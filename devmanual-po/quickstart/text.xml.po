@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/quickstart/text.xml:4(title)
+msgid "Quickstart Ebuild Guide"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:8(e)
+msgid "very"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:7(p)
+msgid "This page provides a <placeholder-1/> brief introduction to ebuild writing. It does not attempt to cover many of the details or problems that will be encountered by developers <d/> rather, it gives some trivial examples which may be of use when trying to grasp the basic idea of how ebuilds work."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:15(p)
+msgid "For proper coverage of all the ins and outs, see <uri link=\"::ebuild-writing\"/>. The <uri link=\"::general-concepts\"/> chapter will also be of use."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:20(p)
+msgid "Note that the examples used here, whilst based upon real tree ebuilds, have had several parts chopped out, changed and simplified."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:27(title)
+msgid "First Ebuild"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:31(e)
+msgid "Exuberant Ctags"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:32(c)
+msgid "dev-util/ctags/ctags-5.5.4.ebuild"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:30(p)
+msgid "We'll start with an ebuild for the <placeholder-1/> utility, a source code indexing tool. Here's a simplified <placeholder-2/> (you can see real ebuilds in the main tree)."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:36(codesample)
+msgid "# Copyright 1999-2017 Gentoo Foundation # Distributed under the terms of the GNU General Public License v2 EAPI=6 DESCRIPTION=\"Exuberant ctags generates tags files for quick source navigation\" HOMEPAGE=\"http://ctags.sourceforge.net\" SRC_URI=\"mirror://sourceforge/ctags/${P}.tar.gz\" LICENSE=\"GPL-2\" SLOT=\"0\" KEYWORDS=\"~mips ~sparc ~x86\" src_configure() { econf --with-posix-regex } src_install() { emake DESTDIR=\"${D}\" install dodoc FAQ NEWS README }"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:63(title)
+msgid "Basic Format"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:67(c)
+msgid "bash"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:66(p)
+msgid "As you can see, ebuilds are just <placeholder-1/> scripts that are executed within a special environment."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:71(p)
+msgid "At the top of the ebuild is a header block. This is present in all ebuilds."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:75(p)
+msgid "Ebuilds are indented using tabs, with each tab representing four places. See <uri link=\"::ebuild-writing/file-format\"/>."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:83(title)
+msgid "Information Variables"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:86(p)
+msgid "Next, there are a series of variables. These tell Portage various things about the ebuild and package in question."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:92(c)
+msgid "EAPI"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:91(p)
+msgid "The <placeholder-1/> of the ebuild, see <uri link=\"::ebuild-writing/eapi\"/>."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:96(c)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:96(e)
+msgid "short"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:95(p)
+msgid "The <placeholder-1/> variable is set to a <placeholder-2/> description of the package and its purpose."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:101(c)
+msgid "HOMEPAGE"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:102(c)
+msgid "http://"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:100(p)
+msgid "The <placeholder-1/> is a link to the package's homepage (remember to include the <placeholder-2/> part)."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:106(c) devmanual/quickstart/text.xml:237(c)
+msgid "SRC_URI"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:107(c)
+msgid "mirror://sourceforge/"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:109(c)
+msgid "${P}"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:110(c)
+msgid "ctags-5.5.4"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:105(p)
+msgid "The <placeholder-1/> tells Portage the address to use for downloading the source tarball. Here, <placeholder-2/> is a special notation meaning \"any of the Sourceforge mirrors\". <placeholder-3/> is a read-only variable set by Portage which is the package's name and version <d/> in this case, it would be <placeholder-4/>."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:114(c)
+msgid "LICENSE"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:114(c)
+msgid "GPL-2"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:113(p)
+msgid "The <placeholder-1/> is <placeholder-2/> (the GNU General Public License version 2)."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:118(c)
+msgid "SLOT"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:119(c)
+msgid "\"0\""
+msgstr ""
+
+#: devmanual/quickstart/text.xml:117(p)
+msgid "The <placeholder-1/> variable tells Portage which slot this package installs to. If you've not seen slots before, either just use <placeholder-2/> or read <uri link=\"::general-concepts/slotting\"/>."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:124(c)
+msgid "KEYWORDS"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:125(c)
+msgid "~"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:123(p)
+msgid "The <placeholder-1/> variable is set to archs upon which this ebuild has been tested. We use <placeholder-2/> keywords for newly written ebuilds <d/> packages are not committed straight to stable, even if they seem to work. See <uri link=\"::keywording\"/> for details."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:133(title)
+msgid "Build Functions"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:137(c) devmanual/quickstart/text.xml:244(c)
+msgid "src_configure"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:138(e)
+msgid "configure"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:138(c) devmanual/quickstart/text.xml:140(c)
+msgid "econf"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:139(c) devmanual/quickstart/text.xml:359(c) devmanual/quickstart/text.xml:430(c)
+msgid "./configure"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:136(p)
+msgid "Next, a function named <placeholder-1/>. Portage will call this function when it wants to <placeholder-2/> the package. The <placeholder-3/> function is a wrapper for calling <placeholder-4/>. If for some reason an error occurs in <placeholder-5/>, Portage will stop rather than trying to continue with the install."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:145(c) devmanual/quickstart/text.xml:244(c)
+msgid "src_install"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:146(e)
+msgid "install"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:148(c)
+msgid "${D}"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:144(p)
+msgid "The <placeholder-1/> function is called by Portage when it wants to <placeholder-2/> the package. A slight subtlety here <d/> rather than installing straight to the live filesystem, we must install to a special location which is given by the <placeholder-3/> variable (Portage sets this <d/> see <uri link=\"::general-concepts/install-destinations\"/> and <uri link=\"::general-concepts/sandbox\"/>)."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:154(c)
+msgid "emake DESTDIR=\"${D}\" install"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:156(c)
+msgid "Makefile"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:156(c)
+msgid "einstall"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:153(note)
+msgid "The canonical install method is <placeholder-1/>. This will work with any properly written standard <placeholder-2/>. If this gives sandbox errors, try <placeholder-3/> instead. If this still fails, see <uri link=\"::ebuild-writing/functions/src_install/\"/> for how to do manual installs."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:163(c)
+msgid "dodoc"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:164(c)
+msgid "/usr/share/doc"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:162(p)
+msgid "The <placeholder-1/> is a helper function for installing files into the relevant part of <placeholder-2/>."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:171(c) devmanual/quickstart/text.xml:172(c)
+msgid "src_unpack"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:171(c) devmanual/quickstart/text.xml:175(c)
+msgid "src_compile"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:176(c)
+msgid "emake"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:176(c)
+msgid "make"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:167(p)
+msgid "Ebuilds can define other functions (see <uri link=\"::ebuild-writing/functions\"/>). In all cases, Portage provides a reasonable default implementation which quite often does the 'right thing'. There was no need to define <placeholder-1/> and <placeholder-2/> functions here, for example <d/> the <placeholder-3/> function is used to do any unpacking of tarballs or patching of source files, but the default implementation does everything we need in this case. Similarly, the default <placeholder-4/> function will call <placeholder-5/> which is a wrapper for <placeholder-6/>."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:180(c)
+msgid "|| die"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:179(note)
+msgid "Formerly, the <placeholder-1/> construct had to be used after every command to check for errors. This is no longer necessary in EAPI 4 <d/> functions provided by Portage will die by themselves if something failed."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:191(title)
+msgid "Ebuild with Dependencies"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:194(p)
+msgid "In the ctags example, we didn't tell Portage about any dependencies. As it happens, that's ok, because ctags only needs a basic toolchain to compile and run (see <uri link=\"::general-concepts/dependencies#Implicit System Dependency\"/> for why we don't need to depend upon those explicitly). However, life is rarely that simple."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:203(c)
+msgid "app-misc/detox/detox-1.1.1.ebuild"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:202(p)
+msgid "Here's <placeholder-1/>:"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:206(codesample)
+msgid "# Copyright 1999-2017 Gentoo Foundation # Distributed under the terms of the GNU General Public License v2 EAPI=5 DESCRIPTION=\"detox safely removes spaces and strange characters from filenames\" HOMEPAGE=\"http://detox.sourceforge.net/\" SRC_URI=\"mirror://sourceforge/${PN}/${P}.tar.bz2\" LICENSE=\"BSD\" SLOT=\"0\" KEYWORDS=\"~hppa ~mips sparc x86\" RDEPEND=\"dev-libs/popt\" DEPEND=\"${RDEPEND} sys-devel/flex sys-devel/bison\" src_configure() { econf --with-popt } src_install() { emake DESTDIR=\"${D}\" install dodoc README CHANGES }"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:237(c)
+msgid "${PN}"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:238(e)
+msgid "without"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:235(p)
+msgid "Again, you can see the ebuild header and the various informational variables. In <placeholder-1/>, <placeholder-2/> is used to get the package's name <placeholder-3/> the version suffix (there are more of these variables <d/> see <uri link=\"::ebuild-writing/variables#Predefined Read-Only Variables\"/>)."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:243(p)
+msgid "Again, we define <placeholder-1/> and <placeholder-2/> functions."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:248(c) devmanual/quickstart/text.xml:249(c)
+msgid "DEPEND"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:248(c) devmanual/quickstart/text.xml:250(c)
+msgid "RDEPEND"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:247(p)
+msgid "The <placeholder-1/> and <placeholder-2/> variables are how Portage determines which packages are needed to build and run the package. The <placeholder-3/> variable lists compile-time dependencies, and the <placeholder-4/> lists runtime dependencies. See <uri link=\"::general-concepts/dependencies\"/> for some more complex examples."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:258(title)
+msgid "Ebuild with Patches"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:262(c)
+msgid "src_prepare"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:263(c) devmanual/quickstart/text.xml:263(c)
+msgid "epatch"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:264(c)
+msgid "eutils"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:266(c)
+msgid "inherit eutils"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:267(c)
+msgid "app-misc/detox/detox-1.1.0.ebuild"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:261(p)
+msgid "Often we need to apply patches. This is done in the <placeholder-1/> function using the <placeholder-2/> helper function. To use <placeholder-3/> one must first tell Portage that the <placeholder-4/> eclass (an eclass is like a library) is required <d/> this is done via <placeholder-5/> at the top of the ebuild. Here's <placeholder-6/>:"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:270(codesample)
+msgid "# Copyright 1999-2017 Gentoo Foundation # Distributed under the terms of the GNU General Public License v2 EAPI=5 inherit eutils DESCRIPTION=\"detox safely removes spaces and strange characters from filenames\" HOMEPAGE=\"http://detox.sourceforge.net/\" SRC_URI=\"mirror://sourceforge/${PN}/${P}.tar.bz2\" LICENSE=\"BSD\" SLOT=\"0\" KEYWORDS=\"~hppa ~mips ~sparc ~x86\" RDEPEND=\"dev-libs/popt\" DEPEND=\"${RDEPEND} sys-devel/flex sys-devel/bison\" src_prepare() { epatch \"${FILESDIR}\"/${P}-destdir.patch \\ \"${FILESDIR}\"/${P}-parallel_build.patch } src_configure() { econf --with-popt } src_install() { emake DESTDIR=\"${D}\" install dodoc README CHANGES }"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:307(c)
+msgid "${FILESDIR}/${P}-destdir.patch"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:308(c)
+msgid "detox-1.1.0-destdir.patch"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:308(c) devmanual/quickstart/text.xml:310(c)
+msgid "files/"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:310(c)
+msgid "dev.gentoo.org"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:306(p)
+msgid "Note the <placeholder-1/><d/> this refers to <placeholder-2/>, which lives in the <placeholder-3/> subdirectory in the Gentoo repository. Larger patch files must go on your developer's space at <placeholder-4/> rather than in <placeholder-5/> or mirrors <d/> see <uri link=\"::general-concepts/mirrors#Gentoo Mirrors\"/> and <uri link=\"::ebuild-writing/functions/src_prepare/epatch/\"/>."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:319(title)
+msgid "Ebuild with USE Flags"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:323(c) devmanual/quickstart/text.xml:361(c)
+msgid "USE"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:323(c)
+msgid "dev-libs/libiconv/libiconv-1.9.2.ebuild"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:324(c)
+msgid "libc"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:322(p)
+msgid "Now for some <placeholder-1/> flags. Here's <placeholder-2/>, a replacement iconv for <placeholder-3/> implementations which don't have their own."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:327(codesample)
+msgid "# Copyright 1999-2017 Gentoo Foundation # Distributed under the terms of the GNU General Public License v2 EAPI=5 DESCRIPTION=\"GNU charset conversion library for libc which doesn't implement it\" HOMEPAGE=\"http://www.gnu.org/software/libiconv/\" SRC_URI=\"ftp://ftp.gnu.org/pub/gnu/libiconv/${P}.tar.gz\" LICENSE=\"LGPL-2.1\" SLOT=\"0\" KEYWORDS=\"~amd64 ~ppc ~sparc ~x86\" IUSE=\"nls\" DEPEND=\"!sys-libs/glibc\" src_configure() { econf $(use_enable nls) } src_install() { emake DESTDIR=\"${D}\" install }"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:354(c)
+msgid "IUSE"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:355(c)
+msgid "emerge -pv"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:353(p)
+msgid "Note the <placeholder-1/> variable. This lists all (non-special) use flags that are used by the ebuild. This is used for the <placeholder-2/> output, amongst other things."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:359(c)
+msgid "--enable-nls"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:360(c)
+msgid "--disable-nls"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:360(c) devmanual/quickstart/text.xml:428(c)
+msgid "use_enable"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:358(p)
+msgid "The package's <placeholder-1/> script takes the usual <placeholder-2/> or <placeholder-3/> argument. We use the <placeholder-4/> utility function to generate this automatically, depending on the user's <placeholder-5/> flags (see <uri link=\"::function-reference/query-functions/\"/>)."
+msgstr ""
+
+#: devmanual/quickstart/text.xml:367(c)
+msgid "mail-client/sylpheed/sylpheed-1.0.4.ebuild"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:365(p)
+msgid "Another more complicated example, this time based upon <placeholder-1/>:"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:370(codesample)
+msgid "# Copyright 1999-2017 Gentoo Foundation # Distributed under the terms of the GNU General Public License v2 EAPI=5 inherit eutils DESCRIPTION=\"A lightweight email client and newsreader\" HOMEPAGE=\"http://sylpheed.good-day.net/\" SRC_URI=\"mirror://sourceforge/${PN}/${P}.tar.bz2\" LICENSE=\"GPL-2\" SLOT=\"0\" KEYWORDS=\"alpha amd64 hppa ia64 ppc ppc64 sparc x86\" IUSE=\"crypt imlib ipv6 ldap nls pda ssl xface\" RDEPEND=\"=x11-libs/gtk+-2* crypt? ( &gt;=app-crypt/gpgme-0.4.5 ) imlib? ( media-libs/imlib2 ) ldap? ( &gt;=net-nds/openldap-2.0.11 ) pda? ( app-pda/jpilot ) ssl? ( dev-libs/openssl ) xface? ( &gt;=media-libs/compface-1.4 ) app-misc/mime-types x11-misc/shared-mime-info\" DEPEND=\"${RDEPEND} dev-util/pkgconfig nls? ( &gt;=sys-devel/gettext-0.12.1 )\" src_prepare() { epatch \"${FILESDIR}\"/${PN}-namespace.diff \\ \"${FILESDIR}\"/${PN}-procmime.diff } src_configure() { econf \\ $(use_enable nls) \\ $(use_enable ssl) \\ $(use_enable crypt gpgme) \\ $(use_enable pda jpilot) \\ $(use_enable ldap) \\ $(use_enable ipv6) \\ $(use_enable imlib) \\ $(use_enable xface compface) } src_install() { emake DESTDIR=\"${D}\" install doicon sylpheed.png domenu sylpheed.desktop dodoc [A-Z][A-Z]* ChangeLog* }"
+msgstr ""
+
+#: devmanual/quickstart/text.xml:427(p)
+msgid "Note the optional dependencies. Some of the <placeholder-1/> lines use the two-argument version <d/> this is helpful when the USE flag name does not exactly match the <placeholder-2/> argument."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/quickstart/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

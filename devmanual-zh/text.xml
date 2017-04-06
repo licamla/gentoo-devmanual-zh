@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<guide root="true">
+<chapter>
+<title>主索引</title>
+
+<body>
+<p>本文档是正在进行的修订工作。它包含空白、不准确、遗漏、错别字和偶尔的错误。目的是为提供给开发人员和用户，一本包含正确、详细、最新的技术手册。</p>
+<p>鼓励捐款。请参阅<uri link="::appendices/contributing"/>如何开始一节。如果你有任何更正，建议或改进意见请看看<placeholder-1/>和文件<placeholder-2/>。<uri link="::appendices/contributors"/>部分列出了本手册的具体贡献。</p>
+</body>
+
+<section>
+<title>Contents</title>
+<body>
+<contentsTree maxdepth="1"/>
+</body>
+</section>
+
+<section>
+<title>完整目录</title>
+<body>
+<contentsTree/>
+</body>
+</section>
+</chapter>
+
+<include href="quickstart/"/>
+<include href="general-concepts/"/>
+<include href="ebuild-writing/"/>
+<include href="ebuild-maintenance/"/>
+<include href="eclass-writing/"/>
+<include href="profiles/"/>
+<include href="keywording/"/>
+<include href="tasks-reference/"/>
+<include href="function-reference/"/>
+<!-- <include href="eclass-reference/"/> -->
+<include href="tools-reference/"/>
+<include href="hosted-projects/"/>
+<include href="archs/"/>
+<include href="appendices/"/>
+</guide>

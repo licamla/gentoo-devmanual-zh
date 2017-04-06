@@ -1,0 +1,956 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/tools-reference/sed/text.xml:4(title)
+msgid "sed -- Stream Editor"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:11(c) devmanual/tools-reference/sed/text.xml:24(c) devmanual/tools-reference/sed/text.xml:61(c) devmanual/tools-reference/sed/text.xml:64(c) devmanual/tools-reference/sed/text.xml:93(c) devmanual/tools-reference/sed/text.xml:109(c) devmanual/tools-reference/sed/text.xml:191(c) devmanual/tools-reference/sed/text.xml:246(c) devmanual/tools-reference/sed/text.xml:251(c) devmanual/tools-reference/sed/text.xml:288(c) devmanual/tools-reference/sed/text.xml:330(c) devmanual/tools-reference/sed/text.xml:367(c) devmanual/tools-reference/sed/text.xml:857(c) devmanual/tools-reference/sed/text.xml:867(c)
+msgid "sed"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:7(p)
+msgid "Sometimes it is better to use regular expressions to manipulate content rather than patching sources. This can be used for small changes, especially those which are likely to create patch conflicts across versions. The canonical way of doing this is via <placeholder-1/>:"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:14(codesample)
+msgid "# This plugin is mapped to the 'h' key by default, which conflicts with some # other mappings. Change it to use 'H' instead. sed -i 's/\\(noremap &lt;buffer&gt; \\)h/\\1H/' info.vim \\ || die 'sed failed'"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:22(c)
+msgid "-gentoo-blah"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:24(c)
+msgid "${PR}"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:25(c)
+msgid "r0"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:25(c)
+msgid "-r"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:21(p)
+msgid "Another common example is appending a <placeholder-1/> version string (some upstreams like us to do this so that they can tell exactly which package they're dealing with). Again, we can use <placeholder-2/>. Note that the <placeholder-3/> variable will be set to <placeholder-4/> if we don't have a <placeholder-5/> component in our version."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:28(codesample)
+msgid "# Add in the Gentoo -r number to fluxbox -version output. We need to look # for the line in version.h.in which contains \"__fluxbox_version\" and append # our content to it. if [[ \"${PR}\" == \"r0\" ]] ; then suffix=\"gentoo\" else suffix=\"gentoo-${PR}\" fi sed -i \\ -e \"s~\\(__fluxbox_version .@VERSION@\\)~\\1-${suffix}~\" \\ version.h.in || die \"version sed failed\""
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:44(c)
+msgid "app-vim"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:42(p)
+msgid "It is also possible to extract content from existing files to create new files this way. Many <placeholder-1/> ebuilds use this technique to extract documentation from the plugin files and convert it to Vim help format."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:48(codesample)
+msgid "# This plugin uses an 'automatic HelpExtractor' variant. This causes # problems for us during the unmerge. Fortunately, sed can fix this # for us. First, we extract the documentation: sed -e '1,/^\" HelpExtractorDoc:$/d' \\ \"${S}\"/plugin/ZoomWin.vim &gt; ${S}/doc/ZoomWin.txt \\ || die \"help extraction failed\" # Then we remove the help extraction code from the plugin file: sed -i -e '/^\" HelpExtractor:$/,$d' \"${S}\"/plugin/ZoomWin.vim \\ || die \"help extract remove failed\""
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:63(c) devmanual/tools-reference/sed/text.xml:64(c)
+msgid "GNU sed 4"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:65(c)
+msgid "system"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:66(c)
+msgid "sed -i"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:67(c)
+msgid "DEPEND"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:67(c)
+msgid "&gt;=sys-apps/sed-4"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:60(p)
+msgid "A summary of the more common ways of using <placeholder-1/> and a description of commonly used address and token patterns follows. Note that some of these constructs are specific to <placeholder-2/><d/> on non-GNU userland archs, the <placeholder-3/> command must be aliased to GNU sed. Also note that <placeholder-4/> is guaranteed to be installed as part of <placeholder-5/>. This was not always the case, which is why some packages, particularly those which use <placeholder-6/>, have <placeholder-7/> s upon <placeholder-8/>."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:71(title)
+msgid "Basic <c>sed</c> Invocation"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:74(p)
+msgid "The basic form of a call is:"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:78(codesample)
+msgid "sed [ option flags ] \\ -e 'first command' \\ -e 'second command' \\ -e 'and so on' \\ input-file &gt; output-file \\ || die \"Oops, sed didn't work!\""
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:89(c)
+msgid "-i"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:87(p)
+msgid "For cases where the input and output files are the same, the inplace option should be used. This is done by passing <placeholder-1/> as one of the option flags."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:94(c) devmanual/tools-reference/sed/text.xml:367(c)
+msgid "-n"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:92(p)
+msgid "Usually <placeholder-1/> prints out every line of the created content. To obtain only explicitly printed lines, the <placeholder-2/> flag should be used."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:98(e)
+msgid "pattern"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:97(note)
+msgid "The term <placeholder-1/> refers to the description of text being matched."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:105(title)
+msgid "Simple Text Substitution using <c>sed</c>"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:109(c)
+msgid "\"some text\""
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:110(c)
+msgid "\"different content\""
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:108(p)
+msgid "The most common form of <placeholder-1/> is to replace all instances of <placeholder-2/> with <placeholder-3/>. This is done as follows:"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:113(codesample)
+msgid "# replace all instances of \"some text\" with \"different content\" in # somefile.txt sed -i -e 's/some text/different content/g' somefile.txt || \\ die \"Sed broke!\""
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:121(c)
+msgid "/g"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:121(e)
+msgid "all"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:120(note)
+msgid "The <placeholder-1/> flag is required to replace <placeholder-2/> occurrences. Without this flag, only the first match on each line is replaced."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:126(c)
+msgid "\"irksome texting\""
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:127(c)
+msgid "\"irkdifferent contenting\""
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:125(warning)
+msgid "The above will replace <placeholder-1/> with <placeholder-2/>, which may not be desired."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:130(p)
+msgid "If the pattern or the replacement string contains the forward slash character, it is usually easiest to use a different delimiter. Most punctuation characters are allowed, although backslash and any form of brackets should be avoided."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:136(codesample)
+msgid "# replace all instances of \"/usr/local\" with \"/usr\" sed -i -e 's~/usr/local~/usr~g' somefile.txt || \\ die \"sed broke\""
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:144(c) devmanual/tools-reference/sed/text.xml:144(c) devmanual/tools-reference/sed/text.xml:474(c)
+msgid "^"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:144(c) devmanual/tools-reference/sed/text.xml:145(c) devmanual/tools-reference/sed/text.xml:302(c) devmanual/tools-reference/sed/text.xml:482(c)
+msgid "$"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:142(p)
+msgid "Patterns can be made to match only at the start or end of a line by using the <placeholder-1/> and <placeholder-2/> metacharacters. A <placeholder-3/> means \"match at the start of a line only\", and <placeholder-4/> means \"match at the end of a line only\". By using both in a single statement, it is possible to match exact lines."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:149(codesample)
+msgid "# Replace any \"hello\"s which occur at the start of a line with \"howdy\". sed -i -e 's!^hello!howdy!' data.in || die \"sed failed\""
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:155(c)
+msgid "!g"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:154(note)
+msgid "There is no need for a <placeholder-1/> suffix here."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:158(codesample)
+msgid "# Replace any \"bye\"s which occur at the end of a line with \"cheerio!\". sed -i -e 's,bye$,cheerio!,' data.in || die \"sed failed\""
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:163(codesample)
+msgid "# Replace any lines which are exactly \"change this line\" with \"have a # cookie\". sed -i -e 's-^change this line$-have a cookie-' data.in || die \"Oops\""
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:170(c)
+msgid "/i"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:169(p)
+msgid "To ignore case in the pattern, add the <placeholder-1/> flag."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:173(codesample)
+msgid "# Replace any \"emacs\" instances (ignoring case) with \"Vim\" sed -i -e 's/emacs/Vim/gi' editors.txt || die \"Ouch\""
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:178(warning)
+msgid "Case insensitive matching doesn't work correctly when backreferences are used."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:187(title)
+msgid "Regular Expression Substitution using <c>sed</c>"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:190(p)
+msgid "It is also possible to do more complex matches with <placeholder-1/>. Some examples could be:"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:196(li)
+msgid "Match any three digits"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:199(li)
+msgid "Match either \"foo\" or \"bar\""
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:202(li)
+msgid "Match any of the letters \"a\", \"e\", \"i\", \"o\" or \"u\""
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:207(p)
+msgid "These types of pattern can be chained together, leading to things like \"match any vowel followed by two digits followed by either foo or bar\"."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:213(e)
+msgid "character class"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:212(p)
+msgid "To match any of a set of characters, a <placeholder-1/> can be used. These come in three forms."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:219(c)
+msgid "\\d"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:220(c)
+msgid "\\s"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:218(li)
+msgid "A backslash followed by a letter. <placeholder-1/>, for example, matches a single digit (any of 0, 1, 2, ... 9). <placeholder-2/> matches a single whitespace character. A table of the more useful classes is provided later in this document."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:224(c)
+msgid "[aeiou]"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:226(c)
+msgid "[0-9A-Fa-fxX]"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:227(c)
+msgid "[^aeiou]"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:228(e) devmanual/tools-reference/sed/text.xml:320(e)
+msgid "except"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:223(li)
+msgid "A group of characters inside square brackets. <placeholder-1/>, for example, matches any one of 'a', 'e', 'i', 'o' or 'u'. Ranges are allowed, such as <placeholder-2/>, which could be used to match any hexadecimal digit or the characters 'x' and 'X'. Inverted character classes, such as <placeholder-3/>, match any single character <placeholder-4/> those listed."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:232(c) devmanual/tools-reference/sed/text.xml:506(c) devmanual/tools-reference/sed/text.xml:618(c)
+msgid "[[:alpha:]]"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:230(li)
+msgid "A POSIX character class is a special named group of characters that are locale-aware. For example, <placeholder-1/> matches any 'alphabet' character in the current locale. A table of the more useful classes is provided later in this document."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:239(c)
+msgid "a[^b]"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:239(b) devmanual/tools-reference/sed/text.xml:330(b) devmanual/tools-reference/sed/text.xml:354(e) devmanual/tools-reference/sed/text.xml:894(e)
+msgid "not"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:238(note)
+msgid "The regex <placeholder-1/> does <placeholder-2/> mean \"match a, so long as it does not have a 'b' after it\". It means \"match a followed by exactly one character which is not a 'b'\". This is important when one considers a line ending in the character 'a'."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:246(c)
+msgid "man sed"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:247(c)
+msgid "sed.info"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:249(uri)
+msgid "IEEE1003.1-2004-9.3"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:250(e)
+msgid "should"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:251(e)
+msgid "actually"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:245(note)
+msgid "At the time of writing, the <placeholder-1/> documentation (<placeholder-2/> and <placeholder-3/>) does not mention that POSIX character classes are supported. Consult <placeholder-4/> for full details of how these <placeholder-5/> work, and the <placeholder-6/> source code for full details of how these <placeholder-7/> work."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:255(e)
+msgid "alternation"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:256(c)
+msgid "first\\|second\\|third"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:254(p)
+msgid "To match any one of multiple options, <placeholder-1/> can be used. The basic form is <placeholder-2/>."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:260(c)
+msgid "\\(parentheses\\)"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:261(c)
+msgid "in\\(iqui\\|fini\\)ty"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:259(p)
+msgid "To group items to avoid ambiguity, the <placeholder-1/> construct may be used. To match \"iniquity\" or \"infinity\", one could use <placeholder-2/>."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:265(c) devmanual/tools-reference/sed/text.xml:458(c) devmanual/tools-reference/sed/text.xml:740(c)
+msgid "\\?"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:265(c)
+msgid "colou\\?r"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:267(c)
+msgid "\\(in\\)\\?finite\\(ly\\)\\?"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:264(p)
+msgid "To optionally match an item, add a <placeholder-1/> after it. For example, <placeholder-2/> matches both \"colour\" and \"color\". This can also be applied to character classes and groups in parentheses, for example <placeholder-3/>. Further atoms are available for matching \"one or more\", \"zero or more\", \"at least n\", \"between n and m\" and so on <d/> these are summarised later in this document."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:275(c) devmanual/tools-reference/sed/text.xml:514(c) devmanual/tools-reference/sed/text.xml:793(c)
+msgid "\\1"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:275(c)
+msgid "\\2"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:275(c) devmanual/tools-reference/sed/text.xml:514(c) devmanual/tools-reference/sed/text.xml:793(c)
+msgid "\\9"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:276(c) devmanual/tools-reference/sed/text.xml:801(c)
+msgid "&amp;"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:272(p)
+msgid "There are also some special constructs which can be used in the replacement part of a substitution command. To insert the contents of the pattern's first matched bracket group, use <placeholder-1/>, for the second use <placeholder-2/> and so on up to <placeholder-3/>. An unescaped ampersand <placeholder-4/> character can be used to insert the entire contents of the match. These and other replace atoms are summarised later in this document."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:284(title)
+msgid "Addresses in <c>sed</c>"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:287(p)
+msgid "Many <placeholder-1/> commands can be applied only to a certain line or range of lines. This could be useful if one wishes to operate only on the first ten lines of a document, for example."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:297(e)
+msgid "before"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:293(p)
+msgid "The simplest form of address is a single positive integer. This will cause the following command to be applied only to the line in question. Line numbering starts from 1, but the address 0 can be useful when one wishes to insert text <placeholder-1/> the first line. If the address 100 is used on a 50 line document, the associated command will never be executed."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:301(p)
+msgid "To match the last line in a document, the <placeholder-1/> address may be used."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:307(c)
+msgid "/pattern/"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:309(c)
+msgid "s///"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:305(p)
+msgid "To match any lines that match a given regular expression, the form <placeholder-1/> is allowed. This can be useful for finding a particular line and then making certain changes to it <d/> sometimes it is simpler to handle this in two stages rather than using one big scary <placeholder-2/> command. When used in ranges, it can be useful for finding all text between two given markers or between a given marker and the end of the document."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:315(c)
+msgid "addr1,addr2"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:314(p)
+msgid "To match a range of addresses, <placeholder-1/> can be used. Most address constructs are allowed for both the start and the end addresses."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:321(c)
+msgid "$!"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:319(p)
+msgid "Addresses may be inverted with an exclamation mark. To match all lines <placeholder-1/> the last, <placeholder-2/> may be used."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:324(p)
+msgid "Finally, if no address is given for a command, the command is applied to every line in the input."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:330(c)
+msgid "%"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:331(c)
+msgid "/addr/+offset"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:332(c)
+msgid "ex"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:329(note)
+msgid "GNU <placeholder-1/> does <placeholder-2/> support the <placeholder-3/> address forms found in some other implementations. It also doesn't support <placeholder-4/>, that's an <placeholder-5/> thing..."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:335(p)
+msgid "Other more complex options involving chaining addresses are available. These are not discussed in this document."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:344(title)
+msgid "Content Deletion using <c>sed</c>"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:348(c)
+msgid "address d"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:349(c)
+msgid "3d"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:350(c) devmanual/tools-reference/sed/text.xml:354(c)
+msgid "/fred/d"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:347(p)
+msgid "Lines may be deleted from a file using <placeholder-1/> command. To delete the third line of a file, one could use <placeholder-2/>, and to filter out all lines containing \"fred\", <placeholder-3/>."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:354(e)
+msgid "fred."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:354(c)
+msgid "s/.<placeholder-1/>//"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:353(note)
+msgid "sed -e <placeholder-1/> is <placeholder-2/> the same as <placeholder-3/><d/> the former will delete the lines including the newline, whereas the latter will delete the lines' contents but not the newline."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:363(title)
+msgid "Content Extraction using <c>sed</c>"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:368(c)
+msgid "p"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:369(c)
+msgid "sed -n -e '/infra monkey/p'"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:370(c)
+msgid "sed -n -e '/^START$/,/^END$/p'"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:366(p)
+msgid "When the <placeholder-1/> option is passed to <placeholder-2/>, no output is printed by default. The <placeholder-3/> command can be used to display content. For example, to print lines containing \"infra monkey\", the command <placeholder-4/> could be used. Ranges may also be printed <d/><placeholder-5/> is sometimes useful."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:378(title)
+msgid "Inserting Content using <c>sed</c>"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:382(c)
+msgid "address a"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:382(c) devmanual/tools-reference/sed/text.xml:383(c)
+msgid "i"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:383(c)
+msgid "a"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:381(p)
+msgid "To insert text with sed use a <placeholder-1/> or <placeholder-2/> command. The <placeholder-3/> command inserts on the line following the match while the <placeholder-4/> command inserts on the line before the match."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:387(p)
+msgid "As usual, an address can be either a line number or a regular expression: a line number command will only be executed once and a regular expression insert/append will be executed for each match."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:393(codesample)
+msgid "# Add 'Bob' after the 'To:' line: sed -i -e '/^To: $/a Bob' data.in || die \"Oops\" # Add 'From: Alice' before the 'To:' line: sed -i -e '/^To: $/i From: Alice' # Note that the spacing between the 'i' or 'a' and 'Bob' or 'From: Alice' is simply ignored' # Add 'From: Alice' indented by two spaces: (You only need to escape the first space) sed -i -e '/^To: $/i\\ From: Alice'"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:406(p)
+msgid "Note that you should use a match instead of a line number wherever possible. This reduces problems if a line is added at the beginning of the file, for example, causing your sed script to break."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:416(title)
+msgid "Regular Expression Atoms in <c>sed</c>"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:420(title)
+msgid "Basic Atoms"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:425(th) devmanual/tools-reference/sed/text.xml:547(th) devmanual/tools-reference/sed/text.xml:715(th) devmanual/tools-reference/sed/text.xml:784(th)
+msgid "Atom"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:428(th)
+msgid "Purpose"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:434(c)
+msgid "text"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:436(ti)
+msgid "Literal text"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:442(c) devmanual/tools-reference/sed/text.xml:796(c)
+msgid "\\( \\)"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:444(ti)
+msgid "Grouping"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:450(c)
+msgid "\\|"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:453(e)
+msgid "or"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:452(ti)
+msgid "Alternation, a <placeholder-1/> b"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:458(c) devmanual/tools-reference/sed/text.xml:724(c)
+msgid "*"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:458(c) devmanual/tools-reference/sed/text.xml:732(c)
+msgid "\\+"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:458(c)
+msgid "\\{\\}"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:460(ti)
+msgid "Repeats, see below"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:466(c)
+msgid "."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:468(ti)
+msgid "Any single character"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:476(ti)
+msgid "Start of line"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:484(ti)
+msgid "End of line"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:490(c)
+msgid "[abc0-9]"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:492(ti)
+msgid "Any one of"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:498(c)
+msgid "[^abc0-9]"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:500(ti)
+msgid "Any one character except"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:508(ti)
+msgid "POSIX character class, see below"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:513(ti) devmanual/tools-reference/sed/text.xml:792(ti)
+msgid "<placeholder-1/> .. <placeholder-2/>"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:516(ti)
+msgid "Backreference"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:522(c) devmanual/tools-reference/sed/text.xml:530(c)
+msgid "\\x"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:521(ti)
+msgid "<placeholder-1/> (any special character)"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:524(ti)
+msgid "Match character literally"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:529(ti)
+msgid "<placeholder-1/> (normal characters)"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:532(ti)
+msgid "Shortcut, see below"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:542(title)
+msgid "Character Class Shortcuts"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:550(th) devmanual/tools-reference/sed/text.xml:612(th) devmanual/tools-reference/sed/text.xml:718(th) devmanual/tools-reference/sed/text.xml:787(th)
+msgid "Description"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:556(c)
+msgid "\\a"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:558(ti)
+msgid "\"BEL\" character"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:564(c)
+msgid "\\f"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:566(ti)
+msgid "\"Form Feed\" character"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:572(c)
+msgid "\\t"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:574(ti)
+msgid "\"Tab\" character"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:580(c)
+msgid "\\w"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:582(ti)
+msgid "\"Word\" (a letter, digit or underscore) character"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:588(c)
+msgid "\\W"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:590(ti)
+msgid "\"Non-word\" character"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:600(title)
+msgid "POSIX Character Classes"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:603(p)
+msgid "Read the source, it's the only place these're documented properly..."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:609(th)
+msgid "Class"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:620(ti)
+msgid "Alphabetic characters"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:626(c)
+msgid "[[:upper:]]"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:628(ti)
+msgid "Uppercase alphabetics"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:634(c)
+msgid "[[:lower:]]"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:636(ti)
+msgid "Lowercase alphabetics"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:642(c)
+msgid "[[:digit:]]"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:644(ti)
+msgid "Digits"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:650(c)
+msgid "[[:alnum:]]"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:652(ti)
+msgid "Alphabetic and numeric characters"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:658(c)
+msgid "[[:xdigit:]]"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:660(ti)
+msgid "Digits allowed in a hexadecimal number"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:666(c)
+msgid "[[:space:]]"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:668(ti)
+msgid "Whitespace characters"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:674(c)
+msgid "[[:print:]]"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:676(ti)
+msgid "Printable characters"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:682(c)
+msgid "[[:punct:]]"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:684(ti)
+msgid "Punctuation characters"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:690(c)
+msgid "[[:graph:]]"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:692(ti)
+msgid "Non-blank characters"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:698(c)
+msgid "[[:cntrl:]]"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:700(ti)
+msgid "Control characters"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:710(title)
+msgid "Count Specifiers"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:726(ti)
+msgid "Zero or more (greedy)"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:734(ti)
+msgid "One or more (greedy)"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:742(ti)
+msgid "Zero or one (greedy)"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:748(c)
+msgid "\\{N\\}"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:750(ti)
+msgid "Exactly N"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:756(c)
+msgid "\\{N,M\\}"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:758(ti)
+msgid "At least N and no more than M (greedy)"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:764(c)
+msgid "\\{N,\\}"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:766(ti)
+msgid "At least N (greedy)"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:779(title)
+msgid "Replacement Atoms in <c>sed</c>"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:795(ti)
+msgid "Captured <placeholder-1/> contents"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:803(ti)
+msgid "The entire matched text"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:809(c) devmanual/tools-reference/sed/text.xml:844(c)
+msgid "\\L"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:811(ti)
+msgid "All subsequent characters are converted to lowercase"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:817(c)
+msgid "\\l"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:819(ti)
+msgid "The following character is converted to lowercase"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:825(c) devmanual/tools-reference/sed/text.xml:844(c)
+msgid "\\U"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:827(ti)
+msgid "All subsequent characters are converted to uppercase"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:833(c)
+msgid "\\u"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:835(ti)
+msgid "The following character is converted to uppercase"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:841(c)
+msgid "\\E"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:843(ti)
+msgid "Cancel the most recent <placeholder-1/> or <placeholder-2/>"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:853(title)
+msgid "Details of <c>sed</c> Match Mechanics"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:856(p)
+msgid "GNU <placeholder-1/> uses a traditional (non-POSIX) nondeterministic finite automaton with extensions to support capturing to do its matching. This means that in all cases, the match with the leftmost starting position will be favoured. Of all the leftmost possible matches, favour will be given to leftmost alternation options. Finally, all other things being equal favour will be given to the longest of the leftmost counting options."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:867(e)
+msgid "is"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:865(p)
+msgid "Most of this is in violation of strict POSIX compliance, so it's best not to rely upon it. It <placeholder-1/> safe to assume that <placeholder-2/> will always pick the leftmost match, and that it will match greedily with priority given to items earlier in the pattern."
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:876(title)
+msgid "Notes on Performance with <c>sed</c>"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:879(todo)
+msgid "write this"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:887(title)
+msgid "Recommended Further Reading for Regular Expressions"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:891(e)
+msgid "Mastering Regular Expressions"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:893(c)
+msgid "t"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:893(c)
+msgid "t[n] ∈ ∑ ∀ n"
+msgstr ""
+
+#: devmanual/tools-reference/sed/text.xml:890(p)
+msgid "The author recommends <placeholder-1/> by Jeffrey E. F. Friedl for those who wish to learn more about regexes. This text is remarkably devoid of phrases like \"let <placeholder-2/> be a finite contiguous sequence such that <placeholder-3/>\", and was <placeholder-4/> written by someone whose pay cheque depended upon them being able to express simple concepts with pages upon pages of mathematical and Greek symbols."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/tools-reference/sed/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

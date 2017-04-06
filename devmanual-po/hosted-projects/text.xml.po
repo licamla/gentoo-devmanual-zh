@@ -1,0 +1,176 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/hosted-projects/text.xml:4(title)
+msgid "Hosted Projects"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:9(c) devmanual/hosted-projects/text.xml:68(c)
+msgid "genkernel"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:7(p)
+msgid "The following guidelines have been proposed for hosted projects in an attempt to prevent a repeat of the <placeholder-1/> disaster."
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:13(title)
+msgid "Documentation Requirement"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:18(e)
+msgid "before the first release"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:16(p)
+msgid "All hosted projects should have decent, up to date user and developer documentation. This documentation must be available <placeholder-1/>, and not left as \"something we'll do later (honest)\"."
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:24(e)
+msgid "need"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:22(p)
+msgid "Our documentation team are happy to help out with GuideXMLification, translation etc. for the user documentation, but they <placeholder-1/> various things to do this:"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:28(li)
+msgid "Basic documentation to start with."
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:34(li)
+msgid "The goals"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:37(li)
+msgid "The design specification"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:40(li)
+msgid "An FAQ"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:31(li)
+msgid "Basic information on the project or tool, such as: <ul><placeholder-1/><placeholder-2/><placeholder-3/></ul>"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:45(li)
+msgid "To be informed of any updates, in advance if at all possible <d/> this is to avoid having out of date recommendations in the documentation."
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:51(p)
+msgid "Developer documentation is generally best left in the hands of the project maintainers."
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:60(title)
+msgid "Portability"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:66(e)
+msgid "even if you originally think that your tool is only relevant for one arch"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:63(p)
+msgid "Gentoo runs on a large number of architectures. This is one of our big advantages over some other distributions. It is therefore important that any tools are made with portability in mind, <placeholder-1/>. It was this kind of assumption that meant that <placeholder-2/> had to be completely rewritten when it suddenly became mandatory."
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:72(p)
+msgid "In practice, this means the following:"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:77(li)
+msgid "Using a portable programming language <d/> no Java or C# for any Gentoo tools. Bash, C and Python are good, especially since everyone already has those installed."
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:86(li)
+msgid "Not assuming that you are running on a 32bit little endian system."
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:89(li)
+msgid "Not assuming that all computers have a VGA text console, or indeed any kind of graphics capability."
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:93(li)
+msgid "Not assuming that all computers use DOS disclabels."
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:82(li)
+msgid "Not making assumptions about the hardware or architecture. This covers various things, depending upon the tool <d/> simple examples include: <ul><placeholder-1/><placeholder-2/><placeholder-3/></ul>"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:101(c)
+msgid "GNU sed"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:102(e)
+msgid "not"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:102(c)
+msgid "GNU find"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:98(li)
+msgid "Not relying too strongly upon particular implementations of various tools, except where it has been agreed that we will always use a particular implementation of said tool (it is safe to use <placeholder-1/> extensions, for example, but <placeholder-2/><placeholder-3/> extensions)."
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:110(title)
+msgid "Open / Free"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:120(c)
+msgid "gentoo-syntax"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:120(c) devmanual/hosted-projects/text.xml:120(c)
+msgid "vim"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:113(p)
+msgid "All hosted projects should use an appropriate open / free / libre license. Typically this will be the GPL v2 for software, and some version of the Creative Commons Attribution-ShareAlike License (CC-BY-SA-*) for documentation. However, reasonable exceptions can be made <d/> sometimes it makes more sense to use the LGPL or a *BSD license, and for application-specific projects going with the application's license may make more sense (the <placeholder-1/> package for <placeholder-2/> uses the <placeholder-3/> license, for example)."
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:127(title)
+msgid "Accessible"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:130(p)
+msgid "Projects should be accessible to users with disabilities. Simple examples of how to go about this include:"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:136(li)
+msgid "Not relying solely upon colour to convey information."
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:139(li)
+msgid "Providing textual descriptions for any images."
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:142(li)
+msgid "Providing clear captions for dialogs, buttons, form fields and so on."
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:147(p)
+msgid "Good places to look for further hints include:"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:153(uri)
+msgid "GNOME Accessibility Project"
+msgstr ""
+
+#: devmanual/hosted-projects/text.xml:157(uri)
+msgid "W3C Web Accessibility Initiative Guidelines"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/hosted-projects/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

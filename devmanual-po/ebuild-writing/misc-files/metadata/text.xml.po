@@ -1,0 +1,580 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:4(title)
+msgid "Package and Category <c>metadata.xml</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:8(c) devmanual/ebuild-writing/misc-files/metadata/text.xml:53(path) devmanual/ebuild-writing/misc-files/metadata/text.xml:64(path) devmanual/ebuild-writing/misc-files/metadata/text.xml:349(c) devmanual/ebuild-writing/misc-files/metadata/text.xml:392(path) devmanual/ebuild-writing/misc-files/metadata/text.xml:456(path) devmanual/ebuild-writing/misc-files/metadata/text.xml:505(path) devmanual/ebuild-writing/misc-files/metadata/text.xml:628(c) devmanual/ebuild-writing/misc-files/metadata/text.xml:670(c) devmanual/ebuild-writing/misc-files/metadata/text.xml:690(c) devmanual/ebuild-writing/misc-files/metadata/text.xml:697(c)
+msgid "metadata.xml"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:7(p)
+msgid "The <placeholder-1/> file is used to specify additional data about a package or category."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:13(title)
+msgid "Syntax"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:18(uri)
+msgid "GLEP 68"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:19(b) devmanual/ebuild-writing/misc-files/metadata/text.xml:349(b)
+msgid "must"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:20(uri)
+msgid "GLEP 31"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:16(p)
+msgid "A metadata file follows the syntax defined in <placeholder-1/>. The character set <placeholder-2/> be UTF-8 as specified by <placeholder-3/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:27(li)
+msgid "Indentation should be consistent, i.e. either spaces or tabs, but not both."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:31(li)
+msgid "Keep the existing style when touching metadata.xml files that belong to other developers."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:23(p)
+msgid "Concerning indentation there is no strict rule governing the style and width. However the following minimal set of rules need to be followed: <ul><placeholder-1/><placeholder-2/></ul>"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:38(p)
+msgid "The following table summarizes the tags that may appear in a metadata.xml:"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:45(th)
+msgid "tag"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:46(th) devmanual/ebuild-writing/misc-files/metadata/text.xml:252(th)
+msgid "description"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:50(brite)
+msgid "&lt;catmetadata&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:55(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:67(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:77(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:257(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:274(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:691(c)
+msgid "&lt;longdescription&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:52(ti)
+msgid "This is the root element of the <placeholder-1/> file for categories. It has no attributes. It contains a number of <placeholder-2/> tags, each for a different language."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:61(brite)
+msgid "&lt;pkgmetadata&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:68(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:89(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:172(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:273(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:305(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:330(brite)
+msgid "&lt;maintainer&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:69(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:122(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:258(brite)
+msgid "&lt;slots&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:70(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:144(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:156(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:259(brite)
+msgid "&lt;use&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:71(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:163(brite)
+msgid "&lt;upstream&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:63(ti)
+msgid "This is the root element of the <placeholder-1/> file for packages. It has no attributes. The following subtags are allowed: <placeholder-2/>, <placeholder-3/>, <placeholder-4/>, <placeholder-5/>, and <placeholder-6/>. While all the subtags are optional, &lt;upstream&gt; may appear at most once."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:81(uri)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:83(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:158(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:230(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:513(c)
+msgid "&lt;pkg&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:84(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:159(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:236(brite)
+msgid "&lt;cat&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:78(ti)
+msgid "This tag contains a description for a category or a package. For packages, it is used to augment the <placeholder-1/> field in the ebuilds themselves. This tag has two optional subtags: <placeholder-2/> and <placeholder-3/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:93(c) devmanual/ebuild-writing/misc-files/metadata/text.xml:225(c) devmanual/ebuild-writing/misc-files/metadata/text.xml:317(ti) devmanual/ebuild-writing/misc-files/metadata/text.xml:328(ti)
+msgid "type"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:94(c) devmanual/ebuild-writing/misc-files/metadata/text.xml:334(c)
+msgid "\"person\""
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:95(c) devmanual/ebuild-writing/misc-files/metadata/text.xml:334(c)
+msgid "\"project\""
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:96(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:102(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:187(brite)
+msgid "&lt;email&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:97(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:108(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:180(brite)
+msgid "&lt;name&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:98(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:114(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:257(brite)
+msgid "&lt;description&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:91(ti)
+msgid "This tag specifies the persons and/or projects responsible for the maintenance of a package. The <placeholder-1/> attribute must be specified and can be either <placeholder-2/> or <placeholder-3/>. There is one required subtag: <placeholder-4/>. It has two optional subtags: <placeholder-5/> and <placeholder-6/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:103(ti)
+msgid "This contains the e-mail address of the maintainer. It is required."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:109(ti)
+msgid "This contains freetext with the name of the maintainer. It is optional."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:115(ti)
+msgid "The description tag contains a description of the maintainership, or for example a remark that someone interested can take over the maintainership. It is optional."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:125(uri)
+msgid "slots"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:123(ti)
+msgid "This tag describes the <placeholder-1/> of a package. It has two optional subtags: &lt;slot&gt; and &lt;subslots&gt;."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:130(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:290(brite)
+msgid "&lt;slot&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:132(c) devmanual/ebuild-writing/misc-files/metadata/text.xml:157(c) devmanual/ebuild-writing/misc-files/metadata/text.xml:288(ti)
+msgid "name"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:131(ti)
+msgid "This contains information for a particular slot. The <placeholder-1/> attribute is mandatory and specifies the name of the slot."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:137(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:581(c)
+msgid "&lt;subslots&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:138(ti)
+msgid "Describes the meaning of subslots for the whole package. This tag may appear at most once."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:147(uri)
+msgid "USE flags"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:149(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:153(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:274(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:290(brite)
+msgid "&lt;flag&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:145(ti)
+msgid "This tag contains descriptions of <placeholder-1/>. This tag is optional and, if specified, has one required subtag: <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:154(ti)
+msgid "This tag contains a description of how the named USE flag affects this package. It is required if the <placeholder-1/> tag is specified. It also requires the USE flag to be named in the <placeholder-2/> attribute. This tag has two optional subtags: <placeholder-3/> and <placeholder-4/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:164(ti)
+msgid "This tag contains information about the upstream developers/project. It supports multiple optional subtags: &lt;maintainer&gt;, &lt;changelog&gt;, &lt;doc&gt;, &lt;bugs-to&gt;, and &lt;remote-id&gt;."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:176(c) devmanual/ebuild-writing/misc-files/metadata/text.xml:303(ti)
+msgid "status"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:173(ti)
+msgid "Provides information about the upstream maintainer. It requires a &lt;name&gt; subtag to be specified, supports an optional &lt;email&gt; subtag and an optional <placeholder-1/> attribute."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:181(ti)
+msgid "The name of an upstream maintainer should contain a block of text with upstream's name. This element is mandatory for an upstream maintainer and must appear exactly once."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:188(ti)
+msgid "The email address of an upstream maintainer. May appear only once."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:193(brite)
+msgid "&lt;changelog&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:194(ti)
+msgid "Should contain a URL where the location of the upstream changelog can be found. The URL must be version independent and must point to a changelog which is only updated on new releases of the corresponding package. (This also implies that one can link to an automatically updated changelog in case of vcs snapshots only). May appear at most once."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:203(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:259(brite)
+msgid "&lt;doc&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:204(ti)
+msgid "Should contain a URL where the location of the upstream documentation can be found. The link must not point to any third party documentation and must be version independent. If the documentation is available in more than one language, a lang attribute can be used which follows the same rules as the one for &lt;longdescription&gt;."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:213(brite)
+msgid "&lt;bugs-to&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:216(c) devmanual/ebuild-writing/misc-files/metadata/text.xml:460(c)
+msgid "mailto:"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:214(ti)
+msgid "Should contain a place where bugs can be filed, a URL or an e-mail address prefixed with <placeholder-1/>. May appear at most once."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:220(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:319(brite) devmanual/ebuild-writing/misc-files/metadata/text.xml:521(c)
+msgid "&lt;remote-id&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:221(ti)
+msgid "Should specify a type of package identification tracker and the identification that corresponds to the package in question. remote-id should make it easier to index information such as its Freshmeat ID or its CPAN name. It has a mandatory attribute <placeholder-1/> which identifies the type of upstream source."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:231(ti)
+msgid "This tag contains a valid qualified package name."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:239(path)
+msgid "profiles/categories"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:237(ti)
+msgid "This tag contains a valid category name as defined in <placeholder-1/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:244(p)
+msgid "There are also some attributes that can be used with these tags:"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:250(th)
+msgid "attribute"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:251(th)
+msgid "tags"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:255(ti)
+msgid "lang"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:256(ti)
+msgid "<placeholder-1/>, <placeholder-2/>, <placeholder-3/>, <placeholder-4/>, <placeholder-5/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:263(e)
+msgid "least"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:266(uri)
+msgid "ISO-639-1"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:261(ti)
+msgid "In every case where a description is required, there must be at <placeholder-1/> an english description. If an additional description in another language is given, this attribute is used to specify the language used. The format is the two-character language code as defined by the <placeholder-2/> norm."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:271(ti) devmanual/ebuild-writing/misc-files/metadata/text.xml:504(c) devmanual/ebuild-writing/misc-files/metadata/text.xml:509(c)
+msgid "restrict"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:272(ti)
+msgid "<placeholder-1/>, <placeholder-2/>, <placeholder-3/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:276(ti)
+msgid "The restrict attribute allows one to restrict the application of certain tags to certain versions of a package. When this attribute is used, other tags with or without the restrict attribute must be present to cover all the versions of the package. A tag without the restrict attribute serves as the default. The format of the restrict attribute is that of a EAPI=0 package dependency specification. Due to the limitations of XML, the \"&lt;\" and \"&gt;\" need to be specified using \"&amp;lt;\" and \"&amp;gt;\"."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:289(ti)
+msgid "<placeholder-1/>, <placeholder-2/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:296(uri)
+msgid "slot name"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:297(c)
+msgid "\"*\""
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:292(ti)
+msgid "When this attribute is required on the &lt;flag&gt; tag, it simply contains the name of the USE flag. For the &lt;slot&gt; tag, it specifies the <placeholder-1/> to which it applies. A slot name of <placeholder-2/> allows for a single &lt;slot&gt; tag to match all the slots of a package, in which case no other slot tags may be present."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:309(c)
+msgid "\"active\""
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:309(c)
+msgid "\"inactive\""
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:311(c)
+msgid "\"unknown\""
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:307(ti)
+msgid "The upstream maintainer element has a status attribute, which is one of <placeholder-1/> or <placeholder-2/>. This attribute is not mandatory. The absence of it shall be interpreted as <placeholder-3/>. Please note that this attribute is only allowed for the &lt;maintainer&gt; subtags of the &lt;upstream&gt; element!"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:323(uri)
+msgid "metadata.dtd"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:321(ti)
+msgid "A string identifying the type of upstream source. A list of valid strings are kept in <placeholder-1/>. Developers should email the gentoo-dev mailing list before using a new type value."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:336(uri)
+msgid "Gentoo project"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:332(ti)
+msgid "Defines the type of the maintainer for a package. There are only two valid values: <placeholder-1/> and <placeholder-2/>. The latter denotes an official <placeholder-3/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:346(title)
+msgid "Package Metadata"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:348(p)
+msgid "All packages <placeholder-1/> include a <placeholder-2/> file which provides information about package description, maintainers, local USE flags, upstream etc."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:357(uri)
+msgid "skel.metadata.xml"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:359(c)
+msgid "app-portage/metagen"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:354(p)
+msgid "For developers' convenience, a skeleton file is provided in the Gentoo tree with the name <placeholder-1/>. The metadata file can also be created using the <placeholder-2/> tool."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:363(c)
+msgid "repoman"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:364(c)
+msgid "dev-libs/libxml2"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:362(p)
+msgid "Commits of package metadata files are handled by <placeholder-1/>. In order for metadata checks to be performed, <placeholder-2/> must be installed on the system."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:371(uri) devmanual/ebuild-writing/misc-files/metadata/text.xml:626(uri)
+msgid "GLEP 67"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:368(p)
+msgid "Unless specified otherwise, the maintainer who is listed in the metadata first shall be the assignee for the bugs for that package as per <placeholder-1/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:376(title)
+msgid "Package Metadata Examples"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:379(p)
+msgid "In the following sections, various examples of metadata.xml are provided. These examples are based on actual package metadata files to keep things as realistic as possible. However, they may not include these files verbatim and should be taken as hypothetical examples."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:387(title)
+msgid "Projects as Maintainers"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:393(path)
+msgid "app-office/libreoffice"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:394(c) devmanual/ebuild-writing/misc-files/metadata/text.xml:418(c)
+msgid "office@gentoo.org"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:395(c) devmanual/ebuild-writing/misc-files/metadata/text.xml:419(c)
+msgid "Gentoo Office Project"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:390(p)
+msgid "For the first example, a package maintained by a single project is presented. It is a simplified version of <placeholder-1/> for the package <placeholder-2/>. The package maintainer is identified by the email address <placeholder-3/> with the name <placeholder-4/> as specified in the optional &lt;name&gt; subtag. It also provides a long package description."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:400(codesample)
+msgid "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt; &lt;!DOCTYPE pkgmetadata SYSTEM \"http://www.gentoo.org/dtd/metadata.dtd\"&gt; &lt;pkgmetadata&gt; &lt;maintainer type=\"project\"&gt; &lt;email&gt;office@gentoo.org&lt;/email&gt; &lt;name&gt;Gentoo Office Project&lt;/name&gt; &lt;/maintainer&gt; &lt;longdescription&gt; LibreOffice is the successor of OpenOffice.org. This ebuild allows you to compile it yourself. Unfortunately this compilation can take up to a day depending on the speed of your computer. It will however make a snappier LibreOffice than the binary version. &lt;/longdescription&gt; &lt;/pkgmetadata&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:420(uri)
+msgid "projects.xml"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:423(uri)
+msgid "projects listing"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:417(p)
+msgid "The email address <placeholder-1/> corresponds to the <placeholder-2/> as defined in <placeholder-3/>. This file lists all the projects in Gentoo and it is generated from the <placeholder-4/> available on the Gentoo Wiki:"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:427(codesample)
+msgid "&lt;project&gt; &lt;email&gt;office@gentoo.org&lt;/email&gt; &lt;name&gt;Gentoo Office Project&lt;/name&gt; &lt;url&gt;https://wiki.gentoo.org/wiki/Project:Office&lt;/url&gt; &lt;description&gt; The Office project manages the office implementations and related packages in Gentoo. &lt;/description&gt; &lt;member&gt; &lt;email&gt;dilfridge@gentoo.org&lt;/email&gt; &lt;name&gt;Andreas K. Hüttel&lt;/name&gt; &lt;role&gt;member&lt;/role&gt; &lt;/member&gt; &lt;member&gt; &lt;email&gt;scarabeus@gentoo.org&lt;/email&gt; &lt;name&gt;Tomáš Chvátal&lt;/name&gt; &lt;role&gt;member&lt;/role&gt; &lt;/member&gt; &lt;/project&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:452(title)
+msgid "Local USE Flag Descriptions"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:457(path)
+msgid "sys-apps/portage"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:455(p)
+msgid "The second example is formed after the <placeholder-1/> of <placeholder-2/>. It lists multiple maintainers where one is a developer and the other is a project. It illustrates how local USE flag descriptions are specified and also contains an upstream element. It is also worth pointing out the use of <placeholder-3/> prefix in &lt;bugs-to&gt; tag due to the presence of an email address as opposed to a URL. Conversely, email addresses specified in the &lt;email&gt; tags require no such prefix."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:466(codesample)
+msgid "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt; &lt;!DOCTYPE pkgmetadata SYSTEM \"http://www.gentoo.org/dtd/metadata.dtd\"&gt; &lt;pkgmetadata&gt; &lt;upstream&gt; &lt;bugs-to&gt;mailto:dev-portage@gentoo.org&lt;/bugs-to&gt; &lt;changelog&gt;https://gitweb.gentoo.org/proj/portage.git/plain/RELEASE-NOTES&lt;/changelog&gt; &lt;doc&gt;https://wiki.gentoo.org/wiki/Handbook:AMD64/Working/Portage&lt;/doc&gt; &lt;/upstream&gt; &lt;maintainer type=\"person\"&gt; &lt;email&gt;larry@gentoo.org&lt;/email&gt; &lt;name&gt;Larry the Cow&lt;/name&gt; &lt;/maintainer&gt; &lt;maintainer type=\"project\"&gt; &lt;email&gt;dev-portage@gentoo.org&lt;/email&gt; &lt;/maintainer&gt; &lt;use&gt; &lt;flag name=\"epydoc\"&gt;Build html API documentation with epydoc.&lt;/flag&gt; &lt;flag name=\"ipc\"&gt;Use inter-process communication between portage and running ebuilds.&lt;/flag&gt; &lt;flag name=\"pypy2_0\"&gt;Use pypy-c2.0 as Python interpreter.&lt;/flag&gt; &lt;flag name=\"python2\"&gt;Use python2 as Python interpreter.&lt;/flag&gt; &lt;flag name=\"python3\"&gt;Use python3 as Python interpreter.&lt;/flag&gt; &lt;flag name=\"xattr\"&gt; Preserve extended attributes (filesystem-stored metadata) when installing files. Usually only required for hardened systems. &lt;/flag&gt; &lt;/use&gt; &lt;/pkgmetadata&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:499(title)
+msgid "Split Maintainership"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:505(path)
+msgid "sys-boot/grub"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:502(p)
+msgid "This example splits the maintainership based on package versions using the attribute <placeholder-1/>. According to the <placeholder-2/> of <placeholder-3/>, the ebuilds for version 2 and above are maintained by floppym@gentoo.org whereas earlier versions are maintained by the Gentoo Base System project. Note the use of \"&amp;gt;\" as opposed to \"&gt;\" in <placeholder-4/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:516(c) devmanual/ebuild-writing/misc-files/metadata/text.xml:517(c)
+msgid ":2"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:512(p)
+msgid "The example also uses the <placeholder-1/> tag in USE flag descriptions. Slot dependency specifiers are not allowed inside &lt;pkg&gt;, therefore the notation &lt;pkg&gt;sys-boot/grub&lt;/pkg&gt;<placeholder-2/> is adopted as opposed to &lt;pkg&gt;sys-boot/grub<placeholder-3/>&lt;/pkg&gt;."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:520(p)
+msgid "Lastly, the <placeholder-1/> tag in the upstream description is demonstrated."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:525(codesample)
+msgid "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt; &lt;!DOCTYPE pkgmetadata SYSTEM \"http://www.gentoo.org/dtd/metadata.dtd\"&gt; &lt;pkgmetadata&gt; &lt;maintainer restrict=\"&amp;gt;=sys-boot/grub-2\" type=\"person\"&gt; &lt;email&gt;floppym@gentoo.org&lt;/email&gt; &lt;/maintainer&gt; &lt;maintainer type=\"project\"&gt; &lt;email&gt;base-system@gentoo.org&lt;/email&gt; &lt;name&gt;Gentoo Base System&lt;/name&gt; &lt;/maintainer&gt; &lt;use&gt; &lt;flag name=\"device-mapper\"&gt; Enable support for device-mapper from &lt;pkg&gt;sys-fs/lvm2&lt;/pkg&gt; &lt;/flag&gt; &lt;flag name=\"efiemu\"&gt; Build and install the efiemu runtimes &lt;/flag&gt; &lt;flag name=\"fonts\"&gt;Build and install fonts for the gfxterm module&lt;/flag&gt; &lt;flag name=\"mount\"&gt; Build and install the grub-mount utility &lt;/flag&gt; &lt;flag name=\"libzfs\"&gt; Enable support for &lt;pkg&gt;sys-fs/zfs&lt;/pkg&gt; &lt;/flag&gt; &lt;flag name=\"multislot\"&gt; Allow concurrent installation of &lt;pkg&gt;sys-boot/grub&lt;/pkg&gt;:0 and &lt;pkg&gt;sys-boot/grub&lt;/pkg&gt;:2 by renaming all programs. &lt;/flag&gt; &lt;flag name=\"themes\"&gt;Build and install GRUB themes (starfield)&lt;/flag&gt; &lt;flag name=\"truetype\"&gt; Build and install grub-mkfont conversion utility &lt;/flag&gt; &lt;/use&gt; &lt;upstream&gt; &lt;remote-id type=\"sourceforge\"&gt;dejavu&lt;/remote-id&gt; &lt;/upstream&gt; &lt;/pkgmetadata&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:568(title)
+msgid "Slots and Subslots"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:574(path)
+msgid "media-libs/libpng"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:571(p)
+msgid "The main focus of this example is to demonstrate how slots and subslots are specified, by examining the metadata of <placeholder-1/>. There may be multiple reasons for slotting depending on the nature of the package. For this particular package, it can be seen that the slots are used to provide different versions of the library with varying binary compatibility and that developers are advised to build against the slot 0. Furthermore, different versions of this package with the same subslot provide the same Application Binary Interface (ABI), according to the description specified in the <placeholder-2/> tag."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:584(codesample)
+msgid "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt; &lt;!DOCTYPE pkgmetadata SYSTEM \"http://www.gentoo.org/dtd/metadata.dtd\"&gt; &lt;pkgmetadata&gt; &lt;maintainer type=\"project\"&gt; &lt;email&gt;base-system@gentoo.org&lt;/email&gt; &lt;name&gt;Gentoo Base System&lt;/name&gt; &lt;/maintainer&gt; &lt;use&gt; &lt;flag name=\"apng\"&gt;support unofficial APNG (Animated PNG) spec&lt;/flag&gt; &lt;/use&gt; &lt;upstream&gt; &lt;remote-id type=\"cpe\"&gt;cpe:/a:libpng:libpng&lt;/remote-id&gt; &lt;remote-id type=\"sourceforge\"&gt;apng&lt;/remote-id&gt; &lt;/upstream&gt; &lt;slots&gt; &lt;slot name=\"0\"&gt; For building against. This is the only slot that provides headers and command line tools. &lt;/slot&gt; &lt;slot name=\"1.2\"&gt; For binary compatibility, provides libpng12.so.0 only. &lt;/slot&gt; &lt;slot name=\"1.5\"&gt; For binary compatibility, provides libpng15.so.15 only. &lt;/slot&gt; &lt;subslots&gt;Reflect ABI compatibility for libpng.so.&lt;/subslots&gt; &lt;/slots&gt; &lt;/pkgmetadata&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:620(title)
+msgid "Maintainer-Needed"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:629(c)
+msgid "maintainer-needed"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:632(c)
+msgid "maintainer-needed@gentoo.org"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:633(uri)
+msgid "orphaned packages list"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:623(p)
+msgid "Maintainer-needed, or orphaned, packages have no maintainers responsible for them. Per <placeholder-1/>, these packages must not contain any &lt;maintainer&gt; subtags under &lt;pkgmetadata&gt; in their <placeholder-2/>. By convention, a comment line containing the string <placeholder-3/> is inserted. Other tags which are relevant to the package may be present in the metadata. Bugs for these packages must be assigned to <placeholder-4/>. The QA team periodically generates the <placeholder-5/> along with their corresponding bugs as part of the QA reports."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:638(codesample)
+msgid "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt; &lt;!DOCTYPE pkgmetadata SYSTEM \"http://www.gentoo.org/dtd/metadata.dtd\"&gt; &lt;pkgmetadata&gt; &lt;!-- maintainer-needed --&gt; &lt;upstream&gt; &lt;maintainer status=\"active\"&gt; &lt;email&gt;rasmus@alum.mit.edu&lt;/email&gt; &lt;name&gt;Matt Rasmussen&lt;/name&gt; &lt;/maintainer&gt; &lt;doc lang=\"en\"&gt;http://keepnote.org/manual/&lt;/doc&gt; &lt;bugs-to&gt;https://code.google.com/p/keepnote/issues/list&lt;/bugs-to&gt; &lt;/upstream&gt; &lt;longdescription lang=\"en\"&gt; KeepNote is a note taking application. With KeepNote, you can store your class notes, TODO lists, research notes, journal entries, paper outlines, etc in a simple notebook hierarchy with rich-text formatting, images, and more. Using full-text search, you can retrieve any note for later reference. &lt;/longdescription&gt; &lt;/pkgmetadata&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:667(title)
+msgid "Category Metadata"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:669(p)
+msgid "For categories, <placeholder-1/> specifies a long description (in English and optionally in other languages). A typical example:"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:674(codesample)
+msgid "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt; &lt;!DOCTYPE catmetadata SYSTEM \"http://www.gentoo.org/dtd/metadata.dtd\"&gt; &lt;catmetadata&gt; &lt;longdescription lang=\"en\"&gt; The app-vim category contains plugins and syntax file packages for the Vim text editor. &lt;/longdescription&gt; &lt;longdescription lang=\"de\"&gt; Die Kategorie app-vim enthält Plugins und Syntax-Pakete für den Vim Texteditor. &lt;/longdescription&gt; &lt;/catmetadata&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:692(b)
+msgid "mandatory"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:689(p)
+msgid "When creating a new category, creating a <placeholder-1/> file along with a <placeholder-2/> in English is <placeholder-3/>. Translations are handled by any interested developer who speaks a language sufficiently well."
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:697(e)
+msgid "category"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:696(p)
+msgid "The correct way to commit a <placeholder-1/><placeholder-2/> file is currently:"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:701(pre)
+msgid "xmllint --noout --valid metadata.xml git add metadata.xml git commit --gpg-sign"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:707(p)
+msgid "The commit message should be formatted properly. A sample commit is shown below:"
+msgstr ""
+
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:712(pre)
+msgid "commit db359439bcd52f5a7f20d2332ab62feb16657504 Author: Alexis Ballier &lt;aballier@gentoo.org&gt; Date: Tue Sep 22 10:47:49 2015 +0200 dev-ros: Add metadata.xml for the category."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/misc-files/metadata/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

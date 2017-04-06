@@ -1,0 +1,68 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/install-destinations/text.xml:4(title)
+msgid "Install Destinations"
+msgstr ""
+
+#: devmanual/general-concepts/install-destinations/text.xml:9(c)
+msgid "src_install"
+msgstr ""
+
+#: devmanual/general-concepts/install-destinations/text.xml:10(c)
+msgid "${S}"
+msgstr ""
+
+#: devmanual/general-concepts/install-destinations/text.xml:10(c) devmanual/general-concepts/install-destinations/text.xml:16(c)
+msgid "${D}"
+msgstr ""
+
+#: devmanual/general-concepts/install-destinations/text.xml:10(e)
+msgid "not"
+msgstr ""
+
+#: devmanual/general-concepts/install-destinations/text.xml:8(p)
+msgid "When an ebuild runs the <placeholder-1/> phase, it installs an image of the package in question from <placeholder-2/> into <placeholder-3/>. Ebuilds must <placeholder-4/> attempt to perform any operation upon the live filesystem at this stage <d/> this will break binaries, and will (often) cause a sandbox violation notice."
+msgstr ""
+
+#: devmanual/general-concepts/install-destinations/text.xml:16(c) devmanual/general-concepts/install-destinations/text.xml:17(c) devmanual/general-concepts/install-destinations/text.xml:21(c)
+msgid "${ROOT}"
+msgstr ""
+
+#: devmanual/general-concepts/install-destinations/text.xml:17(c)
+msgid "/"
+msgstr ""
+
+#: devmanual/general-concepts/install-destinations/text.xml:20(c)
+msgid "pkg_postinst"
+msgstr ""
+
+#: devmanual/general-concepts/install-destinations/text.xml:15(p)
+msgid "When installing, Portage will install the image in <placeholder-1/> into <placeholder-2/>. By default, <placeholder-3/> points to <placeholder-4/>, although the user can alter this <d/> for example, the user may be building a minimal image for another system in a different location. If your package must operate on the live filesystem (for example, to create some cache files during <placeholder-5/>), you must ensure that you prefix any paths with <placeholder-6/>."
+msgstr ""
+
+#: devmanual/general-concepts/install-destinations/text.xml:25(c)
+msgid "pkg_preinst"
+msgstr ""
+
+#: devmanual/general-concepts/install-destinations/text.xml:26(c)
+msgid "\"${D}\""
+msgstr ""
+
+#: devmanual/general-concepts/install-destinations/text.xml:24(p)
+msgid "When inside <placeholder-1/>, the image to be installed can be accessed under <placeholder-2/>."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/install-destinations/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

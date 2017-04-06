@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/profiles/packages/text.xml:4(title)
+msgid "Profiles <c>packages</c> File"
+msgstr ""
+
+#: devmanual/profiles/packages/text.xml:8(c) devmanual/profiles/packages/text.xml:15(c) devmanual/profiles/packages/text.xml:19(c)
+msgid "packages"
+msgstr ""
+
+#: devmanual/profiles/packages/text.xml:8(c)
+msgid "profiles/"
+msgstr ""
+
+#: devmanual/profiles/packages/text.xml:9(c)
+msgid "system"
+msgstr ""
+
+#: devmanual/profiles/packages/text.xml:9(c)
+msgid "base/packages"
+msgstr ""
+
+#: devmanual/profiles/packages/text.xml:10(c)
+msgid "gentoo-dev"
+msgstr ""
+
+#: devmanual/profiles/packages/text.xml:7(p)
+msgid "The <placeholder-1/> file in <placeholder-2/> controls the packages pulled in by the <placeholder-3/> target. The <placeholder-4/> file must not be modified without discussion on the <placeholder-5/> list; subprofile overrides are up to the relevant arch teams."
+msgstr ""
+
+#: devmanual/profiles/packages/text.xml:16(c)
+msgid "&lt;sys-kernel/linux-headers-2.5"
+msgstr ""
+
+#: devmanual/profiles/packages/text.xml:17(b)
+msgid "only"
+msgstr ""
+
+#: devmanual/profiles/packages/text.xml:20(c)
+msgid "package.mask"
+msgstr ""
+
+#: devmanual/profiles/packages/text.xml:14(p)
+msgid "Note that <placeholder-1/> can be used to require that specific versions of a package be used, for example <placeholder-2/> in a profile requiring a 2.4 kernel. If this is done with the intention of requiring <placeholder-3/> a lower version (that is to say, not a &gt; or &gt;= restriction, and with slots not affecting the outcome), then the entry in <placeholder-4/> must be accompanied by a corresponding <placeholder-5/> entry to ensure that no other versions get installed."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/profiles/packages/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

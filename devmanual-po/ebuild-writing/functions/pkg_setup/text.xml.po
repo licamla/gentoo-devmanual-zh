@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/pkg_setup/text.xml:4(title) devmanual/ebuild-writing/functions/pkg_setup/text.xml:10(c)
+msgid "pkg_setup"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_setup/text.xml:9(th)
+msgid "Function"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_setup/text.xml:13(th)
+msgid "Purpose"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_setup/text.xml:14(ti)
+msgid "Pre-build environment configuration and checks"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_setup/text.xml:17(th)
+msgid "Sandbox"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_setup/text.xml:18(ti)
+msgid "Disabled"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_setup/text.xml:21(th)
+msgid "Privilege"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_setup/text.xml:22(ti)
+msgid "root"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_setup/text.xml:25(th)
+msgid "Called for"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_setup/text.xml:26(ti)
+msgid "ebuild, binary"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_setup/text.xml:32(title)
+msgid "Default <c>pkg_setup</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_setup/text.xml:34(codesample)
+msgid "pkg_setup() { return }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_setup/text.xml:44(title)
+msgid "Sample <c>pkg_setup</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_setup/text.xml:46(codesample)
+msgid "pkg_setup() { # We need to know which GUI we're building in several # different places, so work it out here. if use gtk ; then if use gtk2 ; then export mypkg_gui=\"gtk2\" else export mypkg_gui=\"gtk1\" fi elif use motif then export mypkg_gui=\"motif\" else export mypkg_gui=\"athena\" fi }"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/pkg_setup/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

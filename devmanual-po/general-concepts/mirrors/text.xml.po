@@ -1,0 +1,164 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/mirrors/text.xml:4(title)
+msgid "Mirrors"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:7(title)
+msgid "Automatic Mirroring"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:11(c) devmanual/general-concepts/mirrors/text.xml:44(c)
+msgid "SRC_URI"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:10(p)
+msgid "Packages will automatically have their <placeholder-1/> components mirrored onto Gentoo mirrors. When fetching, Portage checks Gentoo mirrors first before trying the original upstream location."
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:16(p)
+msgid "This is generally desired behaviour <d/> upstream mirrors are prone to being rearranged, tidied out or having files modified."
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:23(title)
+msgid "Restricting Automatic Mirroring"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:26(c)
+msgid "RESTRICT"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:25(p)
+msgid "Three <placeholder-1/> keywords can be used to control the mirroring process."
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:30(c)
+msgid "RESTRICT=\"mirror\""
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:29(p)
+msgid "The <placeholder-1/> setting should be used if we cannot legally mirror certain files; files will still be downloaded from the original locations."
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:35(c)
+msgid "RESTRICT=\"primaryuri\""
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:36(e)
+msgid "first"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:34(p)
+msgid "The <placeholder-1/> setting causes Portage to try original locations <placeholder-2/>, and then fall back to mirrors if necessary <d/> this is sometimes useful if approximate download counts are needed, or if upstream have a reliable mirror setup."
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:42(c)
+msgid "RESTRICT=\"fetch\""
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:43(uri)
+msgid "pkg_nofetch"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:41(p)
+msgid "There is also <placeholder-1/>, which prevents Portage from trying to fetch anything manually. The <placeholder-2/> function will be called if any <placeholder-3/> components cannot be found. This should only be used if a license requires it."
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:51(title)
+msgid "Replacing Automatically Mirrored Files"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:57(li)
+msgid "Put a copy of the new distfile on dev.gentoo.org into /space/distfiles-local"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:58(li)
+msgid "commit the new manifest to the git tree"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:59(li)
+msgid "wait"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:53(p)
+msgid "On rare occasions you may need to replace a file that is already mirrored. In this case proceed as follows: <ol><placeholder-1/><placeholder-2/><placeholder-3/></ol> After a few hours a cron job on dev.gentoo.org will fetch the file and replace the version on the mirrors. The file will be automatically removed from /space/distfiles-local after approximately two weeks."
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:68(uri)
+msgid "infrastructure's pages"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:66(p)
+msgid "More general information about the internals of mirroring can be found on <placeholder-1/>."
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:76(title)
+msgid "Suitable Download Hosts"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:81(c) devmanual/general-concepts/mirrors/text.xml:82(c)
+msgid "dev.gentoo.org"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:78(p)
+msgid "If you have to host a source file (patch or tarball) yourself, as long as it is suitable to be distributed by Gentoo Foundation (by license and legality), you're suggested to use your developer's space at <placeholder-1/>. Since external overlays may depend on your patches/tarballs, using the dev space at <placeholder-2/> keeps the distfiles at a stable and reliable infrastructure. If you retire, other developers can take over your distfiles and place them into their own devspace."
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:87(c) devmanual/general-concepts/mirrors/text.xml:105(c)
+msgid "mirror://gentoo"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:86(p)
+msgid "Previous policy was to use <placeholder-1/> directly, but this is now deprecated, as that wouldn't allow to have long-term availability and traceability of the source files, which might be a requirement of the license."
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:93(c)
+msgid "dev.gentoo.org:~/public_html"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:92(p)
+msgid "When you upload the file to <placeholder-1/>, you must ensure that it, and its parent directories, are world-readable."
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:101(title)
+msgid "Gentoo Mirrors"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:105(c)
+msgid "scp"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:106(c)
+msgid "dev.gentoo.org:/space/distfiles-local"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:107(e)
+msgid "less frequent"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:111(e)
+msgid "must"
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:104(p)
+msgid "To manually upload a file to <placeholder-1/>, <placeholder-2/> it to <placeholder-3/>. The file should appear on the mirrors within four hours (note that this is <placeholder-4/> than <uri link=\"::general-concepts/git-to-rsync\"/>). If the upstream download location for a package uses a non-standard TCP port (anything other than 21, 80 or 443), you <placeholder-5/> manually mirror the files. Not doing so can cause all kinds of problems with strict firewalls."
+msgstr ""
+
+#: devmanual/general-concepts/mirrors/text.xml:118(title)
+msgid "Mirroring Process"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/mirrors/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

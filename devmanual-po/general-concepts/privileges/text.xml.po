@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/privileges/text.xml:4(title)
+msgid "Privileges"
+msgstr ""
+
+#: devmanual/general-concepts/privileges/text.xml:7(todo)
+msgid "general privs stuff, include stuff on setuid/setgid and sticky since a lot of people seem to be confused about those... Also notes on the portage user and group issues, and what we use for root:root to make *bsd work."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/privileges/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

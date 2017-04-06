@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/profiles/use.mask/text.xml:4(title)
+msgid "Profiles <c>use.mask</c> File"
+msgstr ""
+
+#: devmanual/profiles/use.mask/text.xml:8(c) devmanual/profiles/use.mask/text.xml:29(c) devmanual/profiles/use.mask/text.xml:35(c)
+msgid "use.mask"
+msgstr ""
+
+#: devmanual/profiles/use.mask/text.xml:8(c)
+msgid "USE"
+msgstr ""
+
+#: devmanual/profiles/use.mask/text.xml:7(p)
+msgid "The <placeholder-1/> file can be used to mark <placeholder-2/> flags as unavailable on a particular profile. This can be useful for various reasons:"
+msgstr ""
+
+#: devmanual/profiles/use.mask/text.xml:14(c)
+msgid "mmx"
+msgstr ""
+
+#: devmanual/profiles/use.mask/text.xml:14(c)
+msgid "sse"
+msgstr ""
+
+#: devmanual/profiles/use.mask/text.xml:15(c)
+msgid "altivec"
+msgstr ""
+
+#: devmanual/profiles/use.mask/text.xml:15(c)
+msgid "ppc"
+msgstr ""
+
+#: devmanual/profiles/use.mask/text.xml:15(c)
+msgid "vis"
+msgstr ""
+
+#: devmanual/profiles/use.mask/text.xml:13(li)
+msgid "Masking hardware-specific feature flags. For example, <placeholder-1/> and <placeholder-2/> are only available on x86, <placeholder-3/> is only available on <placeholder-4/> and <placeholder-5/> is only available on sparc v9."
+msgstr ""
+
+#: devmanual/profiles/use.mask/text.xml:20(c) devmanual/profiles/use.mask/text.xml:23(c)
+msgid "fooapp"
+msgstr ""
+
+#: devmanual/profiles/use.mask/text.xml:20(c) devmanual/profiles/use.mask/text.xml:21(c) devmanual/profiles/use.mask/text.xml:23(c)
+msgid "mips"
+msgstr ""
+
+#: devmanual/profiles/use.mask/text.xml:21(c) devmanual/profiles/use.mask/text.xml:22(c)
+msgid "bar"
+msgstr ""
+
+#: devmanual/profiles/use.mask/text.xml:21(c)
+msgid "libbar"
+msgstr ""
+
+#: devmanual/profiles/use.mask/text.xml:22(c)
+msgid "profiles/arch/mips/use.mask"
+msgstr ""
+
+#: devmanual/profiles/use.mask/text.xml:18(li)
+msgid "Disabling unavailable soft dependencies. A simple hypothetical example <d/> say <placeholder-1/> works on <placeholder-2/>, but has an optional dependency (controlled by the <placeholder-3/> flag) upon <placeholder-4/>, which doesn't work on <placeholder-5/>. Then by adding the <placeholder-6/> flag to <placeholder-7/>, <placeholder-8/> could be made available to <placeholder-9/> users with the unresolvable dependency forcibly disabled."
+msgstr ""
+
+#: devmanual/profiles/use.mask/text.xml:28(p)
+msgid "Note that <placeholder-1/> is a per-flag thing, not per package's use of a given flag. This is one of the reasons that USE flags must have a specific well defined purpose."
+msgstr ""
+
+#: devmanual/profiles/use.mask/text.xml:34(p)
+msgid "Updates to <placeholder-1/> should be handled via the relevant arch team."
+msgstr ""
+
+#: devmanual/profiles/use.mask/text.xml:38(p)
+msgid "See <uri link=\"::general-concepts/use-flags/#noblah USE Flags\"/> for more discussion."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/profiles/use.mask/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

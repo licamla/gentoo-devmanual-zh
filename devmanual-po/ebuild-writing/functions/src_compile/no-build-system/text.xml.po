@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/src_compile/no-build-system/text.xml:4(title)
+msgid "No Build System"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/no-build-system/text.xml:9(c)
+msgid ".c"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/no-build-system/text.xml:10(c)
+msgid "Makefile"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/no-build-system/text.xml:12(c)
+msgid "app-misc/hilite"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/no-build-system/text.xml:7(p)
+msgid "Occasionally some really small packages are shipped simply as a single <placeholder-1/> file. In these circumstances, you can either write your own <placeholder-2/> and ship it with the source tarball, or just manually compile the thing from within the ebuild, preferebly explaining why. Here's an example, from <placeholder-3/>:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/no-build-system/text.xml:15(codesample)
+msgid "src_compile() { $(tc-getCC) ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -o ${PN} ${P}.c || die }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/no-build-system/text.xml:22(c)
+msgid "x11-plugins/asclock"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/no-build-system/text.xml:21(p)
+msgid "Here's an example from <placeholder-1/>, which ships with a broken build system that doesn't actually work:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/no-build-system/text.xml:26(codesample)
+msgid "src_compile() { local x for x in asclock parser symbols config do $(tc-getCC) \\ ${CFLAGS} ${CPPFLAGS} \\ -I/usr/include \\ -Dlinux \\ -D_POSIX_C_SOURCE=199309L \\ -D_POSIX_SOURCE \\ -D_XOPEN_SOURCE \\ -D_BSD_SOURCE \\ -D_SVID_SOURCE \\ -DFUNCPROTO=15 \\ -DNARROWPROTO \\ -c -o ${x}.o ${x}.c || die \"compile asclock failed\" done $(tc-getCC) \\ ${LDFLAGS} \\ -o asclock \\ asclock.o parser.o symbols.o config.o \\ -L/usr/lib \\ -L/usr/lib/X11 \\ -lXpm -lXext -lX11 || die \"link asclock failed\" }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/no-build-system/text.xml:54(p)
+msgid "A possibly better alternative would be to patch the build system and send it upstream."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/src_compile/no-build-system/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

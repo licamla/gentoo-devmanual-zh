@@ -1,0 +1,36 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/profiles/package.mask/text.xml:4(title)
+msgid "Profiles <c>package.mask</c> File"
+msgstr ""
+
+#: devmanual/profiles/package.mask/text.xml:8(c) devmanual/profiles/package.mask/text.xml:14(c)
+msgid "package.mask"
+msgstr ""
+
+#: devmanual/profiles/package.mask/text.xml:14(c)
+msgid "man portage"
+msgstr ""
+
+#: devmanual/profiles/package.mask/text.xml:7(p)
+msgid "The <placeholder-1/> file can be used to hard mask packages or certain versions of packages that should not be merged by users. This is often used when adding certain experimental (either in ebuild or upstream terms) packages to the tree, or to prevent merging of packages that are broken or break something else. Every entry should have a comment detailing the specific reason for the mask. The format of the <placeholder-2/> file is described in <placeholder-3/>."
+msgstr ""
+
+#: devmanual/profiles/package.mask/text.xml:17(p)
+msgid "This file can be used in subprofiles to mask packages only for certain setups."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/profiles/package.mask/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

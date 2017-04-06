@@ -1,0 +1,108 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:4(title)
+msgid "Using Eclasses"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:10(uri)
+msgid "the eclass reference"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:7(p)
+msgid "An eclass is a collection (library) of functions or functionality that is shared between packages. See <uri link=\"::eclass-writing/\"/> for the full story on what eclasses can do, how they work and how to write them, and <placeholder-1/> for documentation on various commonly used eclasses. This section only explains how to use an eclass which has already been written."
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:17(title)
+msgid "The <c>inherit</c> Function"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:21(c) devmanual/ebuild-writing/using-eclasses/text.xml:22(c) devmanual/ebuild-writing/using-eclasses/text.xml:77(c)
+msgid "inherit"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:22(c)
+msgid "ebuild.sh"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:23(e)
+msgid "before"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:20(p)
+msgid "To use an eclass, it must be 'inherited'. This is done via the <placeholder-1/> function, which is provided by <placeholder-2/>. The <placeholder-3/> statement must come at the top of the ebuild, <placeholder-4/> any functions. Conditional inherits are illegal (except where the inheritance criteria are cache-constant <d/> see <uri link=\"::general-concepts/portage-cache\"/>)."
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:30(c)
+msgid "foomatic-0.1-r2.ebuild"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:28(p)
+msgid "After inheriting an eclass, its provided functions can be used as normal. Here's an example ebuild, <placeholder-1/>, which uses four eclasses:"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:34(codesample)
+msgid "# Copyright 1999-2017 Gentoo Foundation # Distributed under the terms of the GNU General Public License v2 EAPI=2 inherit eutils bash-completion flag-o-matic autotools DESCRIPTION=\"Tool for foo\" HOMEPAGE=\"http://foomatic.sf.net\" SRC_URI=\"mirror://sourceforge/${PN}/${P}.tar.gz\" LICENSE=\"GPL-2\" SLOT=\"0\" KEYWORDS=\"alpha ~amd64 ~x86 ~x86-fbsd\" RDEPEND=\"&gt;=sys-libs/ncurses-5.2 &gt;=sys-libs/readline-4.1\" DEPEND=\"${RDEPEND}\" src_prepare() { epatch \"${FILESDIR}/${P}-gentoo.patch\" eautoreconf } src_configure() { econf --sysconfdir=/etc/devtodo } src_compile() { replace-flags -O? -O1 emake || die \"emake failed\" } src_install() { emake DESTDIR=\"${D}\" install || die \"emake install failed\" dodoc AUTHORS ChangeLog README TODO || die \"dodoc failed\" dobashcompletion \"${FILESDIR}/${PN}.bash-completion\" ${PN} }"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:76(p)
+msgid "Note the <placeholder-1/> immediately after the header."
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:81(c)
+msgid "eutils"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:81(uri)
+msgid "eutils.eclass"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:82(c)
+msgid "epatch"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:82(c)
+msgid "flag-o-matic"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:83(uri)
+msgid "flag-o-matic.eclass"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:83(c)
+msgid "replace-flags"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:84(c)
+msgid "bash-completion"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:84(uri)
+msgid "bash-completion.eclass"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:85(c)
+msgid "dobashcompletion"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:85(c)
+msgid "bash-completion_pkg_postinst"
+msgstr ""
+
+#: devmanual/ebuild-writing/using-eclasses/text.xml:80(p)
+msgid "The <placeholder-1/> eclass (see <placeholder-2/>) is needed to get the <placeholder-3/> function. The <placeholder-4/> eclass (see <placeholder-5/>) is needed for <placeholder-6/>, and the <placeholder-7/> eclass (<placeholder-8/>) is used to handle the bash completion file via <placeholder-9/> and <placeholder-10/>."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/using-eclasses/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

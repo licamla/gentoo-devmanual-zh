@@ -1,0 +1,224 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:4(title) devmanual/ebuild-writing/functions/src_install/text.xml:10(c) devmanual/ebuild-writing/functions/src_install/text.xml:35(c) devmanual/ebuild-writing/functions/src_install/text.xml:45(c) devmanual/ebuild-writing/functions/src_install/text.xml:67(c)
+msgid "src_install"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:9(th)
+msgid "Function"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:13(th)
+msgid "Purpose"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:14(c)
+msgid "${D}"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:14(ti)
+msgid "Install a package to <placeholder-1/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:17(th)
+msgid "Sandbox"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:18(ti)
+msgid "Enabled"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:21(th)
+msgid "Privilege"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:22(ti)
+msgid "root"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:25(th)
+msgid "Called for"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:26(ti)
+msgid "ebuild"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:32(title)
+msgid "Default <c>src_install</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:34(p)
+msgid "For EAPIs 0,1,2, and 3, the default <placeholder-1/> function is the following:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:38(codesample)
+msgid "src_install() { return }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:44(p)
+msgid "For EAPIs 4 and later, the default <placeholder-1/> function is the following:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:47(codesample)
+msgid "src_install() { if [[ -f Makefile ]] || [[ -f GNUmakefile]] || [[ -f makefile ]] ; then emake DESTDIR=\"${D}\" install fi if ! declare -p DOCS &gt;/dev/null 2&gt;&amp;1 ; then local d for d in README* ChangeLog AUTHORS NEWS TODO CHANGES THANKS BUGS \\ FAQ CREDITS CHANGELOG ; do [[ -s \"${d}\" ]] &amp;&amp; dodoc \"${d}\" done elif declare -p DOCS | grep -q \"^declare -a \" ; then dodoc \"${DOCS[@]}\" else dodoc ${DOCS} fi }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:66(p)
+msgid "For EAPIs 6 and later, the default <placeholder-1/> function is the following:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:69(codesample)
+msgid "src_install() { if [[ -f Makefile ]] || [[ -f GNUmakefile ]] || [[ -f makefile ]] ; then emake DESTDIR=\"${D}\" install fi einstalldocs }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:77(important)
+msgid "The following examples assume EAPI 4 or later"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:82(title)
+msgid "Sample <c>src_install</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:85(codesample)
+msgid "src_install() { emake DESTDIR=\"${D}\" install dodoc README CHANGES }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:96(title)
+msgid "Easy Installs"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:99(c) devmanual/ebuild-writing/functions/src_install/text.xml:142(c) devmanual/ebuild-writing/functions/src_install/text.xml:212(c) devmanual/ebuild-writing/functions/src_install/text.xml:221(c) devmanual/ebuild-writing/functions/src_install/text.xml:223(c)
+msgid "Makefile"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:100(c)
+msgid "install"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:100(c) devmanual/ebuild-writing/functions/src_install/text.xml:222(c)
+msgid "DESTDIR"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:98(p)
+msgid "Often, especially with autotools-powered packages, there is a <placeholder-1/><placeholder-2/> target which will honour the <placeholder-3/> variable to tell it to install to a non-root location. If possible, this should be used:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:104(codesample)
+msgid "emake DESTDIR=\"${D}\" install"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:109(c)
+msgid "emake"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:110(c)
+msgid "emake -j1"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:110(c)
+msgid "make"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:108(note)
+msgid "<placeholder-1/> should be used to parallelise here. Some installs are not designed to be parallelised, use <placeholder-2/> or <placeholder-3/> if you hit an error."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:116(c)
+msgid "einstall"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:118(c) devmanual/ebuild-writing/functions/src_install/text.xml:128(c)
+msgid "dodoc"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:118(c)
+msgid "README"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:118(c)
+msgid "ChangeLog"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:114(p)
+msgid "Sometimes this will end up installing a few things into strange places. If and only if this is the case, the <placeholder-1/> function can be used. It is usually necessary to include additional <placeholder-2/> statements for the <placeholder-3/>, <placeholder-4/>, etc in these cases:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:122(codesample)
+msgid "einstall dodoc README CHANGES"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:128(c) devmanual/ebuild-writing/functions/src_install/text.xml:130(c)
+msgid "COPYING"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:129(c)
+msgid "${PORTDIR}/licenses"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:127(note)
+msgid "There is no need to <placeholder-1/><placeholder-2/>! The license belongs to <placeholder-3/>. Sometimes though, you might want to install <placeholder-4/> regardless, if it explains how different licenses are applied to different parts of the application, for example."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:138(title)
+msgid "Trivial Installs"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:143(c)
+msgid "cp"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:141(p)
+msgid "For some packages with no <placeholder-1/> that only install a small number of files, writing a manual install using <placeholder-2/> is the easiest option. For example, to do a simple install of some (no compilation required) themes:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:148(codesample)
+msgid "dodir /usr/share/foo-styles/ cp -R \"${S}/\" \"${D}/\" || die \"Install failed!\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:154(c)
+msgid "insinto"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:154(c)
+msgid "doins"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:156(c)
+msgid "sys-fs/udev"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:153(p)
+msgid "Or sometimes a combination of <placeholder-1/> and <placeholder-2/> (plus related functions -- see <uri link=\"::function-reference/install-functions\"/>) <d/> the following is based upon the <placeholder-3/> install:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:159(codesample)
+msgid "src_install() { dobin udevinfo dobin udevtest into / dosbin udev dosbin udevd dosbin udevsend dosbin udevstart dosbin extras/scsi_id/scsi_id dosbin extras/volume_id/udev_volume_id exeinto /etc/udev/scripts doexe extras/ide-devfs.sh doexe extras/scsi-devfs.sh doexe extras/cdsymlinks.sh doexe extras/dvb.sh insinto /etc/udev newins \"${FILESDIR}/udev.conf.post_050\" udev.conf doins extras/cdsymlinks.conf # For devfs style layout insinto /etc/udev/rules.d/ newins etc/udev/gentoo/udev.rules 50-udev.rules # scsi_id configuration insinto /etc doins extras/scsi_id/scsi_id.config # set up symlinks in /etc/hotplug.d/default dodir /etc/hotplug.d/default dosym ../../../sbin/udevsend /etc/hotplug.d/default/10-udev.hotplug # set up the /etc/dev.d directory tree dodir /etc/dev.d/default dodir /etc/dev.d/net exeinto /etc/dev.d/net doexe etc/dev.d/net/hotplug.dev doman *.8 doman extras/scsi_id/scsi_id.8 dodoc ChangeLog FAQ HOWTO-udev_for_dev README TODO dodoc docs/{overview,udev-OLS2003.pdf,udev_vs_devfs,RFC-dev.d,libsysfs.txt} dodoc docs/persistent_naming/* docs/writing_udev_rules/* newdoc extras/volume_id/README README_volume_id }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:210(p)
+msgid "This is, of course, considerably harder to handle than a simple <placeholder-1/> driven install."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:218(title)
+msgid "Other Installs"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_install/text.xml:220(p)
+msgid "Sometimes, there will be a <placeholder-1/> that does not honour <placeholder-2/> and a non-trivial number of files to install. In these situations, it is best to patch the <placeholder-3/> and contact upstream explaining the situation to them."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/src_install/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

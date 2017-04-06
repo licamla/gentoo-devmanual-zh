@@ -1,0 +1,220 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:4(title)
+msgid "Patching with epatch"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:9(c) devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:25(c)
+msgid "epatch"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:9(c)
+msgid "eutils.eclass"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:10(c) devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:58(uri)
+msgid "src_prepare"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:11(c)
+msgid "-p"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:11(c)
+msgid "gunzip"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:7(p)
+msgid "The canonical way of applying patches in ebuilds is to use <placeholder-1/> (from <placeholder-2/>, which you must make sure to inherit!) inside <placeholder-3/>. This function automatically handles <placeholder-4/> levels, <placeholder-5/> and so on as necessary. Also note that olds ebuild may still use src_unpack to apply patches. This is because those ebuilds are based in EAPI=1. You are advised to use EAPI=2 and apply your patches in src_prepare function instead."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:16(e)
+msgid "highly"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:14(p)
+msgid "Note that distributing modified tarballs rather than a vanilla tarball and patches is <placeholder-1/> discouraged."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:21(title)
+msgid "Basic <c>epatch</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:26(c)
+msgid "die"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:27(c)
+msgid "app-misc/detox"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:24(p)
+msgid "In its simplest form, <placeholder-1/> takes a single filename and applies that patch. It will automatically <placeholder-2/> if the apply fails. The following is taken from <placeholder-3/>:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:30(codesample)
+msgid "src_unpack() { unpack ${A} cd \"${S}\" epatch \"${FILESDIR}/${P}-destdir.patch\" epatch \"${FILESDIR}/${P}-parallel_build.patch\" }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:41(uri)
+msgid "your devspace"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:43(uri) devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:46(c)
+msgid "${FILESDIR}"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:45(c)
+msgid "xz"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:46(c)
+msgid "bzip2"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:47(c)
+msgid "app-admin/showconsole"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:39(p)
+msgid "For larger patches, using <placeholder-1/> rather than <placeholder-2/> is more appropriate. In these situations, it is usually best to compress the patch in question with <placeholder-3/> or <placeholder-4/>(as opposed to <placeholder-5/> patches, which must not be compressed). For example, from <placeholder-6/>:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:50(codesample)
+msgid "src_unpack() { unpack ${A} cd \"${S}\" epatch \"${WORKDIR}/${P}-suse-update.patch.bz2\" epatch \"${FILESDIR}/${PV}-no-TIOCGDEV.patch\" }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:58(p)
+msgid "As stated before, if you are using EAPI &gt;=2, you should apply the patches in the <placeholder-1/> function"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:59(codesample)
+msgid "src_prepare() { epatch \"${WORKDIR}/${P}-suse-update.patch.bz2\" epatch \"${FILESDIR}/${PV}-no-TIOCGDEV.patch\" }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:67(c) devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:96(c)
+msgid "SRC_URI"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:66(p)
+msgid "Remember to add the patch to <placeholder-1/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:73(title)
+msgid "Multiple Patches with <c>epatch</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:76(p)
+msgid "epatch can also apply multiple patches (which can be selectively based upon arch) from a single directory. This can be useful if upstream have releases that need more patches."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:82(p)
+msgid "A simple example:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:86(codesample)
+msgid "src_unpack() { unpack ${A} cd \"${S}\" EPATCH_SOURCE=\"${WORKDIR}/patches\" EPATCH_SUFFIX=\"patch\" \\ EPATCH_FORCE=\"yes\" epatch }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:97(c)
+msgid ".patch"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:95(p)
+msgid "Here, one of the <placeholder-1/> components is a tarball containing many patches with file extension <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:100(p)
+msgid "Variables which may be defined include:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:106(th)
+msgid "Variable"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:107(th)
+msgid "Purpose"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:110(c)
+msgid "EPATCH_SOURCE"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:111(ti)
+msgid "Specifies the directory in which epatch looks for patches."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:114(c)
+msgid "EPATCH_SUFFIX"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:115(ti)
+msgid "File extension for patches."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:118(c)
+msgid "EPATCH_OPTS"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:119(c)
+msgid "patch"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:119(ti)
+msgid "Default options to <placeholder-1/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:122(c)
+msgid "EPATCH_EXCLUDE"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:123(ti)
+msgid "List of patches to exclude."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:126(c)
+msgid "EPATCH_FORCE"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:129(c)
+msgid "yes"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:127(ti)
+msgid "Force epatch to apply patches even if they do not follow the canonical naming form (set to <placeholder-1/>)."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:136(c)
+msgid "??_${ARCH}_foo.${EPATCH_SUFFIX}"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:137(c)
+msgid "EPATCH_FORCE=\"yes\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:137(c)
+msgid "all"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:138(c)
+msgid "${ARCH}"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:134(p)
+msgid "Bulk patches should be named in the form <placeholder-1/>. If they are not, <placeholder-2/> must be set. To apply a patch on <placeholder-3/> archs, use all for the <placeholder-4/> part."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/src_prepare/epatch/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

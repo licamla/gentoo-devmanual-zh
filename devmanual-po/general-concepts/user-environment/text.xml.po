@@ -1,0 +1,152 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/user-environment/text.xml:4(title)
+msgid "User Environment"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:8(c)
+msgid "make.conf"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:9(c) devmanual/general-concepts/user-environment/text.xml:47(c) devmanual/general-concepts/user-environment/text.xml:49(c) devmanual/general-concepts/user-environment/text.xml:81(c)
+msgid "CFLAGS"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:10(c)
+msgid "LANG"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:11(c) devmanual/general-concepts/user-environment/text.xml:21(c)
+msgid "LC_ALL"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:7(p)
+msgid "User environment variables and <placeholder-1/> settings get passed on to ebuilds. This can be useful <d/> it's how <placeholder-2/> and friends work, for example <d/> but it can also result in nasty build-breaking variables like <placeholder-3/> and <placeholder-4/> getting through. Currently no sanitisation is performed upon the environment."
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:17(title)
+msgid "Filtering Variables"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:22(c) devmanual/general-concepts/user-environment/text.xml:80(c)
+msgid "sed"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:22(c)
+msgid "grep"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:22(c)
+msgid "[A-Z]"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:23(c)
+msgid "unset"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:24(c)
+msgid "pkg_setup"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:19(p)
+msgid "Certain variables will really really upset certain build systems. A good example is the locale variables (<placeholder-1/> et al), which if set to certain values will cause <placeholder-2/> or <placeholder-3/> expressions involving the likes of <placeholder-4/> to fail. The easiest thing to do here is to <placeholder-5/> or sanitise the offending variables inside <placeholder-6/>."
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:27(p)
+msgid "The simplest way to unset all locale-related variables is:"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:31(codesample)
+msgid "pkg_setup() { # Unset all locale related variables, they can make the # build fail. eval unset ${!LC_*} LANG }"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:43(title)
+msgid "Not Filtering Variables"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:47(e)
+msgid "must"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:45(p)
+msgid "On the other hand, it is extremely important that certain user preferences are honoured as far as possible. A good example is <placeholder-1/>, which <placeholder-2/> be respected (selective filtering is fine, but outright ignoring is not). Ignoring <placeholder-3/> when compiling can cause serious problems:"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:54(c)
+msgid "march/mcpu"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:55(e)
+msgid "very"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:56(c)
+msgid "openssl"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:53(li)
+msgid "Ignoring <placeholder-1/> may force kernel or software emulation for certain opcodes on some architectures. This can be <placeholder-2/> slow <d/> for example, <placeholder-3/> built for SPARC v7 but run on v9 is around five times slower for RSA operations."
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:60(li)
+msgid "Stripping certain ABI-related flags will break linkage."
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:64(li)
+msgid "Stripping certain ABI-related flags will result in invalid code being produced for certain setups. In extreme cases, we could end up with daft things like big endian code being produced for little endian CPUs."
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:71(c)
+msgid "march/mcpu/mtune"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:72(c)
+msgid "i686"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:73(c)
+msgid "pentium-4"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:73(c)
+msgid "v8"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:74(c)
+msgid "UltraSparc"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:70(li)
+msgid "If a user's <placeholder-1/> is ignored, and an auto-detected setting is used instead, GRP and stages will break. For example, <placeholder-2/> stages could no longer be produced on a <placeholder-3/>, and <placeholder-4/> stages could no longer be produced on an <placeholder-5/>."
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:80(c)
+msgid "CFLAGS=-Wall"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:80(c)
+msgid "Makefile.am"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:81(c)
+msgid "AM_CFLAGS"
+msgstr ""
+
+#: devmanual/general-concepts/user-environment/text.xml:78(p)
+msgid "Some packages do this by accident. For example, one might see <placeholder-1/> in <placeholder-2/>. To fix this, either <placeholder-3/> in the user's <placeholder-4/>, or (the better solution) change the variable to <placeholder-5/>, which will automatically be merged with the user's settings. LDFLAGS also should be respected."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/user-environment/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

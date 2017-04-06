@@ -1,0 +1,644 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/dependencies/text.xml:4(title)
+msgid "Dependencies"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:10(c)
+msgid "emerge"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:8(p)
+msgid "Automatic dependency resolution is one of the most useful features provided by <placeholder-1/>."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:14(title)
+msgid "Build Dependencies"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:18(c) devmanual/general-concepts/dependencies/text.xml:36(c) devmanual/general-concepts/dependencies/text.xml:43(c) devmanual/general-concepts/dependencies/text.xml:47(c) devmanual/general-concepts/dependencies/text.xml:102(c)
+msgid "DEPEND"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:17(p)
+msgid "The <placeholder-1/> ebuild variable should specify any dependencies which are required to unpack, patch, compile or install the package (but see <uri link=\"::general-concepts/dependencies#Implicit System Dependency\"/> for exemptions)."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:28(title)
+msgid "Runtime Dependencies"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:32(c) devmanual/general-concepts/dependencies/text.xml:41(c) devmanual/general-concepts/dependencies/text.xml:47(c) devmanual/general-concepts/dependencies/text.xml:63(c)
+msgid "RDEPEND"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:31(p)
+msgid "The <placeholder-1/> ebuild variable should specify any dependencies which are required at runtime. This includes libraries (when dynamically linked), any data packages and (for interpreted languages) the relevant interpreter. In EAPI=3 or older, if this variable is not specified it defaults to the value of <placeholder-2/>, however the implicit usage is frowned upon. In EAPI=4, the implicit behaviour was removed and the assignment is always explicit."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:40(p)
+msgid "Note that when installing from a binary package, only <placeholder-1/> will be checked. It is therefore necessary to include items even if they are also listed in <placeholder-2/>."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:47(e)
+msgid "in theory"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:48(e) devmanual/general-concepts/dependencies/text.xml:60(e)
+msgid "after"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:46(p)
+msgid "Items which are in <placeholder-1/> but not <placeholder-2/> could <placeholder-3/> be merged <placeholder-4/> the target package. Portage does not currently do this."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:55(title)
+msgid "Post-Merge Dependencies"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:59(c) devmanual/general-concepts/dependencies/text.xml:63(c)
+msgid "PDEPEND"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:58(p)
+msgid "The <placeholder-1/> variable specifies dependencies that should be merged <placeholder-2/> the package, but which may be merged at any time, if the former is not possible. This is sometimes used for plugins that have a dependency upon the package being merged. Generally <placeholder-3/> should be avoided in favour of <placeholder-4/> except where this will create circular dependency chains."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:71(title)
+msgid "Implicit System Dependency"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:76(c) devmanual/general-concepts/dependencies/text.xml:81(c) devmanual/general-concepts/dependencies/text.xml:82(c) devmanual/general-concepts/dependencies/text.xml:84(c) devmanual/general-concepts/dependencies/text.xml:88(c) devmanual/general-concepts/dependencies/text.xml:89(c)
+msgid "system"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:77(c)
+msgid "gcc"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:77(c)
+msgid "libc"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:78(c)
+msgid "glibc"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:79(c)
+msgid "uclibc"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:80(c) devmanual/general-concepts/dependencies/text.xml:83(c)
+msgid "flex"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:80(c) devmanual/general-concepts/dependencies/text.xml:82(c)
+msgid "zlib"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:80(c) devmanual/general-concepts/dependencies/text.xml:82(c)
+msgid "libtool"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:74(p)
+msgid "All packages have an implicit compile-time and runtime dependency upon the entire <placeholder-1/> target. It is therefore not necessary, nor advisable, to specify dependencies upon toolchain packages like <placeholder-2/>, <placeholder-3/> and so on, except where specific versions or packages (for example, <placeholder-4/> over <placeholder-5/>) are required. Note that this rule also needs consideration for packages like <placeholder-6/>, <placeholder-7/> and <placeholder-8/>, which aren't in the <placeholder-9/> target for every profile. For example, the embedded profile doesn't have <placeholder-10/> in <placeholder-11/> target, the <placeholder-12/> ABI might change and break building order and <placeholder-13/> might get removed from the <placeholder-14/> target in future."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:90(c)
+msgid "emerge -e system"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:87(p)
+msgid "However, packages which are included in the <placeholder-1/> target, or are dependencies of <placeholder-2/> target packages, should generally include a complete dependency list (excluding bootstrap packages). This makes <placeholder-3/> possible when installing from a stage 1 or stage 2 tarball."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:98(title)
+msgid "Basic Dependency Syntax"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:101(p)
+msgid "A basic <placeholder-1/> specification might look like the following:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:105(codesample)
+msgid "DEPEND=\"dev-lang/ruby dev-ruby/ruby-gtk2 dev-ruby/mysql-ruby\""
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:112(e)
+msgid "package dependency specification"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:111(p)
+msgid "Each <placeholder-1/> is the full category and name of a package. Dependency specifications are separated by arbitrary whitespace <d/> convention is to have one specification per line for readability purposes. When specifying names, the category part should be treated as mandatory."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:122(title)
+msgid "Version Dependencies"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:125(p)
+msgid "Sometimes a particular version of a package is needed. Where this is known, it should be specified. A simple example:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:130(codesample)
+msgid "DEPEND=\"&gt;=dev-libs/openssl-0.9.7d\""
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:135(c)
+msgid "openssl"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:134(p)
+msgid "This states that at least version 0.9.7d of <placeholder-1/> is required."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:139(title)
+msgid "Version Specifiers"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:142(p)
+msgid "Available version specifiers are:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:149(th) devmanual/general-concepts/dependencies/text.xml:454(th)
+msgid "Specifier"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:150(th) devmanual/general-concepts/dependencies/text.xml:455(th)
+msgid "Meaning"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:153(c)
+msgid "&gt;=app-misc/foo-1.23"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:154(ti)
+msgid "Version 1.23 or later is required."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:157(c)
+msgid "&gt;app-misc/foo-1.23"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:158(ti)
+msgid "A version strictly later than 1.23 is required."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:161(c)
+msgid "~app-misc/foo-1.23"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:162(c)
+msgid "1.23-r*"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:162(ti)
+msgid "Version 1.23 (or any <placeholder-1/>) is required."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:165(c)
+msgid "=app-misc/foo-1.23"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:168(c)
+msgid "~"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:166(ti)
+msgid "Exactly version 1.23 is required. If at all possible, use the <placeholder-1/> form to simplify revision bumps."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:172(c)
+msgid "&lt;=app-misc/foo-1.23"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:173(ti)
+msgid "Version 1.23 or older is required."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:176(c)
+msgid "&lt;app-misc/foo-1.23"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:177(ti)
+msgid "A version strictly before 1.23 is required."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:186(title)
+msgid "Ranged Dependencies"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:189(p)
+msgid "To specify \"version 2.x (not 1.x or 3.x)\" of a package, it is necessary to use the asterisk postfix. This is most commonly seen in situations like:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:194(codesample)
+msgid "DEPEND=\"gtk? ( =x11-libs/gtk+-1.2* )\""
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:201(c) devmanual/general-concepts/dependencies/text.xml:201(c) devmanual/general-concepts/dependencies/text.xml:270(c) devmanual/general-concepts/dependencies/text.xml:275(c) devmanual/general-concepts/dependencies/text.xml:276(c)
+msgid "SLOT"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:198(p)
+msgid "Note that the equals sign is mandatory, and that there is no dot before the asterisk. Also note that when selecting all versions in a specific <placeholder-1/>, <placeholder-2/> dependencies should be used (see below)."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:208(title)
+msgid "Blockers"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:211(p)
+msgid "Sometimes two packages cannot be installed in parallel. This is handled by blockers. A softblocker is specified as follows:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:216(codesample)
+msgid "RDEPEND=\"!app-misc/foo\""
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:220(p)
+msgid "Portage will try to resolve this conflict automatically if possible. Sometimes we need to use a hardblocker to ensure correct emerge order. Those cannot be resolved by Portage and must be taken care of by the user. A hardblocker is specified as follows:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:227(codesample)
+msgid "RDEPEND=\"!!app-misc/foo\""
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:233(e)
+msgid "runtime"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:231(p)
+msgid "Hardblockers always take precedence over softblockers and need at least EAPI=2. Also note that blockers are usually <placeholder-1/> rather than buildtime."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:236(p)
+msgid "Specific versions can also be blocked:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:240(codesample)
+msgid "RDEPEND=\"!&lt;app-misc/foo-1.3\""
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:245(c) devmanual/general-concepts/dependencies/text.xml:340(c) devmanual/general-concepts/dependencies/text.xml:350(c) devmanual/general-concepts/dependencies/text.xml:359(c) devmanual/general-concepts/dependencies/text.xml:360(c) devmanual/general-concepts/dependencies/text.xml:406(c) devmanual/general-concepts/dependencies/text.xml:418(c) devmanual/general-concepts/dependencies/text.xml:503(c)
+msgid "USE"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:244(p)
+msgid "Blockers can be optional based upon <placeholder-1/> flags as per normal dependencies."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:249(p)
+msgid "Blockers added to older ebuilds should not be expected to be retroactive. If the user already has the ebuild installed, any changes to the ebuild should not be expected to make any difference. This means that you should add the blockers to whichever ebuild is the newest (even if it means that logically it would seem backwards). For example, certain versions of portage don't like some versions of bash, but the blocker was put into bash because that was the newer package that caused the issues."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:266(title)
+msgid "SLOT Dependencies"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:271(c)
+msgid "EAPI=1"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:269(p)
+msgid "In order to depend on a package in a specific <placeholder-1/> you must specify at least <placeholder-2/>."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:275(c) devmanual/general-concepts/dependencies/text.xml:313(c)
+msgid ":SLOT"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:274(p)
+msgid "To depend on a specific <placeholder-1/>, <placeholder-2/> should be appended to the package name, where 'SLOT' is the <placeholder-3/> of the package wanted:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:279(codesample)
+msgid "DEPEND=\"qt3? ( x11-libs/qt:3 ) gtk? ( x11-libs/gtk+:2 )"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:284(p)
+msgid "To depend on a specific version or version-range within a SLOT we use:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:288(codesample)
+msgid "DEPEND=\"qt3? ( ~x11-libs/qt-3.3.8:3 ) gtk? ( &gt;=x11-libs/gtk+-2.24.9:2 )"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:294(title)
+msgid "Slot Operators"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:298(c)
+msgid "EAPI=5"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:301(uri)
+msgid "sub-slot"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:297(p)
+msgid "In <placeholder-1/> and higher, you can use slot operators appended to the package name to declare whether or not your package should be rebuilt after the versions satisfying its runtime dependencies are updated to versions with a different slot or <placeholder-2/>:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:305(c)
+msgid ":="
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:305(li)
+msgid "<placeholder-1/> means that any slot is acceptable, and that your package should be rebuilt if the version best matching the runtime dependency is updated to a version with a different slot or subslot;"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:308(c)
+msgid ":*"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:308(li)
+msgid "<placeholder-1/> means that any slot is acceptable, and explicitly declares that changes in the slot or sub-slot can be ignored;"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:310(c)
+msgid ":SLOT="
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:310(li)
+msgid "<placeholder-1/> means that only the 'SLOT' slot is acceptable, and that your package should be rebuilt if the version matching the runtime dependency is updated to another version with this slot but with a different subslot;"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:313(li)
+msgid "<placeholder-1/> means that only the 'SLOT' slot is acceptable, and that changes in the sub-slot can be ignored (like in previous EAPIs)."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:315(c)
+msgid ":SLOT/SUBSLOT"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:315(li)
+msgid "<placeholder-1/> means a dependency on a specific slot and sub-slot pair, which can be useful for packages installing pre-built binaries that require a library with a particular soname version corresponding to the sub-slot."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:320(p)
+msgid "For example:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:324(codesample)
+msgid "RDEPEND=\"media-libs/cogl:1.0= gnutls? ( &gt;=net-libs/gnutls-2.8:= )\""
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:336(title)
+msgid "USE-Conditional Dependencies"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:339(p)
+msgid "To depend upon a certain package if and only if a given <placeholder-1/> flag is set:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:343(codesample)
+msgid "DEPEND=\"perl? ( dev-lang/perl ) ruby? ( &gt;=dev-lang/ruby-1.8 ) python? ( dev-lang/python )\""
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:351(e) devmanual/general-concepts/dependencies/text.xml:359(b)
+msgid "not"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:349(p)
+msgid "It is also possible to depend upon a certain package if a given <placeholder-1/> flag is <placeholder-2/> set:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:354(codesample)
+msgid "RDEPEND=\"!crypt? ( net-misc/netkit-rsh )\""
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:361(c)
+msgid "use.mask"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:361(c)
+msgid "profiles/arch"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:358(p)
+msgid "This should <placeholder-1/> be used for disabling a certain <placeholder-2/> flag on a given architecture. In order to do this, the architecture team should add the <placeholder-3/> flag to their <placeholder-4/> file in the <placeholder-5/> directory of the Gentoo repository."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:365(p)
+msgid "This can be nested:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:369(codesample)
+msgid "DEPEND=\"!build? ( gcj? ( gtk? ( x11-libs/libXt x11-libs/libX11 x11-libs/libXtst x11-proto/xproto x11-proto/xextproto &gt;=x11-libs/gtk+-2.2 x11-libs/pango ) &gt;=media-libs/libart_lgpl-2.1 ) &gt;=sys-libs/ncurses-5.2-r2 nls? ( sys-devel/gettext ) )\""
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:392(title)
+msgid "Any of Many Dependencies"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:398(c) devmanual/general-concepts/dependencies/text.xml:406(c) devmanual/general-concepts/dependencies/text.xml:418(c) devmanual/general-concepts/dependencies/text.xml:424(c) devmanual/general-concepts/dependencies/text.xml:425(c) devmanual/general-concepts/dependencies/text.xml:429(c) devmanual/general-concepts/dependencies/text.xml:430(c)
+msgid "foo"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:398(c) devmanual/general-concepts/dependencies/text.xml:406(c) devmanual/general-concepts/dependencies/text.xml:418(c) devmanual/general-concepts/dependencies/text.xml:424(c) devmanual/general-concepts/dependencies/text.xml:425(c) devmanual/general-concepts/dependencies/text.xml:429(c) devmanual/general-concepts/dependencies/text.xml:430(c)
+msgid "bar"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:397(p)
+msgid "To depend on either <placeholder-1/> or <placeholder-2/>:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:401(codesample)
+msgid "DEPEND=\"|| ( app-misc/foo app-misc/bar )\""
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:406(c)
+msgid "baz"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:405(p)
+msgid "To depend on either <placeholder-1/> or <placeholder-2/> if the <placeholder-3/><placeholder-4/> flag is set:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:409(codesample)
+msgid "DEPEND=\"baz? ( || ( app-misc/foo app-misc/bar ) )\""
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:414(title)
+msgid "Any of Many Versus USE"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:418(c) devmanual/general-concepts/dependencies/text.xml:424(c) devmanual/general-concepts/dependencies/text.xml:425(c) devmanual/general-concepts/dependencies/text.xml:429(c)
+msgid "fnord"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:417(p)
+msgid "Say <placeholder-1/> can be built against either <placeholder-2/> or <placeholder-3/>. Then a <placeholder-4/> flag is not necessary if and only if all of the following hold:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:423(li)
+msgid "<placeholder-1/> is merged on a system which has <placeholder-2/> and not <placeholder-3/> installed. <placeholder-4/> is then unmerged, and <placeholder-5/> is installed. <placeholder-6/> must continue to work correctly."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:428(li)
+msgid "A binary package of <placeholder-1/> made on a system with <placeholder-2/> and not <placeholder-3/> can be taken and installed on a system with <placeholder-4/> and not <placeholder-5/>."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:441(title)
+msgid "Built with USE Dependencies"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:445(c)
+msgid "EAPI=2"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:444(p)
+msgid "In order to use built with use dependencies you must specify <placeholder-1/>."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:448(p)
+msgid "Available specifiers are:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:458(c)
+msgid "app-misc/foo[bar]"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:459(ti)
+msgid "foo must have bar enabled."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:462(c)
+msgid "app-misc/foo[bar,baz]"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:463(ti)
+msgid "foo must have both bar and baz enabled."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:466(c)
+msgid "app-misc/foo[-bar,baz]"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:467(ti)
+msgid "foo must have bar disabled and baz enabled."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:471(p)
+msgid "There are also shortcuts for conditional situations:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:477(th)
+msgid "Compact form"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:478(th)
+msgid "Equivalent expanded form"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:481(c)
+msgid "app-misc/foo[bar?]"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:482(c)
+msgid "bar? ( app-misc/foo[bar] ) !bar? ( app-misc/foo )"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:485(c)
+msgid "app-misc/foo[!bar?]"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:486(c)
+msgid "bar? ( app-misc/foo ) !bar? ( app-misc/foo[-bar] )"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:489(c)
+msgid "app-misc/foo[bar=]"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:490(c)
+msgid "bar? ( app-misc/foo[bar] ) !bar? ( app-misc/foo[-bar] )"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:493(c)
+msgid "app-misc/foo[!bar=]"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:494(c)
+msgid "bar? ( app-misc/foo[-bar] ) !bar? ( app-misc/foo[bar] )"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:499(title)
+msgid "Use dependency defaults"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:504(c)
+msgid "(+)"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:504(c)
+msgid "(-)"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:502(p)
+msgid "If a dependency is introducing or removing a <placeholder-1/> flag in new versions, a use dependency default may be used. Appending a <placeholder-2/> or <placeholder-3/> suffix will indicate whether the absence of the flag from a particular version should indicate its presence or absence."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:509(c)
+msgid "&gt;=dev-libs/boost-1.48[threads(+)]"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:509(c)
+msgid "threads"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:508(p)
+msgid "<placeholder-1/> will treat all versions without <placeholder-2/> as having it set."
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:519(title)
+msgid "Legacy Inverse USE-Conditional Dependency Syntax"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:523(c)
+msgid ":"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:523(c)
+msgid "*DEPEND"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:522(p)
+msgid "Once upon a time the <placeholder-1/> conditional operator was allowed in <placeholder-2/>:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:526(codesample)
+msgid "DEPEND=\"use-flag? ( app-misc/foo ) : ( app-misc/bar )\""
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:531(b)
+msgid "This syntax is no longer permitted"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:530(p)
+msgid "<placeholder-1/>. It is exactly equivalent to the following, which should be used instead:"
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:535(codesample)
+msgid "DEPEND=\"use-flag? ( app-misc/foo ) !use-flag? ( app-misc/bar )\""
+msgstr ""
+
+#: devmanual/general-concepts/dependencies/text.xml:540(p)
+msgid "It is useful to recognise the legacy syntax and to know that it is no longer valid."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/dependencies/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

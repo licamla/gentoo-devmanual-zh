@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/tasks-reference/environment/text.xml:4(title)
+msgid "Environment Files"
+msgstr ""
+
+#: devmanual/tasks-reference/environment/text.xml:10(c)
+msgid "/etc/env.d"
+msgstr ""
+
+#: devmanual/tasks-reference/environment/text.xml:8(p)
+msgid "Some packages need to globally set an environment variable for all users. The canonical way of doing this is via <placeholder-1/>. All files in this directory are sourced when generating user environment settings."
+msgstr ""
+
+#: devmanual/tasks-reference/environment/text.xml:15(b)
+msgid "only"
+msgstr ""
+
+#: devmanual/tasks-reference/environment/text.xml:14(p)
+msgid "This directory should <placeholder-1/> be used for setting environment variables."
+msgstr ""
+
+#: devmanual/tasks-reference/environment/text.xml:19(c)
+msgid "doenvd"
+msgstr ""
+
+#: devmanual/tasks-reference/environment/text.xml:19(c)
+msgid "newenvd"
+msgstr ""
+
+#: devmanual/tasks-reference/environment/text.xml:21(c)
+msgid "VARIABLE=\"the value\""
+msgstr ""
+
+#: devmanual/tasks-reference/environment/text.xml:18(p)
+msgid "To install a file into this directory, use <placeholder-1/> or <placeholder-2/> (see <uri link=\"::function-reference/install-functions/\"/>). The format of the file should be a series of lines in the form <placeholder-3/>."
+msgstr ""
+
+#: devmanual/tasks-reference/environment/text.xml:26(uri)
+msgid "Environment Variables section"
+msgstr ""
+
+#: devmanual/tasks-reference/environment/text.xml:24(p)
+msgid "There is further discussion in the <placeholder-1/>."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/tasks-reference/environment/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

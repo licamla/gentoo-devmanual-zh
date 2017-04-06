@@ -1,0 +1,444 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/function-reference/install-functions/text.xml:4(title)
+msgid "Install Functions Reference"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:8(c)
+msgid "ebuild.sh"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:9(c) devmanual/function-reference/install-functions/text.xml:265(c) devmanual/function-reference/install-functions/text.xml:273(c)
+msgid "${D}"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:7(p)
+msgid "The following functions, which are all provided by <placeholder-1/> and the standard library, handle various install-related tasks. <placeholder-2/> is automatically handled for all of these functions."
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:14(c)
+msgid "do*"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:15(c)
+msgid "new*"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:13(p)
+msgid "The <placeholder-1/> functions, when given multiple arguments, will work upon multiple targets. The <placeholder-2/> functions take exactly two arguments (except as noted) <d/> the first is the source name, the second the name to use when installing."
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:21(th)
+msgid "Function"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:24(th)
+msgid "Details"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:30(c)
+msgid "into"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:34(c) devmanual/function-reference/install-functions/text.xml:99(c)
+msgid "dobin"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:34(c) devmanual/function-reference/install-functions/text.xml:288(c)
+msgid "newbin"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:35(c) devmanual/function-reference/install-functions/text.xml:246(c)
+msgid "dosbin"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:35(c) devmanual/function-reference/install-functions/text.xml:376(c)
+msgid "newsbin"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:36(c) devmanual/function-reference/install-functions/text.xml:206(c)
+msgid "dolib"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:37(c) devmanual/function-reference/install-functions/text.xml:214(c)
+msgid "dolib.a"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:37(c) devmanual/function-reference/install-functions/text.xml:352(c)
+msgid "newlib.a"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:38(c) devmanual/function-reference/install-functions/text.xml:222(c)
+msgid "dolib.so"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:38(c) devmanual/function-reference/install-functions/text.xml:360(c)
+msgid "newlib.so"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:32(ti)
+msgid "Change install location for <placeholder-1/>, <placeholder-2/>, <placeholder-3/>, <placeholder-4/>, <placeholder-5/>, <placeholder-6/>, <placeholder-7/>, <placeholder-8/>, <placeholder-9/>"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:43(c)
+msgid "insinto"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:46(c) devmanual/function-reference/install-functions/text.xml:198(c)
+msgid "doins"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:46(c) devmanual/function-reference/install-functions/text.xml:344(c)
+msgid "newins"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:45(ti) devmanual/function-reference/install-functions/text.xml:53(ti) devmanual/function-reference/install-functions/text.xml:61(ti)
+msgid "Change install location for <placeholder-1/>, <placeholder-2/>"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:51(c) devmanual/function-reference/install-functions/text.xml:157(c)
+msgid "exeinto"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:54(c) devmanual/function-reference/install-functions/text.xml:154(c)
+msgid "doexe"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:54(c) devmanual/function-reference/install-functions/text.xml:320(c)
+msgid "newexe"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:59(c)
+msgid "docinto"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:62(c) devmanual/function-reference/install-functions/text.xml:125(c)
+msgid "dodoc"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:62(c) devmanual/function-reference/install-functions/text.xml:304(c)
+msgid "newdoc"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:67(c)
+msgid "insopts"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:70(c) devmanual/function-reference/install-functions/text.xml:78(c) devmanual/function-reference/install-functions/text.xml:86(c) devmanual/function-reference/install-functions/text.xml:94(c)
+msgid "install"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:70(c)
+msgid "-s"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:70(c)
+msgid "-m644"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:69(ti)
+msgid "Specify arguments passed to <placeholder-1/> (eg <placeholder-2/>, <placeholder-3/>)"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:75(c)
+msgid "diropts"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:77(ti)
+msgid "Specify arguments passed to <placeholder-1/> for directories"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:83(c) devmanual/function-reference/install-functions/text.xml:159(c)
+msgid "exeopts"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:85(ti)
+msgid "Specify arguments passed to <placeholder-1/> for executables"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:91(c)
+msgid "libopts"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:93(ti)
+msgid "Specify arguments passed to <placeholder-1/> for libraries"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:102(c)
+msgid "/usr/bin"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:101(ti)
+msgid "Install a binary into <placeholder-1/>, set the file mode to 0755 and set the ownership to superuser or its equivalent on the system or installation at hand."
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:109(c)
+msgid "doconfd"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:112(c) devmanual/function-reference/install-functions/text.xml:299(c)
+msgid "/etc/conf.d"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:111(ti) devmanual/function-reference/install-functions/text.xml:148(ti) devmanual/function-reference/install-functions/text.xml:192(ti) devmanual/function-reference/install-functions/text.xml:248(ti)
+msgid "Install an <placeholder-1/> file"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:117(c)
+msgid "dodir"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:119(ti)
+msgid "Install a directory"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:128(c) devmanual/function-reference/install-functions/text.xml:139(c)
+msgid "/usr/share/doc/${PF}"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:129(c)
+msgid "-r"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:127(ti)
+msgid "Install a documentation file into <placeholder-1/>. For EAPI 4 and above, the <placeholder-2/> option allows directories to be installed recursively."
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:135(c) devmanual/function-reference/install-functions/text.xml:176(c)
+msgid "einstalldocs"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:138(c)
+msgid "DOCS"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:139(c)
+msgid "HTML_DOCS"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:140(c)
+msgid "dodoc -r"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:140(b) devmanual/function-reference/install-functions/text.xml:176(b)
+msgid "Note"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:137(ti)
+msgid "Installs the files and directories specified by the <placeholder-1/> and <placeholder-2/> variables into <placeholder-3/> recursively using <placeholder-4/>. <placeholder-5/>: Approved in EAPI 6."
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:146(c)
+msgid "doenvd"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:149(c) devmanual/function-reference/install-functions/text.xml:315(c)
+msgid "/etc/env.d"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:156(ti)
+msgid "Install an executable into the location provided by <placeholder-1/>, by default with mode 0755 or with the install options set by <placeholder-2/>"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:164(c)
+msgid "doheader"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:167(c)
+msgid "/usr/include"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:166(ti)
+msgid "Install a header file into <placeholder-1/>"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:172(c)
+msgid "dohtml"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:175(c)
+msgid "/usr/share/doc/${PF}/html"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:174(ti)
+msgid "Installs HTML document files into <placeholder-1/><placeholder-2/>: Deprecated in EAPI 6, switch to <placeholder-3/> instead"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:182(c)
+msgid "doinfo"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:184(ti)
+msgid "Install a GNU Info document"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:190(c)
+msgid "doinitd"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:193(c) devmanual/function-reference/install-functions/text.xml:339(c)
+msgid "/etc/init.d"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:200(ti)
+msgid "Install a miscellaneous file"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:208(ti)
+msgid "Install a library file"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:217(c) devmanual/function-reference/install-functions/text.xml:355(c)
+msgid ".a"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:216(ti)
+msgid "Install a library (<placeholder-1/>) file"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:224(ti)
+msgid "Install a library (shared object) file"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:230(c)
+msgid "doman"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:232(ti)
+msgid "Install a man page"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:238(c)
+msgid "domo"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:241(c)
+msgid ".mo"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:240(ti)
+msgid "Install a Gettext <placeholder-1/> file"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:249(c)
+msgid "sbin/"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:254(c)
+msgid "dosym"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:256(ti)
+msgid "Create a symlink from the second parameter to the first parameter"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:262(c)
+msgid "fowners"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:265(c)
+msgid "chown"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:264(ti) devmanual/function-reference/install-functions/text.xml:272(ti)
+msgid "Call <placeholder-1/> on the specified files in <placeholder-2/>"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:270(c)
+msgid "fperms"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:273(c)
+msgid "chmod"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:278(c)
+msgid "keepdir"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:283(c)
+msgid ".keep_${CATEGORY}_${PN}-${SLOT%/*}"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:280(ti)
+msgid "Create a directory which will be preserved by the package manager (This is typically accomplished by inserting an empty <placeholder-1/> file in the directory)"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:290(ti)
+msgid "Install a binary using the second argument as the name"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:296(c)
+msgid "newconfd"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:298(ti)
+msgid "Install an <placeholder-1/> entry using the second argument as the name"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:306(ti)
+msgid "Install a documentation file using the second argument as the name"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:312(c)
+msgid "newenvd"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:314(ti) devmanual/function-reference/install-functions/text.xml:338(ti) devmanual/function-reference/install-functions/text.xml:378(ti)
+msgid "Install an <placeholder-1/> file using the second argument as the name"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:322(ti)
+msgid "Install an executable file using the second argument as the name"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:328(c)
+msgid "newheader"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:330(ti)
+msgid "Install a header file using the second argument as the name"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:336(c)
+msgid "newinitd"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:346(ti)
+msgid "Install a miscellaneous file using the second argument as the name"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:354(ti) devmanual/function-reference/install-functions/text.xml:362(ti)
+msgid "Install a <placeholder-1/> library file using the second argument as the name"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:363(c)
+msgid ".so"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:368(c)
+msgid "newman"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:370(ti)
+msgid "Install a manual page using the second argument as the name"
+msgstr ""
+
+#: devmanual/function-reference/install-functions/text.xml:379(c)
+msgid "sbin"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/function-reference/install-functions/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/manifest/text.xml:4(title) devmanual/general-concepts/manifest/text.xml:12(c) devmanual/general-concepts/manifest/text.xml:13(c) devmanual/general-concepts/manifest/text.xml:16(c) devmanual/general-concepts/manifest/text.xml:20(c) devmanual/general-concepts/manifest/text.xml:21(c)
+msgid "Manifest"
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:9(title)
+msgid "Generating the Manifest"
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:11(p)
+msgid "In the tree, every package has a <placeholder-1/> file. This file lives in the same directory as the ebuilds for the package. The <placeholder-2/> file contains digests (currently RMD160, SHA1, SHA256, SHA512 and WHIRLPOOL) and file size data for every file in the directory and any subdirectories. This is used to verify integrity. The <placeholder-3/> may also be digitally signed."
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:20(c)
+msgid "ebuild foo.ebuild manifest"
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:22(c)
+msgid "repoman"
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:19(p)
+msgid "To generate the <placeholder-1/>, use <placeholder-2/>. When committing, the <placeholder-3/> file must be regenerated to handle any changes <d/><placeholder-4/> will do this automatically."
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:28(title)
+msgid "Signing the Manifest using your GPG key"
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:30(p)
+msgid "Requirements:"
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:35(li)
+msgid "&gt;=sys-apps/portage-2.0.51_pre10"
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:36(li)
+msgid "&gt;=app-crypt/gnupg-1.2.4"
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:39(p)
+msgid "Key Setup:"
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:45(uri)
+msgid "Create"
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:44(li)
+msgid "<placeholder-1/> a new DSA GnuPG key with at least a 1024 bit keylength, an expiration period no longer than 6 months and a good passphrase."
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:50(uri)
+msgid "Upload"
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:49(li)
+msgid "<placeholder-1/> the key to a keyserver."
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:55(p)
+msgid "Portage Configuration:"
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:61(path)
+msgid "PORTAGE_GPG_DIR"
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:61(path)
+msgid "~/.gnupg/"
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:60(li)
+msgid "Set <placeholder-1/> to your <placeholder-2/> directory (or the directory where the keyring with your new key is)."
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:64(path)
+msgid "PORTAGE_GPG_KEY"
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:64(li)
+msgid "Set <placeholder-1/> to the key id of your new key."
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:65(li)
+msgid "Set FEATURES=\"sign\"."
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:71(e)
+msgid "after"
+msgstr ""
+
+#: devmanual/general-concepts/manifest/text.xml:68(p)
+msgid "Now you should be able to sign your Manifests on repoman commit. Repoman will ask you for your passphrase before committing the Manifest. This step is <placeholder-1/> it has committed the other files. At the moment repoman doesn't check if the Manifest is already signed, so others are able to \"unsign\" your package later. This will change before signing is made mandatory."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/manifest/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,180 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/error-handling/text.xml:4(title)
+msgid "Error Handling"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:7(title)
+msgid "Importance of Error Handling"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:10(p)
+msgid "Decent error handling is important because:"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:16(e)
+msgid "before"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:15(li)
+msgid "Errors must be detected <placeholder-1/> portage tries to install a broken or incomplete package onto the live filesystem. If build failures aren't caught, a working package could be unmerged and replaced with nothing."
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:23(c)
+msgid "src_compile"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:20(li)
+msgid "When receiving bug reports, it is a lot easier to figure out what went wrong if you know exactly which call caused the error, rather than just knowing that, say, something somewhere in <placeholder-1/> broke."
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:25(li)
+msgid "Good error handling and notification can help cut down on the number of bug reports received for a package."
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:35(title)
+msgid "The <c>die</c> Function"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:39(c) devmanual/ebuild-writing/error-handling/text.xml:44(c) devmanual/ebuild-writing/error-handling/text.xml:73(c) devmanual/ebuild-writing/error-handling/text.xml:77(c)
+msgid "die"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:38(p)
+msgid "The <placeholder-1/> function should be used to indicate a fatal error and abort the build. Its parameters should be the message to display."
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:43(p)
+msgid "Although <placeholder-1/> will work with no parameters, a short message should always be provided to ease error identification. This is especially important when a function can die in multiple places."
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:51(c) devmanual/ebuild-writing/error-handling/text.xml:63(c)
+msgid "|| die"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:51(c)
+msgid "epatch"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:52(c)
+msgid "emake"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:54(c)
+msgid "ls /usr/lib*/portage/bin/ebuild-helpers"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:54(uri)
+msgid "EAPI&gt;=4"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:49(p)
+msgid "Some portage-provided functions will automatically die upon failure. Others will not. It is for example safe to omit the <placeholder-1/> after a call to <placeholder-2/>, but not <placeholder-3/>. The reason is that external binaries are not able to call die that is a bash function. You can see what commands are external binaries with <placeholder-4/>. In <placeholder-5/> all ebuild-helpers automatically die upon failure."
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:59(c)
+msgid "eerror"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:57(p)
+msgid "Sometimes displaying additional error information beforehand can be useful. Use <placeholder-1/> to do this. See <uri link=\"::ebuild-writing/messages\"/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:62(p)
+msgid "It's best to use <placeholder-1/> too often than too little."
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:69(title)
+msgid "<c>die</c> and Subshells"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:73(b)
+msgid "will not work in a subshell"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:72(warning)
+msgid "<placeholder-1/><placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:76(p)
+msgid "The following code will not work as expected, since the <placeholder-1/> is inside a subshell:"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:81(codesample)
+msgid "[[ -f foorc ]] &amp;&amp; ( update_foorc || die \"Couldn't update foorc!\" )"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:86(c)
+msgid "if"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:85(p)
+msgid "The correct way to rewrite this is to use an <placeholder-1/> block:"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:89(codesample)
+msgid "if [[ -f foorc ]] ; then update_foorc || die \"Couldn't update foorc!\" fi"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:95(p)
+msgid "When using pipes, a subshell is introduced, so the following is unsafe:"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:99(codesample)
+msgid "cat list | while read file ; do epatch ${file} ; done"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:103(p)
+msgid "Using input redirection (see <uri link=\"::tools-reference/cat/#Abuse of cat\"/>) avoids this problem:"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:108(codesample)
+msgid "while read file ; do epatch ${file} ; done &lt; list"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:116(title)
+msgid "The <c>assert</c> Function and <c>$PIPESTATUS</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:120(c)
+msgid "$?"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:122(c)
+msgid "bash"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:122(c) devmanual/ebuild-writing/error-handling/text.xml:132(c)
+msgid "$PIPESTATUS"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:123(c) devmanual/ebuild-writing/error-handling/text.xml:133(c)
+msgid "assert"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:119(p)
+msgid "When using pipes, simple conditionals and tests upon <placeholder-1/> will not correctly detect errors occurring in anything except the final command in the chain. To get around this, <placeholder-2/> provides the <placeholder-3/> variable, and portage provides the <placeholder-4/> function to check this variable."
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:126(codesample)
+msgid "bunzip2 \"${DISTDIR}/${VIM_RUNTIME_SNAP}\" | tar xf assert"
+msgstr ""
+
+#: devmanual/ebuild-writing/error-handling/text.xml:131(p)
+msgid "If you need the gory details of <placeholder-1/>, see the bash manpage. Most of the time, <placeholder-2/> is enough."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/error-handling/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

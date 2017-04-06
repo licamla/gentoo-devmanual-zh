@@ -1,0 +1,364 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/tree/text.xml:4(title)
+msgid "The Gentoo Repository"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:7(p)
+msgid "The basic layout of the Gentoo repository is as follows:"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:13(c)
+msgid "app-editors"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:13(c)
+msgid "sys-apps"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:15(c)
+msgid "app-admin/metadata.xml"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:15(li)
+msgid "Category metadata, for example <placeholder-1/>"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:17(c)
+msgid "app-editors/vim"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:19(c)
+msgid "app-editors/vim/metadata.xml"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:19(li)
+msgid "Package metadata, for example <placeholder-1/>"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:20(c)
+msgid "app-editors/vim/Manifest"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:20(li)
+msgid "Package Manifest, for example <placeholder-1/>"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:22(c)
+msgid "app-editors/vim/vim-6.3.068.ebuild"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:23(c)
+msgid "app-editors/vim/vim-7.0_alpha20050326.ebuild"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:21(li)
+msgid "Ebuilds, for example <placeholder-1/>, <placeholder-2/>"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:26(c)
+msgid "app-editors/vim/files"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:30(c)
+msgid "app-editors/vim/files/vim-completion"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:28(li)
+msgid "Small patches and other miscellaneous files, for example <placeholder-1/>"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:25(li)
+msgid "Package files directory, for example <placeholder-1/><ul><placeholder-2/></ul>"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:16(li)
+msgid "Package directories for example <placeholder-1/><ul><placeholder-2/><placeholder-3/><placeholder-4/><placeholder-5/></ul>"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:12(li)
+msgid "Categories, for example <placeholder-1/>, <placeholder-2/><ul><placeholder-3/><placeholder-4/></ul>"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:38(c)
+msgid "eclass/"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:38(li)
+msgid "Eclasses directory, <placeholder-1/>"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:39(c)
+msgid "licenses/"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:39(li)
+msgid "Licenses directory, <placeholder-1/>"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:41(c)
+msgid "metadata/"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:44(uri)
+msgid "Git to Rsync"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:48(c) devmanual/general-concepts/tree/text.xml:49(c)
+msgid "layout.conf"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:48(c)
+msgid "timestamp"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:49(c)
+msgid "projects.xml"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:47(li)
+msgid "Various control files, for example <placeholder-1/>, <placeholder-2/> and <placeholder-3/>. Only <placeholder-4/> exists in the main git tree."
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:52(c)
+msgid "metadata/dtd/"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:52(c)
+msgid "metadata/xml-schema/"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:51(li)
+msgid "XML validation files in <placeholder-1/> and <placeholder-2/>."
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:55(c)
+msgid "metadata/glsa/"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:56(c)
+msgid "metadata/news/"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:54(li)
+msgid "Security advisories in <placeholder-1/> and news items in <placeholder-2/>"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:40(li)
+msgid "Metadata directory, <placeholder-1/>. Most of the listed contents are not kept directly in the main git tree but instead auto-generated or included from other repositories as part of the <placeholder-2/> process. <ul><placeholder-3/><placeholder-4/><placeholder-5/></ul>"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:61(c)
+msgid "profiles/"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:64(c)
+msgid "categories"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:65(c)
+msgid "info_pkgs"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:65(c)
+msgid "info_vars"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:65(c) devmanual/general-concepts/tree/text.xml:129(c)
+msgid "package.mask"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:65(c)
+msgid "use.desc"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:63(li)
+msgid "Various control and documentation files, for example <placeholder-1/>, <placeholder-2/>, <placeholder-3/>, <placeholder-4/>, <placeholder-5/>"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:68(c)
+msgid "profiles/updates/"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:70(c)
+msgid "profiles/updates/1Q-2005"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:70(li)
+msgid "Updates files, for example <placeholder-1/>"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:67(li)
+msgid "Updates directory, <placeholder-1/><ul><placeholder-2/></ul>"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:73(li)
+msgid "Main profile cascade"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:60(li)
+msgid "Profiles directory, <placeholder-1/><ul><placeholder-2/><placeholder-3/><placeholder-4/></ul>"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:78(c)
+msgid "scripts/"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:78(li)
+msgid "Scripts directory, <placeholder-1/>"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:80(c)
+msgid "distfiles/"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:79(li)
+msgid "Distfiles directory, <placeholder-1/>. This is not included in the main git tree, but it will be found on most user systems."
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:84(c)
+msgid "packages"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:83(li)
+msgid "Packages directory, <placeholder-1/>. Again, this is found on user systems but not in the main git tree."
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:91(title)
+msgid "What Belongs in the Tree?"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:95(b)
+msgid "not"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:94(p)
+msgid "Things that do <placeholder-1/> belong in the tree:"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:99(li)
+msgid "Large patches"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:100(li)
+msgid "Non-text files"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:101(li)
+msgid "Photos of teletubbies"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:102(c)
+msgid "[A-Za-z0-9._+-]"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:102(li)
+msgid "Files whose name contains characters outside <placeholder-1/>"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:103(li)
+msgid "Files whose name starts with a dot, a hyphen, or a plus sign"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:106(p)
+msgid "Software-wise, in general all of the following should be met in order for a package to be included in the tree:"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:111(dt)
+msgid "Active, Cooperative Upstream"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:113(p)
+msgid "If a package is undeveloped or unmaintained upstream, it can be extremely difficult to get problems fixed. If a package does not have an active upstream, the developers who add the package to the tree must ensure that they are able to fix any issues which may arise."
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:119(p)
+msgid "Sometimes upstream may have a reason for not wanting their package included in the tree. This should be respected."
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:125(dt)
+msgid "Reasonably Stable"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:127(p)
+msgid "Keep super-experimental things out of the tree. If you must commit them, consider using <placeholder-1/> until things calm down, or better yet make them available as overlay ebuilds."
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:134(dt)
+msgid "Reasonably Useful"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:136(p)
+msgid "Don't feel obliged to include \"Joe's '1337 XMMS Skinz Collection\" or \"Hans' Super Cool Fast File System\" in the tree just because a few users ask for it. Stick to things that might actually be of use."
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:143(dt)
+msgid "Properly Packaged"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:145(p)
+msgid "If something is only available in live CVS or dodgy autopackage format, don't include it until upstream can come up with a decent source package. Similarly, avoid things that don't have a proper build system (where relevant) <d/> these are very tricky to maintain."
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:153(dt)
+msgid "Patching and Distribution Permitted"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:155(p)
+msgid "If we can't patch packages as necessary ourselves, we end up relying entirely upon upstream for support. This can be problematic, especially if upstream are slow at fixing things. We don't want to be in the situation where we can't stable a critical package because we're still waiting for a closed-source vendor to get their act together."
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:163(p)
+msgid "Similarly, not being able to mirror and distribute tarballs ourselves makes us rely entirely upon upstream mirrors. Experience has shown that these are often extremely unreliable, with files changing, moving or vanishing at random."
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:171(dt)
+msgid "Working Ebuilds"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:174(e)
+msgid "working"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:173(p)
+msgid "If you don't have a <placeholder-1/> ebuild, don't include it."
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:178(dt)
+msgid "Portable"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:182(e)
+msgid "now"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:180(p)
+msgid "If software is unportable, it's generally because it's badly written. Remember that although x86 has a market majority <placeholder-1/>, it probably won't in the not too distant future once x86-64 catches on."
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:187(dt)
+msgid "Reasonable Security Record"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:191(e)
+msgid "lot"
+msgstr ""
+
+#: devmanual/general-concepts/tree/text.xml:189(p)
+msgid "Don't include software that has a terrible security record. Each vulnerability is a <placeholder-1/> of work for a lot of people (security teams, arch teams and package maintainers)."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/tree/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

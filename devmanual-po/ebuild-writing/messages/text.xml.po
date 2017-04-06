@@ -1,0 +1,148 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/messages/text.xml:4(title)
+msgid "Messages"
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:7(p)
+msgid "Sometimes it is necessary to display messages for the user. This can be for errors, post-install help messages, pre-install warnings or simply to notify the user of what's going on. It is considered good form to display a message before any particularly long and silent task is carried out, for example (and it also helps cut down on bogus \"compiling foo froze!\" bugs)."
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:15(note)
+msgid "It is a policy violation to use any of these functions to display a line of characters (a banner header). The use of colours and special leading characters provided by these functions is sufficient to make a message stand out."
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:24(c) devmanual/ebuild-writing/messages/text.xml:40(c)
+msgid "elog"
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:24(c) devmanual/ebuild-writing/messages/text.xml:56(c)
+msgid "einfo"
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:24(c) devmanual/ebuild-writing/messages/text.xml:77(c)
+msgid "ewarn"
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:24(c) devmanual/ebuild-writing/messages/text.xml:89(c)
+msgid "eerror"
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:22(p)
+msgid "In all cases, assume that the user's terminal is no wider than 79 columns, and that the <placeholder-1/>,<placeholder-2/>, <placeholder-3/> and <placeholder-4/> functions will occupy 4 columns with their fancy leading markers."
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:31(title)
+msgid "Information Messages"
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:34(p)
+msgid "There are a number of functions available to assist here. The `echo` bash internal is the simplest <d/> it simply displays its parameters as a message."
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:39(p)
+msgid "The <placeholder-1/> function can be used to display an informational message which is meant to 'stand out' and is logged by the elog functionality in Portage 2.1 and Paludis 0.6 or newer. On a colour terminal, the message provided will be prefixed with a green asterisk. On earlier versions, elog behaves just like einfo."
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:46(codesample)
+msgid "pkg_postinst() { elog \"You will need to set up your /etc/foo/foo.conf file before\" elog \"running foo for the first time. For details, please see the\" elog \"foo.conf(5) manual page.\" }"
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:55(p)
+msgid "The <placeholder-1/> function can be used to display an informational message which is meant to 'stand out'. On a colour terminal, the message provided will be prefixed with a green asterisk. einfo messages go to the INFO elog class which is not logged by default."
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:62(codesample)
+msgid "src_compile() { einfo \"Starting a silent compile that takes hours.\" ./build }"
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:73(title)
+msgid "Warning Messages"
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:76(p)
+msgid "The <placeholder-1/> function is similar, but displays a yellow asterisk. This should be used for warning messages rather than information."
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:85(title)
+msgid "Error Messages"
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:90(c)
+msgid "die"
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:88(p)
+msgid "The <placeholder-1/> function displays a red star, and is used for displaying error messages. It should almost always be followed by a <placeholder-2/> call. This function is mainly used for displaying additional error details before bailing out."
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:98(title)
+msgid "QA warnings"
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:102(c)
+msgid "eqawarn"
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:101(p)
+msgid "The <placeholder-1/> function can be used by eclass authors to notify ebuild writers about deprecated functionality. eqawarn is defined in eutils. Portage doesn't log the qa message class by default so users don't get annoyed by seeing messages they can't do much about."
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:111(title)
+msgid "Message function reference"
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:114(p)
+msgid "See <uri link=\"::function-reference/message-functions/\"/> for a full list of functions."
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:122(title)
+msgid "Good and Bad Messages"
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:125(p)
+msgid "Here is an example of a bad message:"
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:129(codesample)
+msgid "i=10 while ((i--)) ; do ewarn \"PLEASE UPDATE TO YOUR PACKAGE TO USE linux-info.eclass\" done"
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:137(li)
+msgid "Displaying the same message repeatedly is excessive."
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:138(li)
+msgid "The uppercase is excessive."
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:139(li)
+msgid "The bad English looks unprofessional."
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:140(li)
+msgid "The message will only confuse the end user and will not help them work out whether they have a problem and how to solve it if they do."
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:146(p)
+msgid "It would be better written as:"
+msgstr ""
+
+#: devmanual/ebuild-writing/messages/text.xml:150(codesample)
+msgid "ewarn \"The 'frozbinate' function provided by eutils.eclass is deprecated\" ewarn \"in favour of frozbinate.eclass, but this package has not been\" ewarn \"updated yet. If this is a package from the main tree, please check\" ewarn \"https://bugs.gentoo.org/ and file a bug if there is not one already.\" ewarn \"If this is your own package, please read the comments in the\" ewarn \"frozbinate eclass for instructions on how to convert.\""
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/messages/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

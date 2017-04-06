@@ -1,0 +1,124 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/text.xml:4(title)
+msgid "Ebuild Functions"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:8(c) devmanual/ebuild-writing/functions/text.xml:12(c)
+msgid "pkg_setup"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:9(c)
+msgid "src_unpack"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:9(c)
+msgid "src_prepare"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:9(c)
+msgid "src_configure"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:9(c)
+msgid "src_compile"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:10(c)
+msgid "src_test"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:10(c)
+msgid "FEATURES=\"test\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:11(c)
+msgid "src_install"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:11(c) devmanual/ebuild-writing/functions/text.xml:12(c) devmanual/ebuild-writing/functions/text.xml:29(c)
+msgid "pkg_preinst"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:11(c) devmanual/ebuild-writing/functions/text.xml:13(c) devmanual/ebuild-writing/functions/text.xml:29(c)
+msgid "pkg_postinst"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:7(p)
+msgid "When installing packages from source, the function call order is <placeholder-1/>, <placeholder-2/>, <placeholder-3/>, <placeholder-4/>, <placeholder-5/>, <placeholder-6/> (optional, <placeholder-7/>), <placeholder-8/>, <placeholder-9/>, <placeholder-10/>. When installing packages from a binary, the function call order is <placeholder-11/>, <placeholder-12/>, <placeholder-13/>. As some phases haven't been introduced from the beginning, you can have a look at <uri link=\"::ebuild-writing/eapi\"/> for an overview, what have been introduced in which EAPI."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:21(c)
+msgid "pkg_prerm"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:21(c)
+msgid "pkg_postrm"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:22(c)
+msgid "pkg_config"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:24(c)
+msgid "pkg_nofetch"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:24(c)
+msgid "RESTRICT=\"fetch\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:25(c) devmanual/ebuild-writing/functions/text.xml:49(c)
+msgid "SRC_URI"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:20(p)
+msgid "The <placeholder-1/> and <placeholder-2/> functions are called when uninstalling a package. The <placeholder-3/> function is used for any special package configuration <d/> it is only run when explicitly requested by the user. The <placeholder-4/> function is used when a <placeholder-5/> package needs to obtain some <placeholder-6/> components."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:28(p)
+msgid "Between the transition from <placeholder-1/> to <placeholder-2/>, files are copied over to the live filesystem from the sandboxed temporary installation location, and Portage records digests of the files installed."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:36(c)
+msgid "ebuild"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:36(c)
+msgid "ebuild(1)"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:34(p)
+msgid "When testing or debugging, you can instruct Portage to execute a specific function from an ebuild by using the <placeholder-1/> command, see the <placeholder-2/> manual page for further information."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:42(c)
+msgid "emerge --fetchonly"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:44(c)
+msgid "${DISTDIR}"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:40(p)
+msgid "Downloading a package's source happens before any of these phases, so <placeholder-1/> should perform all the network access you need (unless you're using live ebuilds). Network access outside of this would not be cached locally (e.g. in <placeholder-2/>, see <uri link=\"::ebuild-writing/variables#Predefined Read-Only Variables\"/>), which makes it hard to have reproducible builds (see <uri link=\"::ebuild-writing/functions/src_unpack/cvs-sources#Disadvantages of CVS Sources\"/>). Avoid network access in any phase by using local files, extending <placeholder-3/> (see <uri link=\"::ebuild-writing/variables#Ebuild-defined Variables\"/>), etc."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/text.xml:55(title)
+msgid "Contents"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

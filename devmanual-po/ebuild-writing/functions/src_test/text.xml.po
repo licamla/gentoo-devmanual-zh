@@ -1,0 +1,152 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:4(title) devmanual/ebuild-writing/functions/src_test/text.xml:10(c) devmanual/ebuild-writing/functions/src_test/text.xml:79(c) devmanual/ebuild-writing/functions/src_test/text.xml:100(c) devmanual/ebuild-writing/functions/src_test/text.xml:118(c)
+msgid "src_test"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:9(th)
+msgid "Function"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:13(th)
+msgid "Purpose"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:14(ti)
+msgid "Run pre-install test scripts"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:17(th)
+msgid "Sandbox"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:18(ti)
+msgid "Enabled"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:21(th)
+msgid "Privilege"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:22(ti)
+msgid "user"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:25(th)
+msgid "Called for"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:26(ti)
+msgid "ebuild"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:32(title)
+msgid "Default <c>src_test</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:34(p)
+msgid "From sys-apps/portage-2.1.2.9"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:35(codesample)
+msgid "src_test() { if emake -j1 check -n &amp;&gt; /dev/null; then vecho \"&gt;&gt;&gt; Test phase [check]: ${CATEGORY}/${PF}\" if ! emake -j1 check; then hasq test $FEATURES &amp;&amp; die \"Make check failed. See above for details.\" hasq test $FEATURES || eerror \"Make check failed. See above for details.\" fi elif emake -j1 test -n &amp;&gt; /dev/null; then vecho \"&gt;&gt;&gt; Test phase [test]: ${CATEGORY}/${PF}\" if ! emake -j1 test; then hasq test $FEATURES &amp;&amp; die \"Make test failed. See above for details.\" hasq test $FEATURES || eerror \"Make test failed. See above for details.\" fi else vecho \"&gt;&gt;&gt; Test phase [none]: ${CATEGORY}/${PF}\" fi }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:58(title)
+msgid "Sample <c>src_test</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:60(codesample)
+msgid "src_test() { cd \"${S}\"/src/testdir # Test 49 won't work inside a portage environment sed -i -e 's~test49.out~~g' Makefile # Try to run the non-gui tests only make test-nongui \\ || die \"At least one test failed\" }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:76(title)
+msgid "Common <c>src_test</c> Tasks"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:78(p)
+msgid "Often the default <placeholder-1/> is fine. Sometimes it is necessary to remove certain tests from the list if they cannot be used with a portage environment. Reasons for such a failure could include:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:85(li)
+msgid "Needing to use X."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:86(li)
+msgid "Needing to work with files which are disallowed by the sandbox."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:89(li)
+msgid "Requiring user input (src_test must not be interactive)."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:90(li)
+msgid "Requiring root privileges."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:94(c) devmanual/ebuild-writing/functions/src_test/text.xml:101(c)
+msgid "Makefile"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:95(c)
+msgid "sed"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:95(c)
+msgid "make"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:93(p)
+msgid "Usually, removing the relevant test from the <placeholder-1/> using <placeholder-2/> or skipping a particular <placeholder-3/> target is sufficient."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:100(c)
+msgid "emake"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:99(note)
+msgid "<placeholder-1/> should not be used for <placeholder-2/><d/> trying to parallelise tests unless the <placeholder-3/> was specifically designed for this can cause all sorts of strange problems."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:105(p)
+msgid "Try to ensure that tests work properly for your ebuild. A good test suite is extremely helpful for arch maintainers."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:114(title)
+msgid "Skipping Tests"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:116(p)
+msgid "Sometimes it is necessary to skip tests entirely. This can be done using a dummy <placeholder-1/> function:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:121(codesample)
+msgid "src_test() { # Tests don't even remotely work inside portage true }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:129(c)
+msgid "RESTRICT=\"test\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:128(p)
+msgid "Another option would be to set <placeholder-1/> in the ebuild."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_test/text.xml:132(note)
+msgid "If upstream provide a test suite which doesn't work, consider talking to them about getting it fixed. A broken test suite is worse than no test suite at all, since we are unable to tell whether a test failure indicates a genuine fault."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/src_test/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

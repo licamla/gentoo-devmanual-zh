@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/appendices/contributors/text.xml:4(title)
+msgid "Contributions"
+msgstr ""
+
+#: devmanual/appendices/contributors/text.xml:7(p)
+msgid "This page lists the contributions to the Gentoo Development Guide:"
+msgstr ""
+
+#: devmanual/appendices/contributors/text.xml:12(author)
+msgid "Main Content"
+msgstr ""
+
+#: devmanual/appendices/contributors/text.xml:20(uri)
+msgid "subversion.eclass"
+msgstr ""
+
+#: devmanual/appendices/contributors/text.xml:18(author)
+msgid "<uri link=\"::tasks-reference/completion\"/>, <placeholder-1/>"
+msgstr ""
+
+#: devmanual/appendices/contributors/text.xml:25(author)
+msgid "<uri link=\"::appendices/editor-configuration/emacs\"/>, <uri link=\"::ebuild-writing/functions/src_unpack/svn-sources\"/>, <uri link=\"::general-concepts/use-flags/#Conflicting USE Flags\"/>"
+msgstr ""
+
+#: devmanual/appendices/contributors/text.xml:36(author)
+msgid "<uri link=\"::tasks-reference/pam\"/>, <uri link=\"::general-concepts/autotools/#aclocal and m4 Files\"/>"
+msgstr ""
+
+#: devmanual/appendices/contributors/text.xml:52(author)
+msgid "Previous maintainer (XSL Stylesheets, legacy Developer Handbook content)"
+msgstr ""
+
+#: devmanual/appendices/contributors/text.xml:55(author)
+msgid "XSL Stylesheets, current maintainer"
+msgstr ""
+
+#: devmanual/appendices/contributors/text.xml:58(author)
+msgid "<uri link=\"::ebuild-writing\"/>, <uri link=\"::eclass-writing\"/>, <uri link=\"::general-concepts/dependencies\"/>, Misc"
+msgstr ""
+
+#: devmanual/appendices/contributors/text.xml:64(author)
+msgid "<uri link=\"::ebuild-writing\"/>, <uri link=\"::appendices/editor-configuration/emacs\"/>, <uri link=\"::general-concepts/licenses/\"/>, <uri link=\"::general-concepts/virtuals/\"/>, <uri link=\"::ebuild-writing/eapi/\"/>"
+msgstr ""
+
+#: devmanual/appendices/contributors/text.xml:74(author) devmanual/appendices/contributors/text.xml:77(author)
+msgid "Misc"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/appendices/contributors/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

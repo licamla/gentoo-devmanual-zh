@@ -1,0 +1,96 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/function-reference/sandbox-functions/text.xml:4(title)
+msgid "Sandbox Functions Reference"
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:8(c)
+msgid "ebuild.sh"
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:7(p)
+msgid "The following functions, which are all provided by <placeholder-1/>, handle working with the sandbox."
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:14(th)
+msgid "Function"
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:17(th)
+msgid "Details"
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:23(c)
+msgid "addread"
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:25(ti)
+msgid "Add one single additional item to the sandbox allowed read list."
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:31(c) devmanual/function-reference/sandbox-functions/text.xml:35(c)
+msgid "addwrite"
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:34(b)
+msgid "Note"
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:35(c) devmanual/function-reference/sandbox-functions/text.xml:49(c)
+msgid "addpredict"
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:35(b)
+msgid "not"
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:33(ti)
+msgid "Add one single additional item to the sandbox allowed write list. <placeholder-1/>: If at all possible, use <placeholder-2/> instead. Using <placeholder-3/> is <placeholder-4/> an appropriate alternative to making your package build sandbox-friendly."
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:41(c)
+msgid "adddeny"
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:43(ti)
+msgid "Add one single additional item to the sandbox deny (read/write) list."
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:51(ti)
+msgid "Add one single additional item to the sandbox predict (pretend to allow write) list."
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:59(c)
+msgid "/foo/bar"
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:59(c)
+msgid "/foo/baz"
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:60(c)
+msgid "addpredict /foo"
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:57(p)
+msgid "None of these functions accept multiple arguments in one call. The sandbox is recursive, so to allow predicted writes to <placeholder-1/> and <placeholder-2/>, <placeholder-3/> would be sufficient."
+msgstr ""
+
+#: devmanual/function-reference/sandbox-functions/text.xml:63(p)
+msgid "See <uri link=\"::general-concepts/sandbox\"/> for details on how the sandbox works. See <uri link=\"::appendices/common-problems/#Handling Access Violations\"/> for how to handle sandbox-related build problems."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/function-reference/sandbox-functions/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

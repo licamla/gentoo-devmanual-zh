@@ -1,0 +1,616 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:4(title)
+msgid "Common Mistakes"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:7(p)
+msgid "This section contains information on the common mistakes developers make when writing ebuilds."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:14(title)
+msgid "Common Ebuild Writing Mistakes"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:18(title)
+msgid "Invalid use of <c>static</c> use-flag"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:20(c)
+msgid "static"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:22(c)
+msgid "static-libs"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:19(body)
+msgid "The <placeholder-1/> use-flag should only be used to make a binary use static linking instead of dynamic linking. It should not be used to make a library install static libraries. Instead, the <placeholder-2/> use-flag is used for this."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:27(title)
+msgid "Invalid use of <c>ROOT</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:30(c) devmanual/ebuild-writing/common-mistakes/text.xml:31(c) devmanual/ebuild-writing/common-mistakes/text.xml:32(c) devmanual/ebuild-writing/common-mistakes/text.xml:32(c)
+msgid "ROOT"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:32(c)
+msgid "src_*"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:29(p)
+msgid "The usage of <placeholder-1/> is only designed to influence the way the package is installed (ie. into <placeholder-2/>) - building and compiling should not depend on <placeholder-3/>. As a consequence of this the usage of <placeholder-4/> in <placeholder-5/> functions is not allowed."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:36(p)
+msgid "See also <uri link=\"::ebuild-writing/variables#ROOT\"/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:43(title)
+msgid "Referencing the full path to documentation files that could be compressed"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:47(c)
+msgid "PORTAGE_COMPRESS"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:51(codesample)
+msgid "elog \"They are listed in /usr/share/doc/${PF}/INSTALL.gz\""
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:57(codesample)
+msgid "elog \"They are listed in the INSTALL file in /usr/share/doc/${PF}\""
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:45(body)
+msgid "When printing out to the users where to find files like INSTALL, do not specify the full path since <placeholder-1/> comes into play. The file could be compressed with gzip, bzip2, or some other random compression tool. So, instead of doing this: <placeholder-2/> Do something like: <placeholder-3/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:64(title)
+msgid "Build log not verbose"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:69(b)
+msgid "build log must always be verbose."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:70(p)
+msgid "There are several ways to fix non-verbose build logs depending on the build system:"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:74(c)
+msgid "cmake"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:73(p)
+msgid "For <placeholder-1/> based build systems it should be sufficient that the ebuild calls cmake-utils_src_compile which picks up the cmake-utils.eclass variable 'CMAKE_VERBOSE=1' by default. If you call emake directly for whatever reason, you can do 'emake VERBOSE=1' (note that cmake-utils_src_compile takes arguments as well which are passed to make)."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:81(c)
+msgid "autotools"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:80(p)
+msgid "For <placeholder-1/> based build systems you can pass '--disable-silent-rules' to econf, or use EAPI 5 where that argument is passed automatically. 'emake V=1' should also work."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:85(p)
+msgid "For custom Makefiles you often have to write a patch. Try to get upstream to include an option like 'V=1' to enable full verbosity."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:89(note)
+msgid "In case you encounter an affected package which uses a build system not controllable by portage or eclasses you should file a bug (preferably with a patch) and make it block the tracker bug #429308. Solutions above ebuild level are preferred."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:65(body)
+msgid "When writing ebuilds, you should always check the build log, because the build system might ignore CC/CXX/LD/CFLAGS/LDFLAGS and such or add undesired flags by default. In order to analyze this and have complete information, in case someone reports a bug for your package, the <placeholder-1/><placeholder-2/><placeholder-3/><placeholder-4/><placeholder-5/><placeholder-6/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:97(title)
+msgid "-Werror compiler flag not removed"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:101(b)
+msgid "Rationale"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:104(li)
+msgid "new warnings on version bumps of GCC/GLIBC the developer was not aware of at the point of coding"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:107(li)
+msgid "some autoconf checks will fail badly"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:110(li)
+msgid "libraries adding deprecated API warnings although that API is still working/supported"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:113(li)
+msgid "on less known architectures we may get different/more warnings than on common ones"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:116(li)
+msgid "random breakage depending on what distro/architecture/library version/kernel/userland the developer was testing \"-Werror\" on"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:101(p)
+msgid "<placeholder-1/><p/> This flag is not recommended for releases and should always be disabled when encountered in build-logs, because there are numerous cases where this breaks without purpose, e.g.: <ul><placeholder-2/><placeholder-3/><placeholder-4/><placeholder-5/><placeholder-6/></ul> Turning off \"-Werror\" we will still see the warnings, but there is no reason that they cause compile failure. Also note that portage already emits QA notices about gcc warnings that can cause runtime breakage."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:123(b)
+msgid "How to fix"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:127(e)
+msgid "e.g. Makefile.am or configure.ac"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:126(li)
+msgid "remove the compiler flag from the build system, <placeholder-1/> or even provide a switch (for autotools based build systems that could be \"--disable-werror\", which is good for sending a patch upstream)"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:130(e)
+msgid "append-flags -Wno-error"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:129(li)
+msgid "use <placeholder-1/> (needs flag-o-matic.eclass); for this to work the environment flags have to be respected and placed after build system flags; this method is not preferred as it will disable all \"-Werror=specific-warning\" flags as well, see next section"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:123(p)
+msgid "<placeholder-1/><p/> To fix the affected build system you should try the following methods: <ul><placeholder-2/><placeholder-3/></ul> Always check that it's really gone in the build log."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:136(b)
+msgid "Specific -Werror=... flags"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:136(p)
+msgid "<placeholder-1/><p/> GCC can turn any specific warning into an error. A specific -Werror flag would be \"-Werror=implicit-function-declaration\" for example and will only affect warnings about implicit function declarations. It's mostly safe to leave these untouched, cause they are pinned to this issue and should not cause random build time breakage. Also, we can expect that upstream did this on purpose to avoid known runtime errors and not just for testing their builds. However you should check the specified warnings yourself or ask other developers if unsure."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:140(b)
+msgid "Exceptions"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:141(uri)
+msgid "app-emulation/open-vm-tools bug"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:140(p)
+msgid "<placeholder-1/><p/> Removing \"-Werror\" from configure.ac can cause breakage in very rare cases where the configure phase relies on the exit code. See <placeholder-2/>. But even then we remove it from the resulting Makefile."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:98(body)
+msgid "\"-Werror\" is a flag which turns all warnings into errors and thus will abort compiling if any warning is encountered. <placeholder-1/><placeholder-2/><placeholder-3/><placeholder-4/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:147(title)
+msgid "Missing/Invalid/Broken Header"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:151(e)
+msgid "exactly"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:153(uri)
+msgid "skel.ebuild"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:150(p)
+msgid "When you submit your ebuilds, the header must be <placeholder-1/> the same as the one in <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:158(e)
+msgid "must"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:157(p)
+msgid "The first two lines <placeholder-1/> look like this:"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:161(pre)
+msgid "# Copyright 1999-2017 Gentoo Foundation # Distributed under the terms of the GNU General Public License v2"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:167(c)
+msgid "$Id$"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:168(c)
+msgid "$Header$"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:169(uri)
+msgid "decision of the Gentoo Council on 28 February 2017"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:170(e)
+msgid "must not"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:166(note)
+msgid "The header previously included a third line with a CVS <placeholder-1/> or <placeholder-2/> keyword. That line was abolished after conversion to Git by <placeholder-3/> and <placeholder-4/> be added any more."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:176(title)
+msgid "Redefined P, PV, PN, PF"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:179(p)
+msgid "You should never redefine those variables. Always use MY_P, MY_PN, MY_PV, P0, etc. See other ebuilds that do it in portage for more information. Most ebuilds use bash \"Parameter Expansion\". Please read the man page for bash to understand how \"Parameter Expansion\" works."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:186(p)
+msgid "By the way, if you find a package that re-defines it, don't copy it. Submit a bug about that ebuild."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:194(title)
+msgid "Including version numbers in SRC_URI and S"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:197(p)
+msgid "You should try not to include version numbers in the SRC_URI and S. Always try to use ${PV} or ${P}. It makes maintaining the ebuild much easier. If a version number is not consistent with the tarball/source, then use MY_P. An example dev-python/pyopenal fetches a tarball called PyOpenAL, so we redefine it like:"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:204(pre)
+msgid "MY_P=${P/pyopenal/PyOpenAL} SRC_URI=\"http://oomadness.tuxfamily.org/downloads/${MY_P}.tar.gz\" S=${WORKDIR}/${MY_P}"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:213(title)
+msgid "DEPEND has syntactical errors"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:216(p)
+msgid "There are many things that go wrong with user submitted DEPEND and RDEPEND fields. Here are some important points to follow when you write the dependency part."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:224(e)
+msgid "Always include the CATEGORY."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:225(c) devmanual/ebuild-writing/common-mistakes/text.xml:229(c)
+msgid "&gt;=x11-libs/gtk+-2"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:225(c)
+msgid "&gt;=gtk+-2"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:223(li)
+msgid "<placeholder-1/><br/> For example, use <placeholder-2/> and not <placeholder-3/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:228(e)
+msgid "Do not put an asterisk (*) for &gt;= dependencies."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:230(c)
+msgid "&gt;=x11-libs/gtk+-2*"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:227(li)
+msgid "<placeholder-1/><br/> For example, it should be <placeholder-2/> rather than <placeholder-3/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:232(e)
+msgid "GTK specific. Always use =x11-libs/gtk+-1.2* for GTK+1 apps."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:234(e)
+msgid "Never depend on a meta package."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:233(li)
+msgid "<placeholder-1/><br/> So don't depend on gnome-base/gnome, always depend on the specific libraries like libgnome."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:239(e)
+msgid "One dependency per line."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:238(li)
+msgid "<placeholder-1/><br/> Don't put multiple dependency on the same line. It makes it ugly to read and hard to follow."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:248(title)
+msgid "DEPEND is incomplete"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:251(p)
+msgid "This is another very common error. The ebuild submitter submits an ebuild that \"just works\" without checking if the dependencies are correct. Here are some tips on how to find the correct dependencies."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:259(e)
+msgid "Look in configure.in or configure.ac"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:258(li)
+msgid "<placeholder-1/><br/> Look for checks for packages in here. Things to look out for are pkg-config checks or AM_* functions that check for a specific version."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:264(e)
+msgid "Look at included .spec files"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:263(li)
+msgid "<placeholder-1/><br/> A good indication of dependencies is to look at the included .spec files for relevant deps. However, do not trust them to be the definitive complete list of dependencies"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:270(e)
+msgid "Look at the application/library website"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:269(li)
+msgid "<placeholder-1/><br/> Check the application website for possible dependencies that they suggest are needed."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:275(e)
+msgid "Read the README and INSTALL for the package"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:274(li)
+msgid "<placeholder-1/><br/> They usually also contain useful information about building and installing packages."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:280(e)
+msgid "Remember non-binary dependencies such as pkg-config, doc generation programs, etc."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:279(li)
+msgid "<placeholder-1/><br/> Usually the build process requires some dependencies such as intltool, libtool, pkg-config, doxygen, scrollkeeper, gtk-doc, etc. Make sure those are clearly stated."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:291(title)
+msgid "LICENSE Invalid"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:296(c)
+msgid "GPL"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:297(c) devmanual/ebuild-writing/common-mistakes/text.xml:301(c)
+msgid "GPL-1"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:297(c) devmanual/ebuild-writing/common-mistakes/text.xml:301(c) devmanual/ebuild-writing/common-mistakes/text.xml:301(c)
+msgid "GPL-2"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:297(c)
+msgid "LGPL"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:298(c)
+msgid "LICENSE"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:299(path)
+msgid "/usr/portage/licenses"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:299(path)
+msgid "COPYING"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:294(p)
+msgid "Another common mistake users make when submitting ebuilds is supplying an invalid license. For example, <placeholder-1/> is not a valid license. You need to specify <placeholder-2/> or <placeholder-3/>. Same with <placeholder-4/>. Make sure the license you use in the <placeholder-5/> field is something that exists in <placeholder-6/>. As a tip, check the <placeholder-7/> in a source tarball for the license. If a package does not specify it uses <placeholder-8/> or <placeholder-9/>, it is very likely it uses <placeholder-10/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:306(path)
+msgid "/usr/portage/licenses/"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:304(p)
+msgid "If the license for the package you submit is unique and not in <placeholder-1/>, then you must submit the new license in a separate file."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:313(title)
+msgid "Untested ARCHs in KEYWORDS"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:320(c)
+msgid "~"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:316(p)
+msgid "Please do not add other ARCHs into KEYWORDS unless the ebuild has been tested on that ARCH. Also all new ebuilds should be ~x86 or whatever architecture it is. Make sure when you bump a version, the stable KEYWORDS are all marked as <placeholder-1/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:326(title)
+msgid "SLOT missing"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:329(p)
+msgid "Make sure you have the SLOT variable in the ebuild. If you don't plan to use it, don't remove it. Put in:"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:334(pre)
+msgid "SLOT=\"0\""
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:341(title)
+msgid "DESCRIPTION and HOMEPAGE wrong"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:349(uri)
+msgid "No_homepage wiki page"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:344(p)
+msgid "Please check if the HOMEPAGE variable is right and leads users to the right page if they want to find out more about the package. And make sure the DESCRIPTION is not overly long. Good descriptions will describe the main function of the package in a sentence. Set HOMEPAGE to <placeholder-1/>, if there is none."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:356(title)
+msgid "Wrongfully used spaces instead of TABS"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:361(e)
+msgid "please"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:359(p)
+msgid "It is no fun reformatting lines of ebuilds because the submitter did not follow the guidelines to use TABS rather than spaces. So <placeholder-1/> use tabs!"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:367(title)
+msgid "Trailing whitespace"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:370(p)
+msgid "I'm often guilty of this. Remember to run repoman over your ebuilds so it can tell you if there is trailing whitespace at the end of lines or on empty lines."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:378(title)
+msgid "Adding redundant S=${WORKDIR}/${P}"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:382(c)
+msgid "S=${WORKDIR}/${P}"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:384(c)
+msgid "${WORKDIR}/${P}"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:381(p)
+msgid "If <placeholder-1/>, then you should not add it to your ebuild. This is implied already, you should only add it if it is something other than <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:390(title)
+msgid "Documentation missing"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:394(c) devmanual/ebuild-writing/common-mistakes/text.xml:396(c)
+msgid "dodoc"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:395(path)
+msgid "/usr/share/doc/${PF}"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:396(c)
+msgid "doins"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:393(p)
+msgid "If your package has documentation, make sure you install it using <placeholder-1/> or in <placeholder-2/>. Remember to check for errors when running <placeholder-3/>/<placeholder-4/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:401(c)
+msgid "doc"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:403(c)
+msgid "README"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:399(p)
+msgid "If the package documentation is large or requires additional dependencies to build, you should make it optional with the <placeholder-1/> USE flag. If the documentation is small and does not require additional dependencies (e.g. <placeholder-2/> files), install it unconditionally."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:411(title)
+msgid "Masking unsupported/broken USE flags"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:415(e)
+msgid "vanilla"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:415(e)
+msgid "custom-cflags"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:417(e)
+msgid "profiles/base/package.use.mask"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:413(p)
+msgid "Exceptionally, a package may have an unsupported/broken USE flag (this can happen with <placeholder-1/> or <placeholder-2/>). Then the USE flag must be masked for that ebuild (usually in <placeholder-3/>), at least when the ebuild hits the stable branch."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:428(title)
+msgid "Common Ebuild Submission Mistakes"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:430(title)
+msgid "Introduction"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:435(uri)
+msgid "Adding new Ebuild"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:433(p)
+msgid "Please submit ebuilds properly by following the <placeholder-1/> tutorial."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:441(title)
+msgid "Tarball'ing an ebuild"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:444(p)
+msgid "Please do not attach ebuilds or patches as tarballs. It avoids extra operations when reviewing."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:452(title)
+msgid "Inlining Ebuilds"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:455(p)
+msgid "Don't cut and paste an ebuild into bugzilla's comment field."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:462(title)
+msgid "No description on what the package is"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:465(p)
+msgid "Please let us know what the package is, and fill in the URL with the home page of the application, if any exists."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:473(title)
+msgid "Package updates without explaining what has changed"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:476(p)
+msgid "If you submit a package update, then make sure you explain what changes you made to the ebuild. For example if a package introduces a new features/option and you use a USE flag, list it in your bug. Don't make us hunt for it."
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:482(p)
+msgid "It is wise to submit a diff for a package update rather than the whole ebuild. The best way to generate it would be:"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:488(i)
+msgid "diff -u some-package-0.1.0.ebuild some-package-0.2.0.ebuild &gt; ~/some-package-0.2.0.diff"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:487(pre)
+msgid "$ <placeholder-1/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:494(title)
+msgid "Submitting unchanged ebuilds for version bumps"
+msgstr ""
+
+#: devmanual/ebuild-writing/common-mistakes/text.xml:497(p)
+msgid "If you are submitting a new version for a package in portage, make sure the existing ebuild works and make sure changes are incorporated in the new ebuild (such as added documentation.) If there are no required changes to the ebuild from the previous version, then don't attach the ebuild. Just say so in the bug report that you copied the ebuild over and verified that the package works and installs properly."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/common-mistakes/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

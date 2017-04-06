@@ -1,0 +1,28 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/text.xml:4(title)
+msgid "Ebuild Writing"
+msgstr ""
+
+#: devmanual/ebuild-writing/text.xml:7(p)
+msgid "This section describes how to write an ebuild. It covers the basic format of an ebuild and the variables and functions available, and finishes off with some general notes and extended examples."
+msgstr ""
+
+#: devmanual/ebuild-writing/text.xml:15(title)
+msgid "Contents"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

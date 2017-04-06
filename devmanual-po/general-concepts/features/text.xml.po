@@ -1,0 +1,116 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/features/text.xml:4(title) devmanual/general-concepts/features/text.xml:8(c) devmanual/general-concepts/features/text.xml:14(c)
+msgid "FEATURES"
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:9(b)
+msgid "not"
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:7(p)
+msgid "The <placeholder-1/> variable specifies options which affect how Portage operates and how packages are compiled. It is <placeholder-2/> used for settings which have a substantial effect upon the resulting generated package."
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:13(p)
+msgid "Relevant <placeholder-1/> for developers include:"
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:19(th)
+msgid "Feature"
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:20(th)
+msgid "Explanation"
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:23(c)
+msgid "collision-protect"
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:24(ti)
+msgid "Raise an error if an installing package attempts to overwrite a file which is provided by a different package."
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:30(c)
+msgid "noauto"
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:31(c)
+msgid "ebuild"
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:31(ti)
+msgid "When utilizing <placeholder-1/>, only run the function requested."
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:34(c)
+msgid "sandbox"
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:35(ti)
+msgid "Enable the sandbox."
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:38(c)
+msgid "sign"
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:39(c) devmanual/general-concepts/features/text.xml:45(c)
+msgid "Manifest"
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:39(ti)
+msgid "GPG sign <placeholder-1/> files."
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:42(c)
+msgid "strict"
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:43(ti)
+msgid "Do some extra checks for potentially dangerous situations (eg missing <placeholder-1/> files)."
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:49(c)
+msgid "test"
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:50(c)
+msgid "src_test"
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:50(ti)
+msgid "Enable the <placeholder-1/> phase."
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:53(c)
+msgid "userpriv"
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:54(ti)
+msgid "Drop to non-root privileges for certain phases."
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:57(c)
+msgid "usersandbox"
+msgstr ""
+
+#: devmanual/general-concepts/features/text.xml:58(ti)
+msgid "Enables the sandbox even when running non-privileged."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/features/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

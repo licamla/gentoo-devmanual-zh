@@ -1,0 +1,104 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:4(title)
+msgid "Configuring a Package"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:8(c)
+msgid "./configure"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:10(c)
+msgid "econf"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:7(p)
+msgid "Many packages come with an autoconf-generated <placeholder-1/> script for checking the build environment and configuring optional support for libraries. The <placeholder-2/> function should be used where possible <d/> this will provide correct build and path specifications for a Gentoo environment."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:18(b)
+msgid "not"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:19(c)
+msgid "USE=\"-perl\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:19(e)
+msgid "optional"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:21(c)
+msgid "--enable-"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:21(c)
+msgid "--disable"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:22(c)
+msgid "--with-"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:22(c)
+msgid "--without-"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:15(p)
+msgid "Often the configure script will try to automatically enable support for optional components based upon installed packages. This must <placeholder-1/> be allowed to happen. For example, if a user has Perl installed but has <placeholder-2/>, packages with <placeholder-3/> Perl support must not link against Perl. This automatic detection can usually be overridden using <placeholder-4/> and <placeholder-5/> or <placeholder-6/> and <placeholder-7/> switches (but note that these don't always work <d/> make sure these are tested properly!)."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:27(c)
+msgid "use_enable"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:27(c)
+msgid "use_with"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:26(p)
+msgid "The <placeholder-1/> and <placeholder-2/> utility functions should, where appropriate, be used to generate these switches."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:31(codesample)
+msgid "src_configure() { # We have optional perl, python and ruby support econf \\ $(use_enable perl ) \\ $(use_enable python ) \\ $(use_enable ruby ) } src_configure() { # Our package optional IPv6 support which uses --with rather than # --enable / --disable econf $(use_with ipv6 ) }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:50(c) devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:72(c)
+msgid "USE"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:51(c)
+msgid "X"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:48(p)
+msgid "Sometimes the package's choice of name for the option will not exactly match the name or case of the <placeholder-1/> flag. This is very often the case with the <placeholder-2/> flag. For these situations, there are two argument forms:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:55(codesample)
+msgid "src_configure() { # Our package has optional perl, python and ruby support econf \\ $(use_enable perl perlinterp ) \\ $(use_enable python pythoninterp ) \\ $(use_enable ruby rubyinterp ) # ... } src_configure() { econf $(use_with X x11 ) }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:72(c)
+msgid "use_enable !flag"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:71(p)
+msgid "To check for an unset <placeholder-1/> flag, the <placeholder-2/> form can be used."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/src_configure/configuring/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

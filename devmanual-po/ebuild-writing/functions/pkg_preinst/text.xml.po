@@ -1,0 +1,108 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:4(title) devmanual/ebuild-writing/functions/pkg_preinst/text.xml:10(c) devmanual/ebuild-writing/functions/pkg_preinst/text.xml:59(c) devmanual/ebuild-writing/functions/pkg_preinst/text.xml:64(c) devmanual/ebuild-writing/functions/pkg_preinst/text.xml:72(c)
+msgid "pkg_preinst"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:9(th)
+msgid "Function"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:13(th)
+msgid "Purpose"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:14(c)
+msgid "${ROOT}"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:14(ti)
+msgid "Called before image is installed to <placeholder-1/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:17(th)
+msgid "Sandbox"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:18(ti)
+msgid "Disabled"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:21(th)
+msgid "Privilege"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:22(ti)
+msgid "root"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:25(th)
+msgid "Called for"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:26(ti)
+msgid "ebuild, binary"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:32(title)
+msgid "Default <c>pkg_preinst</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:34(codesample)
+msgid "pkg_preinst() { return }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:44(title)
+msgid "Sample <c>pkg_preinst</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:46(codesample)
+msgid "pkg_preinst() { enewgroup foo enewuser foo -1 /bin/false /dev/null foo }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:56(title)
+msgid "Common <c>pkg_preinst</c> Tasks"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:58(p)
+msgid "There are a few things that are often done in <placeholder-1/>:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:65(c)
+msgid "src_compile"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:65(c)
+msgid "pkg_setup"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:63(li)
+msgid "Adding users and groups. However, since <placeholder-1/> may be called after <placeholder-2/>, <placeholder-3/> is the more suitable location for user creation <d/> see <uri link=\"::ebuild-writing/users-and-groups\"/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:73(c)
+msgid "${ROOT}/etc/"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:74(c)
+msgid "${D}/etc/"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:68(li)
+msgid "Modifying the install image for a particular system. This function allows system-specific customisation to be done even when installing from a binary. The most useful example is probably smart configuration file updating <d/> a <placeholder-1/> could check a configuration file in <placeholder-2/> and create a smart updated version in <placeholder-3/> (see <uri link=\"::general-concepts/install-destinations\"/>) rather than always trying to install the default configuration file (remember <uri link=\"::general-concepts/config-protect\"/>)."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/pkg_preinst/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

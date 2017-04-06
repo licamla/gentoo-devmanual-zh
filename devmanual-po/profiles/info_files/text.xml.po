@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/profiles/info_files/text.xml:4(title)
+msgid "Profiles <c>info_</c> Files"
+msgstr ""
+
+#: devmanual/profiles/info_files/text.xml:8(c)
+msgid "profiles/info_pkgs"
+msgstr ""
+
+#: devmanual/profiles/info_files/text.xml:9(c)
+msgid "emerge info"
+msgstr ""
+
+#: devmanual/profiles/info_files/text.xml:9(c)
+msgid "profiles/info_vars"
+msgstr ""
+
+#: devmanual/profiles/info_files/text.xml:11(c)
+msgid "gentoo-dev"
+msgstr ""
+
+#: devmanual/profiles/info_files/text.xml:7(p)
+msgid "The <placeholder-1/> file controls the packages whose versions are listed when <placeholder-2/> is run. The <placeholder-3/> file controls the displayed environment variables. Do not add to these files without discussion on the <placeholder-4/> mailing list."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/profiles/info_files/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

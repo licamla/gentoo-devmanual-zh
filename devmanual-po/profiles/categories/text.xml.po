@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/profiles/categories/text.xml:4(title)
+msgid "Profiles <c>categories</c> File"
+msgstr ""
+
+#: devmanual/profiles/categories/text.xml:8(c)
+msgid "profiles/categories"
+msgstr ""
+
+#: devmanual/profiles/categories/text.xml:10(e)
+msgid "before"
+msgstr ""
+
+#: devmanual/profiles/categories/text.xml:7(p)
+msgid "The <placeholder-1/> file contains an asciibetically sorted list of all the valid categories in the Gentoo repository. When adding a new category, remember to update and commit this file <placeholder-2/> making any related commits."
+msgstr ""
+
+#: devmanual/profiles/categories/text.xml:14(c)
+msgid "categories"
+msgstr ""
+
+#: devmanual/profiles/categories/text.xml:13(p)
+msgid "The <placeholder-1/> file is a straight list. For descriptions, see <uri link=\"::ebuild-writing/misc-files/metadata/#Category Metadata\"/>."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/profiles/categories/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

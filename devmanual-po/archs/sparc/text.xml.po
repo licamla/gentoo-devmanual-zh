@@ -1,0 +1,164 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/archs/sparc/text.xml:4(title)
+msgid "Arch Specific Notes -- SPARC"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:8(c)
+msgid "sparc"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:8(c) devmanual/archs/sparc/text.xml:88(c)
+msgid "sun4u"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:9(c) devmanual/archs/sparc/text.xml:19(c) devmanual/archs/sparc/text.xml:29(c) devmanual/archs/sparc/text.xml:55(c) devmanual/archs/sparc/text.xml:87(c) devmanual/archs/sparc/text.xml:88(c) devmanual/archs/sparc/text.xml:101(c)
+msgid "v9"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:9(c) devmanual/archs/sparc/text.xml:25(c) devmanual/archs/sparc/text.xml:82(c)
+msgid "v8"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:7(p)
+msgid "The SPARC port uses the <placeholder-1/> keyword. It focuses on <placeholder-2/> hardware (Sun UltraSparc systems with <placeholder-3/> CPUs). <placeholder-4/> processors and 2.4 kernels should still work with Gentoo, but they are no longer supported by the Gentoo/SPARC team."
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:15(title)
+msgid "SPARC Kernel and Userland ABIs"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:18(p)
+msgid "<placeholder-1/> systems use a pure 64 bit kernel and a pure 32 bit userland. This can cause portability problems when working with low level software if the kernel does not provide working 32 bit compatibility interfaces."
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:24(p)
+msgid "<placeholder-1/> systems use a pure 32 bit kernel and a pure 32 bit userland."
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:28(p)
+msgid "All of the above SPARC systems are big endian, nevertheless the <placeholder-1/> architecture also utilizes little-endian instructions to access data on PCI buses."
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:38(title)
+msgid "Additional SPARC Keywording Requirements"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:43(e)
+msgid "additional"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:41(note)
+msgid "This section is in addition to the guidelines in <uri link=\"::keywording#Keywording on Upgrades\"/>. It discusses <placeholder-1/> requirements for the SPARC architecture."
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:48(c)
+msgid "~sparc"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:47(p)
+msgid "For a package to have the <placeholder-1/> keyword added, the following additional items must generally hold:"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:53(li)
+msgid "The package must have been tested by an arch team member (or someone with permission from the arch team) on a <placeholder-1/> system."
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:61(c) devmanual/archs/sparc/text.xml:121(c) devmanual/archs/sparc/text.xml:124(c)
+msgid "sparc@"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:59(p)
+msgid "It is generally expected that anyone who does keywording for SPARC should be on the <placeholder-1/> alias."
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:68(title)
+msgid "SPARC Instruction Set and Performance Notes"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:71(p)
+msgid "There are three basic SPARC instruction set standards."
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:77(c) devmanual/archs/sparc/text.xml:78(c) devmanual/archs/sparc/text.xml:79(c) devmanual/archs/sparc/text.xml:82(c) devmanual/archs/sparc/text.xml:99(c)
+msgid "v7"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:76(li)
+msgid "<placeholder-1/> is the original instruction set used in very old hardware. Gentoo does not ship <placeholder-2/> capable stages, however a sufficiently crazy person could in theory run Gentoo on a <placeholder-3/> machine."
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:83(c)
+msgid "sun4m"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:81(li)
+msgid "<placeholder-1/> is an extension of <placeholder-2/> with added support for hardware integer multiplication and division. Last time Gentoo sparc32 (<placeholder-3/>) stages were available was on 2006.1 release."
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:86(li)
+msgid "<placeholder-1/> adds in 64 bit support and a large number of performance-enhancing features. Gentoo sparc64 (<placeholder-2/>) stages are <placeholder-3/>."
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:92(p)
+msgid "In addition, individual CPU implementations have slight differences <d/> for example, HyperSparc CPUs have relaxed requirements when it comes to scheduling certain instructions. These are relatively minor differences."
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:99(c)
+msgid "gcc"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:99(c)
+msgid "-mcpu"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:98(p)
+msgid "If <placeholder-1/> is invoked without any <placeholder-2/> parameter, it will generate <placeholder-3/> code. Depending upon the application, this can be anywhere up to five times slower than <placeholder-4/> code when running on an UltraSparc <d/> cryptographic and graphics applications which make heavy use of integer multiplication and division are especially badly hit. For this reason, the comments in <uri link=\"::general-concepts/user-environment#Not Filtering Variables\"/> are especially important on SPARC."
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:112(title)
+msgid "Contacting the SPARC Team"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:115(p)
+msgid "The SPARC team can be contacted:"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:120(li)
+msgid "Via Bugzilla bugs assigned to <placeholder-1/>"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:123(li)
+msgid "Via email to the <placeholder-1/> email alias"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:127(c)
+msgid "gentoo-sparc"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:126(li)
+msgid "Via email to the <placeholder-1/> mailing list"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:130(c)
+msgid "#gentoo-sparc"
+msgstr ""
+
+#: devmanual/archs/sparc/text.xml:129(li)
+msgid "Via the <placeholder-1/> IRC channel on Freenode"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/archs/sparc/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

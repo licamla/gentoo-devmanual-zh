@@ -1,0 +1,200 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/appendices/contributing/text.xml:4(title)
+msgid "Contributing to This Document"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:10(uri)
+msgid "bugs.gentoo.org"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:7(p)
+msgid "Contributions for this document are very welcome. Whether you've found a typo or have written an entire new section, the best way to get in touch is via Bugzilla at <placeholder-1/>."
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:13(p)
+msgid "The editors reserve the right to modify submissions as they see fit. Any substantial changes will of course be discussed with the submitter first <d/> unless explicitly requested, minor typo corrections and formatting fixes will not be discussed."
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:21(uri)
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:20(p)
+msgid "This document is licensed under the <placeholder-1/>. If this is a problem, don't submit anything."
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:29(c)
+msgid "index.html"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:30(c)
+msgid "text.xml"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:26(p)
+msgid "This document is produced using the DevBook XML build system. You can download a snapshot of the system as well as the relevant XML files from Subversion. You can also view the XML of any page by replacing <placeholder-1/> with <placeholder-2/> in the URL. If you'd rather just work with plain text, that's fine too <d/> the formatting can be easily done by someone else (meaning, us)."
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:35(title)
+msgid "Where to find the sources"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:40(uri)
+msgid "git.gentoo.org"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:42(c)
+msgid "git+ssh://git@git.gentoo.org/proj/devmanual.git"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:44(c)
+msgid "git clone git://anongit.gentoo.org/proj/devmanual.git"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:46(uri)
+msgid "GitHub"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:38(p)
+msgid "Currently, sources are hosted on <placeholder-1/>. For current Gentoo developers, access is at <placeholder-2/>. Non-developers can clone the repository by typing <placeholder-3/>. The sources are also hosted on <placeholder-4/> for those who prefer to submit patches using pull requests."
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:51(c)
+msgid "make"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:52(c)
+msgid "xsltproc"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:53(c)
+msgid "dev-libs/libxslt"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:54(c)
+msgid "convert"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:54(c)
+msgid "media-gfx/imagemagick"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:50(p)
+msgid "To build the devmanual, simply run <placeholder-1/> in the top directory of the repository. You need <placeholder-2/> (from <placeholder-3/>) for the XML to HTML conversion and <placeholder-4/> (from <placeholder-5/>) for the SVG to PNG conversion used in some of the figures throughout the document."
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:63(title)
+msgid "Quick Introduction to DevBook XML"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:67(uri)
+msgid "GuideXML"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:66(p)
+msgid "DevBook XML is heavily based on <placeholder-1/> and many tags are similar, if not the same. The main differences occur in layout which are designed to make a large-scale publication easier to produce and manage using a hierarchical tree system. Before starting off you really should first examine the GuideXML guide in a reasonable amount of depth."
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:75(title)
+msgid "Differences from GuideXML"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:79(dt)
+msgid "Indentation"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:85(c)
+msgid "&lt;subsection&gt;"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:86(e)
+msgid "not"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:83(p)
+msgid "Indent when needed <d/> you should not indent any section flow elements such as <placeholder-1/> but do indent tables, lists and definition lists. Do <placeholder-2/> indent text in ordinary paragraph blocks."
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:89(dt)
+msgid "Code Samples"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:94(c)
+msgid "&lt;pre&gt;"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:95(c)
+msgid "&lt;codesample&gt;"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:96(c)
+msgid "lang"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:97(c)
+msgid "ebuild"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:93(p)
+msgid "You can use the normal GuideXML tag <placeholder-1/> when you need no syntax highlighting. When you need syntax highlighting use the <placeholder-2/> tag along with a <placeholder-3/> attribute <d/> usually you want this to be set to <placeholder-4/> to syntax highlight ebuild code snippets."
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:100(dt)
+msgid "Hierarchy"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:107(c)
+msgid "&lt;include&gt;"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:107(b)
+msgid "must"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:107(c)
+msgid "self"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:104(p)
+msgid "The whole document is organized as a tree. Each directory can contain one document. Each document can inherit multiple sub-documents using the <placeholder-1/> flag. You <placeholder-2/> ensure that the <placeholder-3/> tag in each document correctly points to the relative path of the document from the root node so that the tree-walking algorithms work correctly."
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:120(title)
+msgid "Style Guidelines"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:124(li)
+msgid "This document is in British English. Submissions in other kinds of English are welcome, but they may have their spelling corrected."
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:128(li)
+msgid "Third person form should be used rather than first."
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:131(li)
+msgid "This is not a formal document. The writing style is intended to be professional but readable."
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:137(c)
+msgid "&lt;d/&gt;"
+msgstr ""
+
+#: devmanual/appendices/contributing/text.xml:135(li)
+msgid "When using in-sentence hyphens as punctuation <d/> like this <d/> use a space, followed by the <placeholder-1/> tag. The build system will automatically turn this into a proper Unicode long dash."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/appendices/contributing/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

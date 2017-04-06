@@ -1,0 +1,384 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/use-flags/text.xml:4(title)
+msgid "USE Flags"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:8(c) devmanual/general-concepts/use-flags/text.xml:12(c) devmanual/general-concepts/use-flags/text.xml:13(c) devmanual/general-concepts/use-flags/text.xml:18(c) devmanual/general-concepts/use-flags/text.xml:31(c) devmanual/general-concepts/use-flags/text.xml:49(c) devmanual/general-concepts/use-flags/text.xml:55(c)
+msgid "USE"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:9(c)
+msgid "app-editors/vim"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:10(c) devmanual/general-concepts/use-flags/text.xml:13(c)
+msgid "ruby"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:11(c)
+msgid "dev-lang/ruby"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:13(c)
+msgid "app-text/glark"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:7(p)
+msgid "<placeholder-1/> flags are to control optional dependencies and settings which the user may reasonably want to select. For example, <placeholder-2/> can optionally build with support for the <placeholder-3/> interpreter, and it needs <placeholder-4/> installed to do this <d/> we use the ruby <placeholder-5/> flag to provide this option. On the other hand, <placeholder-6/> requires <placeholder-7/> no matter what, so no <placeholder-8/> flag is used there."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:17(p)
+msgid "No combination of <placeholder-1/> flags should cause a package to fail to build because users can set any combination of flags."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:22(p)
+msgid "Packages should not configure and link based upon what is available at compile time <d/> any autodetection must be overridden. This is commonly referred to as the dependency being \"automagic\" - This is bad because the dependency is not detected by the package manager tools and can easily break, among other issues."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:30(p)
+msgid "The usage of a <placeholder-1/> flag should not control runtime dependencies when the package does not link to it. Doing so will create extra configuration for the package and re-compilation for no underlying file change on disk. This should be avoided and instead can be conveyed to the user via post install messages if needed."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:40(c)
+msgid "pkg_prerm"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:40(c)
+msgid "pkg_postrm"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:38(note)
+msgid "The status of USE flags is saved in the VDB, and their value in <placeholder-1/> and <placeholder-2/> is taken from there. This means that setting or unsetting a USE flag between merge and unmerge has no effect."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:46(title)
+msgid "<c>noblah</c> USE Flags"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:49(c)
+msgid "noblah"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:49(c) devmanual/general-concepts/use-flags/text.xml:92(c) devmanual/general-concepts/use-flags/text.xml:93(c) devmanual/general-concepts/use-flags/text.xml:114(c)
+msgid "use.mask"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:48(p)
+msgid "Avoid <placeholder-1/> style <placeholder-2/> flags. These break <placeholder-3/> and cause all sorts of complications for arch developers. Here's why:"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:53(p)
+msgid "Consider a hypothetical package named 'vplayer', which plays videos. This package has optional support, via <placeholder-1/> flags, for various sound and video output methods, various video codecs and so on."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:61(e)
+msgid "could"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:59(p)
+msgid "One of vplayer's optional features is support for the 'fakemedia' codec, which is unfortunately only available as a dodgy x86 binary. We <placeholder-1/> handle this by doing something like:"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:65(codesample)
+msgid "RDEPEND=\"x86? ( fakemedia? ( &gt;=media-libs/fakemedia-1.1 ) )\""
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:72(c)
+msgid "emerge -pv"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:69(p)
+msgid "Except this is pretty nasty <d/> what happens when an AMD64 binary is made as well? Also, users on other archs will see fakemedia listed in <placeholder-1/> output, even though it is not actually available."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:75(p)
+msgid "Similarly, say vplayer supports output via the ALSA codec as one option. However, ALSA isn't (or wasn't when this example was written) available on SPARC or Alpha. So we could do:"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:81(codesample)
+msgid "DEPEND=\"!sparc? ( !alpha? ( alsa? ( media-libs/alsa-lib ) ) )\""
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:86(c)
+msgid "emerge -p"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:85(p)
+msgid "Again, it's messy, and ALSA still shows up in the <placeholder-1/> output. Also, once ALSA starts working on SPARC, every ebuild that does this would have to be manually edited."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:95(c)
+msgid "fakemedia"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:91(p)
+msgid "The solution is <placeholder-1/>, which is documented in <uri link=\"::profiles/use.mask/\"/>. Each profile can have a <placeholder-2/> file which can be used to forcibly disable certain USE flags on a given arch (or subarch, or subprofile). So, if the <placeholder-3/> USE flag was use.masked on every non-x86 profile, the following would be totally legal and wouldn't break anything:"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:100(codesample)
+msgid "RDEPEND=\"fakemedia? ( &gt;=media-libs/fakemedia-1-1 )\""
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:106(c)
+msgid "emerge -pv vplayer"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:104(p)
+msgid "Users of non-x86 would see the following when doing <placeholder-1/>:"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:109(pre)
+msgid "[ebuild R ] media-video/vplayer-1.2 alsa -blah (-fakemedia) xyz"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:113(p)
+msgid "To get a flag added to <placeholder-1/>, ask the relevant arch team."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:121(title)
+msgid "Local and Global USE Flags"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:124(p)
+msgid "USE flags are categorised as either local or global. A global USE flag must satisfy several criteria:"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:130(li)
+msgid "It is used by many different packages, at least 5 seems to be agreed upon."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:132(li)
+msgid "It has a general non-specific purpose."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:137(c)
+msgid "pkg-one"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:138(c)
+msgid "pkg-two"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:139(c)
+msgid "client"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:139(c)
+msgid "server"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:135(p)
+msgid "The second point is important. If the effect of the USE flag upon <placeholder-1/> is substantially different from the effect it has upon <placeholder-2/>, then the flag is not a suitable candidate for being made a global flag. In particular, note that if <placeholder-3/> and <placeholder-4/> USE flags are ever introduced, they can not be global USE flags for this reason."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:144(p)
+msgid "Before introducing a new global USE flag, it must be discussed on the gentoo-dev mailing list."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:153(title)
+msgid "USE Flag Descriptions"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:156(c)
+msgid "use.desc"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:157(c)
+msgid "profiles/"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:157(c) devmanual/general-concepts/use-flags/text.xml:161(c)
+msgid "metadata.xml"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:158(c)
+msgid "man portage"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:160(c) devmanual/general-concepts/use-flags/text.xml:162(c)
+msgid "use.local.desc"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:165(uri)
+msgid "GLEP 56"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:155(p)
+msgid "All USE flags must be described in either <placeholder-1/> in the <placeholder-2/> directory or <placeholder-3/> in the package's directory. See <placeholder-4/> or the comments in these files for an explanation of the format. Remember to keep these files sorted. The file <placeholder-5/> is automatically generated from entries in the package's <placeholder-6/> and may be used by tools that parse the tree. Since <placeholder-7/> is automatically generated it must never be manually editted in the tree. See <placeholder-8/> for more info."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:169(c) devmanual/general-concepts/use-flags/text.xml:171(c) devmanual/general-concepts/use-flags/text.xml:246(c) devmanual/general-concepts/use-flags/text.xml:252(c)
+msgid "USE_EXPAND"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:170(c)
+msgid "profiles/desc/"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:168(p)
+msgid "The exceptions to this are <placeholder-1/> flags, which must be documented in the <placeholder-2/> directory. One file per <placeholder-3/> variable is required, which must contain descriptions of the possible values this variable can take. See the comments in these files for the format, and remember to keep them sorted."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:179(title)
+msgid "Conflicting USE Flags"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:183(e)
+msgid "not"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:181(p)
+msgid "Occasionally, ebuilds will have conflicting USE flags for functionality. Checking for them and returning an error is <placeholder-1/> a viable solution. Instead, you must pick one of the USE flags in conflict to favour and should alert the user that a particular flag is being used instead."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:189(c)
+msgid "mail-mta/msmtp"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:188(p)
+msgid "One example comes from the <placeholder-1/> ebuilds. The package can use either SSL with GnuTLS, SSL with OpenSSL, or no SSL at all. Because GnuTLS is more featureful than OpenSSL, it is favoured:"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:194(codesample)
+msgid "src_compile() { local myconf if use ssl &amp;&amp; use gnutls ; then myconf=\"${myconf} --enable-ssl --with-ssl=gnutls\" elif use ssl &amp;&amp; ! use gnutls ; then myconf=\"${myconf} --enable-ssl --with-ssl=openssl\" else myconf=\"${myconf} --disable-ssl\" fi econf \\ # Other stuff ${myconf} emake || die \"make failed\" }"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:217(c) devmanual/general-concepts/use-flags/text.xml:232(c)
+msgid "REQUIRED_USE"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:214(p)
+msgid "In some exceptional cases, above policy would break reverse USE dependencies. To avoid this, the ebuild can specify allowed USE flag combinations with <placeholder-1/> (available in EAPI 4). See section <uri link=\"::ebuild-writing/eapi/#eapi=4\"/> for a description of its syntax."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:223(c)
+msgid "dev-libs/foo"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:224(c)
+msgid "USE=\"a\""
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:224(c)
+msgid "USE=\"b\""
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:225(c)
+msgid "dev-libs/foo[a]"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:226(c)
+msgid "dev-libs/foo[b]"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:227(c)
+msgid "REQUIRED_USE=\"a? ( !b )\""
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:222(p)
+msgid "For example, if a package <placeholder-1/> can be built with either <placeholder-2/> or <placeholder-3/> but not with both, then preferring one of the flags would break packages that depend on either <placeholder-4/> or <placeholder-5/>. Therefore, the ebuild should specify <placeholder-6/> in this case."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:230(note)
+msgid "In order to avoid forcing users to micro-manage flags too much, <placeholder-1/> should be used sparingly. Follow the normal policy whenever it is possible to do a build that will presumably suit the user's needs."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:240(title)
+msgid "USE_EXPAND and ARCH USE Flags"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:244(c)
+msgid "VIDEO_CARDS"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:244(c)
+msgid "INPUT_DEVICES"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:244(c)
+msgid "LINGUAS"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:246(c)
+msgid "LINGUAS=\"en fr\""
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:247(c)
+msgid "make.conf"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:247(c)
+msgid "USE=\"linguas_en linguas_fr\""
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:243(p)
+msgid "The <placeholder-1/>, <placeholder-2/> and <placeholder-3/> variables are automatically expanded into USE flags. These are known as <placeholder-4/> variables. If the user has <placeholder-5/> in <placeholder-6/>, for example, then <placeholder-7/> will automatically be set by Portage."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:252(c)
+msgid "profiles/base/make.defaults"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:251(p)
+msgid "The <placeholder-1/> list is set in <placeholder-2/> as of Portage 2.0.51.20. This must not be modified without discussion on the gentoo-dev list, and it must not be modified in any subprofile."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:258(c) devmanual/general-concepts/use-flags/text.xml:268(c)
+msgid "x86"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:258(c) devmanual/general-concepts/use-flags/text.xml:269(c)
+msgid "sparc"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:258(c)
+msgid "ppc-macos"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:260(c)
+msgid "profiles/arch.list"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:262(uri)
+msgid "GLEP 22"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:257(p)
+msgid "The current architecture (e.g. <placeholder-1/>, <placeholder-2/>, <placeholder-3/>) will automatically be set as a USE flag as well. See <placeholder-4/> for a full list of valid architecture keywords, and <placeholder-5/> for an explanation of the format."
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:268(c)
+msgid "ACCEPT_KEYWORDS"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:269(c)
+msgid "USE=\"x86\""
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:270(c)
+msgid "~arch"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:270(c)
+msgid "if use ~x86"
+msgstr ""
+
+#: devmanual/general-concepts/use-flags/text.xml:266(warning)
+msgid "It is a common misconception that the architecture variable is somehow related to <placeholder-1/>. It isn't. Accepting <placeholder-2/> keywords on <placeholder-3/>, for example, won't set <placeholder-4/>. Similarly, there are no <placeholder-5/> USE flags, so don't try <placeholder-6/>."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/use-flags/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

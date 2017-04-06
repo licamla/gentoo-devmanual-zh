@@ -1,0 +1,88 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:4(title) devmanual/ebuild-writing/functions/src_configure/text.xml:10(c) devmanual/ebuild-writing/functions/src_configure/text.xml:69(c)
+msgid "src_configure"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:9(th)
+msgid "Function"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:13(th)
+msgid "Purpose"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:14(ti)
+msgid "Configure the package."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:17(th)
+msgid "Sandbox"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:18(ti)
+msgid "Enabled"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:21(th)
+msgid "Privilege"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:22(ti)
+msgid "user"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:25(th)
+msgid "Called for"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:26(ti)
+msgid "ebuild"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:29(th)
+msgid "EAPI"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:30(ti)
+msgid "2"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:36(title)
+msgid "Default <c>src_configure</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:38(codesample)
+msgid "src_configure() { if [[ -x ${ECONF_SOURCE:-.}/configure ]] ; then econf fi }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:49(title)
+msgid "Sample <c>src_configure</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:51(codesample)
+msgid "src_configure() { use sparc &amp;&amp; filter-flags -fomit-frame-pointer append-ldflags -Wl,-z,now econf \\ $(use_enable ssl ) \\ $(use_enable perl perlinterp ) }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:65(title)
+msgid "<c>src_configure</c> Processes"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:67(p)
+msgid "The following subsections cover different topics which often occur when writing <placeholder-1/> functions."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/src_configure/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

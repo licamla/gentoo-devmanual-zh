@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/tools-reference/sort/text.xml:4(title)
+msgid "sort -- Sorting Text"
+msgstr ""
+
+#: devmanual/tools-reference/sort/text.xml:8(c)
+msgid "sort"
+msgstr ""
+
+#: devmanual/tools-reference/sort/text.xml:10(c)
+msgid "-o filename"
+msgstr ""
+
+#: devmanual/tools-reference/sort/text.xml:7(p)
+msgid "The <placeholder-1/> tool can be used to sort text. It sorts the contents of the files named on the commandline, or the text provided on standard input if no files are given. Output is to standard output by default, unless a <placeholder-2/> option is provided."
+msgstr ""
+
+#: devmanual/tools-reference/sort/text.xml:15(c)
+msgid "-f"
+msgstr ""
+
+#: devmanual/tools-reference/sort/text.xml:14(p)
+msgid "To ignore case, the <placeholder-1/> switch may be used."
+msgstr ""
+
+#: devmanual/tools-reference/sort/text.xml:19(c)
+msgid "man sort"
+msgstr ""
+
+#: devmanual/tools-reference/sort/text.xml:20(uri)
+msgid "IEEE1003.1-2004-sort"
+msgstr ""
+
+#: devmanual/tools-reference/sort/text.xml:18(p)
+msgid "Many other options are available. See <placeholder-1/> and <placeholder-2/> for details."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/tools-reference/sort/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

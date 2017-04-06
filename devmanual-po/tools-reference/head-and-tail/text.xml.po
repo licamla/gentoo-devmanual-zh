@@ -1,0 +1,124 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/tools-reference/head-and-tail/text.xml:4(title)
+msgid "<c>head-and-tail</c> -- Line Extraction"
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:8(c) devmanual/tools-reference/head-and-tail/text.xml:14(c) devmanual/tools-reference/head-and-tail/text.xml:53(c)
+msgid "head"
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:8(c) devmanual/tools-reference/head-and-tail/text.xml:30(c) devmanual/tools-reference/head-and-tail/text.xml:53(c)
+msgid "tail"
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:7(p)
+msgid "The <placeholder-1/> and <placeholder-2/> utilities can be used to obtain only the first or last parts of a file respectively. Both will read from the files named on the commandline, or stdin if no files are provided."
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:14(c) devmanual/tools-reference/head-and-tail/text.xml:31(c)
+msgid "-n"
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:13(p)
+msgid "The <placeholder-1/> utility takes a single argument, <placeholder-2/>, which must be followed by an integer indicating the desired number of lines to be displayed."
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:20(c)
+msgid "-c"
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:19(warning)
+msgid "Use of the GNU <placeholder-1/> option is unportable and should be avoided."
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:24(uri)
+msgid "IEEE1003.1-2004-head"
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:23(p)
+msgid "For full details, see <placeholder-1/>. Note that head-1 on GNU systems describes many non-portable options."
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:29(p)
+msgid "The <placeholder-1/> utility is similar, but takes lines from the end of the file. The <placeholder-2/> argument specifies how many lines to display."
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:35(c)
+msgid "tail -n5"
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:36(c)
+msgid "tail -n+5"
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:34(p)
+msgid "To specify \"the last five lines\", use <placeholder-1/>. To specify \"all but the first five lines\", use <placeholder-2/>."
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:40(c)
+msgid "head/tail -5"
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:39(warning)
+msgid "<placeholder-1/> syntax is deprecated and not POSIX compliant."
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:44(uri)
+msgid "IEEE1003.1-2004-tail"
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:43(p)
+msgid "For full details, see <placeholder-1/>. Note that tail-1 on GNU systems describes many non-portable options."
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:50(title)
+msgid "Chaining with <c>head</c> or <c>tail</c> with <c>sed</c>"
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:53(c) devmanual/tools-reference/head-and-tail/text.xml:55(c) devmanual/tools-reference/head-and-tail/text.xml:86(c) devmanual/tools-reference/head-and-tail/text.xml:91(c)
+msgid "sed"
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:52(p)
+msgid "Chaining <placeholder-1/> or <placeholder-2/> with <placeholder-3/> is usually unnecessary. Use of addresses and early exit can do the same thing with a single <placeholder-4/> call:"
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:58(codesample)
+msgid "# bad: get the first five lines of input.txt with all 'foo' # replaced with 'bar' head -n 5 input.txt | sed -e 's/foo/bar/g' &gt; output.txt # good: use sed's address ranges and command groups to do # the same thing with only one fork sed -n -e '1,5{ s/foo/bar/g ; p }' input.txt &gt; output.txt # good: another way is with an extra command which exits # on line 5 sed -n -e 's/foo/bar/gp ; 5q' input.txt &gt; output.txt # bad: set foo to the first line containing somestring foo=$(sed -n -e '/somestring/p' input.txt | head -n 1 ) # good: use early exit to do the same thing in pure sed foo=$(sed -n -e '/somestring/{ p ; q }' input.txt ) # bad: output the last line matching 'somestring' sed -n -e '/somestring/p' input.txt | tail -n 1 # good: do this in pure sed using the hold space sed -n -e '/somestring/h ; $ {x;p}'"
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:85(c)
+msgid "tail -n X"
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:85(c)
+msgid "X"
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:84(p)
+msgid "<placeholder-1/> where <placeholder-2/> is larger than one is possible to do in pure <placeholder-3/> but tricky. Using chained commands here is probably simplest."
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:90(p)
+msgid "Finally, to extract a single specific line, use <placeholder-1/> instead:"
+msgstr ""
+
+#: devmanual/tools-reference/head-and-tail/text.xml:94(codesample)
+msgid "sed -n -e '123p'"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/tools-reference/head-and-tail/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

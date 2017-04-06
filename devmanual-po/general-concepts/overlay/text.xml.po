@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/overlay/text.xml:4(title)
+msgid "Overlay"
+msgstr ""
+
+#: devmanual/general-concepts/overlay/text.xml:9(c)
+msgid "PORTDIR_OVERLAY"
+msgstr ""
+
+#: devmanual/general-concepts/overlay/text.xml:7(p)
+msgid "Portage can look in multiple places for packages by using an overlay. The locations of overlays are controlled by the <placeholder-1/> variable, which should contain a space-separated list of paths."
+msgstr ""
+
+#: devmanual/general-concepts/overlay/text.xml:14(c)
+msgid "PORTDIR"
+msgstr ""
+
+#: devmanual/general-concepts/overlay/text.xml:13(p)
+msgid "The overlay should contain the same directory structure as <placeholder-1/> (although only the necessary directories need be included). For example, a simple overlay might have a directory structure like:"
+msgstr ""
+
+#: devmanual/general-concepts/overlay/text.xml:19(pre)
+msgid "overlay |-- dev-util `-- gengetopt |-- Manifest |-- files | `-- gengetopt-2.13-foobar.patch `-- gengetopt-2.13.ebuild"
+msgstr ""
+
+#: devmanual/general-concepts/overlay/text.xml:31(c)
+msgid "/etc/portage/categories"
+msgstr ""
+
+#: devmanual/general-concepts/overlay/text.xml:29(p)
+msgid "An overlay can be used to 'add' items to the tree (although you must ensure that <placeholder-1/> is used if any new categories are added) or to override existing entries."
+msgstr ""
+
+#: devmanual/general-concepts/overlay/text.xml:37(title)
+msgid "Overlay and Eclasses"
+msgstr ""
+
+#: devmanual/general-concepts/overlay/text.xml:47(c)
+msgid "touch"
+msgstr ""
+
+#: devmanual/general-concepts/overlay/text.xml:40(p)
+msgid "Be very careful when using eclasses in an overlay. Portage will not do cache updates when an overlay eclass is changed, nor will it do cache updates when a main Gentoo repository eclass which is used by an overlay ebuild changes. You may also encounter bogus 'illegal inherit' notices when working with eclasses in an overlay (see <uri link=\"::appendices/common-problems/#QA Notice -- ECLASS foo inherited illegally\"/>). To be safe, manually <placeholder-1/> all relevant overlay files after updating overlay eclasses."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/overlay/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

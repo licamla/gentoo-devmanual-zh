@@ -1,0 +1,28 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/tools-reference/text.xml:4(title)
+msgid "Tools Reference"
+msgstr ""
+
+#: devmanual/tools-reference/text.xml:7(p)
+msgid "This section provides an overview of various useful standard Unix and Gentoo tools and utilities that may be used within ebuilds or when working with ebuilds."
+msgstr ""
+
+#: devmanual/tools-reference/text.xml:15(title)
+msgid "Contents"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/tools-reference/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

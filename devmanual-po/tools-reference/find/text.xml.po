@@ -1,0 +1,320 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/tools-reference/find/text.xml:4(title)
+msgid "<c>find</c> -- Finding Files"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:8(c) devmanual/tools-reference/find/text.xml:15(c) devmanual/tools-reference/find/text.xml:132(c) devmanual/tools-reference/find/text.xml:146(c)
+msgid "find"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:10(c)
+msgid "find path rules"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:7(p)
+msgid "The <placeholder-1/> utility can be used to search for and perform commands upon groups of files matching a given set of criteria. The basic usage is <placeholder-2/>."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:14(b)
+msgid "always"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:13(p)
+msgid "For portability purposes, <placeholder-1/> specify a path. Do not rely upon <placeholder-2/> defaulting to the current working directory if no path is provided."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:19(p)
+msgid "Useful rules include:"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:25(th)
+msgid "Rule"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:26(th)
+msgid "Effect"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:27(th)
+msgid "POSIX?"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:30(c)
+msgid "-name \"blah\""
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:32(c) devmanual/tools-reference/find/text.xml:40(c)
+msgid "blah"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:32(c)
+msgid "*"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:32(c)
+msgid "?"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:33(c)
+msgid "-name 'blah*'"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:31(ti)
+msgid "Only find files named <placeholder-1/>. The <placeholder-2/> and <placeholder-3/> wildcards may be used but should be quoted as in <placeholder-4/>."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:35(ti) devmanual/tools-reference/find/text.xml:42(ti) devmanual/tools-reference/find/text.xml:47(ti) devmanual/tools-reference/find/text.xml:52(ti) devmanual/tools-reference/find/text.xml:57(ti) devmanual/tools-reference/find/text.xml:66(ti) devmanual/tools-reference/find/text.xml:74(ti) devmanual/tools-reference/find/text.xml:98(ti)
+msgid "yes"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:38(c)
+msgid "\\! -name \"blah\""
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:39(ti)
+msgid "Only find files not named <placeholder-1/>."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:45(c)
+msgid "-type f"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:46(ti)
+msgid "Find only regular files, not directories."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:50(c)
+msgid "-type d"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:51(ti)
+msgid "Find only directories."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:55(c)
+msgid "-type l"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:56(ti)
+msgid "Find only symbolic links."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:60(c)
+msgid "-user foo"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:62(c) devmanual/tools-reference/find/text.xml:71(c)
+msgid "foo"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:63(c)
+msgid "root"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:61(ti)
+msgid "Find only files belonging to user <placeholder-1/>. It is best to use named users rather than numeric UIDs. In particular, <placeholder-2/> may not be UID 0 on some systems."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:69(c)
+msgid "-group foo"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:70(ti)
+msgid "Find only files belonging to group <placeholder-1/>. It is best to use named groups rather than numeric GIDs."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:77(c)
+msgid "-maxdepth 3"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:80(c)
+msgid "-maxdepth 1"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:78(ti)
+msgid "Only descend 3 levels into subdirectories. <placeholder-1/> will ignore all subdiretories of the specified path."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:82(ti) devmanual/tools-reference/find/text.xml:90(ti) devmanual/tools-reference/find/text.xml:106(ti)
+msgid "no, GNU and BSD"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:85(c)
+msgid "-mindepth 2"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:88(c)
+msgid "-mindepth 1"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:86(ti)
+msgid "Ignore the first 2 directory levels before a match occurs. <placeholder-1/> will process all files except the command line arguments."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:93(c)
+msgid "-exec foo '{}'"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:95(c)
+msgid "{}"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:94(ti)
+msgid "Execute a command. <placeholder-1/> is replaced by the name of the current matched file. See examples below."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:101(c)
+msgid "-execdir foo '{}'"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:103(c) devmanual/tools-reference/find/text.xml:158(c) devmanual/tools-reference/find/text.xml:168(c) devmanual/tools-reference/find/text.xml:199(c)
+msgid "-exec"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:102(ti)
+msgid "Same as <placeholder-1/> but runs the command from within the basedir of the match."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:109(c)
+msgid "-delete"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:110(ti)
+msgid "Delete the match."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:113(ti) devmanual/tools-reference/find/text.xml:122(ti)
+msgid "no, GNU and FBSD"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:116(c) devmanual/tools-reference/find/text.xml:147(c)
+msgid "-print0"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:117(ti)
+msgid "Separate file names by a NUL character instead of a newline in the output. This is useful for guarding against files which may include a newline in their names."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:126(note)
+msgid "EAPI&gt;=5 assumes GNU find, so it is safe to use GNU extensions in ebuild context for those EAPIs."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:134(c)
+msgid "for"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:131(p)
+msgid "By default, <placeholder-1/> will echo a list of matching files to the standard output separated by newlines. It can be combined with a <placeholder-2/> loop for a small number of files with no weird characters and spaces in their names:"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:138(codesample)
+msgid "for f in $(find \"${S}\" -type f) ; do einfo \"Doing unholy things to ${f}\" done"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:147(c) devmanual/tools-reference/find/text.xml:148(c)
+msgid "while"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:148(c)
+msgid "read"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:144(p)
+msgid "The above loop may cause issues with files containing special characters in their names. A better way is to run <placeholder-1/> with the <placeholder-2/> option in a <placeholder-3/> loop (note the options passed to <placeholder-4/> and <placeholder-5/> for changing the delimiter):"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:151(codesample)
+msgid "while IFS=\"\" read -d $'\\0' -r f ; do einfo \"Calling down holy vengance upon ${f}\" done &lt; &lt;(find \"${S}\" -type f -print0)"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:159(c)
+msgid "bash"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:157(p)
+msgid "As an alternative you can use the <placeholder-1/> argument. Be careful with escaping to ensure that <placeholder-2/> doesn't gobble up the special characters:"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:163(codesample)
+msgid "find \"${S}\" -name '*.data' -exec mv '{}' \"${S}/data/\" \\;"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:168(c)
+msgid ";"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:171(c)
+msgid "+"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:167(p)
+msgid "When <placeholder-1/> is terminated by a <placeholder-2/> character (needs escaping or quoting) then the command line is built separately for every match. If it is terminated by a <placeholder-3/> character then the command line is built by appending each selected file name at the end."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:177(c)
+msgid "doins"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:175(p)
+msgid "The syntax below is useful if the command you want to run accepts multiple arguments such as <placeholder-1/> and is more efficient in that case:"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:180(codesample)
+msgid "find \"${S}\" -name '*.so*' -exec doexe '{}' +"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:184(p)
+msgid "Find also supports negative matches:"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:188(codesample)
+msgid "find \"${S}/bundled-libs\" \\! -name 'libbass.so' -delete"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:194(c)
+msgid "!"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:192(p)
+msgid "This will delete all files in the \"bundled-libs\" folder except \"libbass.so\". Make sure you always escape the <placeholder-1/> character, so it's not interpreted by the shell."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:200(uri)
+msgid "race conditions"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:201(c)
+msgid "find . -print0 | xargs ..."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:204(c) devmanual/tools-reference/find/text.xml:205(c)
+msgid "-execdir"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:198(warning)
+msgid "The <placeholder-1/> argument has security issues, because of <placeholder-2/> (this is also true for <placeholder-3/> constructs). This should not be a problem in ebuild context, because directories typically aren't writeable by random users. However you should consider <placeholder-4/> as an alternative approach which runs the command from inside the basedir of the match (note that <placeholder-5/> is not POSIX, see the table)."
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:211(uri)
+msgid "IEEE1003.1-2004-find"
+msgstr ""
+
+#: devmanual/tools-reference/find/text.xml:209(p)
+msgid "See find-1 and <placeholder-1/> for further details and examples."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/tools-reference/find/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

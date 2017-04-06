@@ -1,0 +1,232 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:4(title)
+msgid "CVS Sources"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:7(p)
+msgid "Rather than working with a source tarball, it is possible to use upstream's CVS server directly. This can be useful when there is a need to test unreleased snapshots on a regular basis."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:15(title)
+msgid "Disadvantages of CVS Sources"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:19(b) devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:81(e)
+msgid "not"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:18(p)
+msgid "Note that CVS ebuilds should <placeholder-1/> generally be added to the tree for the following reasons:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:24(li)
+msgid "Upstream CVS servers tend to be far less reliable than our mirroring system."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:28(li)
+msgid "CVS ebuilds create a very heavy server load <d/> not only is CVS not mirrored, but allowing a CVS checkout is considerably more work for a server than simply serving up a file via HTTP or FTP."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:33(li)
+msgid "Many users who are behind strict firewalls cannot use CVS."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:38(p)
+msgid "It is safer to make a snapshot instead. For example, vim snapshots are made using:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:42(pre)
+msgid "$ cvs -z3 -d :pserver:anonymous@cvs.sourceforge.net:/cvsroot/vim export -r HEAD vim"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:49(title)
+msgid "Disadvantages of CVS Live Sources"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:53(c)
+msgid "HEAD"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:52(p)
+msgid "CVS ebuilds which work against CVS <placeholder-1/> rather than a specific date or revision are even worse candidates for tree inclusion:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:58(li)
+msgid "You can never be sure whether upstream's CVS will actually build at any given point; which will most likely cause QA issues."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:62(li)
+msgid "It is extremely difficult to track down bugs when you cannot install the same version of a package as the reporter."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:66(li)
+msgid "Many upstream package maintainers tend to get upset if people aren't using a specific released version."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:76(title)
+msgid "Using CVS Sources"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:80(c) devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:81(c)
+msgid "KEYWORDS"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:82(c)
+msgid "-9999"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:79(note)
+msgid "CVS ebuilds must be either with empty <placeholder-1/> or package.masked (but <placeholder-2/> both). Empty <placeholder-3/> are strongly preferred. This applies to \"live\" ebuilds (<placeholder-4/>) and to ebuilds that extract a static revision but still use CVS for fetching."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:88(c)
+msgid "cvs.eclass"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:87(p)
+msgid "To use a CVS source, <placeholder-1/> must be inherited, and then a number of variables must be set. The following variables are often useful:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:95(th)
+msgid "Variable"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:96(th)
+msgid "Purpose"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:97(th)
+msgid "Example"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:100(c)
+msgid "ECVS_SERVER"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:101(ti)
+msgid "Server and path"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:102(c)
+msgid "\"cvs.sourceforge.net:/cvsroot/vim\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:105(c)
+msgid "ECVS_MODULE"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:106(ti)
+msgid "Module"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:107(c)
+msgid "\"vim\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:110(c)
+msgid "ECVS_BRANCH"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:111(ti)
+msgid "Branch"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:112(c)
+msgid "\"HEAD\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:115(c)
+msgid "ECVS_AUTH"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:116(ti)
+msgid "Auth method"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:117(c)
+msgid "\"ext\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:120(c)
+msgid "ECVS_USER"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:121(ti)
+msgid "Username"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:122(c)
+msgid "\"anoncvs\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:125(c)
+msgid "ECVS_PASS"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:126(ti)
+msgid "Password"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:127(c)
+msgid "\"\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:130(c)
+msgid "ECVS_TOP_DIR"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:131(ti)
+msgid "Unpack location"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:132(c)
+msgid "\"${DISTDIR}/cvs-src/${ECVS_MODULE}\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:138(c)
+msgid "cvs_src_unpack"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:136(p)
+msgid "See the eclass itself for the full range of options. To perform the actual checkout, use the <placeholder-1/> function."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:141(p)
+msgid "Here's a simple example, based upon the CVS options in vim.eclass:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:145(codesample)
+msgid "inherit cvs SRC_URI=\"\" src_unpack() { ECVS_SERVER=\"cvs.sourceforge.net:/cvsroot/vim\" ECVS_USER=\"anonymous\" ECVS_PASS=\"\" ECVS_AUTH=\"pserver\" if [[ $(get_major_version ) -ge 7 ]] ; then ECVS_MODULE=\"vim7\" else ECVS_MODULE=\"vim\" fi ECVS_TOP_DIR=\"${DISTDIR}/cvs-src/${ECVS_MODULE}\" cvs_src_unpack }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:166(c)
+msgid "emacs-cvs"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:167(c)
+msgid "src_unpack"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:165(p)
+msgid "Here's another approach, based upon the <placeholder-1/> ebuild, which relies upon the default <placeholder-2/> provided in the eclass; this approach is simpler but less flexible:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:171(codesample)
+msgid "inherit cvs ECVS_AUTH=\"ext\" CVS_RSH=\"ssh\" ECVS_SERVER=\"savannah.gnu.org:/cvsroot/emacs\" ECVS_MODULE=\"emacs\" ECVS_BRANCH=\"emacs-unicode-2\" ECVS_USER=\"anoncvs\" ECVS_PASS=\"\" ECVS_CVS_OPTIONS=\"-dP\" # ...and so on. No src_unpack() is specified."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/src_unpack/cvs-sources/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

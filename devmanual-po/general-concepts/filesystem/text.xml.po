@@ -1,0 +1,200 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/filesystem/text.xml:4(title)
+msgid "Filesystem"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:7(p)
+msgid "The basic filesystem layout and purpose is as follows:"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:12(c)
+msgid "/bin"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:12(li)
+msgid "<placeholder-1/>: Boot-critical applications"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:13(c) devmanual/general-concepts/filesystem/text.xml:61(c)
+msgid "/etc"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:13(li)
+msgid "<placeholder-1/>: System administrator controlled configuration files"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:14(c)
+msgid "/lib"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:14(li)
+msgid "<placeholder-1/>: Boot-critical libraries"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:15(c) devmanual/general-concepts/filesystem/text.xml:42(c) devmanual/general-concepts/filesystem/text.xml:46(c) devmanual/general-concepts/filesystem/text.xml:47(c)
+msgid "/opt"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:15(li)
+msgid "<placeholder-1/>: Binary-only applications."
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:16(c)
+msgid "/sbin"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:16(li)
+msgid "<placeholder-1/>: System administrator boot-critical applications"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:17(c)
+msgid "/tmp"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:17(li)
+msgid "<placeholder-1/>: Temporary data"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:18(c) devmanual/general-concepts/filesystem/text.xml:35(c) devmanual/general-concepts/filesystem/text.xml:41(c) devmanual/general-concepts/filesystem/text.xml:42(c)
+msgid "/usr"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:18(li)
+msgid "<placeholder-1/>: General applications"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:20(c)
+msgid "/usr/bin"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:20(li)
+msgid "<placeholder-1/>: Applications"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:21(c)
+msgid "/usr/lib"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:21(li)
+msgid "<placeholder-1/>: Libraries"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:22(c) devmanual/general-concepts/filesystem/text.xml:51(c)
+msgid "/usr/local"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:22(b)
+msgid "Ebuilds must not install here"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:22(li)
+msgid "<placeholder-1/>: Non-portage applications. <placeholder-2/>."
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:23(c)
+msgid "/usr/sbin"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:23(li)
+msgid "<placeholder-1/>: Non-system-critical system administrator applications"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:24(c) devmanual/general-concepts/filesystem/text.xml:56(c) devmanual/general-concepts/filesystem/text.xml:64(c)
+msgid "/usr/share"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:24(li)
+msgid "<placeholder-1/>: Architecture independent application data and documentation"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:26(c)
+msgid "/var"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:26(li)
+msgid "<placeholder-1/>: Program generated data"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:28(c)
+msgid "/var/cache"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:28(li)
+msgid "<placeholder-1/>: Long term data which can be regenerated"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:29(c)
+msgid "/var/lib"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:29(li)
+msgid "<placeholder-1/>: General application generated data"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:30(c)
+msgid "/var/log"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:30(li)
+msgid "<placeholder-1/>: Log files"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:36(c) devmanual/general-concepts/filesystem/text.xml:37(c)
+msgid "/"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:34(p)
+msgid "Where possible, we prefer to put non-boot-critical applications in <placeholder-1/> rather than <placeholder-2/>. If a program is not needed in the boot process until after filesystems are mounted then it generally does not belong on <placeholder-3/>."
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:40(p)
+msgid "Any binary which links against a library under <placeholder-1/> must itself go into <placeholder-2/> (or possibly <placeholder-3/>)."
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:45(p)
+msgid "The <placeholder-1/> top-level should only be used for binary-only applications. Binary-only applications must not be installed outside of <placeholder-2/>."
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:50(p)
+msgid "The <placeholder-1/> hierarchy is for non-portage software. Ebuilds must not attempt to put anything in here."
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:56(e)
+msgid "architecture independent"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:55(p)
+msgid "The <placeholder-1/> directory is for <placeholder-2/> application data which is not modified at runtime."
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:60(p)
+msgid "Try to avoid installing unnecessary things into <placeholder-1/><d/> every file in there is additional work for the system administrator. In particular, non-text files and files that are not intended for system administrator usage should be moved to <placeholder-2/>."
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:68(title)
+msgid "FHS"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:72(uri)
+msgid "Filesystem Hierarchy Standard"
+msgstr ""
+
+#: devmanual/general-concepts/filesystem/text.xml:71(p)
+msgid "Gentoo does not consider the <placeholder-1/> to be an authoritative standard, although much of our policy coincides with it."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/filesystem/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

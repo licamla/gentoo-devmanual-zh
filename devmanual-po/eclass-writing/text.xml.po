@@ -1,0 +1,596 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/eclass-writing/text.xml:4(title)
+msgid "Eclass Writing Guide"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:7(p)
+msgid "This section provides a brief introduction to eclass authoring."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:11(important)
+msgid "You should reread the <uri link=\"::general-concepts/overlay#Overlay and Eclasses\"/> and <uri link=\"::general-concepts/portage-cache\"/> sections before continuing."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:17(title)
+msgid "Purpose of Eclasses"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:22(c)
+msgid "eclass/"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:20(p)
+msgid "An eclass is a collection of code which can be used by more than one ebuild. At the time of writing, all eclasses live in the <placeholder-1/> directory in the tree. Roughly speaking, there are three kinds of eclass:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:29(c) devmanual/eclass-writing/text.xml:56(c)
+msgid "eutils"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:29(c)
+msgid "versionator"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:29(c)
+msgid "cvs"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:29(c)
+msgid "bash-completion"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:27(li)
+msgid "Those which provide common functions which are used by many ebuilds (for example, <placeholder-1/>, <placeholder-2/>, <placeholder-3/>, <placeholder-4/>)"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:33(c)
+msgid "vim-plugin"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:33(c)
+msgid "kde"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:31(li)
+msgid "Those which provide a basic build system for many similar packages (for example, <placeholder-1/>, <placeholder-2/>)"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:37(c)
+msgid "vim"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:37(c)
+msgid "toolchain"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:37(c)
+msgid "kernel-2"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:35(li)
+msgid "Those which handle one or a small number of packages with complex build systems (for example, <placeholder-1/>, <placeholder-2/>, <placeholder-3/>)"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:45(title)
+msgid "Adding and Updating Eclasses"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:48(p)
+msgid "Before committing a new eclass to the tree, it should be emailed to the gentoo-dev mailing list with a justification and a proposed implementation. Do not skip this step <d/> sometimes a better implementation or an alternative which does not require a new eclass will be suggested."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:55(p)
+msgid "Before updating <placeholder-1/> or a similar widely used eclass, it is best to email the gentoo-dev list. It may be that your proposed change is broken in a way you had not anticipated, or that there is an existing function which performs the same purpose, or that your function may be better off in its own eclass. If you don't email gentoo-dev first, and end up breaking something, expect to be in a lot of trouble."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:64(p)
+msgid "When removing a function or changing the API of an eclass, make sure that it doesn't break any ebuilds in the tree, and post a notice to gentoo-dev at least 30 days in advance, preferably with a patch included."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:73(b)
+msgid "must"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:71(p)
+msgid "If there is an existing maintainer for an eclass (this is usually the case), you <placeholder-1/> talk to the maintainer before committing any changes."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:76(p)
+msgid "It is not usually necessary to email the gentoo-dev list before making changes to a non-general eclass which you maintain. Use common sense here."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:83(c)
+msgid "repoman"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:81(warning)
+msgid "Committing a broken eclass can kill huge numbers of packages. Since <placeholder-1/> is not eclass-aware, be very sure you do proper testing."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:87(c)
+msgid "bash -n foo.eclass"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:86(p)
+msgid "A simple way to verify syntax is <placeholder-1/>."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:94(title)
+msgid "Removing Eclasses"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:97(p)
+msgid "No longer used eclasses may be removed from the tree, but developers must adhere to the following process:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:102(c)
+msgid "inherit"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:101(li)
+msgid "Make sure that no packages or other eclasses in the tree <placeholder-1/> the eclass."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:105(li)
+msgid "Send a lastrite message to the gentoo-dev and gentoo-dev-announce mailing-lists, announcing that the not-used eclass will be removed in 30 days."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:111(c)
+msgid "# @DEAD"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:110(li)
+msgid "Add a one line comment to the eclass, saying exactly <placeholder-1/> so that the eclass-manpages package will not attempt to document it."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:114(li)
+msgid "Wait for the 30-day period to pass, then remove the eclass from the tree."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:124(title)
+msgid "Documenting Eclasses"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:127(p)
+msgid "Eclasses are documented with comment blocks that follow a special markup syntax. The comment blocks are separated by blank lines and each block documents an individual element of an eclass."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:136(c)
+msgid "@CODE"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:133(p)
+msgid "Documentation tags for various eclass elements are explained in their respective sections below. Common to all the tags that accept multiline freetext, the <placeholder-1/> tag should be used when necessary to create unformatted code chunks (such as example code) by placing the tag at the beginning and the end."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:144(title)
+msgid "Basic Eclass Format"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:148(c)
+msgid "bash"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:149(c)
+msgid ".eclass"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:147(p)
+msgid "An eclass is a <placeholder-1/> script which is sourced within the ebuild environment. Files should be a simple text file with a <placeholder-2/> extension. Allowed characters in the filename are lowercase letters, the digits 0-9, hyphens, underscores and dots. Eclasses are not intrinsically versioned."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:154(p)
+msgid "Eclasses should start with the standard ebuild header, along with comments explaining the maintainer and purpose of the eclass, and any other relevant documentation. Eclass documentation block should be the first documentation block to appear in the eclass. The following table summarizes the available documentation tags:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:164(th) devmanual/eclass-writing/text.xml:308(th) devmanual/eclass-writing/text.xml:409(th) devmanual/eclass-writing/text.xml:521(th)
+msgid "tag"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:165(th) devmanual/eclass-writing/text.xml:309(th) devmanual/eclass-writing/text.xml:410(th) devmanual/eclass-writing/text.xml:522(th)
+msgid "optional?"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:166(th) devmanual/eclass-writing/text.xml:310(th) devmanual/eclass-writing/text.xml:411(th) devmanual/eclass-writing/text.xml:523(th)
+msgid "arguments"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:167(th) devmanual/eclass-writing/text.xml:311(th) devmanual/eclass-writing/text.xml:412(th) devmanual/eclass-writing/text.xml:524(th)
+msgid "description"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:171(c)
+msgid "@ECLASS:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:173(ti) devmanual/eclass-writing/text.xml:188(ti) devmanual/eclass-writing/text.xml:246(ti) devmanual/eclass-writing/text.xml:317(ti) devmanual/eclass-writing/text.xml:377(ti) devmanual/eclass-writing/text.xml:418(ti) devmanual/eclass-writing/text.xml:433(ti) devmanual/eclass-writing/text.xml:530(ti) devmanual/eclass-writing/text.xml:589(ti)
+msgid "NO"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:176(ti)
+msgid "Name of the eclass being documented."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:179(ti)
+msgid "Documents various information about the eclass. Must appear as the first tag in the comment block."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:186(c) devmanual/eclass-writing/text.xml:462(c)
+msgid "@MAINTAINER:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:191(ti) devmanual/eclass-writing/text.xml:206(ti)
+msgid "One or more name and email pairs."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:194(ti)
+msgid "List of maintainers for the eclass to be contacted. One line per maintainer. Must start on a newline after the tag."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:201(c)
+msgid "@AUTHOR:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:203(ti) devmanual/eclass-writing/text.xml:218(ti) devmanual/eclass-writing/text.xml:232(ti) devmanual/eclass-writing/text.xml:261(ti) devmanual/eclass-writing/text.xml:275(ti) devmanual/eclass-writing/text.xml:334(ti) devmanual/eclass-writing/text.xml:349(ti) devmanual/eclass-writing/text.xml:363(ti) devmanual/eclass-writing/text.xml:464(ti) devmanual/eclass-writing/text.xml:479(ti) devmanual/eclass-writing/text.xml:546(ti) devmanual/eclass-writing/text.xml:561(ti) devmanual/eclass-writing/text.xml:575(ti)
+msgid "YES"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:209(ti)
+msgid "List of authors for the eclass. One line per author. Must start on a newline after the tag."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:216(c)
+msgid "@BUGREPORTS:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:221(ti) devmanual/eclass-writing/text.xml:264(ti) devmanual/eclass-writing/text.xml:278(ti) devmanual/eclass-writing/text.xml:380(ti) devmanual/eclass-writing/text.xml:467(ti) devmanual/eclass-writing/text.xml:497(ti) devmanual/eclass-writing/text.xml:592(ti)
+msgid "Multiline freetext."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:224(ti)
+msgid "Describes how bugs related to this eclass should be reported."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:230(c)
+msgid "@VCSURL:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:235(ti)
+msgid "A URI string."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:238(ti)
+msgid "Points to the URL of the VCS that contains the eclass source."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:244(c)
+msgid "@BLURB:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:249(ti)
+msgid "Single line freetext."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:252(ti)
+msgid "Contains a short description for the eclass. Must be on the same line with the tag."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:259(c) devmanual/eclass-writing/text.xml:375(c) devmanual/eclass-writing/text.xml:492(c) devmanual/eclass-writing/text.xml:587(c)
+msgid "@DESCRIPTION:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:267(ti)
+msgid "Long description for the eclass."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:273(c)
+msgid "@EXAMPLE:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:281(ti)
+msgid "Examples that illustrate various uses of this eclass."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:291(title)
+msgid "Eclass Variables"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:296(c)
+msgid "IUSE"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:296(c)
+msgid "KEYWORDS"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:296(b) devmanual/eclass-writing/text.xml:657(e)
+msgid "not"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:294(p)
+msgid "Top level variables may be defined as for ebuilds. If any USE flags are used, <placeholder-1/> must be set. The <placeholder-2/> variable must <placeholder-3/> be set in an eclass."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:300(p)
+msgid "You should document the meaning, usage, and default value of every variable in your eclass. The tags available for documenting eclass variables are as follows:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:315(c)
+msgid "@ECLASS-VARIABLE:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:320(ti)
+msgid "Name of the eclass variable to which the documentation applies."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:323(ti)
+msgid "This tag applies to eclass specific variables that affect the default behavior of the eclass. Read-only variables, which are exported by the eclass for developer use, are also documented with this tag. Must appear as the first tag in the comment block."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:332(c) devmanual/eclass-writing/text.xml:544(c)
+msgid "@DEFAULT_UNSET"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:340(ti) devmanual/eclass-writing/text.xml:552(ti)
+msgid "Indicates that this variable is unset by default if not set by the developer."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:347(c) devmanual/eclass-writing/text.xml:477(c) devmanual/eclass-writing/text.xml:559(c)
+msgid "@INTERNAL"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:355(ti)
+msgid "Indicates that the variable is internal to the eclass."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:361(c) devmanual/eclass-writing/text.xml:573(c)
+msgid "@REQUIRED"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:369(ti) devmanual/eclass-writing/text.xml:581(ti)
+msgid "Indicates that this variable must be set by the developer."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:383(ti)
+msgid "Long description for the eclass variable."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:393(title)
+msgid "Eclass Functions"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:396(p)
+msgid "Eclasses may define functions. These functions will be visible to anything which inherits the eclass."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:401(p)
+msgid "You should document the purpose, arguments, usage, and return value of every function in your eclass. The standard tags available for documentation are:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:416(c)
+msgid "@FUNCTION:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:421(ti)
+msgid "Name of the function to which the documentation block applies."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:424(ti)
+msgid "Documents information about an eclass function such as its calling convention etc. Must appear as the first tag in the comment block."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:431(c)
+msgid "@USAGE:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:436(ti)
+msgid "List of required and optional arguments to the function."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:441(c)
+msgid "&lt;"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:441(c)
+msgid "&gt;"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:442(c)
+msgid "["
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:442(c)
+msgid "]"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:439(ti)
+msgid "List of arguments that the eclass function accepts, specified in the following syntax: <placeholder-1/>Required arguments<placeholder-2/><placeholder-3/>Optional arguments<placeholder-4/>"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:447(c)
+msgid "@RETURN:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:450(b) devmanual/eclass-writing/text.xml:457(b) devmanual/eclass-writing/text.xml:495(b)
+msgid "*"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:452(ti)
+msgid "Return value of the function."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:456(p)
+msgid "Description for the value returned by the function."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:457(p)
+msgid "<placeholder-1/>: Not optional for functions that return a value."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:470(ti)
+msgid "List of contacts for the eclass function. One line per maintainer. Must start on a newline after the tag."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:485(ti)
+msgid "Indicates that the function is internal to the eclass and should not be called from outside."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:501(p)
+msgid "Long description for the eclass function."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:502(b)
+msgid "*:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:502(c)
+msgid "RETURN:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:502(p)
+msgid "<placeholder-1/> Not optional if <placeholder-2/> is absent."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:510(title)
+msgid "Eclass Function Variables"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:513(p)
+msgid "Eclass functions may make use of variables just like any other bash function. Special function-specific variables should be documented using the following tags:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:528(c)
+msgid "@VARIABLE:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:533(ti)
+msgid "Name of the function-specific variable to which the documentation applies."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:536(ti)
+msgid "This tag applies to variables consumed by specific functions of the eclass. They are in effect only when the specific function is called."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:567(ti)
+msgid "Indicates that the variable is internal to the eclass function."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:595(ti)
+msgid "Long description for the function variable."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:605(title)
+msgid "Simple Common Functions Eclass Example"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:611(c)
+msgid "domacosapp"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:608(p)
+msgid "As an example, the following eclass was written to illustrate a better way of installing OSX application files during a discussion on this subject. It defines a single function, <placeholder-1/>."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:614(codesample)
+msgid "# Copyright 1999-2017 Gentoo Foundation # Distributed under the terms of the GNU General Public License v2 # @ECLASS: macosapp.eclass # @MAINTAINER: # Ciaran McCreesh &lt;ciaranm@gentoo.org&gt; # @BLURB: install macos .app files to the relevant location. # @FUNCTION: domacosapp # @USAGE: &lt;app-file&gt; [new-file] # @DESCRIPTION: # Install the given .app file into the appropriate location. If # [new-file] is given, it will be used as the new (installed) name of # the file. Otherwise &lt;app-file&gt; is installed as-is. domacosapp() { [[ -z \"${1}\" ]] &amp;&amp; die \"usage: domacosapp &lt;file&gt; [new file]\" if use ppc-macos ; then insinto /Applications newins \"$1\" \"${2:-${1}}\" || die \"Failed to install ${1}\" fi }"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:642(title)
+msgid "Export Functions"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:647(c)
+msgid "src_unpack"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:647(c)
+msgid "pkg_postinst"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:649(c) devmanual/eclass-writing/text.xml:649(c) devmanual/eclass-writing/text.xml:654(c) devmanual/eclass-writing/text.xml:657(c)
+msgid "EXPORT_FUNCTIONS"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:650(c)
+msgid "${ECLASS}_"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:645(p)
+msgid "An eclass may provide default implementations for any of the standard ebuild functions (<placeholder-1/>, <placeholder-2/> etc). This can be done either as a simple function definition (which is not multiple eclass friendly) or using <placeholder-3/>. Functions given to <placeholder-4/> are implemented as normal, but have their name prefixed with <placeholder-5/>."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:653(important)
+msgid "Only 'standard' functions should be specified in <placeholder-1/>."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:657(note)
+msgid "<placeholder-1/> is a function, <placeholder-2/> a variable."
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:663(c)
+msgid "fnord.eclass"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:659(p)
+msgid "If multiple eclasses export the same function, the latest (inherited last) defined version wins. If an ebuild defines a function that is exported, this gets priority over any eclass version. This can be used to override eclass-defined defaults <d/> for example, say we had <placeholder-1/>:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:666(codesample)
+msgid "EXPORT_FUNCTIONS src_compile fnord_src_compile() { do_stuff || die }"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:674(p)
+msgid "Then an ebuild could do this:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:678(codesample)
+msgid "inherit fnord.eclass src_compile() { do_pre_stuff || die fnord_src_compile do_post_stuff || die }"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:692(title)
+msgid "Simple Build System Eclass Example"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:697(c)
+msgid "src_compile"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:697(c)
+msgid "jmake"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:695(p)
+msgid "A simple eclass which defines a number of functions and a default <placeholder-1/> for the (hypothetical) <placeholder-2/> build system might look something like the following:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:701(codesample)
+msgid "# Copyright 1999-2017 Gentoo Foundation # Distributed under the terms of the GNU General Public License v2 # @ECLASS: jmake.eclass # @MAINTAINER: # Gentoo Devmanual Project &lt;devmanual@gentoo.org&gt; # @AUTHOR: # Ciaran McCreesh &lt;ciaranm@gentoo.org&gt; # @BLURB: Demonstrate a simple build system eclass. # @DESCRIPTION: # Demonstrates EXPORT_FUNCTIONS and defines simple wrappers for the # (hypothetical) jmake build system and a default src_compile. EXPORT_FUNCTIONS src_compile DEPEND=\"&gt;=sys-devel/jmake-2\" # @FUNCTION: jmake-configure # @USAGE: [additional-args] # @DESCRIPTION: # Passes all arguments through to the appropriate \"jmake configure\" # command. jmake-configure() { jmake configure --prefix=/usr \"$@\" } # @FUNCTION: jmake-build # @USAGE: [additional-args] # @DESCRIPTION: # First builds all dependencies, and then passes through its arguments # to the appropriate \"jmake build\" command. jmake-build() { jmake dep &amp;&amp; jmake build \"$@\" } # @FUNCTION: jmake-src_compile # @DESCRIPTION: # Calls jmake-configure() and jmake-build() to compile a jmake project. jmake_src_compile() { jmake-configure || die \"configure failed\" jmake-build || die \"build failed\" }"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:750(title)
+msgid "Handling incorrect usage of an eclass"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:753(p)
+msgid "Sometimes an eclass is used incorrectly by an ebuild and the eclass knows it is being used incorrectly- the common example is an eclass that only works with a specific set of EAPIs, but is being accessed inherited by an ebuild with a different EAPI. In those cases, used sparingly as a last resort, it is allowed for an eclass to invoke die from the global scope. For example:"
+msgstr ""
+
+#: devmanual/eclass-writing/text.xml:762(codesample)
+msgid "# Copyright 1999-2017 Gentoo Foundation # Distributed under the terms of the GNU General Public License v2 # @ECLASS: eapi-die.eclass # @MAINTAINER: # Gentoo Devmanual Project &lt;devmanual@gentoo.org&gt; # @BLURB: Calls die when used with an invalid EAPI. case ${EAPI:-0} in 0) die \"this eclass doesn't support EAPI 0\" ;; *) ;; esac"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/eclass-writing/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

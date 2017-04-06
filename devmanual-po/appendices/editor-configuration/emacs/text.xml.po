@@ -1,0 +1,116 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:4(title)
+msgid "Configuring GNU Emacs"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:7(title)
+msgid "UTF-8 support"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:10(p)
+msgid "GNU Emacs has built-in Unicode support, and since version 23 it uses UTF-8 as its internal encoding. It is recommended to start Emacs from within a UTF-8 locale which will control the default coding system."
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:19(c)
+msgid "C-x C-f"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:19(c)
+msgid "C-x C-v"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:20(c)
+msgid "C-x C-m c utf-8 RET"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:21(c)
+msgid "C-h C RET"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:16(p)
+msgid "Emacs will normally autodetect the coding system for given text. In rare cases it may be necessary to tell Emacs that a UTF-8 file is being opened by prefixing the <placeholder-1/> or <placeholder-2/> command with <placeholder-3/>. As a diagnostic measure, the coding system currently in use can be determined with <placeholder-4/>."
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:24(p)
+msgid "If it is desired to prefer UTF-8 to the regular character set in a non-UTF-8 locale, the following can be used inside of the Emacs startup file:"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:30(pre)
+msgid "(prefer-coding-system 'utf-8)"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:38(title)
+msgid "Configuration tips and tricks"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:42(c)
+msgid "diff"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:44(c)
+msgid "(setq require-final-newline 'ask)"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:41(p)
+msgid "Files must end with a newline, in order to let tools like <placeholder-1/> operate properly. To avoid accidental deletions, setting <placeholder-2/> in your startup file will automatically check for the existence of it and ask you to add one."
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:50(c)
+msgid "(setq make-backup-files nil)"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:55(c)
+msgid "(setq x-select-enable-clipboard t)"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:48(p)
+msgid "Other useful settings can be disabled backup files (by <placeholder-1/>, so you don't clutter the git repository directories and confuse repoman with it (by adding unnecessary entries into a Manifest file e.g.). Emacs can even contact the outside world by using the X servers clipboard abilities when yanking, which is activated by <placeholder-2/>."
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:62(title)
+msgid "Gentoo specific additions"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:67(c)
+msgid "app-emacs/ebuild-mode"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:65(p)
+msgid "For easy editing of ebuilds an Emacs mode has been created, which is found in the package <placeholder-1/>. It supports ebuilds and eclasses, highlights keywords and also provides a hook for your own customisation."
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:76(title)
+msgid "Further Reading"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:81(uri)
+msgid "http://www.gnu.org/software/emacs/manual/html_node/emacs/Recognize-Coding.html"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:85(uri)
+msgid "http://www.gnu.org/software/emacs/manual/html_node/emacs/Specify-Coding.html"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:89(uri)
+msgid "http://www.emacswiki.org/emacs/UnicodeEncoding"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/emacs/text.xml:93(uri)
+msgid "http://www.emacswiki.org/emacs/ChangingEncodings"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/appendices/editor-configuration/emacs/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

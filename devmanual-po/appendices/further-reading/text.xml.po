@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/appendices/further-reading/text.xml:4(title)
+msgid "Further Reading"
+msgstr ""
+
+#: devmanual/appendices/further-reading/text.xml:7(p)
+msgid "This section lists some recommended further reading. These are real recommendations, not padding designed to make this document look important."
+msgstr ""
+
+#: devmanual/appendices/further-reading/text.xml:13(title)
+msgid "Books"
+msgstr ""
+
+#: devmanual/appendices/further-reading/text.xml:17(dt)
+msgid "Mastering Regular Expressions"
+msgstr ""
+
+#: devmanual/appendices/further-reading/text.xml:23(b)
+msgid "the"
+msgstr ""
+
+#: devmanual/appendices/further-reading/text.xml:25(uri)
+msgid "Publisher's page"
+msgstr ""
+
+#: devmanual/appendices/further-reading/text.xml:21(p)
+msgid "\"Mastering Regular Expressions\" by Jeffrey E. F. Friedl (O'Reilly, ISBN 0-596-00289-0) is <placeholder-1/> book on regular expressions. Very readable and devoid of the usual mathematical jargon that tends to fill up these kinds of books. <placeholder-2/>"
+msgstr ""
+
+#: devmanual/appendices/further-reading/text.xml:34(title)
+msgid "Articles"
+msgstr ""
+
+#: devmanual/appendices/further-reading/text.xml:38(dt) devmanual/appendices/further-reading/text.xml:43(uri)
+msgid "Making Packager-Friendly Software"
+msgstr ""
+
+#: devmanual/appendices/further-reading/text.xml:42(p)
+msgid "<placeholder-1/> by Julio M. Merino Vidal describes various things that can be done by upstream software providers to make life easy for the distribution people (that means you)."
+msgstr ""
+
+#: devmanual/appendices/further-reading/text.xml:49(dt) devmanual/appendices/further-reading/text.xml:54(uri)
+msgid "How to Report Bugs Effectively"
+msgstr ""
+
+#: devmanual/appendices/further-reading/text.xml:53(p)
+msgid "<placeholder-1/> by Simon Tatham is a good overview of effective bug reporting."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/appendices/further-reading/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

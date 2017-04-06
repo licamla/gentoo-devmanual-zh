@@ -1,0 +1,788 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-maintenance/text.xml:4(title)
+msgid "Ebuild Maintenance"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:7(p)
+msgid "This guide aims to explain common everyday ebuild maintenance routines, as well as other rarer maintenance routines which developers may not be familiar with."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:14(title)
+msgid "Adding a new ebuild"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:18(title)
+msgid "What (not) to put in the Gentoo repository"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:23(uri) devmanual/ebuild-maintenance/text.xml:26(uri)
+msgid "bugs.gentoo.org"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:27(e)
+msgid "Gentoo Linux"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:28(e)
+msgid "ebuilds"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:30(uri)
+msgid "here"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:21(p)
+msgid "Before writing a new ebuild, check <placeholder-1/> to see if an ebuild has already been written for the package, but has not yet been added to the Gentoo repository. Go to <placeholder-2/>, choose query and select Advanced Search; as product select <placeholder-3/>, as component select <placeholder-4/>. In the search field put the name of the ebuild and as status select all possible fields, then submit the query. For you lazy people, click <placeholder-5/>."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:35(path)
+msgid ".ebuild"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:37(path)
+msgid "/usr/portage/mycat/mypkg/files"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:38(path)
+msgid "mycat/mypkg"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:41(uri)
+msgid "Gentoo mirror system"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:45(e)
+msgid "not"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:33(p)
+msgid "In general, the Gentoo repository should only be used for storing <placeholder-1/> files, as well as any relatively small companion files, such as patches or sample configuration files. These types of files should be placed in the <placeholder-2/> directory to keep the main <placeholder-3/> directory uncluttered. Exceptions to this rule are for larger patch files (we recommend this for patches above 20KB) which should be distributed as tarballs via the <placeholder-4/> so that people do not waste excessive amounts of bandwidth and hard drive space. Also, you should not add binary (non-ASCII) files to the git tree. Also, speaking of merging changes, any patches you add to Portage should generally <placeholder-5/> be compressed. This will allow git to merge changes and correctly inform developers of conflicts."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:51(e)
+msgid "ready"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:51(e)
+msgid "out of the box"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:57(uri)
+msgid "Mandriva"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:58(uri)
+msgid "Debian"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:59(uri)
+msgid "Fedora"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:50(p)
+msgid "Remember, the packages that you commit must be <placeholder-1/><placeholder-2/> for end users when committed as stable. Make sure that you have a good set of default settings that will satisfy the majority of systems and users that will use your package. If your package is broken, and you are not sure how to get it to work, check some other distributions that have done their own versions of the package. You can check <placeholder-3/> or <placeholder-4/> or <placeholder-5/> for some examples."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:64(c) devmanual/ebuild-maintenance/text.xml:123(c) devmanual/ebuild-maintenance/text.xml:176(c) devmanual/ebuild-maintenance/text.xml:179(c) devmanual/ebuild-maintenance/text.xml:230(c)
+msgid "repoman commit"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:65(c)
+msgid "git commit"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:66(c) devmanual/ebuild-maintenance/text.xml:216(c)
+msgid "repoman full"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:63(p)
+msgid "When committing to git, all developers should use <placeholder-1/> instead of <placeholder-2/> to submit their ebuilds. Before committing, please run <placeholder-3/> to make sure you didn't forget something."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:73(title)
+msgid "Initial Architecture Keywords"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:76(c) devmanual/ebuild-maintenance/text.xml:88(c) devmanual/ebuild-maintenance/text.xml:374(c) devmanual/ebuild-maintenance/text.xml:380(c) devmanual/ebuild-maintenance/text.xml:393(c)
+msgid "KEYWORDS"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:78(c)
+msgid "USE"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:75(p)
+msgid "When adding a new ebuild, you should only include <placeholder-1/> for architectures on which you have actually tested the ebuild, confirming that it works as it should and that <placeholder-2/> flags are properly honoured in the resulting package which would be installed. If possible, you should give the actual library or application thorough testing as well, since you would be responsible for any breakages for your architecture(s). Minimal testing such as checking that the application starts up without any errors should always be performed."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:86(p)
+msgid "If you are adding a user-submitted ebuild, do not assume that the submitter has done testing on various architectures: often, <placeholder-1/> are cloned across packages or generated from documentation in the source packages, which does not signify that the package does indeed work on those architectures."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:98(title)
+msgid "Git Commit Message Format"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:101(p)
+msgid "It is important to format the commit messages properly so that they communicate the changes to the reader in a clear and concise way. Additionally, consistency in message format allows for easier parsing by external tools. The first line of the commit message should contain a brief summary of the changes, followed by an empty new line. From the third line onward should be a detailed, multiline explanation of the changes introduced by the commit. At the very end, auxiliary information such as the bugs related to the commit, contributors, and reviewers should be listed using RFC822/git style tags. The length of the lines in the message should be 70-75 characters at maximum."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:123(c) devmanual/ebuild-maintenance/text.xml:132(c)
+msgid "${CATEGORY}/${PN}:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:123(li)
+msgid "<placeholder-1/>Single Package (Note that <placeholder-2/> automatically inserts this for you)"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:125(c)
+msgid "${CATEGORY}:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:125(li)
+msgid "<placeholder-1/> Package Category"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:126(c)
+msgid "profiles:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:126(li)
+msgid "<placeholder-1/> Profile Directory"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:127(c)
+msgid "${ECLASS}.eclass:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:127(li)
+msgid "<placeholder-1/> Eclass Directotry"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:128(c)
+msgid "licenses:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:128(li)
+msgid "<placeholder-1/> Licenses Directory"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:129(c)
+msgid "metadata:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:129(li)
+msgid "<placeholder-1/> Metadata Directory"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:138(c) devmanual/ebuild-maintenance/text.xml:144(c)
+msgid "#BUG-ID"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:142(c) devmanual/ebuild-maintenance/text.xml:585(comment) devmanual/ebuild-maintenance/text.xml:586(comment) devmanual/ebuild-maintenance/text.xml:587(comment)
+msgid "#"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:146(c)
+msgid "commentchar"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:141(warning)
+msgid "By default, lines starting with <placeholder-1/> are considered to be comments by git and not included in the commit message. Make sure that a new line does not start with <placeholder-2/>. Optionally, git can be configured to use a different character for comments by changing the <placeholder-3/> option."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:115(p)
+msgid "The summary line should start with referencing what is affected by the change followed by a colon ':' character. Use the rules in the following list to determine the proper format based on what has changed, substituting the package, category and eclass names appropriately: <ul><placeholder-1/><placeholder-2/><placeholder-3/><placeholder-4/><placeholder-5/><placeholder-6/></ul> For packages where <placeholder-7/> is long, the line length limit can be exceeded, if absolutely necessary, to ensure a more useful summary line. If a commit affects multiple directories, prepend the message with which reflects the intention of the change best. If there are any bugs on Gentoo Bugzilla associated with the commit, id of the bug can be appended to the summary line using the format <placeholder-8/>. If you are modifying keywords, clearly state what keywords are added/removed. <placeholder-9/>"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:150(p)
+msgid "For non-trivial commits, the message should contain a detailed explanation of what the commit intends to change, why it is required, and how it is accomplished, along with any other supplementary information."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:162(uri)
+msgid "Linux Kernel patch guideline"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:167(c)
+msgid "Gentoo-Bug:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:167(li)
+msgid "<placeholder-1/> Use this to reference bugs in Gentoo Bugzilla by either the bug ID or the bugzilla URI. Multiple bugs can be referenced by inserting more tags of this type or separating bug IDs with a comma in the same tag. The bug IDs may include an optional '#' prefix. There is no consensus on referencing bugs in the summary line versus referencing with a tag in the message body. The developer has the option to choose either."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:175(c)
+msgid "Package-Manager:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:177(pkg)
+msgid "sys-apps/portage"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:175(li)
+msgid "<placeholder-1/> This is automatically inserted by <placeholder-2/> and it specifies the version of <placeholder-3/> on the system."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:178(c)
+msgid "RepoMan-Options:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:178(li)
+msgid "<placeholder-1/> This is automatically inserted by <placeholder-2/> and records the options passed to repoman (such as --force) for the commit."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:157(p)
+msgid "Finally the commit message should list auxiliary information such as people who are involved in authoring, suggesting, reviewing and testing the changes, and revelant bugs. Use RFC822/git style tags as explained in the <placeholder-1/>. Additionally, the following tags are used in Gentoo: <ul><placeholder-2/><placeholder-3/><placeholder-4/></ul>"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:185(uri)
+msgid "user contributions"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:189(c)
+msgid "Suggested-By"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:190(c)
+msgid "Reported-By:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:184(p)
+msgid "When committing <placeholder-1/>, make sure to credit them in your commit message with the user's full name and email address. Be aware and respectful of their privacy: some users prefer to be only known by a nickname. Take advantage of the tags such as <placeholder-2/> or <placeholder-3/>when entering such information to the commit message."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:194(p) devmanual/ebuild-maintenance/text.xml:589(p)
+msgid "An example commit message is shown below:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:198(pre)
+msgid "app-misc/foo: version bump to 0.5 This also adds a new USE flag 'bar' which controls the new bar functionality introduced with this version. Gentoo-Bug: 01234"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:211(title)
+msgid "Git Commit Policy"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:215(c)
+msgid "repoman scan"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:215(li)
+msgid "Always run <placeholder-1/> before you commit."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:216(li)
+msgid "Please run <placeholder-1/> before you commit."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:217(path) devmanual/ebuild-maintenance/text.xml:220(path) devmanual/ebuild-maintenance/text.xml:223(path) devmanual/ebuild-maintenance/text.xml:228(path)
+msgid "package.mask"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:218(c)
+msgid "emerge --pretend mypkg"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:217(li)
+msgid "Always test that <placeholder-1/> is okay by doing <placeholder-2/> before you commit and check that it doesn't contain any conflicts."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:220(li)
+msgid "Always commit the updated <placeholder-1/> before the updated package."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:225(uri) devmanual/ebuild-maintenance/text.xml:474(uri) devmanual/ebuild-maintenance/text.xml:573(uri)
+msgid "metadata.xml"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:225(b)
+msgid "one"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:222(li)
+msgid "Always do atomic commits; if you commit a package with a new license, or that is masked, then first commit the revised <placeholder-1/> and/or license, then commit the ebuild, patches and <placeholder-2/> all in <placeholder-3/> go ."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:227(note)
+msgid "Although the set of changes in a single git commit is atomic, and combining <placeholder-1/>/license changes with ebuild changes in a single commit wouldn't break atomicity, it is not currently possible to do so using <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:238(title)
+msgid "The files Directory"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:243(path) devmanual/ebuild-maintenance/text.xml:259(path) devmanual/ebuild-maintenance/text.xml:267(path)
+msgid "files/"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:249(path)
+msgid "mypkg-1.0-gentoo.diff"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:250(path)
+msgid "1.0-gentoo.diff"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:251(path)
+msgid "gentoo"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:241(p)
+msgid "As noted earlier, under each package subdirectory is a <placeholder-1/> directory. Any patches, configuration files, or other ancillary files your package might require should be added to this directory; any files bigger than 20KB-or-so should go to the mirrors to lower the amount of (unneeded) files our users have to download. You may want to consider naming patches you create yourself just to get your package to build with a version-specific name, such as <placeholder-2/>, or more simply, <placeholder-3/>. Also note that the <placeholder-4/> extension informs people that this patch was created by us, the Gentoo Linux developers, rather than having been grabbed from a mailing list or somewhere else. Again, you should not compress these patches."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:258(path)
+msgid "mypkg-1.0"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:257(p)
+msgid "Consider prefixing or suffixing (such as <placeholder-1/>) every file you put into the <placeholder-2/> directory, so that the files used for each individual version on an ebuild are distinguishable from one another, and so that the changes between different revisions are visible. This is generally a really good idea :). You may want to use a different suffix if you wish to convey more meaning with the patch name."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:268(path)
+msgid "files/1.0/"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:266(p)
+msgid "If you have many files that should go into the <placeholder-1/> directory, consider creating subdirectories such as <placeholder-2/> and putting the relevant files in the appropriate subdirectory. If you use this method, you do not need to add version information to the names of the files, which is often more convenient."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:281(title)
+msgid "Touching other developers ebuilds"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:283(p)
+msgid "Usually you don't just change other developers ebuilds without permission unless you know that developer does not mind or if you are part of the project involved in maintenance (this information can typically be found in metadata.xml). Start with filing a bug or trying to catch them on IRC or via email. Sometimes you cannot reach them, or there is no response to your bug. It's a good idea to consult other developers on how to handle the situation, especially if it's a critical issue that needs to be handled ASAP. Otherwise a soft limit of 2 to 4 weeks depending on the severity of the bug is an acceptable time frame before you go ahead and fix it yourself."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:295(important)
+msgid "Common sense dictates to us that toolchain/base-system/core packages and eclasses or anything else which is delicate (e.g. glibc) or widely used (e.g. gtk+) should usually be left to those maintainers. If in doubt, don't touch it."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:297(p)
+msgid "Respect developers' coding preferences. Unnecessarily changing the syntax of an ebuild can cause complications for others. Syntax changes should only be done if there is a real benefit, such as faster compilation, improved information for the end user, or compliance with Gentoo policies."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:309(title)
+msgid "Stabilizing ebuilds"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:312(p)
+msgid "Only architecture maintainers for a given architecture should mark packages as stable on that architecture. The maintainer of the package should always be contacted just in case there are reasons not to do so. The exception to this is if you are part of an architecture team, in which case you may mark the package stable for that architecture. If you are not part of an architecture team, you should consult the guidelines below; if the architecture you are looking for is not listed then please consult the relevant lead."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:323(e)
+msgid "never"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:325(mail)
+msgid "sparc@gentoo.org"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:322(p)
+msgid "You should <placeholder-1/> stabilize packages on architectures for which you cannot test and instead you should file a bug to the relevant architecture team, such as <placeholder-2/> asking them to stabilize the ebuild. Alternatively, you may be able to find Gentoo developers on IRC who could help you with your request."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:332(mail)
+msgid "arch-maintainers@gentoo.org"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:331(p)
+msgid "It is best to not use <placeholder-1/>, adding architecture teams onto a bug's CC list individually instead. That way teams can remove themselves from the list when they are done, giving a clear indication of which teams still have to stabilize a package."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:343(title)
+msgid "Stabilization rules"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:346(p)
+msgid "SPARC: You must have prior permission from the arch lead. Usually we expect you to be on the sparc alias for QA reasons, although other arrangements can be made if you will only be working with a small group of packages."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:352(p)
+msgid "ALPHA: Maintainers may keyword their own packages but are reminded to inform the Alpha team if they can help out with testing and keywording packages so the team can keep an eye out for possible keywording mistakes."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:359(uri)
+msgid "keywording"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:358(p)
+msgid "Exotic architectures (like alpha, ia64, sparc, hppa, ppc*) are short on manpower, so it's best if you avoid opening stabilization bugs for them unless it is absolutely necessary (eg, a reverse dependency for your package). More about keywording policies can be found in the <placeholder-1/> section."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:361(p)
+msgid "Some architectures (like m68k, mips, s390, sh) do not maintain a stable keyword. So there is no use in marking a package stable for one of these architectures."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:368(title)
+msgid "Upgrading ebuilds"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:372(c) devmanual/ebuild-maintenance/text.xml:378(c) devmanual/ebuild-maintenance/text.xml:381(c)
+msgid "arch"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:373(e)
+msgid "must"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:371(p)
+msgid "New ebuilds should rarely go in with \"<placeholder-1/>\" keywords and even if they do not, the package <placeholder-2/> be tested on any architectures listed in the <placeholder-3/> variable of the new ebuild."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:381(c) devmanual/ebuild-maintenance/text.xml:382(c) devmanual/ebuild-maintenance/text.xml:548(c) devmanual/ebuild-maintenance/text.xml:550(c)
+msgid "~arch"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:377(p)
+msgid "Exceptions to the no \"<placeholder-1/>\" rule are major bug fixes, or security fixes. If the previous version of the ebuild contains <placeholder-2/> which you cannot test for, you should downgrade them: turn any \"<placeholder-3/>\" keyword to \"<placeholder-4/>\". If you think that your package may not work at all even on \"<placeholder-5/>\" then it is best to leave the keyword out and request testing from the relevant team: if you are to do this, you must file a bug to the team in question."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:388(p)
+msgid "If a new version introduces new dependencies which are not available on some architectures, then you should file a bug or ask on IRC before you upgrade the package. If you really need to get the ebuild added in a hurry, for example, for a security fix, then you should drop any <placeholder-1/> which are causing problems and CC the relevant architectures on the bug - you should file a new bug to the architecture in question regarding this if no bug is already available."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:401(c)
+msgid "git pull"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:402(c)
+msgid "repoman -I"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:399(p)
+msgid "If there are no new dependencies, do not remove keywords if your commit fails with repoman - please try a full <placeholder-1/> and if you still have problems, then commit with <placeholder-2/> and file a bug to the broken architecture, noting it in your git commit message."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:406(warning)
+msgid "When committing, make sure that you reference any bugs in the commit message. Failing to do so is considered to be in very poor taste and may result in disciplinary action."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:416(title)
+msgid "Moving a package"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:422(c)
+msgid "git mv"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:423(path) devmanual/ebuild-maintenance/text.xml:516(path)
+msgid "profiles/updates/"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:419(p)
+msgid "Moving a package in the tree requires several operations. Firstly, the package directory needs to be moved to the correct category using <placeholder-1/>. After this, a new entry needs to be added to the latest file in <placeholder-2/> in the following format:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:427(pre)
+msgid "move old-category/package-name new-category/package-name"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:433(uri)
+msgid "dependency"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:431(p)
+msgid "Following the update entry, ebuilds that have a <placeholder-1/> to this package (in other words, the reverse dependencies of the package to be moved) need to be updated properly."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:439(path) devmanual/ebuild-maintenance/text.xml:469(path) devmanual/ebuild-maintenance/text.xml:524(path)
+msgid "profiles/"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:440(path) devmanual/ebuild-maintenance/text.xml:468(path)
+msgid "profiles/package.mask"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:442(path)
+msgid "eclass/"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:443(c) devmanual/ebuild-maintenance/text.xml:476(c)
+msgid "restrict"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:446(c) devmanual/ebuild-maintenance/text.xml:476(c) devmanual/ebuild-maintenance/text.xml:572(c)
+msgid "&lt;pkg&gt;"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:438(p)
+msgid "Next is checking the files under <placeholder-1/> such as <placeholder-2/> and update them to reflect the ebuild move. Various eclasses automatically provide some of the dependencies upon inherit, so the files under <placeholder-3/> should be checked and updated properly. If the package metadata.xml has tags with <placeholder-4/> attribute, they should be updated to reflect the move. The metadata.xml for various packages may contain references to the package being moved using the <placeholder-5/> tag which need to be updated accordingly as well. Lastly, the titles of the open bugs related to the package should be updated."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:453(path)
+msgid "net-misc/fwbuilder"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:454(path)
+msgid "net-firewall/fwbuilder"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:451(p)
+msgid "Here is an example where the package <placeholder-1/> is transparently moved to <placeholder-2/>:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:458(c)
+msgid "git mv net-misc/fwbuilder net-firewall/fwbuilder"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:458(li)
+msgid "Issue <placeholder-1/>"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:462(path)
+msgid "profile/updates/"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:460(p)
+msgid "Add the following entry to the latest file in <placeholder-1/>:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:464(c)
+msgid "move net-misc/fwbuilder net-firewall/fwbuilder"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:466(li)
+msgid "Update the reverse dependencies of the package"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:467(li)
+msgid "Update <placeholder-1/> and other related files under <placeholder-2/>"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:471(li)
+msgid "Check the eclasses that may be referencing the package"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:472(li)
+msgid "Update all the <placeholder-1/> files which contain a reference to this package using the <placeholder-2/> tag or the <placeholder-3/> attribute."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:479(c)
+msgid "git add"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:479(c)
+msgid "git add profiles/package.mask"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:478(li)
+msgid "Stage all the changed files using <placeholder-1/>. For example: <placeholder-2/>"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:483(c)
+msgid "git commit --gpg-sign"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:482(li)
+msgid "Commit all the changes in one commit using: <placeholder-1/>"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:486(uri)
+msgid "news items"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:487(c)
+msgid "Display-If-Installed"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:488(c)
+msgid "Revision"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:485(li)
+msgid "Update any <placeholder-1/> referencing the package in a <placeholder-2/> header or in the item's body (and increment their <placeholder-3/>)."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:490(li)
+msgid "Update any open bugs related to the package"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:493(p)
+msgid "It is very important to commit all the changes in a single commit to ensure that no breakage occurs. The commit message should follow a format similar to the following:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:499(pre)
+msgid "commit d391643289097344a0b18ab2665bb26198a0e3a1 Author: Guilherme Amadio &lt;amadio@gentoo.org&gt; Date: Tue Nov 3 20:26:52 2015 +0100 media-fonts/nanumfont: renamed to media-fonts/nanum"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:511(title)
+msgid "Changing ebuild's SLOT"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:513(p)
+msgid "The process for changing the ebuild's SLOT is very similar to the previous process. Besides changing the SLOT in the ebuild file, you also need to create a new entry in <placeholder-1/> in the Gentoo repository in the following format:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:519(pre)
+msgid "slotmove app-text/gtkspell 0 2"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:523(p)
+msgid "Make sure that you have fixed all the reverse dependencies and that you have updated every file in <placeholder-1/> directory that happens to contain an entry which may be affected by your change."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:532(title)
+msgid "Removing ebuilds"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:535(p)
+msgid "When removing an ebuild make sure that no dependencies in Portage are broken due to the removal - additionally, your git commit message should explain clearly why the ebuild is being removed from the git repository."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:541(p)
+msgid "If you need to remove ebuilds, make sure you do not accidentally remove the newest/only stable ebuild for any architecture. If you would like to get a newer version marked stable, then please file a bug or ask on IRC."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:547(p)
+msgid "You should also not cause an unnecessary downgrade for any \"<placeholder-1/>\" when removing ebuilds - instead, it is best to get the newest version marked \"<placeholder-2/>\" first and then remove redundant versions of the ebuild."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:557(title)
+msgid "Removing a package"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:560(p)
+msgid "When removing packages follow these steps:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:565(li)
+msgid "Make sure that no dependencies in Portage are broken due to the removal"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:566(li)
+msgid "Send last rites to gentoo-dev-announce and gentoo-dev"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:567(li)
+msgid "Mask the package"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:568(li)
+msgid "Wait 30 days (or more)"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:569(li)
+msgid "Remove from the git tree unless the reason for removal has been fixed"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:570(li)
+msgid "Remove package.mask entry"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:571(li)
+msgid "Remove the <placeholder-1/> tags referencing this package in the <placeholder-2/> files of other packages."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:576(li)
+msgid "Close open bugs as WONTFIX"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:580(path)
+msgid "dev-util/pmk"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:579(p)
+msgid "Here is a list of commands that will delete <placeholder-1/> from the tree:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:585(keyword)
+msgid "cd"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:586(keyword) devmanual/ebuild-maintenance/text.xml:587(keyword)
+msgid "git"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:584(pre)
+msgid "<placeholder-1/><placeholder-2/> dev-util <placeholder-3/><placeholder-4/> rm -rf pmk <placeholder-5/><placeholder-6/> commit --gpg-sign"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:593(pre)
+msgid "commit e0bbcf8291501dc7de6b4b120d4372061367dd7a Author: Michael Palimaka &lt;kensington@gentoo.org&gt; Date: Fri Jan 29 07:11:01 2016 +1100 dev-util/pmk: remove last-rited package Gentoo-bug: 541522"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:607(title)
+msgid "Conflicting files"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:613(c)
+msgid "FEATURES=collision-protect"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:617(path) devmanual/ebuild-maintenance/text.xml:619(path)
+msgid "/usr/bin/example"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:610(p)
+msgid "When you encounter a package that is trying to install files that are already provided by another package (detectable with <placeholder-1/> for example) you have to fix this situation before you can commit the ebuild or, if you encounter this with an existing package, file a bug about that package (see below for a few exceptions). The reason file conflicts are critical is because if \"foo\" provides the file <placeholder-2/> and \"bar\" is going to overwrite it, and later \"bar\" is unmerged, Portage will remove <placeholder-3/> and it is therefore likely it will break \"foo\"."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:623(p)
+msgid "The most obvious fix is to add a blocking dependency to both packages that want to install that file, so they can't be installed at the same time. But unless there are also other reasons for those packages to block each other you should avoid this if possible and rather fix the package, which could include one or more of the following steps:"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:632(li)
+msgid "Make \"foo\" (R)DEPEND on \"bar\" and not install the conflicting file."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:634(c)
+msgid "src_install"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:635(c)
+msgid "pkg_preinst"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:634(li)
+msgid "Remove conflicting files from \"foo\" in <placeholder-1/> or <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:636(li)
+msgid "Move conflicting files into a new subpackage and make \"foo\" and \"bar\" both (R)DEPEND on that package."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:638(li)
+msgid "Change the location where \"foo\" or \"bar\" installs conflicting files."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:645(c)
+msgid "CONFIG_PROTECT"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:642(p)
+msgid "In some cases conflicting files can't be really fixed or aren't critical, currently known exceptions are Perl module manpages (overwriting the ones from Perl itself) and <placeholder-1/>'ed files (which should still be fixed, but aren't critical as Portage won't overwrite them)."
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:654(title)
+msgid "Homepage unavailable"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:658(c)
+msgid "HOMEPAGE"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:660(uri)
+msgid "https://wiki.gentoo.org/wiki/No_homepage"
+msgstr ""
+
+#: devmanual/ebuild-maintenance/text.xml:657(p)
+msgid "If the <placeholder-1/> of your package seems to be unavailable or it never existed at all, please set the HOMEPAGE variable in every ebuild to <placeholder-2/>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-maintenance/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

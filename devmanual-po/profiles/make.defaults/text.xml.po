@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/profiles/make.defaults/text.xml:4(title)
+msgid "Profiles <c>make.defaults</c> File"
+msgstr ""
+
+#: devmanual/profiles/make.defaults/text.xml:8(c) devmanual/profiles/make.defaults/text.xml:11(c) devmanual/profiles/make.defaults/text.xml:16(c) devmanual/profiles/make.defaults/text.xml:17(c)
+msgid "make.defaults"
+msgstr ""
+
+#: devmanual/profiles/make.defaults/text.xml:8(c)
+msgid "profiles/"
+msgstr ""
+
+#: devmanual/profiles/make.defaults/text.xml:9(c)
+msgid "make.conf"
+msgstr ""
+
+#: devmanual/profiles/make.defaults/text.xml:9(c)
+msgid "CFLAGS"
+msgstr ""
+
+#: devmanual/profiles/make.defaults/text.xml:9(c)
+msgid "USE"
+msgstr ""
+
+#: devmanual/profiles/make.defaults/text.xml:10(c)
+msgid "FEATURES"
+msgstr ""
+
+#: devmanual/profiles/make.defaults/text.xml:10(c)
+msgid "USE_EXPAND"
+msgstr ""
+
+#: devmanual/profiles/make.defaults/text.xml:7(p)
+msgid "The <placeholder-1/> file in <placeholder-2/> provides a minimal set of defaults for the kinds of values which may be set in <placeholder-3/> (<placeholder-4/>, <placeholder-5/>, <placeholder-6/> etc) along with certain control variables (eg <placeholder-7/>). These values can further be refined by additional <placeholder-8/> files in subprofiles."
+msgstr ""
+
+#: devmanual/profiles/make.defaults/text.xml:17(c)
+msgid "gentoo-dev"
+msgstr ""
+
+#: devmanual/profiles/make.defaults/text.xml:15(p)
+msgid "In general, <placeholder-1/> should not be modified without consulting the relevant arch team, or <placeholder-2/> for high-up <placeholder-3/> files."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/profiles/make.defaults/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

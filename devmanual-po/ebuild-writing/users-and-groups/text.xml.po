@@ -1,0 +1,124 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:4(title)
+msgid "Users and Groups"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:9(c)
+msgid "user.eclass"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:11(c) devmanual/ebuild-writing/users-and-groups/text.xml:11(c)
+msgid "pkg_setup"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:13(uri)
+msgid "sandbox"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:16(c)
+msgid "pkg_preinst"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:16(c)
+msgid "pkg_postinst"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:17(c)
+msgid "src_install"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:7(p)
+msgid "If your ebuild requires a user or group to be added for a daemon, for example, this should be performed via the functions available in <placeholder-1/>. Regardless of whether you are adding a group or a user, this should be performed in the <placeholder-2/> phase function. <placeholder-3/> is called before the compile process, with <placeholder-4/> disabled, so a build that requires the user to exist will have it, and is also called for both binary and source packages. You may also use the <placeholder-5/> or <placeholder-6/> functions for user creation, if the user is not required during or before <placeholder-7/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:22(title)
+msgid "Adding Groups"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:26(c) devmanual/ebuild-writing/users-and-groups/text.xml:35(c) devmanual/ebuild-writing/users-and-groups/text.xml:59(c)
+msgid "enewgroup"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:25(p)
+msgid "To add a group, use the <placeholder-1/> function:"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:29(pre)
+msgid "enewgroup &lt;name&gt; [gid]"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:33(p)
+msgid "By default the next available group ID is selected. To set a specfic group ID, pass it an extra argument to <placeholder-1/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:38(note)
+msgid "Group IDs should rarely be hardcoded. If this is the case, you should probably check first on gentoo-dev."
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:47(title)
+msgid "Adding Users"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:51(c) devmanual/ebuild-writing/users-and-groups/text.xml:59(c) devmanual/ebuild-writing/users-and-groups/text.xml:65(c)
+msgid "enewuser"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:50(p)
+msgid "To add a user, use the <placeholder-1/> function:"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:54(pre)
+msgid "enewuser &lt;user&gt; [uid] [shell] [homedir] [groups]"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:58(p)
+msgid "By default, both <placeholder-1/> and <placeholder-2/> allocate the next available user ID or group ID to the new user or group - if not, you explicitly have to specify one."
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:67(c)
+msgid "-1"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:67(c)
+msgid "uid"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:64(p)
+msgid "Arguments for <placeholder-1/> must be passed in the order as shown above: if you do not want to specify a fixed user ID however but do want to set a specific shell, for example, use <placeholder-2/> for the <placeholder-3/> parameter. The same applies for any other parameter where you want to keep the default setting."
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:72(c)
+msgid "groups"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:72(c)
+msgid ","
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:71(p)
+msgid "Groups for the <placeholder-1/> argument should be separated by a comma (<placeholder-2/>) and wrapped correctly, for example:"
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:76(pre)
+msgid "enewuser frozd -1 -1 -1 \"backup,frozd\""
+msgstr ""
+
+#: devmanual/ebuild-writing/users-and-groups/text.xml:80(note)
+msgid "User IDs should rarely be hardcoded. If this is the case, you should probably check first on gentoo-dev."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/users-and-groups/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

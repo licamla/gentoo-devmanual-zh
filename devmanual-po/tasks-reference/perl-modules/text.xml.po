@@ -1,0 +1,36 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/tasks-reference/perl-modules/text.xml:4(title)
+msgid "Perl Modules"
+msgstr ""
+
+#: devmanual/tasks-reference/perl-modules/text.xml:9(c)
+msgid ".pm"
+msgstr ""
+
+#: devmanual/tasks-reference/perl-modules/text.xml:9(b)
+msgid "not"
+msgstr ""
+
+#: devmanual/tasks-reference/perl-modules/text.xml:7(p)
+msgid "This section covers where and how Perl modules should be installed. This is for Perl applications which use their own <placeholder-1/> files, <placeholder-2/> for CPAN things."
+msgstr ""
+
+#: devmanual/tasks-reference/perl-modules/text.xml:12(todo)
+msgid "write me. see thread on -dev."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/tasks-reference/perl-modules/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,100 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/tools-reference/cut/text.xml:4(title)
+msgid "<c>cut</c> -- Column Concatenation"
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:8(c) devmanual/tools-reference/cut/text.xml:15(c) devmanual/tools-reference/cut/text.xml:35(c)
+msgid "cut"
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:7(p)
+msgid "The <placeholder-1/> tool can be used to extract specific columns from files which are delimited by a particular character or by column numbers. It can be passed filenames on the commandline; if none are specified, it reads from stdin."
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:16(c)
+msgid "1"
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:16(c) devmanual/tools-reference/cut/text.xml:26(c)
+msgid "-c"
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:16(c) devmanual/tools-reference/cut/text.xml:29(c) devmanual/tools-reference/cut/text.xml:33(c)
+msgid "-f"
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:16(c) devmanual/tools-reference/cut/text.xml:28(c)
+msgid "-b"
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:20(c)
+msgid "low-high"
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:20(c)
+msgid "low"
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:21(c)
+msgid "high"
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:14(p)
+msgid "The <placeholder-1/> tool considers the first character in a line to have index <placeholder-2/>. The <placeholder-3/>, <placeholder-4/> and <placeholder-5/> switches take a parameter listing the desired columns. This can be a single value, or a more complex list of values separated by commas. Each value can be a single number, or two numbers separated by hyphens representing <placeholder-6/>. If <placeholder-7/> is unspecified, it is treated as the first column. If <placeholder-8/> is unspecified, it is treated as being \"up to the last character (inclusive)\"."
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:25(p)
+msgid "To select particular characters from each line, use the <placeholder-1/> switch. For particular bytes (not the same as characters when using multibyte text), use <placeholder-2/>. To specify particular fields, use <placeholder-3/>."
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:34(c)
+msgid "-d"
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:35(c)
+msgid "-s"
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:32(p)
+msgid "When using <placeholder-1/>, the field delimiter can be specified using the <placeholder-2/> switch. The default value is the tab character. The <placeholder-3/> switch instructs <placeholder-4/> to suppress lines which do not contain any instances of the delimiter <d/> by default they are echoed intact."
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:40(p)
+msgid "For example, to extract the second, fourth and fifth columns in a comma-delimited file, ignoring lines which contain no commas, one could use:"
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:46(codesample)
+msgid "cut -s -d',' -f2,4-5 input.txt &gt; output.txt"
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:50(p)
+msgid "To chop the first character off stdin, one could use:"
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:54(codesample)
+msgid "do_stuff | cut -c2-"
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:60(uri)
+msgid "IEEE1003.1-2004-cut"
+msgstr ""
+
+#: devmanual/tools-reference/cut/text.xml:58(p)
+msgid "See the cut manpage and <placeholder-1/> for full documentation."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/tools-reference/cut/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

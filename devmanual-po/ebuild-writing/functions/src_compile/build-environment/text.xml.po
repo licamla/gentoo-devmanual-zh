@@ -1,0 +1,228 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:4(title)
+msgid "Configuring Build Environment"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:9(c)
+msgid "./configure"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:9(c)
+msgid "flag-o-matic"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:10(c) devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:16(c) devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:30(c) devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:31(c) devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:46(c) devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:48(c) devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:49(c) devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:83(c) devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:130(c)
+msgid "CFLAGS"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:10(c) devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:79(c) devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:131(c)
+msgid "LDFLAGS"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:7(p)
+msgid "Sometimes it is necessary to manipulate certain aspects of the user's build environment before running <placeholder-1/>. The <placeholder-2/> eclass is the best choice for manipulating <placeholder-3/>, <placeholder-4/> and suchlike."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:16(c)
+msgid "CXXFLAGS"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:14(note)
+msgid "Except where otherwise specified, any function which operates on <placeholder-1/> also operates on <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:19(p)
+msgid "Ebuilds must not simply ignore user CFLAGS, CXXFLAGS or LDFLAGS<d/> see <uri link=\"::general-concepts/user-environment#Not Filtering Variables\"/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:26(title)
+msgid "Guidelines for Flag Filtering"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:32(c)
+msgid "-march="
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:32(c)
+msgid "-mcpu="
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:32(c)
+msgid "-mtune="
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:33(c) devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:34(c) devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:102(c) devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:103(c)
+msgid "-O2"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:33(c) devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:34(c) devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:102(c)
+msgid "-Os"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:33(c)
+msgid "-fomit-frame-pointer"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:35(c)
+msgid "-fstack-protector"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:29(p)
+msgid "If a package breaks with any reasonable <placeholder-1/>, it is best to filter the problematic flag if a bug report is received. Reasonable <placeholder-2/> are <placeholder-3/>, <placeholder-4/>, <placeholder-5/> (depending upon arch), <placeholder-6/>, <placeholder-7/> and <placeholder-8/>. Note that <placeholder-9/> should usually be replaced with <placeholder-10/> rather than being stripped entirely. The <placeholder-11/> flag should probably be in this group too, although our hardened team claim that this flag never ever breaks anything..."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:41(c)
+msgid "-pipe"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:40(p)
+msgid "The <placeholder-1/> flag doesn't affect the generated code, so it's not really relevant here, but it's a sensible flag to have set globally."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:47(b)
+msgid "WONTFIX"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:49(b)
+msgid "INVALID"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:45(p)
+msgid "If a package breaks with other (insane) <placeholder-1/>, it is perfectly OK to close the bug with a <placeholder-2/> suggesting that the user picks more sensible global <placeholder-3/>. Similarly, if you suspect that a bug is caused by insane <placeholder-4/>, an <placeholder-5/> resolution is suitable."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:54(c)
+msgid "inherit flag-o-matic"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:53(p)
+msgid "All of the following assumes that the ebuild has an <placeholder-1/> line in the correct place."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:62(title)
+msgid "Simple Flag Stripping"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:66(c)
+msgid "filter-flags"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:67(c)
+msgid "{C,CPP,CXX,CCAS,F,FC,LD}FLAGS"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:65(p)
+msgid "The <placeholder-1/> function can be used to remove a particular flag from <placeholder-2/>. Multiple arguments can be supplied; each is the name of a flag to remove."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:71(codesample)
+msgid "# -fomit-frame-pointer leads to nasty broken code on sparc thanks to a # rather icky asm function use sparc &amp;&amp; filter-flags -fomit-frame-pointer"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:78(c)
+msgid "filter-ldflags"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:77(p)
+msgid "There is a <placeholder-1/> function available which does the equivalent for <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:84(c)
+msgid "strip-flags"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:82(p)
+msgid "If a package is known to be very <placeholder-1/> sensitive, the <placeholder-2/> function will remove most flags, leaving only a minimal conservative set of flags."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:88(codesample)
+msgid "# Our app hates screwy flags strip-flags"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:97(title)
+msgid "Flag Replacement"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:101(c)
+msgid "replace-flags"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:103(c)
+msgid "-O3"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:100(p)
+msgid "To replace a flag with a different one, use <placeholder-1/>. This is most commonly used to replace <placeholder-2/> with <placeholder-3/> (or <placeholder-4/> with <placeholder-5/> if you are feeling kind)."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:106(codesample)
+msgid "# Seems to have issues with -Os, switch to -O2 replace-flags -Os -O2"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:112(c)
+msgid "replace-cpu-flags"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:113(c)
+msgid "-mtune"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:113(c)
+msgid "-mcpu"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:113(c)
+msgid "-march"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:111(p)
+msgid "There is also a special function named <placeholder-1/> for replacing CPU (<placeholder-2/>, <placeholder-3/>, <placeholder-4/>) designation flags. The last argument is the flag to use; previous arguments are the flags to be replaced."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:118(codesample)
+msgid "# Can't use ultrasparc or ultrasparc3 code, drop to v9 replace-cpu-flags ultrasparc ultrasparc3 v9"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:127(title)
+msgid "Adding Additional Flags"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:131(c)
+msgid "append-flags"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:131(c)
+msgid "append-ldflags"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:129(p)
+msgid "Sometimes it is necessary to add in additional <placeholder-1/> or <placeholder-2/>. The <placeholder-3/> and <placeholder-4/> functions can be used here."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:135(codesample)
+msgid "# If we're using selinux, we need to add a -D use selinux &amp;&amp; append-flags \"-DWITH_SELINUX\" # Secure linking needed, since we're setuid root append-ldflags -Wl,-z,now"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:144(uri)
+msgid "flag-o-matic.eclass"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:143(p)
+msgid "See <placeholder-1/> for a full reference."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/src_compile/build-environment/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

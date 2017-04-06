@@ -1,0 +1,400 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/keywording/text.xml:4(title)
+msgid "Keywording"
+msgstr ""
+
+#: devmanual/keywording/text.xml:8(e)
+msgid "Terminology"
+msgstr ""
+
+#: devmanual/keywording/text.xml:9(c)
+msgid "app-editors/vim"
+msgstr ""
+
+#: devmanual/keywording/text.xml:9(e) devmanual/keywording/text.xml:99(b) devmanual/keywording/text.xml:115(b) devmanual/keywording/text.xml:143(b) devmanual/keywording/text.xml:168(b) devmanual/keywording/text.xml:168(b) devmanual/keywording/text.xml:170(b) devmanual/keywording/text.xml:171(b) devmanual/keywording/text.xml:196(b)
+msgid "not"
+msgstr ""
+
+#: devmanual/keywording/text.xml:7(note)
+msgid "<placeholder-1/>: The term 'package' refers to an entire directory, for example <placeholder-2/><d/> it does <placeholder-3/> refer to a specific version. The terms 'ebuild' or 'package version' are used when this meaning is intended. This distinction is important."
+msgstr ""
+
+#: devmanual/keywording/text.xml:15(c) devmanual/keywording/text.xml:28(c) devmanual/keywording/text.xml:105(c) devmanual/keywording/text.xml:169(c)
+msgid "KEYWORDS"
+msgstr ""
+
+#: devmanual/keywording/text.xml:17(c)
+msgid "sparc"
+msgstr ""
+
+#: devmanual/keywording/text.xml:17(c) devmanual/keywording/text.xml:85(c)
+msgid "ppc"
+msgstr ""
+
+#: devmanual/keywording/text.xml:17(c)
+msgid "x86-obsd"
+msgstr ""
+
+#: devmanual/keywording/text.xml:14(p)
+msgid "Most ebuilds specify a <placeholder-1/> variable. This variable is used to indicate the suitability and stability of both the package and the ebuild on each given arch (<placeholder-2/>, <placeholder-3/>, <placeholder-4/>, ...)."
+msgstr ""
+
+#: devmanual/keywording/text.xml:22(uri)
+msgid "GLEP 22"
+msgstr ""
+
+#: devmanual/keywording/text.xml:20(note)
+msgid "The term 'arch' is used in this sense for historical reasons. As a result of <placeholder-1/> and the various non-Linux ports, this is no longer a particularly accurate term."
+msgstr ""
+
+#: devmanual/keywording/text.xml:27(p)
+msgid "A sample <placeholder-1/> entry might look like:"
+msgstr ""
+
+#: devmanual/keywording/text.xml:31(codesample)
+msgid "KEYWORDS=\"x86 sparc ~mips ~ppc ~ppc-macos -ia64\""
+msgstr ""
+
+#: devmanual/keywording/text.xml:35(p)
+msgid "The different levels of keyword are:"
+msgstr ""
+
+#: devmanual/keywording/text.xml:41(c) devmanual/keywording/text.xml:56(c) devmanual/keywording/text.xml:121(c) devmanual/keywording/text.xml:196(c) devmanual/keywording/text.xml:207(c) devmanual/keywording/text.xml:231(c) devmanual/keywording/text.xml:254(c)
+msgid "arch"
+msgstr ""
+
+#: devmanual/keywording/text.xml:41(c) devmanual/keywording/text.xml:85(c) devmanual/keywording/text.xml:116(c) devmanual/keywording/text.xml:174(c) devmanual/keywording/text.xml:234(c) devmanual/keywording/text.xml:235(c)
+msgid "x86"
+msgstr ""
+
+#: devmanual/keywording/text.xml:41(c)
+msgid "ppc-macos"
+msgstr ""
+
+#: devmanual/keywording/text.xml:40(dt) devmanual/keywording/text.xml:49(dt) devmanual/keywording/text.xml:69(dt)
+msgid "<placeholder-1/> (<placeholder-2/>, <placeholder-3/>)"
+msgstr ""
+
+#: devmanual/keywording/text.xml:45(e)
+msgid "and"
+msgstr ""
+
+#: devmanual/keywording/text.xml:44(p)
+msgid "Both the package version <placeholder-1/> the ebuild are widely tested, known to work and not have any serious issues on the indicated platform."
+msgstr ""
+
+#: devmanual/keywording/text.xml:50(c) devmanual/keywording/text.xml:66(c) devmanual/keywording/text.xml:120(c) devmanual/keywording/text.xml:163(c) devmanual/keywording/text.xml:207(c) devmanual/keywording/text.xml:208(c) devmanual/keywording/text.xml:231(c) devmanual/keywording/text.xml:247(c)
+msgid "~arch"
+msgstr ""
+
+#: devmanual/keywording/text.xml:50(c) devmanual/keywording/text.xml:115(c)
+msgid "~x86"
+msgstr ""
+
+#: devmanual/keywording/text.xml:50(c)
+msgid "~ppc-macos"
+msgstr ""
+
+#: devmanual/keywording/text.xml:53(p)
+msgid "The package version and the ebuild are believed to work and do not have any known serious bugs, but more testing is required before the package version is considered suitable for <placeholder-1/>."
+msgstr ""
+
+#: devmanual/keywording/text.xml:59(dt)
+msgid "No keyword"
+msgstr ""
+
+#: devmanual/keywording/text.xml:63(p)
+msgid "If a package has no keyword for a given arch, it means it is not known whether the package will work, or that insufficient testing has occurred for <placeholder-1/>."
+msgstr ""
+
+#: devmanual/keywording/text.xml:70(c)
+msgid "-arch"
+msgstr ""
+
+#: devmanual/keywording/text.xml:70(c)
+msgid "-x86"
+msgstr ""
+
+#: devmanual/keywording/text.xml:70(c)
+msgid "-ppc-macos"
+msgstr ""
+
+#: devmanual/keywording/text.xml:73(p)
+msgid "The package version will not work on the arch. This could be caused by badly written code (for example, non-64-bit or endian clean code), relying upon particular hardware (for example, a BIOS querying tool would not work on non-BIOS architectures) or binary only packages."
+msgstr ""
+
+#: devmanual/keywording/text.xml:83(c)
+msgid "-*"
+msgstr ""
+
+#: devmanual/keywording/text.xml:82(p)
+msgid "The <placeholder-1/> keyword is special. It is used to indicate package versions which are not worth trying to test on unlisted archs. For example, a binary-only package which is only supported upstream on <placeholder-2/> and <placeholder-3/> might use:"
+msgstr ""
+
+#: devmanual/keywording/text.xml:88(codesample)
+msgid "KEYWORDS=\"-* x86 ppc\""
+msgstr ""
+
+#: devmanual/keywording/text.xml:93(c)
+msgid "\"x86 ppc\""
+msgstr ""
+
+#: devmanual/keywording/text.xml:92(p)
+msgid "This is different in implication from <placeholder-1/><d/> the former implies that it will not work on other archs, whereas the latter implies that it has not been tested."
+msgstr ""
+
+#: devmanual/keywording/text.xml:99(c)
+msgid "*"
+msgstr ""
+
+#: devmanual/keywording/text.xml:99(c)
+msgid "~*"
+msgstr ""
+
+#: devmanual/keywording/text.xml:98(p)
+msgid "Do <placeholder-1/> use the <placeholder-2/> or <placeholder-3/> special keywords in ebuilds."
+msgstr ""
+
+#: devmanual/keywording/text.xml:102(note)
+msgid "Usually, \"live\" ebuilds (see <uri link=\"::ebuild-writing/functions/src_unpack/cvs-sources\"/>) do not specify a <placeholder-1/> variable, or assign the empty string to it."
+msgstr ""
+
+#: devmanual/keywording/text.xml:109(title)
+msgid "Equal Visibility Requirement"
+msgstr ""
+
+#: devmanual/keywording/text.xml:113(b)
+msgid "must not"
+msgstr ""
+
+#: devmanual/keywording/text.xml:114(c) devmanual/keywording/text.xml:115(c) devmanual/keywording/text.xml:316(c)
+msgid "foo-1.2"
+msgstr ""
+
+#: devmanual/keywording/text.xml:114(c) devmanual/keywording/text.xml:115(c) devmanual/keywording/text.xml:116(c)
+msgid "bar-1.2"
+msgstr ""
+
+#: devmanual/keywording/text.xml:112(p)
+msgid "An ebuild <placeholder-1/> depend upon any package that is of a lower keyword level than itself. For example, if <placeholder-2/> depends upon <placeholder-3/>, and <placeholder-4/> is <placeholder-5/>, then <placeholder-6/> must <placeholder-7/> be marked stable on <placeholder-8/> unless <placeholder-9/> is also stabilised."
+msgstr ""
+
+#: devmanual/keywording/text.xml:119(p)
+msgid "You may assume that if a user accepts <placeholder-1/> for a given arch then they also accept <placeholder-2/>."
+msgstr ""
+
+#: devmanual/keywording/text.xml:125(e)
+msgid "possible"
+msgstr ""
+
+#: devmanual/keywording/text.xml:126(c)
+msgid "USE"
+msgstr ""
+
+#: devmanual/keywording/text.xml:127(e)
+msgid "at least one"
+msgstr ""
+
+#: devmanual/keywording/text.xml:124(p)
+msgid "For optional dependencies, all <placeholder-1/> dependencies must satisfy the above. Note that certain <placeholder-2/> flags can be forcibly disabled on a per-profile basis <d/> talk to the arch teams if you require this. For either-or dependencies, <placeholder-3/> of the options must be of equal or better visibility than the package in question."
+msgstr ""
+
+#: devmanual/keywording/text.xml:136(title)
+msgid "Hard Masks"
+msgstr ""
+
+#: devmanual/keywording/text.xml:140(c)
+msgid "package.mask"
+msgstr ""
+
+#: devmanual/keywording/text.xml:139(p)
+msgid "The <placeholder-1/> file can be used to 'hard mask' individual or groups of ebuilds. This should be used for testing ebuilds or beta releases of software, and may also be used if a package has serious compatibility problems. Packages which are not hard masked must <placeholder-2/> have a dependency upon hard masked packages."
+msgstr ""
+
+#: devmanual/keywording/text.xml:148(c)
+msgid "Possibly a DEPEND problem"
+msgstr ""
+
+#: devmanual/keywording/text.xml:150(c)
+msgid "/etc/portage/"
+msgstr ""
+
+#: devmanual/keywording/text.xml:151(b)
+msgid "You should never commit a change which could cause this error to appear on a user system"
+msgstr ""
+
+#: devmanual/keywording/text.xml:147(p)
+msgid "The only time it is acceptable for a user to see the <placeholder-1/> error message is if they have manually changed visibility levels for a package (for example, through <placeholder-2/>) and have missed a dependency. <placeholder-3/>."
+msgstr ""
+
+#: devmanual/keywording/text.xml:159(title)
+msgid "Keywording New Packages"
+msgstr ""
+
+#: devmanual/keywording/text.xml:162(important)
+msgid "New packages should be marked as <placeholder-1/> only upon architectures for which the committing developer has tested."
+msgstr ""
+
+#: devmanual/keywording/text.xml:173(c)
+msgid "vim"
+msgstr ""
+
+#: devmanual/keywording/text.xml:167(p)
+msgid "Do <placeholder-1/> assume that your package works on all architectures. Do <placeholder-2/> assume that user submitted ebuilds will have correct <placeholder-3/><d/> chances are they just copied from somewhere else. Do <placeholder-4/> assume that upstream's 'supported architectures' list is correct. Do <placeholder-5/> assume that because your code is written in Perl / Python / Java / whatever that it will run on other archs (there is at least one case of a <placeholder-6/> script which only worked on <placeholder-7/>)."
+msgstr ""
+
+#: devmanual/keywording/text.xml:180(c)
+msgid "mips"
+msgstr ""
+
+#: devmanual/keywording/text.xml:182(c)
+msgid "o32"
+msgstr ""
+
+#: devmanual/keywording/text.xml:182(c)
+msgid "o64"
+msgstr ""
+
+#: devmanual/keywording/text.xml:182(c)
+msgid "n32"
+msgstr ""
+
+#: devmanual/keywording/text.xml:177(p)
+msgid "Note that most (non-x86) archs expect you to be on the arch team and bugzilla alias if you are committing packages with keywords for that arch, and may have additional requirements of which you should be aware (on <placeholder-1/>, for example, there are multiple ABIs and byte orders to consider <d/> a package working on your <placeholder-2/> box may not work on <placeholder-3/> or <placeholder-4/>). Contact the individual arch teams for details."
+msgstr ""
+
+#: devmanual/keywording/text.xml:186(p)
+msgid "It's important to note that alternative arches (like alpha, ia64, s390, sh, sparc, hppa, ppc*) are mainly undermanned arches, some of them are slow, they have more basic problems and have a small userbase. Just file bugs for these architectures when a package is going to be a dependency of a package already keyworded."
+msgstr ""
+
+#: devmanual/keywording/text.xml:195(p)
+msgid "Do <placeholder-1/> commit straight to <placeholder-2/>."
+msgstr ""
+
+#: devmanual/keywording/text.xml:203(title)
+msgid "Keywording on Upgrades"
+msgstr ""
+
+#: devmanual/keywording/text.xml:208(e)
+msgid "think"
+msgstr ""
+
+#: devmanual/keywording/text.xml:206(p)
+msgid "When upgrading, drop all existing keywords from <placeholder-1/> to <placeholder-2/>, and leave any existing <placeholder-3/> keywords intact. This must be done even if you <placeholder-4/> you're just making a trivial fix <d/> there have been several examples of the stable tree getting broken this way."
+msgstr ""
+
+#: devmanual/keywording/text.xml:215(b)
+msgid "must"
+msgstr ""
+
+#: devmanual/keywording/text.xml:213(p)
+msgid "Sometimes you may need to remove a keyword because of new unresolved dependencies. If you do this, you <placeholder-1/> file a bug notifying the relevant arch teams."
+msgstr ""
+
+#: devmanual/keywording/text.xml:219(p)
+msgid "This also applies to revision bumps, not just to upstream version changes."
+msgstr ""
+
+#: devmanual/keywording/text.xml:227(title)
+msgid "Moving from <c>~arch</c> to <c>arch</c>"
+msgstr ""
+
+#: devmanual/keywording/text.xml:237(uri)
+msgid "GLEP 40"
+msgstr ""
+
+#: devmanual/keywording/text.xml:230(p)
+msgid "Moving a package from <placeholder-1/> to <placeholder-2/> is done only by the relevant arch teams. If you have access to non-x86 hardware but are not on the arch teams, you may wish to make individual arrangements <d/> the arch teams are happy for help, so long as they know what is going on. Please note that <placeholder-3/> is now no longer an exception and stabilisation must be done through the <placeholder-4/> arch team unless you have individual arrangements <d/> see <placeholder-5/> for further details."
+msgstr ""
+
+#: devmanual/keywording/text.xml:241(p)
+msgid "For a package to move to stable, the following guidelines must be met:"
+msgstr ""
+
+#: devmanual/keywording/text.xml:246(li)
+msgid "The package has spent a reasonable amount of time in <placeholder-1/> first. Thirty days is the usual figure, although this is clearly only a guideline. For critical packages, a much longer duration is expected. For small packages which have only minor changes between versions, a shorter period is sometimes appropriate."
+msgstr ""
+
+#: devmanual/keywording/text.xml:253(li)
+msgid "The package must not have any non-<placeholder-1/> dependencies."
+msgstr ""
+
+#: devmanual/keywording/text.xml:256(li)
+msgid "The package must not have any severe outstanding bugs or issues."
+msgstr ""
+
+#: devmanual/keywording/text.xml:259(li)
+msgid "The package must be widely tested."
+msgstr ""
+
+#: devmanual/keywording/text.xml:262(li)
+msgid "If the package is a library, it should be known not to break any package which depends upon it."
+msgstr ""
+
+#: devmanual/keywording/text.xml:270(uri)
+msgid "Vulnerability Treatment Policy"
+msgstr ""
+
+#: devmanual/keywording/text.xml:268(p)
+msgid "For security fixes, the \"reasonable amount of time\" guideline may be relaxed. See the <placeholder-1/>"
+msgstr ""
+
+#: devmanual/keywording/text.xml:278(title)
+msgid "Simultaneous stabilization on all architectures"
+msgstr ""
+
+#: devmanual/keywording/text.xml:287(c) devmanual/keywording/text.xml:292(c)
+msgid "ALLARCHES"
+msgstr ""
+
+#: devmanual/keywording/text.xml:287(c)
+msgid "STABLEREQ"
+msgstr ""
+
+#: devmanual/keywording/text.xml:282(p)
+msgid "If you maintain an architecture-independent package (data files, icons, pure Perl,...) then you may request that your package be stabilized on all arches at once. To do this<d/>when you are filing the stabilization bug<d/>please add the keyword <placeholder-1/> in addition to <placeholder-2/> and CC the arches that you would like to stabilize."
+msgstr ""
+
+#: devmanual/keywording/text.xml:291(p)
+msgid "The arch teams, when encountering the <placeholder-1/> keyword, should perform their usual set of tests on a single convenient architecture. Then, if everything works, stabilize not only the arch that was used during testing, but also all of the other arches in CC on the bug. Afterwards, the CC field can be cleared and the bug closed if appropriate."
+msgstr ""
+
+#: devmanual/keywording/text.xml:304(title)
+msgid "Removing Package Versions"
+msgstr ""
+
+#: devmanual/keywording/text.xml:307(p)
+msgid "When removing ebuild, ensure that you do not remove the most recent version at any given keyword level on any profile. The aim here is:"
+msgstr ""
+
+#: devmanual/keywording/text.xml:315(c)
+msgid "foo-1.3"
+msgstr ""
+
+#: devmanual/keywording/text.xml:313(li)
+msgid "Never to force a downgrade. (Exception: occasionally you really do want to force a downgrade, for example if the newly committed <placeholder-1/> turns out to be badly broken and that making everyone downgrade to <placeholder-2/> is the better option. This is rare.)"
+msgstr ""
+
+#: devmanual/keywording/text.xml:319(li)
+msgid "Do not break any existing dependencies."
+msgstr ""
+
+#: devmanual/keywording/text.xml:324(p)
+msgid "If you would like a particular package version moved to stable on certain archs so that you can tidy up, file a bug."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/keywording/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

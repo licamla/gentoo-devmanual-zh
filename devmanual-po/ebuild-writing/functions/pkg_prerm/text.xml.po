@@ -1,0 +1,80 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/pkg_prerm/text.xml:4(title) devmanual/ebuild-writing/functions/pkg_prerm/text.xml:10(c) devmanual/ebuild-writing/functions/pkg_prerm/text.xml:59(c)
+msgid "pkg_prerm"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_prerm/text.xml:9(th)
+msgid "Function"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_prerm/text.xml:13(th)
+msgid "Purpose"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_prerm/text.xml:14(ti)
+msgid "Called before a package is unmerged"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_prerm/text.xml:17(th)
+msgid "Sandbox"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_prerm/text.xml:18(ti)
+msgid "Disabled"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_prerm/text.xml:21(th)
+msgid "Privilege"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_prerm/text.xml:22(ti)
+msgid "root"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_prerm/text.xml:25(th)
+msgid "Called for"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_prerm/text.xml:26(ti)
+msgid "ebuild, binary"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_prerm/text.xml:32(title)
+msgid "Default <c>pkg_prerm</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_prerm/text.xml:34(codesample)
+msgid "pkg_prerm() { return }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_prerm/text.xml:44(title)
+msgid "Sample <c>pkg_prerm</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_prerm/text.xml:46(codesample)
+msgid "pkg_prerm() { # clean up temp files [[ -d \"${ROOT}/var/tmp/foo\" ]] &amp;&amp; rm -rf \"${ROOT}/var/tmp/foo\" }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_prerm/text.xml:56(title)
+msgid "Common <c>pkg_prerm</c> Tasks"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_prerm/text.xml:58(p)
+msgid "<placeholder-1/> is used to clean up any files that would otherwise prevent a clean unmerge."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/pkg_prerm/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

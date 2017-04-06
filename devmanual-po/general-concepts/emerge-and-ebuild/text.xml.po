@@ -1,0 +1,44 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/emerge-and-ebuild/text.xml:4(title)
+msgid "Emerge and Ebuild Relationships"
+msgstr ""
+
+#: devmanual/general-concepts/emerge-and-ebuild/text.xml:12(c) devmanual/general-concepts/emerge-and-ebuild/text.xml:13(c) devmanual/general-concepts/emerge-and-ebuild/text.xml:15(c)
+msgid "emerge"
+msgstr ""
+
+#: devmanual/general-concepts/emerge-and-ebuild/text.xml:12(c) devmanual/general-concepts/emerge-and-ebuild/text.xml:14(c)
+msgid "ebuild.sh"
+msgstr ""
+
+#: devmanual/general-concepts/emerge-and-ebuild/text.xml:15(c)
+msgid "${D}"
+msgstr ""
+
+#: devmanual/general-concepts/emerge-and-ebuild/text.xml:15(c)
+msgid "${ROOT}"
+msgstr ""
+
+#: devmanual/general-concepts/emerge-and-ebuild/text.xml:11(p)
+msgid "The <placeholder-1/> program is a high level wrapper for <placeholder-2/> that handles dependency tracking, safe installs and uninstalls and so on. <placeholder-3/> calls <placeholder-4/> during the build process, which in turn handles the ebuild file and any eclasses. The <placeholder-5/> to <placeholder-6/> install is handled by <placeholder-7/>."
+msgstr ""
+
+#: devmanual/general-concepts/emerge-and-ebuild/text.xml:18(todo)
+msgid "https://dev.gentoo.org/~g2boojum/portage.html"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/emerge-and-ebuild/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

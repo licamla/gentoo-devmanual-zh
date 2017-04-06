@@ -1,0 +1,140 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/archs/ppc/text.xml:4(title)
+msgid "Arch Specific Notes -- PPC"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:8(c)
+msgid "ppc"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:7(p)
+msgid "The Gentoo PowerPC port uses the <placeholder-1/> keyword and maintains compatibility with all 32 bit PowerPC processors. It is also used for 32 bit userland installs on 64 bit PowerPC systems."
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:14(title)
+msgid "Common issues"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:21(c) devmanual/archs/ppc/text.xml:28(c)
+msgid "x86"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:21(c)
+msgid "amd64"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:17(p)
+msgid "Although PowerPC processors can be run in little endian mode, the Linux kernel runs on PowerPC processors in big endian mode. Due to this fact, a common PowerPC issue is dealing with code that is written with only little endian processors in mind (<placeholder-1/>/<placeholder-2/>). These bugs can be difficult to find, but are usually found when loading data from disk (such as a structure written directly to disk) or during bit operations."
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:28(c)
+msgid "char"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:29(c)
+msgid "-fsigned-char"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:29(c) devmanual/archs/ppc/text.xml:42(c)
+msgid "GCC"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:26(p)
+msgid "The PowerPC port of gcc uses unsigned characters by default, which is different than on <placeholder-1/>. If the code you are working with assumes that the <placeholder-2/> type is signed, you can pass <placeholder-3/> to <placeholder-4/> to work around the issue."
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:36(title)
+msgid "Altivec"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:40(c)
+msgid "G4"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:40(c)
+msgid "G5"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:42(c)
+msgid "-mabi=altivec -maltivec"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:42(c)
+msgid "-mcpu="
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:39(p)
+msgid "Altivec (Apple's name for VMX SIMD instructions) is supported on the <placeholder-1/> and <placeholder-2/> processors. You can enable support for the instruction set by passing <placeholder-3/> to <placeholder-4/>. Note that passing <placeholder-5/> options may enable altivec without passing the flags above."
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:46(p)
+msgid "Occasionally, an altivec issue that crops up is that Apple uses a different notation for indicating vectors, (x) instead of {x}. Using something like the code below to define vectors is the preferred way of fixing this:"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:52(codesample)
+msgid "#ifdef CONFIG_APPLE #define AVV(x...) (x) #else #define AVV(x...) {x} #endif"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:64(title)
+msgid "Contacting the PowerPC Team"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:67(p)
+msgid "The PowerPC team can be reached by:"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:73(c)
+msgid "#gentoo-ppc"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:72(li)
+msgid "Via the <placeholder-1/> IRC channel on freenode"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:76(c) devmanual/archs/ppc/text.xml:82(c)
+msgid "ppc@gentoo.org"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:75(li)
+msgid "Via email to <placeholder-1/>"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:79(c)
+msgid "gentoo-ppc-dev@gentoo.org"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:78(li)
+msgid "Via email to <placeholder-1/> the mailing list"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:81(li)
+msgid "Via Bugzilla bugs assigned to <placeholder-1/>"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:90(title)
+msgid "Other Resources"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:95(uri)
+msgid "Gentoo PPC FAQ"
+msgstr ""
+
+#: devmanual/archs/ppc/text.xml:98(uri)
+msgid "Gentoo PPC Forums"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/archs/ppc/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

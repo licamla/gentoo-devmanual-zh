@@ -1,0 +1,32 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/archs/text.xml:4(title)
+msgid "Arch Specific Notes"
+msgstr ""
+
+#: devmanual/archs/text.xml:7(p)
+msgid "This section provides a brief overview of various arch-specific issues. It is not complete, and it is not a substitute for discussing any problems with the relevant arch team."
+msgstr ""
+
+#: devmanual/archs/text.xml:13(note)
+msgid "People who have worked with some other distributions may find Gentoo's views on architecture support slightly unfamiliar. We do not follow Debian's attempts to provide a standard set of packages at specific versions and install it onto every platform <d/> rather, we simply attempt to provide whatever happens to work best in any situation."
+msgstr ""
+
+#: devmanual/archs/text.xml:23(title)
+msgid "Contents"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/archs/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

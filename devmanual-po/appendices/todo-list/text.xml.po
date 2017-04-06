@@ -1,0 +1,28 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/appendices/todo-list/text.xml:4(title)
+msgid "TODO List"
+msgstr ""
+
+#: devmanual/appendices/todo-list/text.xml:7(c)
+msgid "&lt;todo&gt;"
+msgstr ""
+
+#: devmanual/appendices/todo-list/text.xml:6(p)
+msgid "This TODO list is automatically generated from the <placeholder-1/> directives in other documents."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/appendices/todo-list/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

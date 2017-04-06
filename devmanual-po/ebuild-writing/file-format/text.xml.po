@@ -1,0 +1,280 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/file-format/text.xml:4(title)
+msgid "Ebuild File Format"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:8(c)
+msgid "bash"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:9(c)
+msgid ".ebuild"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:7(p)
+msgid "An ebuild is a <placeholder-1/> script which is executed within a special environment. Files should be simple text files with a <placeholder-2/> extension."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:14(title)
+msgid "File Naming Rules"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:18(c)
+msgid "name-version.ebuild"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:17(p)
+msgid "An ebuild should be named in the form <placeholder-1/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:21(p)
+msgid "The name section should contain only lowercase non-accented letters, the digits 0-9, hyphens, underscores and plus characters. Uppercase characters are strongly discouraged, but technically valid."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:29(uri)
+msgid "IEEE Std 1003.1-2013, section 3.278"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:27(note)
+msgid "This is the same as <placeholder-1/>, with the exception of the period character and with the addition of the plus character to keep GTK+ and friends happy."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:35(p)
+msgid "The name must not begin with a hyphen or a plus sign, and must not end in a hyphen followed by anything that could be mistaken for a version."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:43(c)
+msgid "1.2.3"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:43(c)
+msgid "20050108"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:44(c) devmanual/ebuild-writing/file-format/text.xml:45(c)
+msgid "1.2b"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:45(c)
+msgid "1.2"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:45(c)
+msgid "1.2a"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:40(p)
+msgid "The version section is more complicated. It consists of one or more numbers separated by full stop (or period, or dot, or decimal point) characters (eg <placeholder-1/>, <placeholder-2/>). The final number may have a single letter following it (e.g. <placeholder-3/>). This letter should not be used to indicate 'beta' status <d/> portage treats <placeholder-4/> as being a later version than <placeholder-5/> or <placeholder-6/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:48(p)
+msgid "There can be a suffix to version indicating the kind of release. In the following table, what portage considers to be the 'lowest' version comes first."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:55(th)
+msgid "Suffix"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:56(th)
+msgid "Meaning"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:59(c)
+msgid "_alpha"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:60(ti)
+msgid "Alpha release (earliest)"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:63(c)
+msgid "_beta"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:64(ti)
+msgid "Beta release"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:67(c)
+msgid "_pre"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:68(ti)
+msgid "Pre release"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:71(c)
+msgid "_rc"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:72(ti)
+msgid "Release candidate"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:75(ti)
+msgid "(no suffix)"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:76(ti)
+msgid "Normal release"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:79(c)
+msgid "_p"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:80(ti)
+msgid "Patch release"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:84(p)
+msgid "Any of these suffixes may be followed by a non-zero positive integer."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:93(li)
+msgid "foo-1.0.0_alpha_pre"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:94(li)
+msgid "foo-1.0.0_alpha_rc1"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:95(li)
+msgid "foo-1.0.0_beta_pre"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:96(li)
+msgid "foo-1.0.0_beta_p1"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:88(p)
+msgid "These suffixes can be chained together and will be processed iteratively. To give some examples (the following list is from lowest version to highest): <ul><placeholder-1/><placeholder-2/><placeholder-3/><placeholder-4/></ul>"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:100(p)
+msgid "No integer part of the version may be longer than 18 digits."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:105(c) devmanual/ebuild-writing/file-format/text.xml:107(c)
+msgid "-r1"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:107(c)
+msgid "-r2"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:104(p)
+msgid "Finally, version may have a Gentoo revision number in the form <placeholder-1/>. The initial Gentoo version should have no revision suffix, the first revision should be <placeholder-2/>, the second <placeholder-3/> and so on. See <uri link=\"::general-concepts/ebuild-revisions\"/>. Revision numbers are distinguished from patch releases by revision bumps being changes by Gentoo developers, while patch releases are new releases by upstream (with the exception of snapshots, see below)."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:114(c)
+msgid "libfoo-1.2.5b_pre5-r2.ebuild"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:113(p)
+msgid "Overall, this gives us a filename like <placeholder-1/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:117(p)
+msgid "When packaging a snapshot of a source repository, there are two commonly used formats. The first treats the snapshot as a patch to the previous version, and so the ebuild version is in the format $(last-released-version)_pYYYYMMDD. Alternatively, the snapshot may be treated as a pre-release to an upcoming version, usually used when a release is anticipated but not out yet. The format for this is $(upcoming-version)_preYYYYMMDD."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:126(e)
+msgid "live"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:128(c)
+msgid "9999"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:125(p)
+msgid "The policy for so-called <placeholder-1/> ebuilds (see <uri link=\"::ebuild-writing/functions/src_unpack/#src_unpack-actions\"/>) is to use <placeholder-2/> as the version (or as the last version component)."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:133(uri)
+msgid "versionator.eclass"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:131(p)
+msgid "The <placeholder-1/> may be used to manipulate and extract ebuild version components."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:142(title)
+msgid "Ebuild Header"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:149(uri)
+msgid "header.txt"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:145(p)
+msgid "All ebuilds committed to the tree should have a two line header immediately at the start indicating copyright, followed by an empty line. This must be an exact copy of the contents of <c><placeholder-1/></c> in the top directory of the Gentoo repository."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:153(codesample)
+msgid "# Copyright 1999-2017 Gentoo Foundation # Distributed under the terms of the GNU General Public License v2"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:159(c)
+msgid "$Id$"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:160(c)
+msgid "$Header$"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:161(uri)
+msgid "decision of the Gentoo Council on 28 February 2017"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:162(e)
+msgid "must not"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:158(note)
+msgid "The header previously included a third line with a CVS <placeholder-1/> or <placeholder-2/> keyword. That line was abolished after conversion to Git by <placeholder-3/> and <placeholder-4/> be added any more."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:169(title)
+msgid "Indenting and Whitespace"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:172(p)
+msgid "Indenting in ebuilds must be done with tabs, one tab per indent level. Each tab represents four spaces. Tabs should only be used for indenting, never inside strings."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:178(p)
+msgid "Avoid trailing whitespace: repoman will warn you about this if your ebuild contains trailing or leading whitespace (whitespace instead of tabs for indentation) when you commit."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:184(p)
+msgid "Where possible, try to keep lines no wider than 80 positions. A 'position' is generally the same as a character <d/> tabs are four positions wide, and multibyte characters are just one position wide."
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:194(title)
+msgid "Character Set"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:199(uri)
+msgid "GLEP 31"
+msgstr ""
+
+#: devmanual/ebuild-writing/file-format/text.xml:196(p)
+msgid "All ebuilds (and eclasses, metadata files and ChangeLogs) must use the UTF-8 character set. See <placeholder-1/> for details."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/file-format/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

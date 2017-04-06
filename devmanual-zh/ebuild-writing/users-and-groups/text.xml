@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<guide self="ebuild-writing/users-and-groups/">
+<chapter>
+<title>Users and Groups</title>
+
+<body>
+<p>
+If your ebuild requires a user or group to be added for a daemon, for example,
+this should be performed via the functions available in <c>user.eclass</c>.
+Regardless of whether you are adding a group or a user, this should be performed
+in the <c>pkg_setup</c> phase function. <c>pkg_setup</c> is called
+before the compile process, with
+<uri link="::general-concepts/sandbox">sandbox</uri>
+disabled, so a build that requires the user to exist will
+have it, and is also called for both binary and source packages. You may also
+use the <c>pkg_preinst</c> or <c>pkg_postinst</c> functions for user creation, if
+the user is not required during or before <c>src_install</c>.
+</p>
+</body>
+
+<section>
+<title>Adding Groups</title>
+<body>
+
+<p>
+To add a group, use the <c>enewgroup</c> function:
+</p>
+
+<pre>
+enewgroup &lt;name&gt; [gid]
+</pre>
+
+<p>
+By default the next available group ID is selected. To set a specfic group ID,
+pass it an extra argument to <c>enewgroup</c>.
+</p>
+
+<note>
+Group IDs should rarely be hardcoded. If this is the case, you should
+probably check first on gentoo-dev.
+</note>
+
+</body>
+</section>
+
+<section>
+<title>Adding Users</title>
+<body>
+
+<p>
+To add a user, use the <c>enewuser</c> function:
+</p>
+
+<pre>
+enewuser &lt;user&gt; [uid] [shell] [homedir] [groups]
+</pre>
+
+<p>
+By default, both <c>enewuser</c> and <c>enewgroup</c> allocate the next available user
+ID or group ID to the new user or group - if not, you explicitly have to specify
+one.
+</p>
+
+<p>
+Arguments for <c>enewuser</c> must be passed in the order as shown above: if you do
+not want to specify a fixed user ID however but do want to set a specific shell,
+for example, use <c>-1</c> for the <c>uid</c> parameter. The same applies for any other
+parameter where you want to keep the default setting.
+</p>
+
+<p>
+Groups for the <c>groups</c> argument should be separated by a comma (<c>,</c>) and
+wrapped correctly, for example:
+</p>
+
+<pre>
+enewuser frozd -1 -1 -1 "backup,frozd"
+</pre>
+
+<note>
+User IDs should rarely be hardcoded. If this is the case, you should
+probably check first on gentoo-dev.
+</note>
+
+</body>
+</section>
+
+</chapter>
+</guide>

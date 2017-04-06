@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/src_prepare/autopackage/text.xml:4(title)
+msgid "Autopackage"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/autopackage/text.xml:7(p)
+msgid "If a package is only supplied in autopackage format, you must not add it to the tree. If a package is supplied in autopackage format and some other sane standard format (for example a source tarball), use the other format only."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/autopackage/text.xml:14(p)
+msgid "Autopackage packages are totally unsuitable for Gentoo systems for a large number of reasons:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/autopackage/text.xml:20(li)
+msgid "To even unpack the package, you must run arbitrary code supplied by an untrusted source."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/autopackage/text.xml:23(li)
+msgid "They install directly to the live filesystem."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/autopackage/text.xml:24(li)
+msgid "Their intrinsic dependency resolver is broken."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/autopackage/text.xml:25(li)
+msgid "They do not support the filesystem layout used by Gentoo."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/autopackage/text.xml:26(li)
+msgid "They do not support configuration protection."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/autopackage/text.xml:27(li)
+msgid "They can clobber arbitrary files on uninstall."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/autopackage/text.xml:28(li)
+msgid "The linking mechanism used is insufficiently flexible."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/autopackage/text.xml:29(li)
+msgid "The entire format is completely unportable and highly tied to x86 Linux systems."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_prepare/autopackage/text.xml:35(p)
+msgid "Upstream are aware of these issues and have no desire to fix them <d/> indeed, they pass off some of their most broken behaviour as 'features'."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/src_prepare/autopackage/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

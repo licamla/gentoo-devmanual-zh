@@ -1,0 +1,828 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/variables/text.xml:4(title)
+msgid "Variables"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:7(p)
+msgid "There are a number of special variables which must be set in ebuilds, and many more which can optionally be specified. There are also some predefined variables which are of use throughout the ebuild."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:15(title)
+msgid "Predefined Read-Only Variables"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:18(p)
+msgid "The following variables are defined for you. You must not attempt to set them. Developers must not rely on package manager specific values for these variables when writing ebuilds."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:26(th) devmanual/ebuild-writing/variables/text.xml:149(th)
+msgid "Variable"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:27(th) devmanual/ebuild-writing/variables/text.xml:150(th) devmanual/ebuild-writing/variables/text.xml:525(th)
+msgid "Purpose"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:30(c)
+msgid "P"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:31(c)
+msgid "vim-6.3"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:31(ti)
+msgid "Package name and version (excluding revision, if any), for example <placeholder-1/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:34(c)
+msgid "PN"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:35(c)
+msgid "vim"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:35(ti)
+msgid "Package name, for example <placeholder-1/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:38(c)
+msgid "PV"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:39(c) devmanual/ebuild-writing/variables/text.xml:47(c)
+msgid "6.3"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:39(ti)
+msgid "Package version (excluding revision, if any), for example <placeholder-1/>. It should reflect the upstream versioning scheme."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:42(c)
+msgid "PR"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:43(c)
+msgid "r0"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:43(ti)
+msgid "Package revision, or <placeholder-1/> if no revision exists."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:46(c)
+msgid "PVR"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:47(c)
+msgid "6.3-r1"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:47(ti)
+msgid "Package version and revision (if any), for example <placeholder-1/>, <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:50(c)
+msgid "PF"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:51(c)
+msgid "${PN}-${PVR}"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:51(c)
+msgid "vim-6.3-r1"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:51(ti)
+msgid "Full package name, <placeholder-1/>, for example <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:54(c)
+msgid "A"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:57(c) devmanual/ebuild-writing/variables/text.xml:181(c) devmanual/ebuild-writing/variables/text.xml:210(c) devmanual/ebuild-writing/variables/text.xml:219(c) devmanual/ebuild-writing/variables/text.xml:417(c)
+msgid "USE"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:55(ti)
+msgid "All the source files for the package (excluding those which are not available because of <placeholder-1/> flags)."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:61(c)
+msgid "CATEGORY"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:62(c)
+msgid "app-editors"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:62(ti)
+msgid "Package's category, for example <placeholder-1/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:65(c)
+msgid "FILESDIR"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:67(c)
+msgid "files/"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:69(c)
+msgid "\"${PORTDIR}/${CATEGORY}/${PN}/files\""
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:66(ti)
+msgid "Path to the ebuild's <placeholder-1/> directory, commonly used for small patches and files. For example: <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:73(c)
+msgid "WORKDIR"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:76(c)
+msgid "\"${PORTAGE_BUILDDIR}/work\""
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:74(ti)
+msgid "Path to the ebuild's root build directory. For example: <placeholder-1/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:80(c)
+msgid "T"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:83(c)
+msgid "\"${PORTAGE_BUILDDIR}/temp\""
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:81(ti)
+msgid "Path to a temporary directory which may be used by the ebuild. For example: <placeholder-1/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:87(c) devmanual/ebuild-writing/variables/text.xml:574(c)
+msgid "D"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:90(c)
+msgid "\"${PORTAGE_BUILDDIR}/image\""
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:88(ti)
+msgid "Path to the temporary install directory. For example: <placeholder-1/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:94(c)
+msgid "HOME"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:98(c)
+msgid "\"${PORTAGE_BUILDDIR}/homedir\""
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:95(ti)
+msgid "Path to a temporary directory for use by any programs invoked by an ebuild that may read or modify the home directory. For example: <placeholder-1/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:102(c) devmanual/ebuild-writing/variables/text.xml:426(title) devmanual/ebuild-writing/variables/text.xml:430(c) devmanual/ebuild-writing/variables/text.xml:437(c) devmanual/ebuild-writing/variables/text.xml:438(c) devmanual/ebuild-writing/variables/text.xml:445(c) devmanual/ebuild-writing/variables/text.xml:452(c) devmanual/ebuild-writing/variables/text.xml:457(c) devmanual/ebuild-writing/variables/text.xml:574(c)
+msgid "ROOT"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:103(ti)
+msgid "The absolute path to the root directory into which the package is to be merged. Only allowed in pkg_* phases. See <uri link=\"::ebuild-writing/variables#ROOT\"/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:110(c)
+msgid "DISTDIR"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:111(ti)
+msgid "Contains the path to the directory where all the files fetched for the package are stored."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:117(c)
+msgid "EPREFIX"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:118(ti)
+msgid "The normalised offset-prefix path of an offset installation."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:123(c) devmanual/ebuild-writing/variables/text.xml:574(c)
+msgid "ED"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:125(c)
+msgid "${D%/}${EPREFIX}/"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:124(ti) devmanual/ebuild-writing/variables/text.xml:130(ti)
+msgid "Shorthand for <placeholder-1/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:129(c) devmanual/ebuild-writing/variables/text.xml:574(c)
+msgid "EROOT"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:131(c)
+msgid "${ROOT%/}${EPREFIX}/"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:140(title)
+msgid "Ebuild-defined Variables"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:143(p)
+msgid "The following variables may or must be defined by every ebuild."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:153(c)
+msgid "EAPI"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:154(ti)
+msgid "The EAPI. See <uri link=\"::ebuild-writing/eapi\"/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:159(c)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:160(ti)
+msgid "A short (not more than 80 characters) description of the package's purpose. Mandatory."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:166(c)
+msgid "HOMEPAGE"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:170(uri)
+msgid "freshmeat.net"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:173(c)
+msgid "https://wiki.gentoo.org/wiki/No_homepage"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:167(ti)
+msgid "Package's homepage. Mandatory (except for virtuals). If you are unable to locate an official one, try to provide a link to <placeholder-1/> or a similar package tracking site. If the homepage of the package is unavailable and no new location can be found, please update it to <placeholder-2/>. Never refer to a variable name in the string; include only raw text."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:178(c) devmanual/ebuild-writing/variables/text.xml:326(title)
+msgid "SRC_URI"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:179(ti)
+msgid "A list of source URIs for the package. Can contain <placeholder-1/>-conditional parts, see <uri link=\"::ebuild-writing/variables#SRC_URI\"/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:186(c) devmanual/ebuild-writing/variables/text.xml:412(title) devmanual/ebuild-writing/variables/text.xml:416(c)
+msgid "LICENSE"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:189(c)
+msgid "licenses/"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:187(ti)
+msgid "The package's license, corresponding exactly (including case) to a file in <placeholder-1/>. Mandatory (except for virtuals). See <uri link=\"::ebuild-writing/variables#LICENSE\"/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:194(c) devmanual/ebuild-writing/variables/text.xml:196(c) devmanual/ebuild-writing/variables/text.xml:294(title)
+msgid "SLOT"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:195(ti)
+msgid "The package's <placeholder-1/>. Mandatory. See <uri link=\"::ebuild-writing/variables#SLOT\"/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:201(c) devmanual/ebuild-writing/variables/text.xml:310(title) devmanual/ebuild-writing/variables/text.xml:314(c)
+msgid "KEYWORDS"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:202(ti)
+msgid "See <uri link=\"::ebuild-writing/variables#KEYWORDS\"/> and <uri link=\"::keywording/\"/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:208(c) devmanual/ebuild-writing/variables/text.xml:392(title) devmanual/ebuild-writing/variables/text.xml:396(c)
+msgid "IUSE"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:211(c) devmanual/ebuild-writing/variables/text.xml:347(c)
+msgid "USE_EXPAND"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:209(ti)
+msgid "A list of all <placeholder-1/> flags (excluding arch flags, but including <placeholder-2/> flags) used within the ebuild. See <uri link=\"::ebuild-writing/variables#IUSE\"/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:216(c)
+msgid "REQUIRED_USE"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:220(uri) devmanual/ebuild-writing/variables/text.xml:276(uri)
+msgid "EAPI&gt;=4"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:217(ti)
+msgid "A list of assertions that must be met by the configuration of <placeholder-1/> flags to be valid for this ebuild. (Requires <placeholder-2/>.)"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:224(c)
+msgid "RESTRICT"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:227(c)
+msgid "fetch"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:227(c)
+msgid "mirror"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:227(c)
+msgid "strip"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:227(c)
+msgid "test"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:228(c)
+msgid "userpriv"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:228(c)
+msgid "man 5 ebuild"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:225(ti)
+msgid "A space-delimited list of portage features to restrict. Valid values are <placeholder-1/>, <placeholder-2/>, <placeholder-3/>, <placeholder-4/> and <placeholder-5/>. See <placeholder-6/> for details."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:232(c) devmanual/ebuild-writing/variables/text.xml:418(c)
+msgid "DEPEND"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:233(ti)
+msgid "A list of the package's build dependencies. See <uri link=\"::general-concepts/dependencies\"/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:239(c) devmanual/ebuild-writing/variables/text.xml:249(c)
+msgid "RDEPEND"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:240(ti)
+msgid "A list of the package's runtime dependencies. See <uri link=\"::general-concepts/dependencies\"/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:246(c)
+msgid "PDEPEND"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:247(ti)
+msgid "A list of packages to be installed (if possible) after the package is merged. Use this only when <placeholder-1/> would cause cyclic dependencies. See <uri link=\"::general-concepts/dependencies\"/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:254(c)
+msgid "S"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:257(c)
+msgid "src_compile"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:257(c)
+msgid "src_install"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:258(c)
+msgid "\"${WORKDIR}/${P}\""
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:258(b) devmanual/ebuild-writing/variables/text.xml:298(b) devmanual/ebuild-writing/variables/text.xml:315(b) devmanual/ebuild-writing/variables/text.xml:510(e)
+msgid "not"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:255(ti)
+msgid "Path to the temporary build directory, used by <placeholder-1/> and <placeholder-2/>. Default: <placeholder-3/>. Ebuilds should <placeholder-4/> provide a value for this variable if it is the same as the default value."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:263(c)
+msgid "PROPERTIES"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:266(c)
+msgid "interactive"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:264(ti)
+msgid "A space-delimited list of properties, with conditional syntax support. <placeholder-1/> is the only valid value for now."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:271(c)
+msgid "DOCS"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:272(ti)
+msgid "An array or space-delimited list of documentation files for the default src_install function to install using dodoc. If undefined, a reasonable default list is used. (Requires <placeholder-1/>.)"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:280(c)
+msgid "HTML_DOCS"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:283(c)
+msgid "einstalldocs"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:285(uri)
+msgid "EAPI&gt;=6"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:281(ti)
+msgid "An array or space-delimited list of documentation files or directories for the <placeholder-1/> function to install recursively. (Requires <placeholder-2/>.)"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:298(c)
+msgid "SLOT=\"0\""
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:298(c)
+msgid "SLOT=\"\""
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:297(p)
+msgid "When slots are not needed, use <placeholder-1/>. Do <placeholder-2/> use <placeholder-3/>, as this will disable slotting for this package."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:302(p)
+msgid "See <uri link=\"::general-concepts/slotting/\"/> for more information on this variable."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:314(c)
+msgid "*"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:314(c)
+msgid "-*"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:315(c)
+msgid "KEYWORDS=\"*\""
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:315(c)
+msgid "KEYWORDS=\"~*\""
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:313(p)
+msgid "The only valid construct involving a <placeholder-1/> inside <placeholder-2/> is a <placeholder-3/>. Do <placeholder-4/> use <placeholder-5/> or <placeholder-6/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:318(p)
+msgid "See <uri link=\"::keywording/\"/> for how to handle this variable."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:329(title)
+msgid "Conditional Sources"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:334(c)
+msgid "flag? ( )"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:332(p)
+msgid "Conditional source files based upon USE flags are allowed using the usual <placeholder-1/> syntax. This is often useful for arch-specific code or for binary packages <d/> downloading sparc binaries on ppc would be a waste of bandwidth."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:338(codesample)
+msgid "SRC_URI=\"http://example.com/files/${P}-core.tar.bz2 x86? ( http://example.com/files/${P}/${P}-sse-asm.tar.bz2 ) ppc? ( http://example.com/files/${P}/${P}-vmx-asm.tar.bz2 ) sparc? ( http://example.com/files/${P}/${P}-vis-asm.tar.bz2 ) doc? ( http://example.com/files/${P}/${P}-docs.tar.bz2 )\""
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:349(e)
+msgid "all"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:346(p)
+msgid "If a <placeholder-1/> variable is used to control whether certain optional components are installed, the correct thing to do if the variable is unset is generally to install <placeholder-2/> available components."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:352(codesample)
+msgid "SRC_URI=\"http://example.com/files/${P}-core.tar.bz2 examplecards_foo? ( http://example.com/files/${P}-foo.tar.bz2 ) examplecards_bar? ( http://example.com/files/${P}-bar.tar.bz2 ) examplecards_baz? ( http://example.com/files/${P}-baz.tar.bz2 ) !examplecards_foo? ( !examplecards_bar? ( !examplecards_baz? ( http://example.com/files/${P}-foo.tar.bz2 http://example.com/files/${P}-bar.tar.bz2 http://example.com/files/${P}-baz.tar.bz2 ) ) )\""
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:367(title)
+msgid "Renaming Sources"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:372(c)
+msgid "-&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:370(p)
+msgid "Sometimes the upstream URI uses generic names that can easily clash with other packages when creating a single mirror. Using the <placeholder-1/> syntax allows you to rename the file when it's fetched from upstream for storing on mirrors and in the local distdir."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:379(c)
+msgid "1.0.tar.gz"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:380(c)
+msgid "thepackage-1.0.tar.gz"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:377(p)
+msgid "Here we download a file from upstream which has a plain name like <placeholder-1/> and save/mirror it with a better name like <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:383(codesample)
+msgid "SRC_URI=\"http://example.com/files/${PV}.tar.gz -&gt; ${P}.tar.gz\""
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:395(p)
+msgid "Note that the <placeholder-1/> variable is cumulative, so there is no need to specify USE flags used only within inherited eclasses within the ebuild's IUSE."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:399(note)
+msgid "You need not assign the IUSE variable in your ebuild if it is empty."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:404(c)
+msgid "sparc"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:404(c)
+msgid "mips"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:404(c)
+msgid "x86-fbsd"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:403(p)
+msgid "Arch USE flags (<placeholder-1/>, <placeholder-2/>, <placeholder-3/> and so on) should not be listed."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:418(uri)
+msgid "GLEP 23"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:415(p)
+msgid "It is possible to specify multiple <placeholder-1/> entries, and entries which only apply if a particular <placeholder-2/> flag is set. The format is the same as for <placeholder-3/>. See <placeholder-4/> for details."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:431(c) devmanual/ebuild-writing/variables/text.xml:441(c)
+msgid "ROOT=/somewhere"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:432(c)
+msgid "/somewhere"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:433(c)
+msgid "/somewhere/usr/bin/foo"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:429(p)
+msgid "The idea behind <placeholder-1/> is that one can build a system with <placeholder-2/> and then chroot into it or tar up <placeholder-3/> as a system image. It is not designed to allow the user to run <placeholder-4/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:437(c)
+msgid "pkg_*"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:438(c)
+msgid "src_*"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:440(c)
+msgid "ROOT=/"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:436(p)
+msgid "Ebuilds may reference <placeholder-1/> only during <placeholder-2/> phases. It can't be used correctly in <placeholder-3/> phases, since <placeholder-4/> may be different when merging a binary package. For example, a binary package may be built with <placeholder-5/> and then installed onto a system using <placeholder-6/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:447(c) devmanual/ebuild-writing/variables/text.xml:575(c) devmanual/ebuild-writing/variables/text.xml:583(c)
+msgid "/"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:444(p)
+msgid "When building a package, <placeholder-1/> should not be used to satisfy the required dependencies on libraries, headers files etc. Instead, the files on the build system should be specified using <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:450(p)
+msgid "In a cross compiling environment, ebuilds must not call any of the binaries inside <placeholder-1/> since they may not be executable on the build system."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:458(c)
+msgid "pkg_postinst()"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:461(codesample)
+msgid "pkg_postinst() { if [[ -e \"${ROOT}etc/oldconfig\" ]]; then ewarn \"You still have the obsolete config file \" ewarn \" ${ROOT}etc/oldconfig.\" ewarn \"Please migrate your settings to ${ROOT}etc/newconfig\" ewarn \"and remove ${ROOT}etc/oldconfig.\" fi }"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:456(p)
+msgid "Below is an example of an ebuild that uses <placeholder-1/> in <placeholder-2/> to conditionally print an error message if an old and obsolete configuration file still exists: <placeholder-3/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:477(title)
+msgid "Version and Name Formatting Issues"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:483(c)
+msgid "foo-1.2.3b"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:484(c)
+msgid "Foo-1.2-3b.tar.bz2"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:485(c)
+msgid "MY_PN"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:485(c)
+msgid "MY_PV"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:485(c)
+msgid "MY_P"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:487(c) devmanual/ebuild-writing/variables/text.xml:516(c)
+msgid "versionator"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:480(p)
+msgid "Often upstream's tarball versioning or naming format doesn't quite follow Gentoo conventions. Using capital letters in names or differences in how underscores and hyphens are used in versions are particularly common. For example, what Gentoo calls <placeholder-1/> may be expecting a tarball named <placeholder-2/>. Rather than hard coding the package string, it is preferable to make <placeholder-3/>, <placeholder-4/> and <placeholder-5/> variables and use those to define the upstream naming. The easy way of redefining the version, which should be used unless you are sure you know what you are doing, is to use the <placeholder-6/> eclass:"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:490(codesample)
+msgid "inherit versionator MY_PN=\"Foo\" MY_PV=$(replace_version_separator 2 '-') MY_P=\"${MY_PN}-${MY_PV}\""
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:499(c)
+msgid "Foo-1.3-4.5.tar.bz2"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:497(p)
+msgid "This code has the advantage that it will carry on working even if upstream switches to a format like <placeholder-1/> (yes, this really happens)."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:502(p)
+msgid "It is also possible to use bash substitution to achieve the same effect (this is how versionator works internally), but this is complicated, error prone and hard to read."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:509(c)
+msgid "sed"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:509(c)
+msgid "awk"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:509(c)
+msgid "cut"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:508(p)
+msgid "Some ebuilds use calls to <placeholder-1/>, <placeholder-2/> and / or <placeholder-3/> to do this. This must <placeholder-4/> be done for any new code, and should be fixed to use either versionator or bash substitution where possible. Global scope non-bash code is highly discouraged."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:517(c)
+msgid "man versionator.eclass"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:515(p)
+msgid "The <placeholder-1/> eclass can also be used to extract particular components from a version string. See <placeholder-2/> and the eclass source code for further documentation and examples. A brief summary of the functions follows."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:524(th)
+msgid "Function"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:528(c)
+msgid "get_all_version_components"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:529(ti)
+msgid "Split up a version string into its component parts."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:532(c)
+msgid "get_version_components"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:533(ti)
+msgid "Get important version components, excluding '.', '-' and '_'."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:536(c)
+msgid "get_major_version"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:537(ti)
+msgid "Get the major version."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:540(c)
+msgid "get_version_component_range"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:541(ti)
+msgid "Extract a range of subparts from a version string."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:544(c)
+msgid "get_after_major_version"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:545(ti)
+msgid "Get everything after the major version."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:548(c)
+msgid "replace_version_separator"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:549(ti)
+msgid "Replace a particular version separator."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:552(c)
+msgid "replace_all_version_separators"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:553(ti)
+msgid "Replace all version separators."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:556(c)
+msgid "delete_version_separator"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:557(ti)
+msgid "Delete a version separator."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:560(c)
+msgid "delete_all_version_separators"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:561(ti)
+msgid "Delete all version separators."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:569(title)
+msgid "Trailing Slashes in Variables"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:572(p)
+msgid "The following variables always end in a trailing slash by default: <placeholder-1/>, <placeholder-2/>, <placeholder-3/>, <placeholder-4/>. Therefore, there is no need to suffix them with <placeholder-5/> when joining paths."
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:580(uri)
+msgid "Bug 465722"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:584(c)
+msgid "${D%/}/"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:584(c)
+msgid "${ED%/}/"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:585(c)
+msgid "${ROOT%/}/"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:585(c)
+msgid "${EROOT%/}/"
+msgstr ""
+
+#: devmanual/ebuild-writing/variables/text.xml:578(note)
+msgid "Future EAPI may remove the trailing slash at the end per <placeholder-1/>. To ease the transition, and ensure maximum compatibility with both the current and the future EAPI, developers are encouraged to use the bash suffix removal for the trailing slash and add an explicit <placeholder-2/> when joining paths. For example: <placeholder-3/>, <placeholder-4/>, <placeholder-5/>, <placeholder-6/>."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/variables/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

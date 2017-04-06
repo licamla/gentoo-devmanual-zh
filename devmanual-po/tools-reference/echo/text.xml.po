@@ -1,0 +1,160 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/tools-reference/echo/text.xml:4(title)
+msgid "<c>echo</c> -- Print Strings"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:8(c) devmanual/tools-reference/echo/text.xml:17(c) devmanual/tools-reference/echo/text.xml:66(c) devmanual/tools-reference/echo/text.xml:82(c) devmanual/tools-reference/echo/text.xml:87(c)
+msgid "echo"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:9(c)
+msgid "echo firstString secondString ..."
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:7(p)
+msgid "The <placeholder-1/> command can be used to print strings. The standard usage is <placeholder-2/>. Also, it provides additional parameters for formatting of the output."
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:14(title)
+msgid "Abuse of <c>echo</c>"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:16(p)
+msgid "If you find yourself about to use <placeholder-1/> in an ebuild, stop and reconsider. It is almost always unnecessary."
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:23(c)
+msgid "einfo"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:23(c)
+msgid "eerror"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:24(c)
+msgid "einfon"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:24(c)
+msgid "eerrorn"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:26(c) devmanual/tools-reference/echo/text.xml:68(c) devmanual/tools-reference/echo/text.xml:78(c)
+msgid "\\n"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:21(p)
+msgid "First of all, for printing messages in standard portage scripts, you can use the <placeholder-1/>, and <placeholder-2/> functions along with their corresponding functions, <placeholder-3/>, <placeholder-4/>, etc, which are the same as the former, but they won't print the trailing newline (<placeholder-5/>)."
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:30(c)
+msgid "echo ${somevar} | grep substring"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:31(c)
+msgid "${somevar}"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:32(c)
+msgid "substring"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:32(c)
+msgid "echo ${somevar} | command"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:29(p)
+msgid "All usage of the form <placeholder-1/> just to check if the contents of the <placeholder-2/> variable contains <placeholder-3/>, or more often, <placeholder-4/>, are deprecated and should be (and in most cases, can be) used as less as possible: doing so involves for no reason an additional shell session and a pipe. The \"here strings\" section describes the preferred way of dealing with such cases."
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:42(title)
+msgid "Here Strings"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:48(c)
+msgid "&lt;&lt;&lt;word"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:49(c)
+msgid "bash"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:44(p)
+msgid "As of &gt;=bash-2.05b, the so-called \"here strings\" have been introduced. Using \"here strings\", you can pass contents of an environment variable to the standard input of an application, using <placeholder-1/> redirection: what actually happens is that <placeholder-2/> expands word and passes the result to the standard input."
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:54(c)
+msgid "${foo}"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:55(c)
+msgid "grep bar &lt;&lt;&lt; ${foo}"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:57(c)
+msgid "echo ${foo} | grep bar"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:53(p)
+msgid "A common example would be verifying if a variable <placeholder-1/> contains the bar substring with the following construct: <placeholder-2/>. This replaces the deprecated and more wasteful behaviour of using <placeholder-3/>."
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:63(title)
+msgid "Standard usage of <c>echo</c>"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:65(p)
+msgid "In standard calls, the <placeholder-1/> command with no additional options, outputs the arguments passed to the standard output, separated by whitespace and with a trailing newline character (<placeholder-2/>)."
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:72(c)
+msgid "-n"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:73(c)
+msgid "echo -n \"no trailing newline\""
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:71(p)
+msgid "If one wants to exclude the trailing newline character, the <placeholder-1/> option can be passed, as in: <placeholder-2/>."
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:77(c)
+msgid "\\t"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:78(c)
+msgid "\\r"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:81(c)
+msgid "-e"
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:83(c)
+msgid "echo -e \"first line\\nsecond line\\nthird line\""
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:76(p)
+msgid "Special characters, like tabs (<placeholder-1/>), newline characters (<placeholder-2/>), carriage return characters (<placeholder-3/>) (i.e. for translating newlines from DOS format to Unix format), and any other ASCII character given by its code value) can be passed to the echo command with the <placeholder-4/> option. For example, to output three strings, each on different lines, in a single <placeholder-5/> command, use: <placeholder-6/>."
+msgstr ""
+
+#: devmanual/tools-reference/echo/text.xml:86(p)
+msgid "Other escape sequences and additional parameters for the <placeholder-1/> command are available in the bash man page."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/tools-reference/echo/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

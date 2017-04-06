@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/tools-reference/ekeyword/text.xml:4(title)
+msgid "<c>ekeyword</c> -- Keywording"
+msgstr ""
+
+#: devmanual/tools-reference/ekeyword/text.xml:8(c)
+msgid "ekeyword"
+msgstr ""
+
+#: devmanual/tools-reference/ekeyword/text.xml:9(c)
+msgid "KEYWORDS"
+msgstr ""
+
+#: devmanual/tools-reference/ekeyword/text.xml:11(e)
+msgid "ekeyword changes ebuilds"
+msgstr ""
+
+#: devmanual/tools-reference/ekeyword/text.xml:12(c)
+msgid "sparc"
+msgstr ""
+
+#: devmanual/tools-reference/ekeyword/text.xml:12(c)
+msgid "~sparc"
+msgstr ""
+
+#: devmanual/tools-reference/ekeyword/text.xml:13(c)
+msgid "-sparc"
+msgstr ""
+
+#: devmanual/tools-reference/ekeyword/text.xml:13(c)
+msgid "^sparc"
+msgstr ""
+
+#: devmanual/tools-reference/ekeyword/text.xml:14(c)
+msgid "all"
+msgstr ""
+
+#: devmanual/tools-reference/ekeyword/text.xml:15(c)
+msgid "ekeyword ~all foo-1.23.ebuild"
+msgstr ""
+
+#: devmanual/tools-reference/ekeyword/text.xml:7(p)
+msgid "The <placeholder-1/> tool should be used to manipulate the <placeholder-2/> variable. Using this tool will guarantee that you get the correct keyword ordering <d/> manual editing may screw this up. The usage is <placeholder-3/>. Valid changes are in the form <placeholder-4/> (to mark stable), <placeholder-5/> (to mark unstable), <placeholder-6/> (to mark unavailable) and <placeholder-7/> (to remove the sparc keyword). The special <placeholder-8/> keyword is useful when doing version bumps <d/><placeholder-9/> will drop all currently present keywords to unstable. See ekeyword-1 for details."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/tools-reference/ekeyword/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

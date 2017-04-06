@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/virtuals/text.xml:4(title)
+msgid "Virtuals"
+msgstr ""
+
+#: devmanual/general-concepts/virtuals/text.xml:8(c)
+msgid "virtual"
+msgstr ""
+
+#: devmanual/general-concepts/virtuals/text.xml:14(c)
+msgid "HOMEPAGE"
+msgstr ""
+
+#: devmanual/general-concepts/virtuals/text.xml:14(c)
+msgid "LICENSE"
+msgstr ""
+
+#: devmanual/general-concepts/virtuals/text.xml:7(p)
+msgid "Virtuals are merely packages that are in the category of <placeholder-1/>. They use their dependency string to specify the providers for the virtual and should not install any files. Since they are regular ebuilds, there can be several versions of a virtual (which can be helpful when a package may be provided by another in some versions, and not others <d/> see the perl virtuals for an example of this). One other difference (besides not installing any files) is that a virtual does not define <placeholder-2/> and <placeholder-3/> variables. Since it installs no files, it really does not have a license."
+msgstr ""
+
+#: devmanual/general-concepts/virtuals/text.xml:19(c)
+msgid "gentoo-dev"
+msgstr ""
+
+#: devmanual/general-concepts/virtuals/text.xml:18(p)
+msgid "Before adding a new virtual, it should be discussed on <placeholder-1/>."
+msgstr ""
+
+#: devmanual/general-concepts/virtuals/text.xml:25(codesample)
+msgid "EAPI=4 DESCRIPTION=\"Virtual for C++ tr1 &lt;type_traits&gt;\" SLOT=\"0\" KEYWORDS=\"alpha amd64 arm hppa ia64 ~mips ppc ppc64 ~s390 sparc x86 ~x86-fbsd\" RDEPEND=\"|| ( &gt;=sys-devel/gcc-4.1 dev-libs/boost )\""
+msgstr ""
+
+#: devmanual/general-concepts/virtuals/text.xml:22(p)
+msgid "An example of a virtual: <placeholder-1/> Looks familar...right? It should since its going to look just like a regular ebuild."
+msgstr ""
+
+#: devmanual/general-concepts/virtuals/text.xml:40(e)
+msgid "old-style"
+msgstr ""
+
+#: devmanual/general-concepts/virtuals/text.xml:40(c)
+msgid "PROVIDE"
+msgstr ""
+
+#: devmanual/general-concepts/virtuals/text.xml:39(note)
+msgid "The so-called <placeholder-1/> or <placeholder-2/> type virtuals have been banned from the Gentoo repository."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/virtuals/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

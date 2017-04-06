@@ -1,0 +1,1349 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/eapi/text.xml:4(title)
+msgid "EAPI Usage and Description"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:7(p)
+msgid "The Package Manager Specification (PMS) is a standardization effort to ensure that the ebuild file format, the ebuild repository format (of which the Gentoo repository is Gentoo's main incarnation) as well as behavior of the package managers interacting with these ebuilds is properly written down and agreed upon."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:15(p)
+msgid "EAPI is a version defined in ebuilds and other package manager related files which informs the package manager about the file syntax and content. It is, in effect, the version of the package manager specification (PMS) that the file adheres to."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:22(p)
+msgid "This section provides usage and descriptions of the different EAPIs."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:27(title)
+msgid "Usage of EAPIs"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:33(c)
+msgid "app-doc/pms"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:29(important)
+msgid "An overview about the important features of each EAPI is provided in the appendix of the Package Manager Specification. The two-page leaflet can be printed out, consulted for reference and is available as <placeholder-1/> in the main tree."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:35(p)
+msgid "If EAPI is undefined in an ebuild, then EAPI=0 is selected. You should set the EAPI variable, by specifying it at the top of the ebuild:"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:40(note)
+msgid "Most developers prefer to set the EAPI version without quotes. However, the PMS allows single and double quotes as well."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:44(codesample)
+msgid "# Copyright 1999-2017 Gentoo Foundation # Distributed under the terms of the GNU General Public License v2 EAPI=6"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:51(important)
+msgid "EAPI must only be defined in ebuild files, not eclasses. (eclasses may have EAPI-conditional code)"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:56(p)
+msgid "When writing new ebuilds developers can choose whathever EAPI they think is the best. Using the features of the latest EAPI is encouraged."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:65(title)
+msgid "EAPI=1"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:70(b)
+msgid "Default src_compile Phase Function"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:72(c)
+msgid "ECONF_SOURCE"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:73(c) devmanual/ebuild-writing/eapi/text.xml:421(c) devmanual/ebuild-writing/eapi/text.xml:965(c)
+msgid "econf"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:73(c) devmanual/ebuild-writing/eapi/text.xml:253(c) devmanual/ebuild-writing/eapi/text.xml:256(c) devmanual/ebuild-writing/eapi/text.xml:258(c) devmanual/ebuild-writing/eapi/text.xml:283(c) devmanual/ebuild-writing/eapi/text.xml:300(c) devmanual/ebuild-writing/eapi/text.xml:319(c)
+msgid "src_compile"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:71(p)
+msgid "Support for the <placeholder-1/> variable, which is also supported by <placeholder-2/>, has been added to the default <placeholder-3/> implementation."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:75(codesample)
+msgid "src_compile() { if [[ -x ${ECONF_SOURCE:-.}/configure ]] ; then econf fi if [ -f Makefile ] || [ -f GNUmakefile ] || [ -f makefile ] ; then emake || die \"emake failed\" fi }"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:87(b)
+msgid "SLOT dependencies"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:88(p)
+msgid "Any valid package dependency specification can be constrained to match a specific SLOT. This is accomplished by appending a colon to the specification, followed by a SLOT value."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:94(b)
+msgid "SLOT dependency examples:"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:96(c)
+msgid "x11-libs/qt:3"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:97(c)
+msgid "~x11-libs/qt-3.3.8:3"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:98(c)
+msgid "&gt;=x11-libs/qt-3.3.8:3"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:99(c)
+msgid "=x11-libs/qt-3.3*:3"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:104(b)
+msgid "IUSE defaults"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:105(p)
+msgid "Add + or - before the name of the use flag in IUSE to turn it on or off by default."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:111(c)
+msgid "USE_ORDER=\"env:pkg:conf:defaults:pkginternal:env.d\""
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:110(important)
+msgid "The default USE-ordering is <placeholder-1/> (see man make.conf)"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:114(important)
+msgid "Disabling default IUSE is pretty much useless as it does not override the profile and user config (make.conf and package.use)"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:119(codesample)
+msgid "# Copyright 1999-2017 Gentoo Foundation # Distributed under the terms of the GNU General Public License v2 EAPI=1 IUSE=\"foo +bar\""
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:136(title)
+msgid "EAPI=2"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:140(title) devmanual/ebuild-writing/eapi/text.xml:359(title) devmanual/ebuild-writing/eapi/text.xml:782(title) devmanual/ebuild-writing/eapi/text.xml:930(title)
+msgid "Helpers"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:144(b)
+msgid "doman Language Support"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:146(c)
+msgid "doman"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:148(codesample)
+msgid "doman foo.1 # will go into /usr/share/man/man1/foo.1 doman foo.lang.1 # will go into /usr/share/man/lang/man1/foo.1 with EAPI=2"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:145(p)
+msgid "<placeholder-1/> automatically detects language codes and puts it in the appropriate directory. <placeholder-2/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:161(title) devmanual/ebuild-writing/eapi/text.xml:467(title) devmanual/ebuild-writing/eapi/text.xml:705(title)
+msgid "Metadata"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:165(b)
+msgid "Blockers"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:169(b)
+msgid "New Meaning for Old Syntax"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:171(c)
+msgid "!"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:173(e)
+msgid "weak blocks"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:170(p)
+msgid "Blockers which use the previously existing <placeholder-1/> syntax now have a slightly different meaning. These so-called <placeholder-2/> indicate that conflicting packages may be temporarily installed simultaneously. When temporary simultaneous installation of conflicting packages occurs, the installation of a newer package may overwrite any colliding files that belong to an older package which is explicitly blocked. When such file collisions occur, the colliding files cease to belong to the older package, and they remain installed after the older package is eventually uninstalled. The older package is uninstalled only after any newer blocking packages have been merged on top of it."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:186(c) devmanual/ebuild-writing/eapi/text.xml:188(c)
+msgid "!!"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:186(b)
+msgid "New <placeholder-1/> Operator"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:188(e)
+msgid "strong blocks"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:187(p)
+msgid "A new <placeholder-1/> operator for <placeholder-2/> is now supported, for use in special cases for which temporary simultaneous installation of conflicting packages should not be allowed. If both weak and strong blocks match a given package, the strong block takes precedence."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:199(b)
+msgid "USE Dependencies"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:200(p)
+msgid "It is possible to depend on USE-flags of packages."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:205(c)
+msgid "foo[bar]"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:205(li)
+msgid "<placeholder-1/> means that package foo must have USE-flag bar enabled"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:207(c)
+msgid "foo[bar,baz]"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:207(li)
+msgid "<placeholder-1/> means that the package foo must have both the bar and baz USE-flags enabled"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:210(c)
+msgid "foo[-bar,baz]"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:210(li)
+msgid "<placeholder-1/> means that the package foo must have the bar USE-flag disabled and baz USE-flag enabled"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:212(c)
+msgid "foo[bar?]"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:212(c)
+msgid "bar? ( foo[bar] ) !bar? ( foo )"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:212(li) devmanual/ebuild-writing/eapi/text.xml:213(li) devmanual/ebuild-writing/eapi/text.xml:214(li) devmanual/ebuild-writing/eapi/text.xml:215(li)
+msgid "<placeholder-1/> means <placeholder-2/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:213(c)
+msgid "foo[!bar?]"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:213(c)
+msgid "bar? ( foo ) !bar? ( foo[-bar] )"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:214(c)
+msgid "foo[bar=]"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:214(c)
+msgid "bar? ( foo[bar] ) !bar? ( foo[-bar] )"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:215(c)
+msgid "foo[!bar=]"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:215(c)
+msgid "bar? ( foo[-bar] ) !bar? ( foo[bar] )"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:203(p)
+msgid "Examples: <ul><placeholder-1/><placeholder-2/><placeholder-3/><placeholder-4/><placeholder-5/><placeholder-6/><placeholder-7/></ul>"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:220(b)
+msgid "Customization of Output File Names in SRC_URI"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:224(c)
+msgid "-&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:221(p)
+msgid "A new syntax is supported which allows customization of the output file name for a given URI. In order to customize the output file name, a given URI should be followed by a \"<placeholder-1/>\" operator which, in turn, should be followed by the desired output file name. As usual, all tokens, including the operator and output file name, should be separated by whitespace."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:229(p) devmanual/ebuild-writing/eapi/text.xml:370(p) devmanual/ebuild-writing/eapi/text.xml:395(p) devmanual/ebuild-writing/eapi/text.xml:478(p) devmanual/ebuild-writing/eapi/text.xml:512(p)
+msgid "Example:"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:230(codesample)
+msgid "SRC_URI=\"http://dl.google.com/earth/client/GE4/release_4_3/GoogleEarthLinux.bin -&gt; GoogleEarthLinux-${PV}.bin\""
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:240(title) devmanual/ebuild-writing/eapi/text.xml:491(title) devmanual/ebuild-writing/eapi/text.xml:827(title) devmanual/ebuild-writing/eapi/text.xml:892(title)
+msgid "Phases"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:244(c) devmanual/ebuild-writing/eapi/text.xml:255(c) devmanual/ebuild-writing/eapi/text.xml:281(c) devmanual/ebuild-writing/eapi/text.xml:896(c) devmanual/ebuild-writing/eapi/text.xml:898(c) devmanual/ebuild-writing/eapi/text.xml:960(c) devmanual/ebuild-writing/eapi/text.xml:961(c)
+msgid "src_prepare"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:244(b) devmanual/ebuild-writing/eapi/text.xml:251(b) devmanual/ebuild-writing/eapi/text.xml:912(b)
+msgid "New <placeholder-1/> Phase Function"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:246(c) devmanual/ebuild-writing/eapi/text.xml:280(c) devmanual/ebuild-writing/eapi/text.xml:847(c)
+msgid "src_unpack"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:247(c)
+msgid "$S"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:245(p)
+msgid "A new src_prepare function is called after the <placeholder-1/> function, with cwd initially set to <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:251(c) devmanual/ebuild-writing/eapi/text.xml:254(c) devmanual/ebuild-writing/eapi/text.xml:255(c) devmanual/ebuild-writing/eapi/text.xml:258(c) devmanual/ebuild-writing/eapi/text.xml:282(c)
+msgid "src_configure"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:252(p)
+msgid "The configure portion of the <placeholder-1/> function has been split into a separate function which is named <placeholder-2/>. The <placeholder-3/> function is called in-between the <placeholder-4/> and <placeholder-5/> functions."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:260(codesample)
+msgid "src_configure() { if [[ -x ${ECONF_SOURCE:-.}/configure ]] ; then econf fi } src_compile() { if [ -f Makefile ] || [ -f GNUmakefile ] || [ -f makefile ] ; then emake || die \"emake failed\" fi }"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:258(p)
+msgid "The default <placeholder-1/> and <placeholder-2/> functions in EAPI=2: <placeholder-3/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:276(b)
+msgid "Execution Order of Phase Functions"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:279(c) devmanual/ebuild-writing/eapi/text.xml:639(c) devmanual/ebuild-writing/eapi/text.xml:847(c)
+msgid "pkg_setup"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:284(c) devmanual/ebuild-writing/eapi/text.xml:833(c)
+msgid "src_test"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:285(c) devmanual/ebuild-writing/eapi/text.xml:430(c) devmanual/ebuild-writing/eapi/text.xml:458(c) devmanual/ebuild-writing/eapi/text.xml:538(c) devmanual/ebuild-writing/eapi/text.xml:675(c) devmanual/ebuild-writing/eapi/text.xml:677(c) devmanual/ebuild-writing/eapi/text.xml:912(c) devmanual/ebuild-writing/eapi/text.xml:914(c)
+msgid "src_install"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:286(c) devmanual/ebuild-writing/eapi/text.xml:637(c)
+msgid "pkg_preinst"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:287(c) devmanual/ebuild-writing/eapi/text.xml:638(c)
+msgid "pkg_postinst"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:288(c) devmanual/ebuild-writing/eapi/text.xml:647(c)
+msgid "pkg_prerm"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:289(c) devmanual/ebuild-writing/eapi/text.xml:647(c)
+msgid "pkg_postrm"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:294(b)
+msgid "Default Phase Functions"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:296(c)
+msgid "pkg_nofetch"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:296(c)
+msgid "src_*"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:297(c)
+msgid "default_"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:299(c) devmanual/ebuild-writing/eapi/text.xml:308(c) devmanual/ebuild-writing/eapi/text.xml:320(c)
+msgid "default_src_compile"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:295(p)
+msgid "The default <placeholder-1/> and <placeholder-2/> phase functions are now accessible via a function having a name that begins with <placeholder-3/> and ends with the respective phase function name. For example, a call to a function with the name <placeholder-4/> is equivalent to a call to the default <placeholder-5/> implementation."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:304(c)
+msgid "default_pkg_nofetch"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:305(c)
+msgid "default_src_unpack"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:306(c)
+msgid "default_src_prepare"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:307(c)
+msgid "default_src_configure"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:309(c)
+msgid "default_src_test"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:302(p)
+msgid "The default phase functions are: <ul><li><placeholder-1/></li><li><placeholder-2/></li><li><placeholder-3/></li><li><placeholder-4/></li><li><placeholder-5/></li><li><placeholder-6/></li></ul>"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:314(b)
+msgid "Default Phase Function Alias"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:316(c) devmanual/ebuild-writing/eapi/text.xml:318(c)
+msgid "default"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:317(c)
+msgid "default_*"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:315(p)
+msgid "A function named \"<placeholder-1/>\" is redefined for each phase so that it will call the <placeholder-2/> function corresponding to the current phase. For example, a call to the function named \"<placeholder-3/>\" during the <placeholder-4/> phase is equivalent to a call to the function named <placeholder-5/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:330(title)
+msgid "EAPI=3"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:335(b)
+msgid "Gentoo Prefix support"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:337(c)
+msgid "EPREFIX"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:337(c)
+msgid "EROOT"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:337(c)
+msgid "ED"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:339(uri)
+msgid "Gentoo Prefix Techdocs"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:336(p)
+msgid "Support for the <placeholder-1/>, <placeholder-2/>, and <placeholder-3/> variables. If an ebuild uses one of these, it must be EAPI3 aware. See <placeholder-4/> for more information."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:343(b)
+msgid "unpack supports .xz and .tar.xz"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:345(c) devmanual/ebuild-writing/eapi/text.xml:977(c) devmanual/ebuild-writing/eapi/text.xml:979(c) devmanual/ebuild-writing/eapi/text.xml:980(c) devmanual/ebuild-writing/eapi/text.xml:981(c)
+msgid "unpack"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:344(p)
+msgid "The <placeholder-1/> command supports xz-archives and xz-compressed tar files."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:355(title)
+msgid "EAPI=4"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:363(b)
+msgid "utilities die on their own, unless the nonfatal command is used"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:367(c)
+msgid "nonfatal function [arg,...]"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:364(p)
+msgid "Ebuild functions all die on their own in EAPI=4. In case that this non-zero exit status is expected, you may call <placeholder-1/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:371(codesample)
+msgid "EAPI=1 ... src_install() { emake DESTDIR=\"${D}\" install || die \"make install failed\" dodoc ChangeLog README }"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:379(codesample)
+msgid "EAPI=4 ... src_install() { emake DESTDIR=\"${D}\" install nonfatal dodoc ChangeLog README }"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:389(b)
+msgid "recursive dodoc"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:391(c) devmanual/ebuild-writing/eapi/text.xml:392(c) devmanual/ebuild-writing/eapi/text.xml:676(c)
+msgid "dodoc"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:391(c) devmanual/ebuild-writing/eapi/text.xml:807(c)
+msgid "-r"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:390(p)
+msgid "<placeholder-1/> supports <placeholder-2/> as the first argument, which leads <placeholder-3/> to install the specified documentation directory recursively into the docdir."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:396(codesample)
+msgid "src_install() { default dodoc ChangeLog dodoc -r doc/ }"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:405(b)
+msgid "doins symlink supports"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:407(c)
+msgid "doins"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:406(p)
+msgid "Within EAPI=4, <placeholder-1/> supports installing symlinks as symlinks when installing recursively. For older EAPIs, the symlink behaviour is undefined."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:413(b)
+msgid "dosed and dohard are banned"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:415(c)
+msgid "dosed"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:415(c)
+msgid "dohard"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:414(p)
+msgid "The <placeholder-1/> and <placeholder-2/> commands are banned in this EAPI."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:419(b)
+msgid "econf adds --disable-dependency-tracking"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:422(c)
+msgid "--disable-dependency-tracking"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:420(p)
+msgid "Within EAPI=4, <placeholder-1/> adds <placeholder-2/> to the default configure options."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:427(b)
+msgid "controllable compression via docompress"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:429(c)
+msgid "${D}"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:430(c) devmanual/ebuild-writing/eapi/text.xml:450(c) devmanual/ebuild-writing/eapi/text.xml:455(c)
+msgid "docompress"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:435(c)
+msgid "/usr/share/doc"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:436(c)
+msgid "/usr/share/info"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:437(c)
+msgid "/usr/share/man"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:441(c)
+msgid "/usr/share/doc/${PF}/html"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:428(p)
+msgid "To compress files in the destination-folder <placeholder-1/>, the <placeholder-2/> command may be used in <placeholder-3/>. To control which items should be compressed and which shouldn't be compressed, you may include or exclude directories or plain files. The default inclusion list contains: <ul><li><placeholder-4/></li><li><placeholder-5/></li><li><placeholder-6/></li></ul> The default exclusion list contains: <ul><li><placeholder-7/></li></ul> When a directory is in- or excluded, all files and directories in the given directories shall be added to the corresponding list. If a file is in- or excluded, the file shall be added to the corresponding list (exclusion is stronger than inclusion <d/> if a file is in both lists, the inclusion will be ignored)."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:450(c)
+msgid "-x"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:449(p)
+msgid "If the first argument of <placeholder-1/> is <placeholder-2/>, the items specified will be added to the exclusion list, otherwise they will be added to the inclusion list."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:455(e)
+msgid "not"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:454(note)
+msgid "When <placeholder-1/> is called, it is <placeholder-2/> required that the paths specified as its arguments are pointing to existing files or directories. However, if a file still doesn't exist when <placeholder-3/> has completed, it will be ignored with a warning."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:471(b)
+msgid "use dependencies default"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:473(c) devmanual/ebuild-writing/eapi/text.xml:476(c)
+msgid "(+)"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:474(c) devmanual/ebuild-writing/eapi/text.xml:477(c)
+msgid "(-)"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:479(codesample)
+msgid "DEPEND=\" &gt;=dev-libs/boost-1.32[boost(+)] sys-devel/gcc[openmp(-)]\""
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:472(p)
+msgid "In addition to the use-deps specified in EAPI=2, a <placeholder-1/> or <placeholder-2/> may be added to the use-dep to define a default-value in case the use-flag does not exist in the given package. The <placeholder-3/> means that this use-flag is assumed to be enabled, <placeholder-4/> the opposite. <placeholder-5/><placeholder-6/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:495(b)
+msgid "new pkg_pretend phase"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:497(c) devmanual/ebuild-writing/eapi/text.xml:508(c) devmanual/ebuild-writing/eapi/text.xml:639(c)
+msgid "pkg_pretend"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:502(c)
+msgid "eerror"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:502(c) devmanual/ebuild-writing/eapi/text.xml:948(c)
+msgid "die"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:503(important)
+msgid "There is no guarantee that the ebuild's dependencies are installed when this phase is called."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:507(important)
+msgid "As <placeholder-1/> is not called in the main phase function sequence, environment saving is not guaranteed."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:496(p)
+msgid "The new <placeholder-1/> phase can be used to do sanity checks before the main phase function sequence is run (meaning this phase is executed after the package manager has calculated the dependencies and before installing them). This phase typically checks for a kernel configuration and may <placeholder-2/> and <placeholder-3/> when needed. <placeholder-4/><placeholder-5/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:513(codesample)
+msgid "# Copyright 1999-2017 Gentoo Foundation # Distributed under the terms of the GNU General Public License v2 EAPI=4 inherit linux-info ... CONFIG_CHECK=\"FUSE_FS\" ERROR_FUSE_FS=\"this is an unrealistic testcase...\" pkg_pretend() { if use kernel_linux ; then if [[ -e \"${ROOT}\"/usr/src/linux/.config ]] ; then if kernel_is lt 2 6 30 ; then check_extra_config fi fi fi }"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:536(b)
+msgid "default src_install is no longer a no-op"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:537(p)
+msgid "The default <placeholder-1/> function in EAPI=4:"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:540(codesample)
+msgid "src_install() { if [[ -f Makefile ]] || [[ -f GNUmakefile]] || [[ -f makefile ]] ; then emake DESTDIR=\"${D}\" install fi if ! declare -p DOCS &gt;/dev/null 2&gt;&amp;1 ; then local d for d in README* ChangeLog AUTHORS NEWS TODO CHANGES THANKS BUGS \\ FAQ CREDITS CHANGELOG ; do [[ -s \"${d}\" ]] &amp;&amp; dodoc \"${d}\" done elif declare -p DOCS | grep -q \"^declare -a \" ; then dodoc \"${DOCS[@]}\" else dodoc ${DOCS} fi }"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:561(b)
+msgid "pkg_info for non-installed packages"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:563(c)
+msgid "pkg_info"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:562(p)
+msgid "The <placeholder-1/> function may also be called by the package manager for non-installed packages. Ebuild writers should note that dependencies may not be available."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:574(title) devmanual/ebuild-writing/eapi/text.xml:841(title)
+msgid "Variables"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:578(b) devmanual/ebuild-writing/eapi/text.xml:580(c) devmanual/ebuild-writing/eapi/text.xml:586(c) devmanual/ebuild-writing/eapi/text.xml:623(c)
+msgid "REQUIRED_USE"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:579(p)
+msgid "The <placeholder-1/> variable contains a list of assertions that must be met by the configuration of USE flags to be valid for this ebuild. In order to be matched, a USE flag in a terminal element must be enabled (or disabled if it has an exclamation mark prefix)."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:586(c) devmanual/ebuild-writing/eapi/text.xml:609(c)
+msgid "DEPEND"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:588(c) devmanual/ebuild-writing/eapi/text.xml:594(c) devmanual/ebuild-writing/eapi/text.xml:601(c) devmanual/ebuild-writing/eapi/text.xml:613(c)
+msgid "foo"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:588(c) devmanual/ebuild-writing/eapi/text.xml:594(c) devmanual/ebuild-writing/eapi/text.xml:601(c) devmanual/ebuild-writing/eapi/text.xml:613(c)
+msgid "bar"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:585(p)
+msgid "Essentially, <placeholder-1/> is an analogue of <placeholder-2/> style syntax. For example, to state that some combination is forbidden, i.e. \"if <placeholder-3/> is set, <placeholder-4/> must be unset\":"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:590(codesample)
+msgid "REQUIRED_USE=\"foo? ( !bar )\""
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:595(c) devmanual/ebuild-writing/eapi/text.xml:601(c) devmanual/ebuild-writing/eapi/text.xml:614(c) devmanual/ebuild-writing/eapi/text.xml:760(c)
+msgid "baz"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:595(c)
+msgid "quux"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:593(p)
+msgid "To state \"if <placeholder-1/> is set, then at least one of <placeholder-2/>, <placeholder-3/>, and <placeholder-4/> must be activated\":"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:597(codesample)
+msgid "REQUIRED_USE=\"foo? ( || ( bar baz quux ) )\""
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:600(p)
+msgid "To state \"exactly one of <placeholder-1/>, <placeholder-2/>, or <placeholder-3/> must be set, but not several\":"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:604(codesample)
+msgid "REQUIRED_USE=\"^^ ( foo bar baz )\""
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:610(c)
+msgid "^^"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:607(p)
+msgid "Note that the last relationship is that of an Exclusive OR (XOR). While an XOR could be formed from usual <placeholder-1/> syntax, a specific <placeholder-2/> operator has been added for this case."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:612(p)
+msgid "Finally, to state \"at least one of <placeholder-1/>, <placeholder-2/>, or <placeholder-3/> must be set\":"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:616(codesample)
+msgid "REQUIRED_USE=\"|| ( foo bar baz )\""
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:620(important)
+msgid "See section <uri link=\"::general-concepts/use-flags/#conflicting-use-flags\"/> for when (and when not) to use <placeholder-1/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:627(b)
+msgid "REPLACING_VERSIONS and REPLACED_BY_VERSION"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:629(c) devmanual/ebuild-writing/eapi/text.xml:637(c)
+msgid "REPLACING_VERSIONS"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:630(c) devmanual/ebuild-writing/eapi/text.xml:645(c)
+msgid "PVR"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:633(c)
+msgid "foo-2:2"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:634(c)
+msgid "foo-2:1"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:634(c)
+msgid "foo-3:2"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:628(p)
+msgid "The <placeholder-1/> variable contains a whitespace-separated list of all versions (<placeholder-2/>) of this package that are being replaced (uninstalled or overwritten) as a result of this install. It is a list, not a single optional value, to handle pathological cases such as installing <placeholder-3/> to replace <placeholder-4/> and <placeholder-5/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:636(p)
+msgid "<placeholder-1/> is valid in <placeholder-2/> and <placeholder-3/>. In addition, it may be available in <placeholder-4/> and <placeholder-5/>, although you should take care to handle binary package creation and installation correctly when using it in these phases."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:644(c)
+msgid "REPLACED_BY_VERSION"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:643(p)
+msgid "The <placeholder-1/> variable contains the single version (<placeholder-2/>) of this package that is replacing us, if we are being uninstalled as part of an install, or an empty string otherwise. It is valid in <placeholder-3/> and <placeholder-4/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:651(b) devmanual/ebuild-writing/eapi/text.xml:653(c)
+msgid "MERGE_TYPE"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:656(c)
+msgid "source"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:657(p)
+msgid "if building and installing a package from source,"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:660(c)
+msgid "binary"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:661(p)
+msgid "if installing a binary package,"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:664(c)
+msgid "buildonly"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:665(p)
+msgid "if building a binary package without installing it."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:652(p)
+msgid "The <placeholder-1/> variable contains the type of package that is being merged. Possible values are: <dl><dt><placeholder-2/></dt><dd><placeholder-3/></dd><dt><placeholder-4/></dt><dd><placeholder-5/></dd><dt><placeholder-6/></dt><dd><placeholder-7/></dd></dl>"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:672(b) devmanual/ebuild-writing/eapi/text.xml:674(c) devmanual/ebuild-writing/eapi/text.xml:987(c) devmanual/ebuild-writing/eapi/text.xml:987(c)
+msgid "DOCS"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:673(p)
+msgid "The <placeholder-1/> variable is an array or whitespace-separated list of documentation files for the default <placeholder-2/> function to install using <placeholder-3/>. If undefined, a reasonable default list is used. See the default <placeholder-4/> function above."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:681(b)
+msgid "AA and KV variables are gone"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:683(c)
+msgid "AA"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:683(c)
+msgid "KV"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:682(p)
+msgid "The <placeholder-1/> and <placeholder-2/> variables are no longer set in EAPI=4."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:687(b)
+msgid "no more RDEPEND=\"${DEPEND}\""
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:689(c)
+msgid "RDEPEND"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:690(c)
+msgid "RDEPEND=\"${DEPEND}\""
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:688(p)
+msgid "When <placeholder-1/> is unset, there will no longer be an automatic assignment of <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:701(title)
+msgid "EAPI=5"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:709(b)
+msgid "REQUIRED_USE supports new at-most-one-of operator"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:711(b)
+msgid "at-most-one-of"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:711(c)
+msgid "'??'"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:710(p)
+msgid "The new <placeholder-1/> operator consists of the string <placeholder-2/>, and is satisfied if zero or one (but no more) of its child elements is matched."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:715(b)
+msgid "SLOT supports optional \"sub-slot\" part"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:717(c)
+msgid "SLOT"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:717(b)
+msgid "sub-slot"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:717(c) devmanual/ebuild-writing/eapi/text.xml:723(c)
+msgid "/"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:716(p)
+msgid "The <placeholder-1/> variable may contain an optional <placeholder-2/> part that follows the regular slot and is delimited by a <placeholder-3/> character. The sub-slot must be a valid slot name. The sub-slot is used to represent cases in which an upgrade to a new version of a package with a different sub-slot may require dependent packages to be rebuilt. When the sub-slot part is omitted from the SLOT definition, the package is considered to have an implicit sub-slot which is equal to the regular slot."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:721(b)
+msgid "Slot operators and sub-slots in dependencies"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:722(p)
+msgid "A slot dependency may contain an optional sub-slot part that follows the regular slot and is delimited by a <placeholder-1/> character. This can be useful for packages installing pre-built binaries that require a library with a specific soname version which corresponds to the sub-slot. For example:"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:725(codesample)
+msgid "RDEPEND=\"dev-libs/foo:0/3\""
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:729(b)
+msgid "slot operators"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:728(p)
+msgid "Package dependency specifications can use <placeholder-1/> to clarify what should happen if the slot and/or sub-slot of a runtime dependency changes:"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:735(c)
+msgid ":*"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:734(li)
+msgid "<placeholder-1/> Indicates that any slot value is acceptable. In addition, for runtime dependencies, indicates that the package specifying the dependency will not break if the package matching the dependency is replaced by a different matching package with a different slot and/or sub-slot."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:738(c) devmanual/ebuild-writing/eapi/text.xml:741(c)
+msgid ":="
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:737(li)
+msgid "<placeholder-1/> Indicates that any slot value is acceptable. In addition, for runtime dependencies, indicates that the package specifying the dependency will break unless there is available a package matching the dependency and whose slot and sub-slot are equal to the slot and sub-slot of the best installed version that had matched this dependency at the time when the package specifying this dependency had been installed."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:741(c)
+msgid ":slot="
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:743(c)
+msgid ":slot/subslot"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:743(c)
+msgid "="
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:743(c)
+msgid ":slot/subslot="
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:742(note)
+msgid "use <placeholder-1/> without a <placeholder-2/> to depend on a specific slot and sub-slot pair; it's a syntax error to use <placeholder-3/> in an ebuild."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:740(li)
+msgid "<placeholder-1/> Indicates that only a specific slot value is acceptable, and otherwise behaves identically to the <placeholder-2/> operator. <placeholder-3/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:748(c)
+msgid ":slot"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:747(p)
+msgid "The <placeholder-1/> dependency syntax continues to behave like in EAPI=4 or earlier, i.e. it indicates that only the specific slot value is acceptable, but the package will not break when the version matching the runtime dependency is replaced by a version with a different sub-slot."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:750(p)
+msgid "For example:"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:753(codesample)
+msgid "RDEPEND=\"dev-libs/foo:2= &gt;=dev-libs/bar-0.9:= media-gfx/baz:* x11-misc/wombat:0\""
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:760(c)
+msgid "foo:2"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:760(c)
+msgid "&gt;=bar-0.9"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:760(c)
+msgid "wombat:0"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:759(p)
+msgid "means that the package should be rebuilt when <placeholder-1/> or <placeholder-2/> are upgraded to versions with different subslots, but that changes in subslots of <placeholder-3/> or <placeholder-4/> should be ignored."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:768(title)
+msgid "Profiles"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:772(b)
+msgid "Profile stable USE forcing and masking"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:774(c)
+msgid "use.stable.mask"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:774(c)
+msgid "use.stable.force"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:774(c)
+msgid "package.use.stable.mask"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:774(c)
+msgid "package.use.stable.force"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:773(p)
+msgid "In profile directories with an EAPI supporting stable masking, new USE configuration files are supported: <placeholder-1/>, <placeholder-2/>, <placeholder-3/> and <placeholder-4/>. These files behave similarly to previously supported USE configuration files, except that they only influence packages that are merged due to a stable keyword."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:786(b)
+msgid "econf adds --disable-silent-rules"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:788(c)
+msgid "--disable-silent-rules"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:788(c)
+msgid "configure --help"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:787(p)
+msgid "This option will automatically be passed if <placeholder-1/> occurs in the output of <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:792(b)
+msgid "new* commands can read from standard input"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:794(c)
+msgid "-"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:793(p)
+msgid "Standard input is read when the first parameter is <placeholder-1/> (a hyphen)."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:798(b)
+msgid "New option --host-root for {has,best}_version"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:800(c)
+msgid "--host-root"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:799(p)
+msgid "This option <placeholder-1/> will cause the query to apply to the host root instead of ROOT."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:804(b)
+msgid "New doheader helper function"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:806(c)
+msgid "/usr/include/"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:805(p)
+msgid "Installs the given header files into <placeholder-1/>. If option <placeholder-2/> is specified, descends recursively into any directories given."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:811(b)
+msgid "New usex helper function"
+msgstr ""
+
+#. We probably need an example here
+#: devmanual/ebuild-writing/eapi/text.xml:814(pre)
+msgid "USAGE: usex &lt;USE flag&gt; [true output] [false output] [true suffix] [false suffix] DESCRIPTION: If USE flag is set, echo [true output][true suffix] (defaults to \"yes\"), otherwise echo [false output][false suffix] (defaults to \"no\")."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:831(b)
+msgid "src_test supports parallel tests"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:832(p)
+msgid "Unlike older EAPIs, the default <placeholder-1/> implementation will not pass the -j1 option to emake."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:845(b) devmanual/ebuild-writing/eapi/text.xml:848(c)
+msgid "EBUILD_PHASE_FUNC"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:846(p)
+msgid "During execution of an ebuild phase function (such as <placeholder-1/> or <placeholder-2/>), the <placeholder-3/> variable will contain the name of the phase function that is currently executing."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:859(title) devmanual/ebuild-writing/eapi/text.xml:884(c) devmanual/ebuild-writing/eapi/text.xml:936(c) devmanual/ebuild-writing/eapi/text.xml:942(c)
+msgid "EAPI=6"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:863(title)
+msgid "Bash version"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:865(p)
+msgid "Ebuilds can use features of Bash version 4.2 (was 3.2 before)."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:870(title)
+msgid "Ebuild environment"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:874(b)
+msgid "Locale settings"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:876(c)
+msgid "LC_CTYPE"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:877(c)
+msgid "LC_COLLATE"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:875(p)
+msgid "Behaviour of case modification and collation order (<placeholder-1/> and <placeholder-2/>) are guaranteed to be the same as in the C locale, as far as characters in the ASCII range are concerned."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:882(c) devmanual/ebuild-writing/eapi/text.xml:884(c)
+msgid "failglob"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:882(b)
+msgid "<placeholder-1/> enabled"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:883(p)
+msgid "For <placeholder-1/>, the <placeholder-2/> option of bash is set in the global scope of ebuilds. If set, failed pattern matches during filename expansion result in an error when the ebuild is being sourced."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:896(b)
+msgid "Update default implementation of <placeholder-1/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:898(c)
+msgid "PATCHES"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:898(c) devmanual/ebuild-writing/eapi/text.xml:958(c) devmanual/ebuild-writing/eapi/text.xml:960(c) devmanual/ebuild-writing/eapi/text.xml:961(c)
+msgid "eapply_user"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:899(codesample)
+msgid "src_prepare() { if declare -p PATCHES | grep -q \"^declare -a \"; then [[ -n ${PATCHES[@]} ]] &amp;&amp; eapply \"${PATCHES[@]}\" else [[ -n ${PATCHES} ]] &amp;&amp; eapply ${PATCHES} fi eapply_user }"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:897(p)
+msgid "This phase is no longer a no-op, it supports applying patches via the <placeholder-1/> variable and applying user patches via <placeholder-2/>. The default <placeholder-3/> looks like this: <placeholder-4/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:914(c) devmanual/ebuild-writing/eapi/text.xml:985(c) devmanual/ebuild-writing/eapi/text.xml:987(c)
+msgid "einstalldocs"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:915(codesample)
+msgid "src_install() { if [[ -f Makefile ]] || [[ -f GNUmakefile ]] || [[ -f makefile ]]; then emake DESTDIR=\"${D}\" install fi einstalldocs }"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:913(p)
+msgid "This phase uses the new <placeholder-1/> function for installation of documentation. The default <placeholder-2/> looks like this: <placeholder-3/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:934(c) devmanual/ebuild-writing/eapi/text.xml:936(c)
+msgid "einstall"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:934(b)
+msgid "<placeholder-1/> banned"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:935(p)
+msgid "The <placeholder-1/> helper has been banned with <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:940(c) devmanual/ebuild-writing/eapi/text.xml:942(c)
+msgid "dohtml"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:940(b)
+msgid "<placeholder-1/> deprecated"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:941(p)
+msgid "The <placeholder-1/> helper has been deprecated with <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:946(c)
+msgid "nonfatal die"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:948(c)
+msgid "assert"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:948(c)
+msgid "nonfatal"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:948(c)
+msgid "-n"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:947(p)
+msgid "When <placeholder-1/> or <placeholder-2/> are called under the <placeholder-3/> command and with the <placeholder-4/> option, they will not abort the build process but return with an error."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:952(c) devmanual/ebuild-writing/eapi/text.xml:954(c)
+msgid "eapply"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:952(b) devmanual/ebuild-writing/eapi/text.xml:958(b) devmanual/ebuild-writing/eapi/text.xml:971(b) devmanual/ebuild-writing/eapi/text.xml:985(b) devmanual/ebuild-writing/eapi/text.xml:991(b)
+msgid "<placeholder-1/> support"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:954(c)
+msgid "epatch"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:954(c)
+msgid "eutils.eclass"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:954(c)
+msgid "-p1"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:954(c)
+msgid "patch(1)"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:953(p)
+msgid "The <placeholder-1/> command is a simplified substitute for <placeholder-2/> (from <placeholder-3/>), implemented in the package manager. The patches from its file or directory arguments are applied using patch <placeholder-4/>, but it accepts <placeholder-5/> options from GNU patch to override default behavior."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:961(note)
+msgid "<placeholder-1/> doesn't need to be called explicitly when default <placeholder-2/> is called."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:959(p)
+msgid "The <placeholder-1/> command permits the package manager to apply user-provided patches. It must be called from every <placeholder-2/> function. <placeholder-3/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:965(c) devmanual/ebuild-writing/eapi/text.xml:967(c)
+msgid "--docdir"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:965(c) devmanual/ebuild-writing/eapi/text.xml:967(c)
+msgid "--htmldir"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:965(b)
+msgid "<placeholder-1/> adds <placeholder-2/> and <placeholder-3/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:967(c)
+msgid "configure"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:966(p)
+msgid "Options <placeholder-1/> and <placeholder-2/> are passed to <placeholder-3/>, in addition to the existing options."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:971(c) devmanual/ebuild-writing/eapi/text.xml:973(c)
+msgid "in_iuse"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:973(c)
+msgid "true"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:973(c)
+msgid "USE"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:972(p)
+msgid "The <placeholder-1/> function returns <placeholder-2/> if the given parameter is available in the ebuilds <placeholder-3/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:977(b)
+msgid "<placeholder-1/> changes"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:979(c)
+msgid "./"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:979(c)
+msgid "unpack foo/bar.tar.gz"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:979(p)
+msgid "<placeholder-1/> supports relative paths without leading <placeholder-2/> (<placeholder-3/> is valid as relative path)."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:980(c)
+msgid ".txz"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:980(p)
+msgid "<placeholder-1/> supports <placeholder-2/> (xz compressed tarball)."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:981(p)
+msgid "<placeholder-1/> matches filename extensions case-insensitively."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:987(c)
+msgid "HTML_DOCS"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:986(p)
+msgid "The <placeholder-1/> function will install the files specified by the <placeholder-2/> variable (or a default set of files if <placeholder-3/> is unset) and by the <placeholder-4/> variable."
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:991(c) devmanual/ebuild-writing/eapi/text.xml:993(c)
+msgid "get_libdir"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:993(c)
+msgid "lib*"
+msgstr ""
+
+#: devmanual/ebuild-writing/eapi/text.xml:992(p)
+msgid "The <placeholder-1/> command outputs the <placeholder-2/> directory basename suitable for the current ABI."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/eapi/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

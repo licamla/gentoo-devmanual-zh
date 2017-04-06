@@ -1,0 +1,80 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/src_unpack/rpm-sources/text.xml:4(title)
+msgid "RPM Sources"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/rpm-sources/text.xml:7(p)
+msgid "If a package is supplied as an .rpm file, you should:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/rpm-sources/text.xml:11(codesample)
+msgid "inherit rpm"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/rpm-sources/text.xml:17(c)
+msgid "rpm.eclass"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/rpm-sources/text.xml:17(c) devmanual/ebuild-writing/functions/src_unpack/rpm-sources/text.xml:22(c)
+msgid "src_unpack"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/rpm-sources/text.xml:15(p)
+msgid "If you don't need to do anything in the unpack phase, then you are finished as the <placeholder-1/> exports a default <placeholder-2/> that will unpack the RPM files."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/rpm-sources/text.xml:21(p)
+msgid "If you do need to apply patches then override <placeholder-1/> in a manner such as:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/rpm-sources/text.xml:26(codesample)
+msgid "src_unpack () { rpm_src_unpack ${A} cd \"${S}\" use ssl &amp;&amp; epatch \"${FILESDIR}/${PV}/${P}-ssl.patch\" }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/rpm-sources/text.xml:36(c)
+msgid "${A}"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/rpm-sources/text.xml:37(c)
+msgid "unpack"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/rpm-sources/text.xml:35(note)
+msgid "<placeholder-1/> can contain non-rpm files since the rpm eclass will call the normal <placeholder-2/> function for files that are not in the RPM format."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/rpm-sources/text.xml:43(title)
+msgid "Example RPM Handling"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/rpm-sources/text.xml:49(c)
+msgid "ebuild unpack"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/rpm-sources/text.xml:51(c)
+msgid "suse-fetchmail-6.2.5.54.1.ebuild"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/rpm-sources/text.xml:46(p)
+msgid "Here is an ebuild snippet that is based upon the fetchmail source RPM from SuSE 9.2. The ebuild snippet is complete enough to work with the <placeholder-1/> command. The ebuild will download the source file from the OSU SuSE mirror, unpack the file and apply the included patches. The filename should be <placeholder-2/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/rpm-sources/text.xml:54(codesample)
+msgid "# Copyright 1999-2017 Gentoo Foundation # Distributed under the terms of the GNU General Public License v2 inherit eutils versionator rpm MY_PV=$(replace_version_separator 3 '-') MY_P=fetchmail-${MY_PV} SRC_URI=\"http://suse.osuosl.org/suse/i386/9.2/suse/src/${MY_P}.src.rpm\" DESCRIPTION=\"SuSE 9.2 Fetchmail Source Package\" HOMEPAGE=\"http://www.suse.com\" LICENSE=\"GPL-2 public-domain\" SLOT=\"0\" KEYWORDS=\"-*\" RESTRICT=\"mirror\" # Need to test if the file can be unpacked with rpmoffset and cpio # If it can't then set: #DEPEND=\"app-arch/rpm\" # To force the use of rpmoffset and cpio instead of rpm2cpio from # app-arch/rpm, then set the following: #USE_RPMOFFSET_ONLY=1 S=${WORKDIR}/fetchmail-$(get_version_component_range 1-3) src_unpack () { rpm_src_unpack ${A} cd \"${S}\" EPATCH_SOURCE=\"${WORKDIR}\" EPATCH_SUFFIX=\"patch\" \\ EPATCH_FORCE=\"yes\" epatch }"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/src_unpack/rpm-sources/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

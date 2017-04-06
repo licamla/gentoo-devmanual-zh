@@ -1,0 +1,144 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:4(title)
+msgid "Building a Package"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:8(c) devmanual/ebuild-writing/functions/src_compile/building/text.xml:9(c) devmanual/ebuild-writing/functions/src_compile/building/text.xml:12(c)
+msgid "emake"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:8(c)
+msgid "make"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:9(c) devmanual/ebuild-writing/functions/src_compile/building/text.xml:16(c)
+msgid "MAKEOPTS"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:10(c)
+msgid "emake extras"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:12(c)
+msgid "Makefile"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:7(p)
+msgid "The <placeholder-1/> function should be used to call <placeholder-2/>. This will ensure that the user's <placeholder-3/> are used correctly. The <placeholder-4/> function passes on any arguments provided, so it can be used to make non-default targets (<placeholder-5/>), for example. Occasionally you might encounter a screwy non-autotools <placeholder-6/> that explodes with <placeholder-7/>, but this is rare."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:16(c)
+msgid "-j"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:17(e) devmanual/ebuild-writing/functions/src_compile/building/text.xml:42(e)
+msgid "not"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:15(p)
+msgid "Builds should be tested with various <placeholder-1/> settings in <placeholder-2/> to ensure that the build parallelises properly. If a package does <placeholder-3/> parallelise cleanly, it should be patched."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:22(e)
+msgid "really"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:22(c)
+msgid "emake -j1"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:25(c)
+msgid "-j1"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:21(p)
+msgid "If patching <placeholder-1/> isn't an option, <placeholder-2/> should be used. However, when doing this please remember that you are seriously hurting build times for many non-x86 users in particular. Forcing a <placeholder-3/> can increase build times from a few minutes to an hour on some MIPS and SPARC systems."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:31(title)
+msgid "Fixing Compiler Usage"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:36(c)
+msgid "tc-getCC()"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:37(uri)
+msgid "toolchain-funcs.eclass"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:38(c)
+msgid "man toolchain-funcs.eclass"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:34(p)
+msgid "Sometimes a package will try to use a bizarre compiler, or will need to be told which compiler to use. In these situations, the <placeholder-1/> function from <placeholder-2/> should be used. Other similar functions are available <d/> these are documented in <placeholder-3/>."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:42(c)
+msgid "${CC}"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:41(note)
+msgid "It is <placeholder-1/> correct to use the <placeholder-2/> variable for this purpose."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:46(c) devmanual/ebuild-writing/functions/src_compile/building/text.xml:49(c)
+msgid "${CFLAGS}"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:46(c) devmanual/ebuild-writing/functions/src_compile/building/text.xml:49(c)
+msgid "${LDFLAGS}"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:49(c) devmanual/ebuild-writing/functions/src_compile/building/text.xml:68(c)
+msgid "sed"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:45(p)
+msgid "Sometimes a package will not use the user's <placeholder-1/> or <placeholder-2/>. This must be worked around, as sometimes these variables are used for specifying critical ABI options. In these cases, the build scripts should be modified (for example, with <placeholder-3/>) to use <placeholder-4/> or <placeholder-5/> correctly."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:52(codesample)
+msgid "inherit flag-o-matic toolchain-funcs src_compile() { # -Os not happy replace-flags -Os -O2 # We have a weird build.sh to work with which ignores our # compiler preferences. yay! sed -i -e \"s:cc -O2:$(tc-getCC) ${CFLAGS} ${LDFLAGS}:\" build.sh \\ || die \"sed fix failed. Uh-oh...\" ./build.sh || die \"Build failed!\" }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:68(c)
+msgid "CFLAGS"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:68(c) devmanual/ebuild-writing/functions/src_compile/building/text.xml:74(c)
+msgid "LDFLAGS"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:67(note)
+msgid "When using <placeholder-1/> with <placeholder-2/> or <placeholder-3/>, it is not safe to use a comma or a slash as a delimiter. The recommended character is a colon."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:74(c)
+msgid "-Wl,--hash-style=gnu"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:75(c)
+msgid "sys-libs/glibc"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:72(p)
+msgid "Portage performs a QA check which verifies if LDFLAGS are respected. This QA check is enabled only when <placeholder-1/> variable contains <placeholder-2/>. (This flag can be used only on systems which use <placeholder-3/> except for machines with a MIPS CPU.)"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/src_compile/building/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

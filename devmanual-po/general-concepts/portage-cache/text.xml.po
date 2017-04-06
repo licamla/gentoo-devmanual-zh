@@ -1,0 +1,108 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/portage-cache/text.xml:4(title)
+msgid "The Portage Cache"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:8(c)
+msgid "DEPEND"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:8(c)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:9(c)
+msgid "SRC_URI"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:11(c)
+msgid "P"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:11(c) devmanual/general-concepts/portage-cache/text.xml:29(c) devmanual/general-concepts/portage-cache/text.xml:58(c)
+msgid "PN"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:11(c) devmanual/general-concepts/portage-cache/text.xml:28(c) devmanual/general-concepts/portage-cache/text.xml:29(c)
+msgid "PV"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:11(c)
+msgid "PR"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:11(c)
+msgid "PVR"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:11(c)
+msgid "PF"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:7(p)
+msgid "Portage uses a cache for most top-level variables (<placeholder-1/>, <placeholder-2/>, <placeholder-3/> and so on). This cache may be generated on a different machine, so these variables must be either static or generated using only unchanging 'version / name' variables (<placeholder-4/>, <placeholder-5/>, <placeholder-6/>, <placeholder-7/>, <placeholder-8/> and <placeholder-9/>)."
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:14(p)
+msgid "So, the following will not work:"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:18(codesample)
+msgid "# DO NOT DO THIS! if ! has_version \"x11-libs/gtk+\" ; then DEPEND=\"${DEPEND} gtk? ( &gt;=x11-libs/gtk+-2 ) !gtk? ( =x11-libs/gtk+-1.2* )\" fi"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:28(c)
+msgid "versionator.eclass"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:27(p)
+msgid "However, this is legal, since <placeholder-1/> works upon <placeholder-2/>, and <placeholder-3/> and <placeholder-4/> are both static:"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:32(codesample)
+msgid "inherit versionator if [[ $(get_major_version) -ge 7 ]] ; then IUSE=\"${IUSE} tcltk mzscheme\" DEPEND=\"${DEPEND} tcltk? ( dev-lang/tcl ) mzscheme? ( dev-lisp/mzscheme )\" RDEPEND=\"${RDEPEND} tcltk? ( dev-lang/tcl ) mzscheme? ( dev-lisp/mzscheme )\" if [[ \"${MY_PN}\" != \"vim-core\" ]] ; then RDEPEND=\"${RDEPEND} !&lt;app-vim/align-30-r1\" fi fi"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:52(title)
+msgid "Conditional Inherits"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:57(c)
+msgid "USE"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:54(p)
+msgid "Because eclasses modify various cached variables, conditional inheritance is not allowed except where the same results will always be obtained on every system. For example, inherits based upon <placeholder-1/> flags are illegal, but inherits based solely upon <placeholder-2/> are allowed."
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:61(p)
+msgid "As an example of a legal and possibly useful conditional inherit, some eclasses do:"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:66(codesample)
+msgid "if [[ \"${PN##*-}\" == \"cvs\" ]] ; then inherit cvs fi"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:73(c)
+msgid "-cvs"
+msgstr ""
+
+#: devmanual/general-concepts/portage-cache/text.xml:72(p)
+msgid "This allows the same eclass to be used for both regular and <placeholder-1/> packages."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/portage-cache/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

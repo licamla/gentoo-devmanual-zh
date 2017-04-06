@@ -1,0 +1,100 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/function-reference/build-functions/text.xml:4(title)
+msgid "Build Functions Reference"
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:9(c)
+msgid "ebuild.sh"
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:8(p)
+msgid "The following functions, which are all provided by <placeholder-1/>, are useful during the unpack and compile stages."
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:15(th)
+msgid "Function"
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:18(th)
+msgid "Details"
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:24(c)
+msgid "unpack archives"
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:26(ti)
+msgid "Unpack the specified archives."
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:32(c)
+msgid "econf args"
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:35(c)
+msgid "./configure"
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:35(c) devmanual/function-reference/build-functions/text.xml:43(c)
+msgid "args"
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:35(c)
+msgid "die"
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:35(c)
+msgid "configure"
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:34(ti)
+msgid "Wrapper for <placeholder-1/>. Passes on all <placeholder-2/>. Will abort (via <placeholder-3/>) should <placeholder-4/> fail."
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:40(c)
+msgid "emake args"
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:43(c)
+msgid "make"
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:42(ti)
+msgid "Wrapper for <placeholder-1/>. Passes on all <placeholder-2/>."
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:48(c)
+msgid "einstall args"
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:51(c)
+msgid "emake install"
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:51(c)
+msgid "emake DESTDIR=\"${D}\""
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:52(b)
+msgid "Note"
+msgstr ""
+
+#: devmanual/function-reference/build-functions/text.xml:50(ti)
+msgid "Wrapper for <placeholder-1/>, only to be used if <placeholder-2/> is unsuitable. <placeholder-3/>: Banned in EAPI 6."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/function-reference/build-functions/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

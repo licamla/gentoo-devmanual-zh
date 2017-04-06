@@ -1,0 +1,80 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:4(title)
+msgid "Other Archive Formats"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:7(p)
+msgid "There are a variety of other archive formats which you may encounter. Instructions for some of them are detailed below:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:14(title)
+msgid "Zip Files"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:17(p)
+msgid "If a package is supplied as a .zip file, you should:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:22(c)
+msgid "DEPEND"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:22(c)
+msgid "app-arch/unzip"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:22(li)
+msgid "<placeholder-1/> upon <placeholder-2/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:23(c)
+msgid "unpack"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:23(li)
+msgid "Use <placeholder-1/> as normal"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:30(title)
+msgid "Shar Files"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:33(c) devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:35(c)
+msgid ".shar"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:34(c) devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:46(c)
+msgid ".tar.bz2"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:32(p)
+msgid "If a package is supplied as a <placeholder-1/> file, you should repackage it locally into a <placeholder-2/>. It may also be useful to ask upstream to use a friendlier package format <d/> however, if they ship <placeholder-3/>, chances are they haven't done a release in at least ten years."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:42(title)
+msgid "RAR Files"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:46(c)
+msgid ".rar"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:45(p)
+msgid "<placeholder-1/> files must be repackaged locally into a <placeholder-2/> file."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/src_unpack/other-formats/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

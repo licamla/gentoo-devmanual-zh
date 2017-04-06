@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/user-submitted/text.xml:4(title)
+msgid "User-submitted Ebuilds"
+msgstr ""
+
+#: devmanual/ebuild-writing/user-submitted/text.xml:8(p)
+msgid "User-submitted ebuilds should never be blindly trusted and should always be well-tested and audited before being committed to the tree. The developer committing the user-submitted ebuild is vouching that the ebuild meets all Gentoo Linux development standards."
+msgstr ""
+
+#: devmanual/ebuild-writing/user-submitted/text.xml:15(p)
+msgid "The user-submitted ebuild must not contain custom headers like this:"
+msgstr ""
+
+#: devmanual/ebuild-writing/user-submitted/text.xml:19(pre)
+msgid "# Ebuild updated by: me &lt;me@example.com&gt;"
+msgstr ""
+
+#: devmanual/ebuild-writing/user-submitted/text.xml:25(c)
+msgid "Suggested-By:"
+msgstr ""
+
+#: devmanual/ebuild-writing/user-submitted/text.xml:25(c)
+msgid "Reported-By:"
+msgstr ""
+
+#: devmanual/ebuild-writing/user-submitted/text.xml:27(uri)
+msgid "commit message format section"
+msgstr ""
+
+#: devmanual/ebuild-writing/user-submitted/text.xml:23(p)
+msgid "Such information should be included in the git commit message instead. The use of tags such as <placeholder-1/> or <placeholder-2/>in the commit message, as explained in the <placeholder-3/>, is highly encouraged. Note that ebuilds received in the form of git patches or pull requests will have the user as the commit author by default, in which case including the user information in the commit message explicitly may not be necessary."
+msgstr ""
+
+#: devmanual/ebuild-writing/user-submitted/text.xml:39(c)
+msgid "diff"
+msgstr ""
+
+#: devmanual/ebuild-writing/user-submitted/text.xml:35(p)
+msgid "Users should be encouraged to submit diffs to an existing ebuild if they are submitting an upgrade. Doing this will help to avoid re-introduction of previously fixed bugs into \"new\" ebuilds. When not working from a diff but from a complete user-submitted ebuild, the <placeholder-1/> command should be used to see what has changed; attention should be payed for anything from the current ebuild that should appear in the new ebuild, or anything in the new ebuild that should be fixed or removed."
+msgstr ""
+
+#: devmanual/ebuild-writing/user-submitted/text.xml:45(p)
+msgid "In general, it is preferable to have the user do the work required to get their ebuild up to par, so that they can learn from their mistakes and submit cleaner ebuilds in the future. Be sure to be thankful for any submission, even if it isn't very good. Be polite but honest <d/> if an ebuild isn't usable, the user can be told in a way that does not insult their current ebuild-writing abilities. Remember that the user who submitted that broken ebuild may be a skilled and productive member of our project in the future <d/> that is, if they receive the right amount of encouragement and support and continue to improve in their abilities."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/user-submitted/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

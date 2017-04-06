@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/tools-reference/uniq/text.xml:4(title)
+msgid "uniq -- Filtering Duplicates"
+msgstr ""
+
+#: devmanual/tools-reference/uniq/text.xml:8(c)
+msgid "uniq"
+msgstr ""
+
+#: devmanual/tools-reference/uniq/text.xml:8(b)
+msgid "adjacent"
+msgstr ""
+
+#: devmanual/tools-reference/uniq/text.xml:7(p)
+msgid "The <placeholder-1/> utility can be used to filter <placeholder-2/> duplicate lines in files or in the text provided through standard input."
+msgstr ""
+
+#: devmanual/tools-reference/uniq/text.xml:13(c)
+msgid "sort | uniq"
+msgstr ""
+
+#: devmanual/tools-reference/uniq/text.xml:13(c)
+msgid "sort -u"
+msgstr ""
+
+#: devmanual/tools-reference/uniq/text.xml:12(note)
+msgid "Instead of using <placeholder-1/>, one should use <placeholder-2/>."
+msgstr ""
+
+#: devmanual/tools-reference/uniq/text.xml:17(c)
+msgid "man uniq"
+msgstr ""
+
+#: devmanual/tools-reference/uniq/text.xml:18(uri)
+msgid "IEEE1003.1-2004-uniq"
+msgstr ""
+
+#: devmanual/tools-reference/uniq/text.xml:16(p)
+msgid "See <placeholder-1/> and <placeholder-2/> for details."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/tools-reference/uniq/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/appendices/editor-configuration/vim/text.xml:4(title)
+msgid "Configuring <c>vim</c> and <c>gvim</c>"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/vim/text.xml:9(c) devmanual/appendices/editor-configuration/vim/text.xml:15(c)
+msgid "vim"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/vim/text.xml:9(c)
+msgid "gvim"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/vim/text.xml:10(c)
+msgid "app-vim/gentoo-syntax"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/vim/text.xml:7(p)
+msgid "For full whitespace, character set, syntax highlighting and indent settings for all of Gentoo's file-types in <placeholder-1/> and <placeholder-2/>, emerge the <placeholder-3/> package."
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/vim/text.xml:15(c)
+msgid ":help gentoo-syntax"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/vim/text.xml:13(p)
+msgid "Full documentation is provided with the package, and can be viewed by using <placeholder-1/>'s internal help browser (<placeholder-2/>)."
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/vim/text.xml:19(c)
+msgid ":retab!"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/vim/text.xml:18(p)
+msgid "When fixing ebuilds with broken whitespace, the <placeholder-1/> command may be of interest. The ! is required to replace spaces with tabs."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/appendices/editor-configuration/vim/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

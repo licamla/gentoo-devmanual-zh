@@ -1,0 +1,236 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/slotting/text.xml:4(title)
+msgid "Slotting"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:10(c)
+msgid "gtk+"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:10(c)
+msgid "2.24"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:10(c)
+msgid "3.6"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:7(p)
+msgid "Packages can support having multiple versions installed simultaneously. This is useful for libraries which may have changed interfaces between versions <d/> for example, the <placeholder-1/> package can install both versions <placeholder-2/> and <placeholder-3/> in parallel. This feature is called slotting."
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:15(c)
+msgid "SLOT=\"0\""
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:16(b) devmanual/general-concepts/slotting/text.xml:35(e)
+msgid "not"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:17(c)
+msgid "SLOT=\"\""
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:14(p)
+msgid "Most packages have no need for slotting. These packages specify <placeholder-1/> in the ebuilds. This is <placeholder-2/> the same as specifying an empty slot (<placeholder-3/>) <d/> an empty slot means \"disable slotting entirely\", and should not be used."
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:22(c)
+msgid "SLOT"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:22(e)
+msgid "per <placeholder-1/> value"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:21(p)
+msgid "Portage permits at most one instance of a package installation <placeholder-1/>. For example, say we have the following:"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:27(c) devmanual/general-concepts/slotting/text.xml:35(c) devmanual/general-concepts/slotting/text.xml:66(c)
+msgid "foo-1.1"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:27(c) devmanual/general-concepts/slotting/text.xml:28(c)
+msgid "SLOT=\"1\""
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:27(li) devmanual/general-concepts/slotting/text.xml:28(li) devmanual/general-concepts/slotting/text.xml:29(li) devmanual/general-concepts/slotting/text.xml:30(li)
+msgid "<placeholder-1/> with <placeholder-2/>"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:28(c) devmanual/general-concepts/slotting/text.xml:34(c) devmanual/general-concepts/slotting/text.xml:35(c) devmanual/general-concepts/slotting/text.xml:67(c)
+msgid "foo-1.2"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:29(c) devmanual/general-concepts/slotting/text.xml:34(c) devmanual/general-concepts/slotting/text.xml:36(c) devmanual/general-concepts/slotting/text.xml:68(c) devmanual/general-concepts/slotting/text.xml:76(c)
+msgid "foo-2.0"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:29(c) devmanual/general-concepts/slotting/text.xml:30(c)
+msgid "SLOT=\"2\""
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:30(c) devmanual/general-concepts/slotting/text.xml:69(c) devmanual/general-concepts/slotting/text.xml:76(c)
+msgid "foo-2.1"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:36(c)
+msgid "foo-1.x"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:33(p)
+msgid "Then the user could have, say, <placeholder-1/> and <placeholder-2/> installed in parallel, but <placeholder-3/><placeholder-4/> and <placeholder-5/>. Note that it is entirely possible that the user may have <placeholder-6/> installed and no <placeholder-7/> at all."
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:40(c)
+msgid "DEPEND"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:39(p)
+msgid "To <placeholder-1/> upon a package in a specific slot, refer to <uri link=\"::general-concepts/dependencies#SLOT Dependencies\"/>."
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:46(title)
+msgid "Sub-Slots"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:52(c)
+msgid "EAPI=5"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:53(c)
+msgid "/"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:54(c)
+msgid "SLOT=\"slot/subslot\""
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:55(uri)
+msgid "request to be automatically rebuilt"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:49(p)
+msgid "Sometimes a package installs a library that changes interfaces between versions, but it's undesirable or inconvenient to allow some of these versions to be installed simultaneously. In <placeholder-1/> and higher, this situation can be handled by using sub-slots, which are delimited from the regular slot by a <placeholder-2/> character, as in <placeholder-3/>. Packages can <placeholder-4/> when the subslot of a runtime dependency changes."
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:60(c) devmanual/general-concepts/slotting/text.xml:88(c)
+msgid "foo"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:59(p)
+msgid "For example, suppose package <placeholder-1/> installs a library whose soname is different for different versions. It would be reasonable to use the soname version as the sub-slot name:"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:66(c)
+msgid "libfoo.so.5"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:66(c)
+msgid "SLOT=\"1/5\""
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:66(li) devmanual/general-concepts/slotting/text.xml:67(li) devmanual/general-concepts/slotting/text.xml:68(li) devmanual/general-concepts/slotting/text.xml:69(li)
+msgid "<placeholder-1/> installs <placeholder-2/><d/><placeholder-3/>"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:67(c)
+msgid "libfoo.so.6"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:67(c)
+msgid "SLOT=\"1/6\""
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:68(c)
+msgid "libfoo-2.so.0"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:68(c)
+msgid "SLOT=\"2/0\""
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:69(c)
+msgid "libfoo-2.so.1"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:69(c)
+msgid "SLOT=\"2/1\""
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:73(c)
+msgid "libfoo-2"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:73(c)
+msgid "libfoo"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:75(c)
+msgid "foo:2"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:75(c)
+msgid "foo:1"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:72(p)
+msgid "Other ebuilds that install binaries which link to <placeholder-1/> (or <placeholder-2/>) can then request to be automatically rebuilt when the installed version of <placeholder-3/> or <placeholder-4/> changes sub-slots <d/> for example, when the user upgrades from <placeholder-5/> to <placeholder-6/>."
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:79(p)
+msgid "If an ebuild does not explicitly declare a sub-slot, the regular slot is used as the value of the sub-slot by default."
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:87(c)
+msgid "media-libs/libpng"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:88(c)
+msgid "libpng:0="
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:84(note)
+msgid "Care must be taken when using sub-slots in a library ebuild for the first time. Adding sub-slots will trigger rebuilds for all the packages that already use sub-slot dependencies (e.g. Switching from SLOT=\"0\" to SLOT=\"0/14\" in <placeholder-1/> and package <placeholder-2/> depends on <placeholder-3/>). Therefore, it's best if you start using sub-slots in the library when the existing library interface changes."
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:97(title)
+msgid "Slot Names"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:102(c) devmanual/general-concepts/slotting/text.xml:102(c)
+msgid "'_'"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:103(c)
+msgid "'-'"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:103(c)
+msgid "'.'"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:103(c)
+msgid "'+'"
+msgstr ""
+
+#: devmanual/general-concepts/slotting/text.xml:100(p)
+msgid "Current versions of portage accept slot and sub-slot names that begin with an alphanumeric character or <placeholder-1/>, and contain alphanumerics and <placeholder-2/>, <placeholder-3/>, <placeholder-4/>, and <placeholder-5/> characters."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/slotting/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/licenses/text.xml:4(title)
+msgid "Licenses"
+msgstr ""
+
+#: devmanual/general-concepts/licenses/text.xml:8(c)
+msgid "LICENSE"
+msgstr ""
+
+#: devmanual/general-concepts/licenses/text.xml:10(c)
+msgid "licenses/"
+msgstr ""
+
+#: devmanual/general-concepts/licenses/text.xml:7(p)
+msgid "All ebuilds must specify a <placeholder-1/> (note the American English spelling) variable. The value of this variable must be the name of a file in the Gentoo repository's <placeholder-2/> directory."
+msgstr ""
+
+#: devmanual/general-concepts/licenses/text.xml:13(p)
+msgid "If the application is multi-license (either of several licenses can be used) then use the following syntax:"
+msgstr ""
+
+#: devmanual/general-concepts/licenses/text.xml:18(codesample)
+msgid "LICENSE=\"|| ( foo bar )\""
+msgstr ""
+
+#: devmanual/general-concepts/licenses/text.xml:23(title)
+msgid "Adding New Licenses"
+msgstr ""
+
+#: devmanual/general-concepts/licenses/text.xml:34(uri)
+msgid "GLEP 23"
+msgstr ""
+
+#: devmanual/general-concepts/licenses/text.xml:26(p)
+msgid "If your package's license is not already in the tree, you must add the license before committing the package. When adding the license, use a plain text file (UTF-8 encoded) if at all possible. Some licenses are PDF files rather than plain text <d/> this should only be done if we are legally required to do so. Finally you need to check if your license should be added to a license group as listed in $PORTDIR/profiles/license_groups. For more information see the <placeholder-1/>"
+msgstr ""
+
+#: devmanual/general-concepts/licenses/text.xml:38(c)
+msgid "gentoo-dev"
+msgstr ""
+
+#: devmanual/general-concepts/licenses/text.xml:39(c)
+msgid "licenses@gentoo.org"
+msgstr ""
+
+#: devmanual/general-concepts/licenses/text.xml:37(p)
+msgid "It is not normally necessary to mail the <placeholder-1/> list or <placeholder-2/> before adding a new license. You should only do so if the license could be considered 'questionable' or if you are unsure as to the meaning of any part of it."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/licenses/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

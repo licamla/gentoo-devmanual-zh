@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/tasks-reference/init-scripts/text.xml:4(title)
+msgid "Init Scripts"
+msgstr ""
+
+#: devmanual/tasks-reference/init-scripts/text.xml:9(c)
+msgid "/etc/init.d"
+msgstr ""
+
+#: devmanual/tasks-reference/init-scripts/text.xml:9(c)
+msgid "doinitd"
+msgstr ""
+
+#: devmanual/tasks-reference/init-scripts/text.xml:10(c)
+msgid "newinitd"
+msgstr ""
+
+#: devmanual/tasks-reference/init-scripts/text.xml:12(c)
+msgid "/etc/conf.d"
+msgstr ""
+
+#: devmanual/tasks-reference/init-scripts/text.xml:13(c)
+msgid "doconfd"
+msgstr ""
+
+#: devmanual/tasks-reference/init-scripts/text.xml:13(c)
+msgid "newconfd"
+msgstr ""
+
+#: devmanual/tasks-reference/init-scripts/text.xml:8(p)
+msgid "Init scripts should be installed into <placeholder-1/> using the <placeholder-2/> or <placeholder-3/> functions (see <uri link=\"::function-reference/install-functions/\"/>). Any configuration (commandline parameters or environment variables) for these scripts should be handled via entries in <placeholder-4/> with the same filename <d/><placeholder-5/> or <placeholder-6/> can be used to install these."
+msgstr ""
+
+#: devmanual/tasks-reference/init-scripts/text.xml:18(uri)
+msgid "Writing Init Scripts section"
+msgstr ""
+
+#: devmanual/tasks-reference/init-scripts/text.xml:16(p)
+msgid "An overview of the Gentoo init system and how to write init scripts is available in the <placeholder-1/>."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/tasks-reference/init-scripts/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

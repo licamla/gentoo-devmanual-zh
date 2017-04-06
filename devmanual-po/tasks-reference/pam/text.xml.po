@@ -1,0 +1,368 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/tasks-reference/pam/text.xml:4(title)
+msgid "Working with PAM"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:7(p)
+msgid "PAM (Pluggable Authentication Modules) is a mechanism which allows different applications to authenticate using various specified parameters, using for example a passwd/shadow file, a Kerberos server, an LDAP server or an a NT Domain server (using Samba)."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:16(c)
+msgid "pam.d"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:14(p)
+msgid "With PAM, a program just needs to require authentication for a given login class (defined in a <placeholder-1/> file), and PAM framework will take care of calling the modules which will provide authentication."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:22(c) devmanual/tasks-reference/pam/text.xml:180(c)
+msgid "sys-libs/pam"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:20(p)
+msgid "There are different PAM implementations. Gentoo Linux, by default, uses the Linux-PAM implementation which is installed via <placeholder-1/>; FreeBSD and NetBSD (and hence Gentoo/FreeBSD) use OpenPAM, which is a minimal version. The different implementations can provide different authentication modules, and can differ in some details of the configuration."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:29(title)
+msgid "Structure of a <c>pamd</c> File"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:33(c) devmanual/tasks-reference/pam/text.xml:33(c) devmanual/tasks-reference/pam/text.xml:92(c) devmanual/tasks-reference/pam/text.xml:107(c) devmanual/tasks-reference/pam/text.xml:194(c) devmanual/tasks-reference/pam/text.xml:201(c) devmanual/tasks-reference/pam/text.xml:207(c) devmanual/tasks-reference/pam/text.xml:211(c) devmanual/tasks-reference/pam/text.xml:213(c) devmanual/tasks-reference/pam/text.xml:216(c)
+msgid "pamd"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:34(c) devmanual/tasks-reference/pam/text.xml:194(c)
+msgid "/etc/pam.d"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:32(p)
+msgid "But let's see the structure of a <placeholder-1/> file. First of all, the <placeholder-2/>files are placed in <placeholder-3/>, and they are structured as one statement per line. The statement is composed of 3 or 4 tokens:"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:39(li)
+msgid "The first token specifies the type of service for which the statement is done. There are four types:"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:45(e)
+msgid "account"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:44(li)
+msgid "<placeholder-1/>, which checks for validity of the user account."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:48(e)
+msgid "auth"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:47(li)
+msgid "<placeholder-1/>, which verifies that the user is who is claim to be, using passwords or other ways such as biometric and smart-card devices."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:52(e)
+msgid "password"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:51(li)
+msgid "<placeholder-1/>, which takes care of changing users' password."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:55(e)
+msgid "session"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:54(li)
+msgid "<placeholder-1/>, which covers tasks such as checks for the user validity or mount/umount of home directories, executed both before starting and after closing the user session."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:60(li)
+msgid "The second token is the control that tells PAM how to behave with failures and success of the authentication for the module specified:"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:66(e)
+msgid "requisite"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:65(li)
+msgid "<placeholder-1/>, a failure results in the termination of the process."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:69(e) devmanual/tasks-reference/pam/text.xml:74(e)
+msgid "required"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:68(li)
+msgid "<placeholder-1/>, a failure will lead in a failure for the service, but before this, all the other modules are being executed."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:73(e)
+msgid "sufficient"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:72(li)
+msgid "<placeholder-1/>, a success in this module leads to a success in authentication if no <placeholder-2/> module failed before of it."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:77(e)
+msgid "optional"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:76(li)
+msgid "<placeholder-1/>, in which case the failure or the success are ignored if this is not the only module present, in which case a success or a failure of it makes the authentication succeed or fail."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:90(c)
+msgid "/lib/security"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:91(c)
+msgid "/lib64/security"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:91(c)
+msgid "/usr/lib(64)"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:82(li)
+msgid "The third token is the module to execute for that type of service; PAM modules are extensible and, as the name says, pluggable. The result is that there are a small number of default modules and some external optional modules which can be built against PAM implementation to define additional authentication methods. Some documentation states that we need to specify the full path of the module, but this creates problems because not all the systems install the modules in the same place: Linux-PAM on Gentoo is generally set up to load them from <placeholder-1/>, but for example on AMD64 this become <placeholder-2/>, and on OpenPAM they are just in <placeholder-3/>. The result is that providing the full path will lead to non-working <placeholder-4/> files, and the right way to handle this is just states the module name <d/> the PAM implementation will take care of finding the module."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:96(li)
+msgid "The last token, which can consist of multiple items, describe the parameters passed to the module. These are module-dependent."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:102(p)
+msgid "As the number and the type of modules shipped with the implementation depends on the implementations themselves (Linux-PAM provides a full working set of modules, OpenPAM doesn't provide modules at all, and it's the operating system which provides them, as FreeBSD or NetBSD do), there are just a few modules which can be used directly in <placeholder-1/> files without the risk of providing a non-working configuration file:"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:113(c)
+msgid "pam_deny.so"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:113(c)
+msgid "pam_permit.so"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:112(li)
+msgid "<placeholder-1/>, <placeholder-2/><d/> they just report a failure or a success"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:116(c)
+msgid "pam_rootok.so"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:115(li)
+msgid "<placeholder-1/> reports success if the user is root, else a failure"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:119(c)
+msgid "pam_nologin.so"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:118(li)
+msgid "<placeholder-1/> checks for presence of /etc/nologin file with a reason for blocking user logins <d/> it's used for example when it's better to avoid users logging in on a compromised system"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:124(c)
+msgid "pam_securetty.so"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:123(li)
+msgid "<placeholder-1/> checks that the login is done in a tty which is considered secure by a configuration file (depends on the implementation)"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:128(c)
+msgid "pam_unix.so"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:129(c)
+msgid "/etc/passwd"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:129(c)
+msgid "/etc/shadow"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:127(li)
+msgid "<placeholder-1/> is the base module for Unix systems, it just checks the user/password pair with <placeholder-2/> and <placeholder-3/>."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:133(p)
+msgid "There are also other modules which can be used for more complex authentication against a database (mysql or postgresql), against an LDAP directory or against an NT domain (using samba). This is useful on thin or fat clients where the users have an unique login for all the machines. Another place where this is useful is a cluster of servers which needs to authenticate against a single source for some services, such as mail and ftp servers."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:142(p)
+msgid "But for desktop systems, all the different services, such as mail servers, ftp servers, ssh and so on, just need to authenticate in the same way the users logs in to the system."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:150(c) devmanual/tasks-reference/pam/text.xml:160(c) devmanual/tasks-reference/pam/text.xml:179(c)
+msgid "pam_stack.so"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:151(c)
+msgid "\"login=&lt;login service to use&gt;\""
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:148(p)
+msgid "To achieve this, RedHat developed for Linux-PAM (which hadn't had a way to rely on another authentication scheme) a <placeholder-1/> module which accepted as parameter <placeholder-2/>, telling PAM to execute the auth stack for the service stated."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:155(p)
+msgid "Unfortunately that module relied upon internal data structures of Linux-PAM and assumptions which aren't valid for other PAM implementations, so it is completely non-portable. It is not used in all the implementations of Linux-PAM (see for example MacOS X, which uses Linux-PAM but doesn't provide <placeholder-1/>), and so it's not present on all Linux distributions."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:165(e) devmanual/tasks-reference/pam/text.xml:178(c)
+msgid "include"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:166(c)
+msgid "required pam_stack.so"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:163(p)
+msgid "A solution came when AltLinux developers added a new instruction for the control token: <placeholder-1/>. That control token can be used on Linux-PAM 0.78 and on OpenPAM to do the same as a <placeholder-2/>, replacing the module name with the name of the login class to mimic."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:170(p)
+msgid "In this way, instead of loading a module which in turn reloads pam, the option is parsed directly by the PAM implementation which loads the other login class and takes care of executing it, and the same syntax is valid on both Linux-PAM and OpenPAM systems."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:180(c)
+msgid "sys-libs/openpam"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:182(c)
+msgid "virtual/pam"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:177(p)
+msgid "New packages (and new versions of old packages) should then use the <placeholder-1/> directive instead of <placeholder-2/> module, but to do that they need to depend on a later version of <placeholder-3/> or on <placeholder-4/> (note: openpam is for now just on G/FreeBSD's project overlay) <d/> to resolve this, <placeholder-5/> is set up to add the right dependency for the use of the include directive."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:190(title)
+msgid "Installing <c>pamd</c> Files"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:195(c) devmanual/tasks-reference/pam/text.xml:196(c) devmanual/tasks-reference/pam/text.xml:200(c) devmanual/tasks-reference/pam/text.xml:205(c) devmanual/tasks-reference/pam/text.xml:253(c)
+msgid "pam"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:193(p)
+msgid "The right place for <placeholder-1/> files is <placeholder-2/>, but installing them by hand checking for <placeholder-3/> USE flag is tricky and doesn't follow the same path as initd and confd files, so the solution is to use the <placeholder-4/> eclass."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:201(c)
+msgid "dopamd"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:201(c)
+msgid "newpamd"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:202(c)
+msgid "do*"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:202(c)
+msgid "new*"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:202(c) devmanual/tasks-reference/pam/text.xml:204(c)
+msgid "/etc/security"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:203(c)
+msgid "dopamsecurity"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:203(c)
+msgid "newpamsecurity"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:199(p)
+msgid "In the <placeholder-1/> eclass there are functions which provide installation facilities for <placeholder-2/> files (<placeholder-3/> and <placeholder-4/>, whose usage is the same as similar <placeholder-5/> and <placeholder-6/> functions) and the <placeholder-7/> files (<placeholder-8/> and <placeholder-9/>, which need the first argument to be the subdirectory of <placeholder-10/> in which the files are to be installed). Those groups of functions already takes care of verifying whether the <placeholder-11/> USE flag is made optional for the package <d/> if this is the case, and the flag is disabled, the <placeholder-12/> files are just skipped."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:211(c) devmanual/tasks-reference/pam/text.xml:238(c)
+msgid "system-auth"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:213(c)
+msgid "${FILESDIR}"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:214(c)
+msgid "pamd_mimic_system"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:210(p)
+msgid "Many <placeholder-1/> files just uses one or more auth types from <placeholder-2/> login class, which is the base one which provides login facilities for most services on common desktop systems. Instead of adding a <placeholder-3/> file in <placeholder-4/> for this, one can use the <placeholder-5/> function. This function takes a series of parameters <d/> the first one is the name of the login class (the name of the <placeholder-6/> file in /etc/pam.d); the others are the auth types for which system-auth needs to be used."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:220(p)
+msgid "For example, a call like:"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:224(pre)
+msgid "pamd_mimic_system foo auth password"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:229(c)
+msgid "/etc/pam.d/foo"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:228(p)
+msgid "installs an <placeholder-1/> file which contains:"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:232(pre)
+msgid "auth include system-auth password include system-auth"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:237(p)
+msgid "which just uses <placeholder-1/> login class."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:245(title)
+msgid "Installing PAM Modules"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:253(c)
+msgid "getpam_mod_dir"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:248(p)
+msgid "As PAM modules are looked for in different directories on different implementations, which also depends on the libdir's name for ARCHs with more than one ABI, usually is not possible to trust the default directory stated by the module (always if the module state a default directory). The solution for this is also in <placeholder-1/> eclass. The function <placeholder-2/> returns the correct directory to use for the current implementation/arch."
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:259(c)
+msgid "Makefile"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:259(c)
+msgid "dopammod"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:260(c)
+msgid "newpammod"
+msgstr ""
+
+#: devmanual/tasks-reference/pam/text.xml:257(p)
+msgid "When the PAM module doesn't provide a way to install the package by itself, such as a <placeholder-1/> or an installation script, there are also the <placeholder-2/> and <placeholder-3/> functions which takes care of install the module in the right directory."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/tasks-reference/pam/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

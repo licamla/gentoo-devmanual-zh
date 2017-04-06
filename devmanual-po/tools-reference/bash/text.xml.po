@@ -1,0 +1,1216 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/tools-reference/bash/text.xml:4(title)
+msgid "<c>bash</c> -- Standard Shell"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:8(c) devmanual/tools-reference/bash/text.xml:628(c) devmanual/tools-reference/bash/text.xml:685(c)
+msgid "bash"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:7(p)
+msgid "A thorough understanding of <placeholder-1/> programming is vital when working with ebuilds."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:13(title)
+msgid "Bash Conditionals"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:17(title)
+msgid "Basic Selection"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:21(c)
+msgid "if"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:20(p)
+msgid "The basic conditional operator is the <placeholder-1/> statement:"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:24(codesample)
+msgid "if something ; then do_stuff fi"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:34(title)
+msgid "Multiple Selection"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:38(c)
+msgid "else"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:38(c)
+msgid "elif"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:37(p)
+msgid "Multiple pronged selection can be done using <placeholder-1/> and <placeholder-2/>:"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:41(codesample)
+msgid "if something ; then do_stuff elif something_else ; then do_other_stuff elif full_moon ; then howl else turn_into_a_newt fi"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:54(b)
+msgid "must"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:55(b) devmanual/tools-reference/bash/text.xml:599(e) devmanual/tools-reference/bash/text.xml:608(b) devmanual/tools-reference/bash/text.xml:758(b) devmanual/tools-reference/bash/text.xml:830(b)
+msgid "not"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:53(warning)
+msgid "You <placeholder-1/> specify at least one statement inside each block. The following will <placeholder-2/> work:"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:58(codesample)
+msgid "if some_stuff ; then # A statement is required here. a blank or a comment # isn't enough! else einfo \"Not some stuff\" fi"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:69(c)
+msgid ":"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:67(p)
+msgid "If you really don't want to restructure the block, you can use a single colon (<placeholder-1/>) on its own as a null statement."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:72(codesample)
+msgid "if some_stuff ; then # Do nothing : else einfo \"Not some stuff\" fi"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:85(title)
+msgid "Selection Tests"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:89(c) devmanual/tools-reference/bash/text.xml:118(c) devmanual/tools-reference/bash/text.xml:123(c) devmanual/tools-reference/bash/text.xml:613(c)
+msgid "[ ]"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:89(c) devmanual/tools-reference/bash/text.xml:118(c) devmanual/tools-reference/bash/text.xml:123(c) devmanual/tools-reference/bash/text.xml:564(c) devmanual/tools-reference/bash/text.xml:606(c) devmanual/tools-reference/bash/text.xml:609(c) devmanual/tools-reference/bash/text.xml:614(c)
+msgid "[[ ]]"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:88(p)
+msgid "To do comparisons or file attribute tests, <placeholder-1/> or <placeholder-2/> blocks are needed."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:93(codesample)
+msgid "# is $foo zero length? if [[ -z \"${foo}\" ]] ; then die \"Please set foo\" fi # is $foo equal to \"moo\"? if [[ \"${foo}\" == \"moo\" ]] ; then einfo \"Hello Larry\" fi # does \"${ROOT}/etc/deleteme\" exist? if [[ -f \"${ROOT}/etc/deleteme\" ]] ; then einfo \"Please delete ${ROOT}/etc/readme manually!\" fi"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:114(title)
+msgid "Single versus Double Brackets in <c>bash</c>"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:117(important)
+msgid "The <placeholder-1/> form is generally safer than <placeholder-2/> and should be used in all new code."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:122(p)
+msgid "This is because <placeholder-1/> is a bash syntax construct, whereas <placeholder-2/> is a program which happens to be implemented as an internal -- as such, cleaner syntax is possible with the former. For a simple illustration, consider:"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:128(codesample)
+msgid "bash$ [ -n $foo ] &amp;&amp; [ -z $foo ] &amp;&amp; echo \"huh?\" huh? bash$ [[ -n $foo ]] &amp;&amp; [[ -z $foo ]] &amp;&amp; echo \"huh?\" bash$"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:139(title)
+msgid "String Comparison in <c>bash</c>"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:143(c)
+msgid "string1 operator string2"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:142(p)
+msgid "The general form of a string comparison is <placeholder-1/>. The following are available:"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:149(th) devmanual/tools-reference/bash/text.xml:212(th) devmanual/tools-reference/bash/text.xml:257(th) devmanual/tools-reference/bash/text.xml:328(th) devmanual/tools-reference/bash/text.xml:519(th)
+msgid "Operator"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:152(th) devmanual/tools-reference/bash/text.xml:215(th) devmanual/tools-reference/bash/text.xml:260(th) devmanual/tools-reference/bash/text.xml:331(th) devmanual/tools-reference/bash/text.xml:522(th)
+msgid "Purpose"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:158(c) devmanual/tools-reference/bash/text.xml:962(c)
+msgid "=="
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:158(c) devmanual/tools-reference/bash/text.xml:1018(c)
+msgid "="
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:157(ti)
+msgid "<placeholder-1/> (also <placeholder-2/>)"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:160(ti)
+msgid "String equality"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:166(c) devmanual/tools-reference/bash/text.xml:962(c)
+msgid "!="
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:168(ti)
+msgid "String inequality"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:174(c) devmanual/tools-reference/bash/text.xml:953(c)
+msgid "&lt;"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:176(ti)
+msgid "String lexiographic comparison (before)"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:182(c) devmanual/tools-reference/bash/text.xml:953(c)
+msgid "&gt;"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:184(ti)
+msgid "String lexiographic comparison (after)"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:190(c)
+msgid "=~"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:193(b)
+msgid "bash 3 only"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:192(ti)
+msgid "String regular expression match (<placeholder-1/>, not currently allowed in ebuilds)"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:202(title)
+msgid "String Tests in <c>bash</c>"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:206(c)
+msgid "-operator \"string\""
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:205(p)
+msgid "The general form of string tests is <placeholder-1/>. The following are available:"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:221(c)
+msgid "-z \"string\""
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:223(ti)
+msgid "String has zero length"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:229(c)
+msgid "-n \"string\""
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:231(ti)
+msgid "String has non-zero length"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:238(c)
+msgid "-n \"${BLAH}\""
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:239(c)
+msgid "-n $BLAH"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:237(note)
+msgid "To check whether a variable is set and not blank, use <placeholder-1/> rather than <placeholder-2/>. The latter will cause problems in some situations if the variable is unset."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:247(title)
+msgid "Integer Comparison in <c>bash</c>"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:251(c)
+msgid "int1 -operator int2"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:250(p)
+msgid "The general form of integer comparisons is <placeholder-1/>. The following are available:"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:266(c)
+msgid "-eq"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:268(ti)
+msgid "Integer equality"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:274(c)
+msgid "-ne"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:276(ti)
+msgid "Integer inequality"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:282(c)
+msgid "-lt"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:284(ti)
+msgid "Integer less than"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:290(c)
+msgid "-le"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:292(ti)
+msgid "Integer less than or equal to"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:298(c)
+msgid "-gt"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:300(ti)
+msgid "Integer greater than"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:306(c)
+msgid "-ge"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:308(ti)
+msgid "Integer greater than or equal to"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:318(title)
+msgid "File Tests in <c>bash</c>"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:322(c)
+msgid "-operator \"filename\""
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:323(c) devmanual/tools-reference/bash/text.xml:514(c) devmanual/tools-reference/bash/text.xml:828(c)
+msgid "man bash"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:321(p)
+msgid "The general form of a file test is <placeholder-1/>. The following are available (lifted from <placeholder-2/>):"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:337(c)
+msgid "-a file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:340(c)
+msgid "-e"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:339(ti)
+msgid "Exists (use <placeholder-1/> instead)"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:345(c)
+msgid "-b file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:347(ti)
+msgid "Exists and is a block special file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:353(c)
+msgid "-c file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:355(ti)
+msgid "Exists and is a character special file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:361(c)
+msgid "-d file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:363(ti)
+msgid "Exists and is a directory"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:369(c)
+msgid "-e file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:371(ti)
+msgid "Exists"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:377(c)
+msgid "-f file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:379(ti)
+msgid "Exists and is a regular file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:385(c)
+msgid "-g file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:387(ti)
+msgid "Exists and is set-group-id"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:393(c)
+msgid "-h file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:395(ti) devmanual/tools-reference/bash/text.xml:483(ti)
+msgid "Exists and is a symbolic link"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:401(c)
+msgid "-k file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:403(ti)
+msgid "Exists and its sticky bit is set"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:409(c)
+msgid "-p file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:411(ti)
+msgid "Exists and is a named pipe (FIFO)"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:417(c)
+msgid "-r file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:419(ti)
+msgid "Exists and is readable"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:425(c)
+msgid "-s file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:427(ti)
+msgid "Exists and has a size greater than zero"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:433(c)
+msgid "-t fd"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:435(ti)
+msgid "Descriptor fd is open and refers to a terminal"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:441(c)
+msgid "-u file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:443(ti)
+msgid "Exists and its set-user-id bit is set"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:449(c)
+msgid "-w file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:451(ti)
+msgid "Exists and is writable"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:457(c)
+msgid "-x file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:459(ti)
+msgid "Exists and is executable"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:465(c)
+msgid "-O file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:467(ti)
+msgid "Exists and is owned by the effective user id"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:473(c)
+msgid "-G file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:475(ti)
+msgid "Exists and is owned by the effective group id"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:481(c)
+msgid "-L file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:489(c)
+msgid "-S file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:491(ti)
+msgid "Exists and is a socket"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:497(c)
+msgid "-N file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:499(ti)
+msgid "Exists and has been modified since it was last read"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:509(title)
+msgid "File Comparison in <c>bash</c>"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:513(c)
+msgid "\"file1\" -operator \"file2\""
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:512(p)
+msgid "The general form of a file comparison is <placeholder-1/>. The following are available (lifted from <placeholder-2/>):"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:528(c)
+msgid "file1 -nt file2"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:530(ti)
+msgid "file1 is newer (according to modification date) than file2, or if file1 exists and file2 does not."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:537(c)
+msgid "file1 -ot file2"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:539(ti)
+msgid "file1 is older than file2, or if file2 exists and file1 does not."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:546(c)
+msgid "file1 -ef file2"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:548(ti)
+msgid "file1 and file2 refer to the same device and inode numbers."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:559(title)
+msgid "Boolean Algebra in <c>bash</c>"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:564(e)
+msgid "outside"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:565(c)
+msgid "( )"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:562(p)
+msgid "There are constructs available for boolean algebra ('and', 'or' and 'not'). These are used <placeholder-1/> of the <placeholder-2/> blocks. For operator precedence, use <placeholder-3/>."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:570(th)
+msgid "Construct"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:573(th) devmanual/tools-reference/bash/text.xml:883(th)
+msgid "Effect"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:579(c)
+msgid "first || second"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:582(e)
+msgid "or"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:581(ti) devmanual/tools-reference/bash/text.xml:590(ti)
+msgid "first <placeholder-1/> second (short circuit)"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:587(c)
+msgid "first &amp;&amp; second"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:591(e)
+msgid "and"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:596(c)
+msgid "! condition"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:598(ti)
+msgid "<placeholder-1/> condition"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:606(e)
+msgid "inside"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:607(c) devmanual/tools-reference/bash/text.xml:913(c)
+msgid "!"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:607(c)
+msgid "[[ ! -f foo ]] &amp;&amp; bar"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:608(c)
+msgid "[[ -f foo &amp;&amp; bar ]]"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:605(note)
+msgid "These will also sometimes work <placeholder-1/><placeholder-2/> constructs, and using <placeholder-3/> before a test is fairly common. <placeholder-4/> is fine. However, there are catches -- <placeholder-5/> will <placeholder-6/> work properly, since commands cannot be run inside <placeholder-7/> blocks."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:613(c)
+msgid "-test"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:612(p)
+msgid "Inside <placeholder-1/> blocks, several <placeholder-2/> style boolean operators are available. These should be avoided in favour of <placeholder-3/> and the above operators."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:624(title)
+msgid "Bash Iterative Structures"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:629(c) devmanual/tools-reference/bash/text.xml:640(c)
+msgid "for"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:627(p)
+msgid "There are a few simple iterative structures available from within <placeholder-1/>. The most useful of these is a <placeholder-2/> loop. This can be used to perform the same task upon multiple items."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:633(codesample)
+msgid "for myvar in \"the first\" \"the second\" \"and the third\" ; do einfo \"This is ${myvar}\" done"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:639(p)
+msgid "There is a second form of the <placeholder-1/> loop which can be used for repeating an event a given number of times."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:644(codesample)
+msgid "for (( i = 1 ; i &lt;= 10 ; i++ )) ; do einfo \"i is ${i}\" done"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:651(c)
+msgid "while"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:650(p)
+msgid "There is also a <placeholder-1/> loop, although this is usually not useful within ebuilds."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:655(codesample)
+msgid "while hungry ; do eat_cookies done"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:661(p)
+msgid "This is most commonly used to iterate over lines in a file:"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:665(codesample)
+msgid "while read myline ; do einfo \"It says ${myline}\" done &lt; some_file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:673(c)
+msgid "while read &lt; file"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:674(c)
+msgid "cat file | while read"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:671(p)
+msgid "See <uri link=\"::ebuild-writing/error-handling/#die and Subshells\"/> for an explanation of why <placeholder-1/> should be used over <placeholder-2/>."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:681(title)
+msgid "Bash Variable Manipulation"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:685(c)
+msgid "${}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:687(c) devmanual/tools-reference/bash/text.xml:831(c)
+msgid "sed"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:684(p)
+msgid "There are a number of special <placeholder-1/> constructs in <placeholder-2/> which either manipulate or return information based upon variables. These can be used instead of expensive (or illegal, if we're in global scope) external calls to <placeholder-3/> and friends."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:692(title)
+msgid "<c>bash</c> String Length"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:696(c)
+msgid "${#somevar}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:695(p)
+msgid "The <placeholder-1/> construct can be used to obtain the length of a string variable."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:700(codesample)
+msgid "somevar=\"Hello World\" echo \"${somevar} is ${#somevar} characters long\""
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:709(title)
+msgid "<c>bash</c> Variable Default Values"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:714(c)
+msgid "${var:-value}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:714(c) devmanual/tools-reference/bash/text.xml:763(c)
+msgid "${var}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:715(c) devmanual/tools-reference/bash/text.xml:720(c) devmanual/tools-reference/bash/text.xml:731(c)
+msgid "value"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:715(c)
+msgid "${var-value}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:712(p)
+msgid "There are a number of ways of using a default value if a variable is unset or zero length. The <placeholder-1/> construct expands to the value of <placeholder-2/> if it is set and not null, or <placeholder-3/> otherwise. The <placeholder-4/> construct is similar, but checks only that the variable is set."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:720(c)
+msgid "${var:=value}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:720(c)
+msgid "${var=value}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:721(c) devmanual/tools-reference/bash/text.xml:721(c) devmanual/tools-reference/bash/text.xml:726(c) devmanual/tools-reference/bash/text.xml:731(c) devmanual/tools-reference/bash/text.xml:804(c) devmanual/tools-reference/bash/text.xml:805(c) devmanual/tools-reference/bash/text.xml:806(c) devmanual/tools-reference/bash/text.xml:812(c) devmanual/tools-reference/bash/text.xml:822(c) devmanual/tools-reference/bash/text.xml:837(c)
+msgid "var"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:721(c)
+msgid ":="
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:719(p)
+msgid "The <placeholder-1/> and <placeholder-2/> forms will also assign <placeholder-3/> to <placeholder-4/> if <placeholder-5/> is unset (and also set, but null for the <placeholder-6/> form)."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:725(c)
+msgid "${var:?message}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:725(c)
+msgid "message"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:727(c)
+msgid "die"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:727(c)
+msgid "${var?message}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:724(p)
+msgid "The <placeholder-1/> form will display <placeholder-2/> to stderr and then exit if <placeholder-3/> is unset or null. This should generally not be used within ebuilds as it does not use the <placeholder-4/> mechanism. There is a <placeholder-5/> form too."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:731(c)
+msgid "${var:+value}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:732(c)
+msgid "${var+value}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:730(p)
+msgid "The <placeholder-1/> form expands to <placeholder-2/> if <placeholder-3/> is set and not null, or a blank string otherwise. There is a <placeholder-4/> form."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:739(title)
+msgid "<c>bash</c> Substring Extraction"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:743(c)
+msgid "${var:offset}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:743(c)
+msgid "${var:offset:length}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:744(c) devmanual/tools-reference/bash/text.xml:750(c) devmanual/tools-reference/bash/text.xml:763(c) devmanual/tools-reference/bash/text.xml:763(c) devmanual/tools-reference/bash/text.xml:765(c)
+msgid "offset"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:744(c) devmanual/tools-reference/bash/text.xml:762(c) devmanual/tools-reference/bash/text.xml:764(c)
+msgid "length"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:742(p)
+msgid "The <placeholder-1/> and <placeholder-2/> constructs can be used to obtain a substring. Strings are zero-indexed. Both <placeholder-3/> and <placeholder-4/> are arithmetic expressions."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:751(e) devmanual/tools-reference/bash/text.xml:764(e) devmanual/tools-reference/bash/text.xml:812(e)
+msgid "end"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:748(p)
+msgid "The first form with a positive offset returns a substring starting with the character at <placeholder-1/> and continuing to the end of a string. If the offset is negative, the offset is taken relative to the <placeholder-2/> of the string."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:756(e) devmanual/tools-reference/bash/text.xml:874(c)
+msgid "expression"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:757(c)
+msgid "${var:0-1}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:757(c)
+msgid "${var:-1}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:754(note)
+msgid "For reasons which will not be discussed here, any negative value must be an <placeholder-1/> which results in a negative value, rather than simply a negative value. The best way to handle this is to use <placeholder-2/>. <placeholder-3/> will <placeholder-4/> work."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:764(e)
+msgid "must not"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:761(p)
+msgid "The second form returns the first <placeholder-1/> characters of the value of <placeholder-2/> starting at <placeholder-3/>. If <placeholder-4/> is negative, the offset is taken from the <placeholder-5/> of the string. The <placeholder-6/> parameter <placeholder-7/> be less than zero. Again, negative <placeholder-8/> values must be given as an expression."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:772(title)
+msgid "<c>bash</c> Command Substitution"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:776(c)
+msgid "$(command)"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:777(c)
+msgid "stdout"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:775(p)
+msgid "The <placeholder-1/> construct can be used to run a command and capture the output (<placeholder-2/>) as a string."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:781(c)
+msgid "`command`"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:782(c)
+msgid "$(command )"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:780(note)
+msgid "The <placeholder-1/> construct also does this, but should be avoided in favour of <placeholder-2/> for clarity, ease of reading and nesting purposes."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:785(codesample)
+msgid "myconf=\"$(use_enable acl) $(use_enable nls) --with-tlib=ncurses\""
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:793(title)
+msgid "<c>bash</c> String Replacements"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:797(c) devmanual/tools-reference/bash/text.xml:804(c)
+msgid "${var#pattern}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:798(c) devmanual/tools-reference/bash/text.xml:811(c)
+msgid "${var%pattern}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:798(c) devmanual/tools-reference/bash/text.xml:822(c)
+msgid "${var/pattern/replacement}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:796(p)
+msgid "There are three basic string replacement forms available: <placeholder-1/>, <placeholder-2/> and <placeholder-3/>. The first two are used for deleting content from the start and end of a string respectively. The third is used to replace a match with different content."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:805(c) devmanual/tools-reference/bash/text.xml:823(c) devmanual/tools-reference/bash/text.xml:837(c) devmanual/tools-reference/bash/text.xml:844(c) devmanual/tools-reference/bash/text.xml:848(c)
+msgid "pattern"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:806(e)
+msgid "longest"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:807(c)
+msgid "${var##pattern}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:803(p)
+msgid "The <placeholder-1/> form will return <placeholder-2/> with the shortest match of <placeholder-3/> at the start of the value of <placeholder-4/> deleted. If no match can be made, the value of <placeholder-5/> is given. To delete the <placeholder-6/> match at the start, use <placeholder-7/> instead."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:811(c)
+msgid "${var%%pattern}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:810(p)
+msgid "The <placeholder-1/> and <placeholder-2/> forms are similar, but delete the shortest and longest matches at the <placeholder-3/> of <placeholder-4/> respectively."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:816(e)
+msgid "greedy"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:816(e)
+msgid "non-greedy"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:816(c) devmanual/tools-reference/bash/text.xml:839(c) devmanual/tools-reference/bash/text.xml:929(c)
+msgid "%"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:817(c) devmanual/tools-reference/bash/text.xml:838(c)
+msgid "#"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:815(note)
+msgid "The terms <placeholder-1/> and <placeholder-2/> are sometimes used here (<placeholder-3/> and <placeholder-4/> being the non-greedy forms). This is arguably incorrect, but the terms are fairly close."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:823(c) devmanual/tools-reference/bash/text.xml:843(c)
+msgid "replacement"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:824(e)
+msgid "all"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:824(c)
+msgid "${var//pattern/replacement}"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:821(p)
+msgid "The <placeholder-1/> construct expands to the value of <placeholder-2/> with the first match of <placeholder-3/> replaced with <placeholder-4/>. To replace <placeholder-5/> matches, <placeholder-6/> can be used."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:831(c)
+msgid "perl"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:832(uri)
+msgid "IEEE1003.1-2004-9.1"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:827(note)
+msgid "<placeholder-1/> incorrectly describes what will be matched. Of all the possible leftmost matches, the longest will be taken. Yes, really, the longest, even if it involves favouring later groups or later branches. This is <placeholder-2/> like <placeholder-3/> or <placeholder-4/>. See <placeholder-5/> for details."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:836(p)
+msgid "To match only if <placeholder-1/> occurs at the start of the value of <placeholder-2/>, the pattern should begin with a <placeholder-3/> character. To match only at the end, the pattern should begin with a <placeholder-4/>."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:843(c) devmanual/tools-reference/bash/text.xml:929(c)
+msgid "/"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:842(p)
+msgid "If <placeholder-1/> is null, matches are deleted and the <placeholder-2/> following <placeholder-3/> may be omitted."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:847(p)
+msgid "The <placeholder-1/> may contain a number of special metacharacters for pattern matching."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:852(todo)
+msgid "tables of bash metachars"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:857(c)
+msgid "extglob"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:858(e)
+msgid "extremely"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:856(p)
+msgid "If the <placeholder-1/> shell option is enabled, a number of additional constructs are available. These can be <placeholder-2/> useful sometimes."
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:861(todo)
+msgid "table of extra bash goodies"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:869(title)
+msgid "<c>bash</c> Arithmetic Expansion"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:873(c)
+msgid "$(( expression ))"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:872(p)
+msgid "The <placeholder-1/> construct can be used for integer arithmetic evaluation. <placeholder-2/> is a C-like arithmetic expression. The following operators are supported (the table is in order of precedence, highest first):"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:880(th)
+msgid "Operators"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:889(c)
+msgid "var++"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:889(c)
+msgid "var--"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:888(ti) devmanual/tools-reference/bash/text.xml:896(ti) devmanual/tools-reference/bash/text.xml:904(ti) devmanual/tools-reference/bash/text.xml:912(ti) devmanual/tools-reference/bash/text.xml:936(ti) devmanual/tools-reference/bash/text.xml:944(ti) devmanual/tools-reference/bash/text.xml:961(ti)
+msgid "<placeholder-1/>, <placeholder-2/>"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:891(ti)
+msgid "Variable post-increment, post-decrement"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:897(c)
+msgid "++var"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:897(c)
+msgid "--var"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:899(ti)
+msgid "Variable pre-increment, pre-decrement"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:905(c) devmanual/tools-reference/bash/text.xml:937(c)
+msgid "-"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:905(c) devmanual/tools-reference/bash/text.xml:937(c)
+msgid "+"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:907(ti)
+msgid "Unary minus and plus"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:913(c)
+msgid "~"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:915(ti)
+msgid "Logical negation, bitwise negation"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:921(c)
+msgid "**"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:923(ti)
+msgid "Exponentiation"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:929(c)
+msgid "*"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:928(ti)
+msgid "<placeholder-1/>, <placeholder-2/>, <placeholder-3/>"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:931(ti)
+msgid "Multiplication, division, remainder"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:939(ti)
+msgid "Addition, subtraction"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:945(c)
+msgid "&lt;&lt;"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:945(c)
+msgid "&gt;&gt;"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:947(ti)
+msgid "Left, right bitwise shifts"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:953(c)
+msgid "&lt;="
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:953(c)
+msgid "&gt;="
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:952(ti)
+msgid "<placeholder-1/>, <placeholder-2/>, <placeholder-3/>, <placeholder-4/>"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:955(ti)
+msgid "Comparison: less than or equal to, greater than or equal to, strictly less than, strictly greater than"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:964(ti)
+msgid "Equality, inequality"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:970(c)
+msgid "&amp;"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:972(ti)
+msgid "Bitwise AND"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:978(c)
+msgid "^"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:980(ti)
+msgid "Bitwise exclusive OR"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:986(c)
+msgid "|"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:988(ti)
+msgid "Bitwise OR"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:994(c)
+msgid "&amp;&amp;"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:996(ti)
+msgid "Logical AND"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1002(c)
+msgid "||"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1004(ti)
+msgid "Logical OR"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1010(c)
+msgid "expr ? expr : expr"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1012(ti)
+msgid "Conditional operator"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1018(c)
+msgid "*="
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1018(c)
+msgid "/="
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1018(c)
+msgid "%="
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1018(c)
+msgid "+="
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1018(c)
+msgid "-="
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1018(c)
+msgid "&lt;&lt;="
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1019(c)
+msgid "&gt;&gt;="
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1019(c)
+msgid "&amp;="
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1019(c)
+msgid "^="
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1019(c)
+msgid "|="
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1017(ti)
+msgid "<placeholder-1/>, <placeholder-2/>, <placeholder-3/>, <placeholder-4/>, <placeholder-5/>, <placeholder-6/>, <placeholder-7/>, <placeholder-8/>, <placeholder-9/>, <placeholder-10/>, <placeholder-11/>"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1021(ti)
+msgid "Assignment"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1027(c)
+msgid "expr1 , expr2"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1029(ti)
+msgid "Multiple statements"
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1036(c)
+msgid "**="
+msgstr ""
+
+#: devmanual/tools-reference/bash/text.xml:1035(note)
+msgid "There is no <placeholder-1/> assignment operator."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/tools-reference/bash/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

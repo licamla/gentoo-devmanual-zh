@@ -1,0 +1,128 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/function-reference/message-functions/text.xml:4(title)
+msgid "Message Functions Reference"
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:8(c)
+msgid "functions.sh"
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:7(p)
+msgid "The following functions, which are provided by <placeholder-1/>, can be used for displaying informational messages."
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:14(th) devmanual/function-reference/message-functions/text.xml:87(th)
+msgid "Function"
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:17(th) devmanual/function-reference/message-functions/text.xml:90(th)
+msgid "Details"
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:23(c)
+msgid "einfo"
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:25(ti)
+msgid "Display an informational message."
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:31(c)
+msgid "einfon"
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:33(ti)
+msgid "Display an informational message with no trailing newline."
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:39(c)
+msgid "elog"
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:41(ti)
+msgid "Display an informational message, to be logged if logging is enabled."
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:47(c)
+msgid "ewarn"
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:49(ti)
+msgid "Display a warning message."
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:55(c)
+msgid "eerror"
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:57(ti)
+msgid "Display an error message."
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:63(c)
+msgid "ebegin"
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:65(ti)
+msgid "Display the message for the start of an action block."
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:71(c)
+msgid "eend"
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:73(ti)
+msgid "Display the end of an action block."
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:80(c)
+msgid "eutils.eclass"
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:79(p)
+msgid "The following are available from <placeholder-1/> . ebeep and epause are deprecated in EAPIS 0, 1 and 2 in favor of GLEP 42 news items and package manager message logging functionality."
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:96(c)
+msgid "epause"
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:98(ti)
+msgid "Pause for the specified number (must be a positive integer) of seconds. Defaults to a sane value."
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:105(c)
+msgid "ebeep"
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:107(ti)
+msgid "Beep the specified number (must be a positive integer) of times. Defaults to a sane value."
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:113(c)
+msgid "eqawarn"
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:115(ti)
+msgid "Used by eclass authors to notify ebuild writers that they are using deprecated functionality."
+msgstr ""
+
+#: devmanual/function-reference/message-functions/text.xml:121(p)
+msgid "See <uri link=\"::ebuild-writing/messages\"/> for a detailed discussion."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/function-reference/message-functions/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

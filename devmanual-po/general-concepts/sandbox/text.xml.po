@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/sandbox/text.xml:4(title)
+msgid "Sandbox"
+msgstr ""
+
+#: devmanual/general-concepts/sandbox/text.xml:8(c)
+msgid "src_unpack"
+msgstr ""
+
+#: devmanual/general-concepts/sandbox/text.xml:8(c)
+msgid "src_compile"
+msgstr ""
+
+#: devmanual/general-concepts/sandbox/text.xml:8(c)
+msgid "src_test"
+msgstr ""
+
+#: devmanual/general-concepts/sandbox/text.xml:8(c)
+msgid "src_install"
+msgstr ""
+
+#: devmanual/general-concepts/sandbox/text.xml:9(c)
+msgid "ebuild.sh"
+msgstr ""
+
+#: devmanual/general-concepts/sandbox/text.xml:9(e)
+msgid "sandbox"
+msgstr ""
+
+#: devmanual/general-concepts/sandbox/text.xml:7(p)
+msgid "During the <placeholder-1/>, <placeholder-2/>, <placeholder-3/> and <placeholder-4/> phases, <placeholder-5/> operates inside a <placeholder-6/>. This is a special environment which attempts to help prevent badly written ebuilds (or ebuilds working with badly written build systems) accidentally writing outside of permitted locations."
+msgstr ""
+
+#: devmanual/general-concepts/sandbox/text.xml:15(b)
+msgid "All packages must build correctly when sandbox is active."
+msgstr ""
+
+#: devmanual/general-concepts/sandbox/text.xml:18(c)
+msgid "Makefile"
+msgstr ""
+
+#: devmanual/general-concepts/sandbox/text.xml:18(c)
+msgid "addwrite"
+msgstr ""
+
+#: devmanual/general-concepts/sandbox/text.xml:19(b)
+msgid "not"
+msgstr ""
+
+#: devmanual/general-concepts/sandbox/text.xml:14(p)
+msgid "<placeholder-1/> Packages must not achieve this by using sneaky tricks to make sandbox warnings not show up <d/> the sandbox is there to ensure that binary packages will work correctly, and that a badly written <placeholder-2/> won't cause problems. Using <placeholder-3/> is generally <placeholder-4/> the correct solution."
+msgstr ""
+
+#: devmanual/general-concepts/sandbox/text.xml:22(p)
+msgid "See <uri link=\"::function-reference/sandbox-functions/\"/> for details on sandbox-related functions. See <uri link=\"::appendices/common-problems/#Handling Access Violations\"/> for suggestions on fixing sandbox-related build problems."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/sandbox/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/ebuild-revisions/text.xml:4(title)
+msgid "Ebuild Revisions"
+msgstr ""
+
+#: devmanual/general-concepts/ebuild-revisions/text.xml:9(c) devmanual/general-concepts/ebuild-revisions/text.xml:16(c)
+msgid "-rX"
+msgstr ""
+
+#: devmanual/general-concepts/ebuild-revisions/text.xml:9(c)
+msgid "X"
+msgstr ""
+
+#: devmanual/general-concepts/ebuild-revisions/text.xml:12(c)
+msgid "-r0"
+msgstr ""
+
+#: devmanual/general-concepts/ebuild-revisions/text.xml:7(p)
+msgid "Ebuilds may have a Gentoo revision number associated with them. This is a <placeholder-1/> suffix, where <placeholder-2/> is an integer <d/> see <uri link=\"::ebuild-writing/file-format#File Naming Rules\"/>. This component must only be used for Gentoo changes, not upstream releases. By default, <placeholder-3/> is implied."
+msgstr ""
+
+#: devmanual/general-concepts/ebuild-revisions/text.xml:15(p)
+msgid "Ebuilds should have their <placeholder-1/> incremented whenever a change is made which will make a substantial difference to what gets installed by the package <d/> by substantial, we generally mean \"something for which many users would want to upgrade\". This is usually for bugfixes. For any such revision bump, the new ebuild should be based on the previous revision to ensure that fixes aren't dropped accidentally."
+msgstr ""
+
+#: devmanual/general-concepts/ebuild-revisions/text.xml:25(b)
+msgid "not"
+msgstr ""
+
+#: devmanual/general-concepts/ebuild-revisions/text.xml:24(p)
+msgid "Simple compile fixes do <placeholder-1/> warrant a revision bump; this is because they do not affect the installed package for users who already managed to compile it. Small documentation fixes are also usually not grounds for a new revision. In particular, this applies if the package has a substantial compilation time; developers should use their best judgement in these circumstances."
+msgstr ""
+
+#: devmanual/general-concepts/ebuild-revisions/text.xml:35(b)
+msgid "Modifying stable ebuilds should be avoided."
+msgstr ""
+
+#: devmanual/general-concepts/ebuild-revisions/text.xml:32(important)
+msgid "For ebuilds marked stable on at least one arch, only trivial edits can be made without a bump (e.g. typo fixes in elog messages). Even simple changes may result in a breakage. <placeholder-1/>"
+msgstr ""
+
+#: devmanual/general-concepts/ebuild-revisions/text.xml:39(c)
+msgid "~arch"
+msgstr ""
+
+#: devmanual/general-concepts/ebuild-revisions/text.xml:38(p)
+msgid "When doing a revision bump, the usual rules about dropping to <placeholder-1/> apply. See <uri link=\"::keywording#Keywording on Upgrades\"/>."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/ebuild-revisions/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

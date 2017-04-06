@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/tools-reference/grep/text.xml:4(title)
+msgid "<c>grep</c> -- Text Filtering"
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:8(c) devmanual/tools-reference/grep/text.xml:34(c)
+msgid "grep"
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:7(p)
+msgid "The <placeholder-1/> tool can be used to extract lines matching a given regular expression from a file, or to check whether a given regular expression matches any line in a file."
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:14(c)
+msgid "grep \"pattern\" files"
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:15(c) devmanual/tools-reference/grep/text.xml:22(c) devmanual/tools-reference/grep/text.xml:29(c)
+msgid "pattern"
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:17(uri)
+msgid "IEEE1003.1-2004-9.3"
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:13(p)
+msgid "The usage is <placeholder-1/>. If no files are specified, text is read from the standard input. The <placeholder-2/> is a standard basic regular expression, as described in <placeholder-3/>."
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:22(c)
+msgid "-E"
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:24(uri)
+msgid "IEEE1003.1-2004-9.4"
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:21(p)
+msgid "If the <placeholder-1/> argument is supplied, <placeholder-2/> is treated as being an extended regular expression as described in <placeholder-3/>."
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:29(c)
+msgid "-F"
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:28(p)
+msgid "If the <placeholder-1/> argument is supplied, <placeholder-2/> is treated as being a fixed string rather than a regular expression."
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:35(c)
+msgid "-q"
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:35(c)
+msgid "-l"
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:33(p)
+msgid "By default, <placeholder-1/> prints out matching lines from the input. If <placeholder-2/> is specified, no output is displayed. If <placeholder-3/> (lowercase letter ell) is specified, only the filenames of files which contain matching lines are displayed."
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:41(c)
+msgid "-v"
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:40(p)
+msgid "The <placeholder-1/> option can be used to select lines which do not match the pattern instead."
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:46(c)
+msgid "-s"
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:45(p)
+msgid "The <placeholder-1/> option can be used to suppress messages about nonexistent or unreadable files."
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:52(c)
+msgid "0"
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:53(c)
+msgid "1"
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:50(p)
+msgid "The return code can be used to test whether or not a match occurred. A return code of <placeholder-1/> indicates that one or more matches occurred; a code of <placeholder-2/> indicates no matches."
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:57(uri)
+msgid "IEEE1003.1-2004-grep"
+msgstr ""
+
+#: devmanual/tools-reference/grep/text.xml:56(p)
+msgid "See <placeholder-1/> for details. The grep-1 manual page on GNU systems documents many non-portable additional features."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/tools-reference/grep/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

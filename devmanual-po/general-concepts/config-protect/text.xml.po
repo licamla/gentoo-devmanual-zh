@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/config-protect/text.xml:4(title)
+msgid "Configuration File Protection"
+msgstr ""
+
+#: devmanual/general-concepts/config-protect/text.xml:9(c)
+msgid "/etc"
+msgstr ""
+
+#: devmanual/general-concepts/config-protect/text.xml:10(c) devmanual/general-concepts/config-protect/text.xml:15(c)
+msgid "CONFIG_PROTECT"
+msgstr ""
+
+#: devmanual/general-concepts/config-protect/text.xml:11(c) devmanual/general-concepts/config-protect/text.xml:16(c)
+msgid "CONFIG_PROTECT_MASK"
+msgstr ""
+
+#: devmanual/general-concepts/config-protect/text.xml:7(p)
+msgid "Portage includes a system for configuration file protection which means ebuilds don't have to worry about accidentally clobbering files in <placeholder-1/>. This is known as 'protection', and it is controlled by the <placeholder-2/> and <placeholder-3/> variables."
+msgstr ""
+
+#: devmanual/general-concepts/config-protect/text.xml:18(c)
+msgid "DESTDIR"
+msgstr ""
+
+#: devmanual/general-concepts/config-protect/text.xml:18(c)
+msgid "ROOT"
+msgstr ""
+
+#: devmanual/general-concepts/config-protect/text.xml:19(c)
+msgid "._cfg0000_filename"
+msgstr ""
+
+#: devmanual/general-concepts/config-protect/text.xml:20(c)
+msgid "etc-update"
+msgstr ""
+
+#: devmanual/general-concepts/config-protect/text.xml:20(c)
+msgid "dispatch-conf"
+msgstr ""
+
+#: devmanual/general-concepts/config-protect/text.xml:14(p)
+msgid "Any directory which is listed in <placeholder-1/> (and any subdirectories thereof), except for any which are listed in <placeholder-2/> (and subdirectories) are automatically 'protected' by Portage when copying an image from <placeholder-3/> to <placeholder-4/>. Rather than installing protected files directly, Portage will install them as <placeholder-5/>. These can then be processed by the <placeholder-6/> or <placeholder-7/> files at the user's discretion."
+msgstr ""
+
+#: devmanual/general-concepts/config-protect/text.xml:24(b)
+msgid "not"
+msgstr ""
+
+#: devmanual/general-concepts/config-protect/text.xml:24(c)
+msgid "pkg_postinst"
+msgstr ""
+
+#: devmanual/general-concepts/config-protect/text.xml:23(p)
+msgid "Packages must <placeholder-1/> attempt to override this system via <placeholder-2/> or similar. If you need a file renamed, removed or changed in a particular way, you should display a message informing the user."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/config-protect/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

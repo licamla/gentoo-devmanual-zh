@@ -1,0 +1,152 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:4(title)
+msgid "Projects and Herds"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:9(title)
+msgid "Projects"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:15(uri)
+msgid "GLEP 39"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:18(uri)
+msgid "Devmanual"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:12(p)
+msgid "The management structure of Gentoo, called the \"metastructure\", is defined in <placeholder-1/>. In Gentoo, a project is a group of developers working towards a common goal in various different areas. For example, the <placeholder-2/> project focuses on maintaining this document. Many others are responsible for maintaining packages. Projects spanning a large area of topics can have multiple subprojects specializing in particular fields within the domain of the parent project and thus form a project hierarchy."
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:29(uri)
+msgid "metadata.xml"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:31(uri)
+msgid "api.gentoo.org"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:33(uri)
+msgid "wiki"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:26(p)
+msgid "A package maintained by a project needs to have the project explicitly listed as a maintainer in its <placeholder-1/>. The full listing of all the projects can be found on <placeholder-2/> or on the <placeholder-3/>."
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:37(title)
+msgid "Starting New Projects"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:47(uri)
+msgid "through the wiki"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:45(li)
+msgid "Create a new project page <placeholder-1/>."
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:50(li)
+msgid "Post a Request For Comments (RFC) email to the gentoo-dev mailing list."
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:40(p)
+msgid "According to the metastructure any developer may create a new project. There are two procedures involved in starting a new project: <ol><placeholder-1/><placeholder-2/></ol> There is no approval required for the RFC and negative comments do not block a developer from creating a project. Competing projects are allowed to co-exist in Gentoo; existence of another project with similar goals do not block another developer from starting a new project with the same goals."
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:66(title)
+msgid "Joining and Leaving a Project"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:69(p)
+msgid "Members of a project are managed through the project's page on the Gentoo Wiki. Each page has a \"Project\" template in its source which lists the members of the project. Simply modifying the list is sufficient for adding or removing a developer. Note that different projects have different requirements and procedures for recruiting developers, which may require prior arrangements to be made before modifying the member list."
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:81(path)
+msgid "/var/mail/alias/misc/&lt;alias name&gt;"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:83(c)
+msgid "/var/mail/alias/misc/devmanual"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:84(c)
+msgid "devmanual@gentoo.org"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:79(p)
+msgid "Developers should remember to add themselves to the alias by editing <c><placeholder-1/></c> on dev.gentoo.org. For example, the alias for the Devmanual project is located at <placeholder-2/>, which corresponds to the project's email address <placeholder-3/>."
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:94(title)
+msgid "Herds"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:99(uri)
+msgid "decision on January 10, 2016"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:97(warning)
+msgid "Herds have been declared obsolete as per the Gentoo Council's <placeholder-1/>. The following section is preserved for historical purposes."
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:105(e)
+msgid "herd"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:109(b) devmanual/general-concepts/herds-and-projects/text.xml:122(e)
+msgid "not"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:109(c)
+msgid "herdname@gentoo.org"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:110(c)
+msgid "cron"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:111(c)
+msgid "cron-bugs@gentoo.org"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:104(p)
+msgid "A <placeholder-1/> is a collection of packages with an associated set of maintainers. It can happen for example because of retirement that a herd has no developers but this should be avoided if at all possible. A herd has an associated email address which can be used for bugzilla assignments. This email address is <placeholder-2/> always <placeholder-3/><d/> for example, because of the way Gentoo's email aliases are set up, the <placeholder-4/> herd use <placeholder-5/> (aliases cannot match system usernames)."
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:115(e)
+msgid "project"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:114(p)
+msgid "A <placeholder-1/> is a group formed for handling a particular general area. A project may have herds associated with it."
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:120(c) devmanual/general-concepts/herds-and-projects/text.xml:121(c)
+msgid "sparc"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:122(c)
+msgid "silo"
+msgstr ""
+
+#: devmanual/general-concepts/herds-and-projects/text.xml:119(p)
+msgid "Sometimes herd and project names overlap <d/> for example, the <placeholder-1/> project has an associated <placeholder-2/> herd which maintains sparc-specific packages (such as the <placeholder-3/> bootloader). This is <placeholder-4/> always the case."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/herds-and-projects/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,32 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/pic/text.xml:4(title)
+msgid "Position Independent Code"
+msgstr ""
+
+#: devmanual/general-concepts/pic/text.xml:7(p)
+msgid "On some architectures, shared libraries must be built with -fPIC. On x86 and others, shared libraries may build without -fPIC. This can be wasteful and potentially cause a performance hit."
+msgstr ""
+
+#: devmanual/general-concepts/pic/text.xml:10(uri)
+msgid "PIC internals"
+msgstr ""
+
+#: devmanual/general-concepts/pic/text.xml:10(p)
+msgid "If you encounter a package that is not building shared libraries with -fPIC, patch the Makefile to build only the shared libraries with -fPIC. More information on PIC is available at the <placeholder-1/> wiki page. If you are unsure, please ask in a public developer forum (like the gentoo-dev mailing list or #gentoo-dev irc channel) for help."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/pic/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

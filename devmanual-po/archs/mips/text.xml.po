@@ -1,0 +1,152 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/archs/mips/text.xml:4(title)
+msgid "Arch Specific Notes -- MIPS"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:8(c) devmanual/archs/mips/text.xml:14(c)
+msgid "mips"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:7(p)
+msgid "The MIPS port uses the <placeholder-1/> keyword. It focuses upon commonly available hardware <d/> mainly SGI, Cobalt, Cavium Octeon and the MIPS Creator CI20 systems <d/> although various embedded and special purpose boards are also supported."
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:13(p)
+msgid "The <placeholder-1/> keyword covers a huge range of architectures, CPUs and hardware, from tiny embedded devices up to server class kit with many tens of CPUs."
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:18(note)
+msgid "Terminology: ABI stands for \"Application Binary Interface\". It refers to issues like calling conventions (which registers are used for passing parameters when calling functions) and the size of data types. ISA stands for \"Instruction Set Architecture\", and refers to the instructions available and the number and types of registers for a given CPU."
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:28(title)
+msgid "MIPS ABIs"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:32(c)
+msgid "o32"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:33(c)
+msgid "n32"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:35(c)
+msgid "n64"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:31(p)
+msgid "The <placeholder-1/> ABI was a wonderful invention by SGI that was good at the time, but later turned out to be a little bit short-sighted and inefficient. The <placeholder-2/> ABI corrects that problem by pretending to be 32 bit, whilst in reality being 64 bit. <placeholder-3/> is another 64 bit ABI, this time not pretending to be 32 bit, which is therefore large, fat and yet very powerful."
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:39(p)
+msgid "All of these ABIs can be both big and little endian, since MIPS CPUs come in both flavours, although most hardware does not support both options."
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:44(p)
+msgid "All of these ABIs are popular amongst various applications domains. None of them actually work correctly."
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:53(title)
+msgid "MIPS ISAs"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:56(p)
+msgid "The most commonly seen MIPS ISAs are mips2, mips3, mips4, mips32 and mips64. If you encounter a situation in which you need to know about the differences between these, talk to the MIPS team."
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:66(title)
+msgid "Not Dropping <c>CFLAGS</c> on MIPS"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:70(c)
+msgid "CFLAGS"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:69(p)
+msgid "Because <placeholder-1/> are sometimes used to specify ISA and ABI information, it is vital that packages honour this setting. See <uri link=\"::general-concepts/user-environment/#Not Filtering Variables\"/>."
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:79(title)
+msgid "Additional MIPS Keywording Requirements"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:84(e)
+msgid "additional"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:82(note)
+msgid "This section is in addition to the guidelines in <uri link=\"::keywording/\"/> It discusses <placeholder-1/> requirements for the MIPS architectures."
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:88(c)
+msgid "~mips"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:87(p)
+msgid "For a package to have the <placeholder-1/> keyword added, the following additional items must generally hold:"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:93(li)
+msgid "The package should work on both big and little endian systems, on both pure 32 bit and pure 64 bit systems and on systems with differing kernel and userland ABIs."
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:102(c) devmanual/archs/mips/text.xml:121(c) devmanual/archs/mips/text.xml:124(c)
+msgid "mips@"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:100(p)
+msgid "It is generally expected that anyone who does keywording for MIPS should be on the <placeholder-1/> alias."
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:105(p)
+msgid "MIPS doesn't currently use stable keywords so don't file stable requests to them."
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:112(title)
+msgid "Contacting the MIPS Team"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:115(p)
+msgid "The MIPS team can be contacted:"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:120(li)
+msgid "Via Bugzilla bugs assigned to <placeholder-1/>"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:123(li)
+msgid "Via email to the <placeholder-1/> email alias"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:127(c)
+msgid "gentoo-mips"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:126(li)
+msgid "Via email to the <placeholder-1/> mailing list"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:130(c)
+msgid "#gentoo-mips"
+msgstr ""
+
+#: devmanual/archs/mips/text.xml:129(li)
+msgid "Via the <placeholder-1/> IRC channel on Freenode"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/archs/mips/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

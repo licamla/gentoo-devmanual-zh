@@ -1,0 +1,172 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:4(title)
+msgid "Subversion Sources"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:9(uri) devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:53(c) devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:92(uri)
+msgid "subversion.eclass"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:7(p)
+msgid "As with CVS, an eclass exists for working directly with upstream Subversion repositories. See <placeholder-1/> for a full list of functions and variables. Also see the <uri link=\"::ebuild-writing/functions/src_unpack/cvs-sources\"/> ection."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:17(title)
+msgid "Disadvantages of Subversion Sources"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:21(b) devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:46(e)
+msgid "not"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:20(p)
+msgid "Note that Subversion ebuilds should <placeholder-1/> generally be added to the tree for much the same reasons that live CVS ebuilds should not (see <uri link=\"::ebuild-writing/functions/src_unpack/cvs-sources#Disadvantages of CVS Sources\"/>). Indeed, there should be even less impetus to add a live Subversion ebuild than a live CVS ebuild, as Subversion checkouts are roughly a factor of five larger than an equivalent CVS checkout."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:31(c)
+msgid "gentoo-syntax"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:29(p)
+msgid "It is safer (and better for the user) to make a snapshot instead. For example, <placeholder-1/> snapshots could be made using:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:34(pre)
+msgid "$ svn export svn://svn.berlios.de/svnroot/repos/gentoo-syntax -r HEAD gentoo-syntax"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:41(title)
+msgid "Using Subversion Sources"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:45(c) devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:46(c)
+msgid "KEYWORDS"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:47(c)
+msgid "-9999"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:44(note)
+msgid "Subversion ebuilds must be either with empty <placeholder-1/> or package.masked (but <placeholder-2/> both). Empty <placeholder-3/> are strongly preferred. This applies to \"live\" ebuilds (<placeholder-4/>) and to ebuilds that extract a static revision but still use Subversion for fetching."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:54(c) devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:65(c)
+msgid "ESVN_REPO_URI"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:52(p)
+msgid "To use a Subversion source, <placeholder-1/> must be inherited, and then at least <placeholder-2/> must be set. The following variables are also noteworthy:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:60(th)
+msgid "Variable"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:61(th)
+msgid "Purpose"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:62(th)
+msgid "Example"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:66(ti)
+msgid "Server and path (http, https, svn)"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:67(c)
+msgid "\"svn://svn.example.com/foobar/trunk\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:70(c)
+msgid "ESVN_STORE_DIR"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:71(ti)
+msgid "Unpack location"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:72(c)
+msgid "ESVN_STORE_DIR=\"${DISTDIR}/svn-src\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:75(c)
+msgid "ESVN_PROJECT"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:76(ti)
+msgid "Project name of ebuild"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:77(c)
+msgid "ESVN_PROJECT=\"${PN/-svn}\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:80(c)
+msgid "ESVN_BOOTSTRAP"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:81(ti)
+msgid "Bootstrap command or script"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:82(c)
+msgid "ESVN_BOOTSTRAP=\"autogen.sh\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:85(c)
+msgid "ESVN_PATCHES"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:86(ti)
+msgid "Patches to apply during bootstrap"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:87(c)
+msgid "ESVN_PATCHES=\"${FILESDIR}/*.patch\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:94(c)
+msgid "subversion_src_unpack"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:95(c)
+msgid "subversion_svn_fetch"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:95(c)
+msgid "subversion_bootstrap"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:91(p)
+msgid "See the eclass itself and <placeholder-1/> for the full range of options. To perform the actual checkout, use the <placeholder-2/> function, which calls both <placeholder-3/> and <placeholder-4/> itself."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:101(c)
+msgid "litu-svn-20040902.ebuild"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:99(p)
+msgid "Here is a simple example, based upon the Subversion options in <placeholder-1/>; this approach is sufficient for most Subversion ebuilds:"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:105(codesample)
+msgid "inherit subversion ESVN_REPO_URI=\"http://tao.uab.es/ion/svn/libtu/trunk\" ESVN_PROJECT=\"libtu-snapshot\""
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/src_unpack/svn-sources/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

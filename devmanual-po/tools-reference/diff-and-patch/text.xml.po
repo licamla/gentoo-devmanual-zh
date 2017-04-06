@@ -1,0 +1,116 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:4(title)
+msgid "<c>diff and patch</c> -- File Differences"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:8(c)
+msgid "diff"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:7(p)
+msgid "The <placeholder-1/> tool is used to create patches (sometimes called diffs). A patch is a program (computer science definition) which modifies text across one or more files. Typically these are used for making changes to source code before it is compiled."
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:15(c)
+msgid "diff -u oldfile newfile"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:16(c)
+msgid "oldfile"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:17(c)
+msgid "newfile"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:17(c)
+msgid "diff -urN olddir newdir"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:14(p)
+msgid "The simplest invocation is <placeholder-1/>, which will create a list of differences in unified format between <placeholder-2/> and <placeholder-3/>. To operate over directories instead, use <placeholder-4/>."
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:22(c)
+msgid "git"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:22(c)
+msgid "svn"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:22(c)
+msgid "cvs"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:23(c)
+msgid "git diff"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:23(c)
+msgid "svn diff"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:23(c)
+msgid "cvs diff"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:21(note)
+msgid "VCS like <placeholder-1/>,<placeholder-2/> or <placeholder-3/> provide built-in diff functionality (<placeholder-4/>, <placeholder-5/>, <placeholder-6/>) which may be more helpful."
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:28(c) devmanual/tools-reference/diff-and-patch/text.xml:33(c)
+msgid "-u"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:32(c)
+msgid "-c"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:27(p)
+msgid "For patches which go in the main tree, use unified (<placeholder-1/>) format. This is generally the best format to use when sending patches upstream too <d/> however, occasionally you may be asked to provide context diffs, which are more portable than unifieds (but don't handle conflicts as cleanly). In this case, use <placeholder-2/> rather than <placeholder-3/>."
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:37(c)
+msgid "patch -pX &lt; whatever.patch"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:38(c)
+msgid "X"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:39(c)
+msgid "0"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:39(c)
+msgid "1"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:40(c)
+msgid "epatch"
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:36(p)
+msgid "To apply a patch, use <placeholder-1/>, where <placeholder-2/> is a number representing the number of path components which must be removed (typically this is <placeholder-3/> or <placeholder-4/>). Within ebuilds, use the <placeholder-5/> function instead — see <uri link=\"::ebuild-writing/functions/src_prepare/epatch\"/>."
+msgstr ""
+
+#: devmanual/tools-reference/diff-and-patch/text.xml:44(p)
+msgid "The diff-1 and patch-1 manual pages provide more information."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/tools-reference/diff-and-patch/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,104 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:4(title) devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:10(c)
+msgid "pkg_nofetch"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:9(th)
+msgid "Function"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:13(th)
+msgid "Purpose"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:14(ti)
+msgid "Tell the user how to deal with fetch-restricted packages"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:17(th)
+msgid "Sandbox"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:18(ti)
+msgid "Enabled"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:21(th)
+msgid "Privilege"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:22(ti)
+msgid "root"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:25(th)
+msgid "Called for"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:26(ti)
+msgid "ebuild"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:32(title)
+msgid "Default <c>pkg_nofetch</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:34(codesample)
+msgid "pkg_nofetch() { [ -z \"${SRC_URI}\" ] &amp;&amp; return echo \"!!! The following are listed in SRC_URI for ${PN}:\" for MYFILE in `echo ${SRC_URI}`; do echo \"!!! $MYFILE\" done return }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:50(title)
+msgid "Sample <c>pkg_nofetch</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:52(codesample)
+msgid "pkg_nofetch() { einfo \"Please download\" einfo \" - ${P}-main.tar.bz2\" einfo \" - ${P}-extras.tar.bz2\" einfo \"from ${HOMEPAGE} and place them in your DISTDIR directory.\" }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:61(c)
+msgid "DISTDIR"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:61(c)
+msgid "pkg_*"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:60(note)
+msgid "The <placeholder-1/> variable is not valid in <placeholder-2/> phases, so it must not be referenced."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:68(title)
+msgid "Notes on <c>pkg_nofetch</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:72(c)
+msgid "RESTRICT=\"fetch\""
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:73(c)
+msgid "SRC_URI"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:74(c)
+msgid "distfiles"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:70(p)
+msgid "This function is only triggered for packages which have <placeholder-1/> (see <uri link=\"::general-concepts/mirrors#Restricting Automatic Mirroring\"/>) set, and only if one or more components listed in <placeholder-2/> are not already available in the <placeholder-3/> directory."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/pkg_nofetch/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

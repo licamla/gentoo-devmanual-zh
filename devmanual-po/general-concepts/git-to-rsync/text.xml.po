@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/git-to-rsync/text.xml:4(title)
+msgid "Git to RSYNC"
+msgstr ""
+
+#: devmanual/general-concepts/git-to-rsync/text.xml:8(p)
+msgid "Changes made to the tree are propagated to the users in stages:"
+msgstr ""
+
+#: devmanual/general-concepts/git-to-rsync/text.xml:13(li)
+msgid "Developer commits to local Git clone and pushes to central remote Git repository. Commits and pushes are signed using Git mechanisms based on GPG."
+msgstr ""
+
+#: devmanual/general-concepts/git-to-rsync/text.xml:18(li)
+msgid "Staging box syncs from central Git repository, generates the metadata cache, ChangeLogs and signed Manifests from Git history."
+msgstr ""
+
+#: devmanual/general-concepts/git-to-rsync/text.xml:22(c) devmanual/general-concepts/git-to-rsync/text.xml:25(c)
+msgid "rsync1"
+msgstr ""
+
+#: devmanual/general-concepts/git-to-rsync/text.xml:21(li)
+msgid "<placeholder-1/> syncs from the staging box."
+msgstr ""
+
+#: devmanual/general-concepts/git-to-rsync/text.xml:24(li)
+msgid "Public rsync servers sync from <placeholder-1/>."
+msgstr ""
+
+#: devmanual/general-concepts/git-to-rsync/text.xml:27(li)
+msgid "Users sync from the public rsync servers."
+msgstr ""
+
+#: devmanual/general-concepts/git-to-rsync/text.xml:37(c)
+msgid "emerge-websync"
+msgstr ""
+
+#: devmanual/general-concepts/git-to-rsync/text.xml:36(p)
+msgid "The <placeholder-1/> snapshot is made daily from the staging box."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/git-to-rsync/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

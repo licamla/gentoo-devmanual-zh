@@ -1,0 +1,764 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/general-concepts/autotools/text.xml:4(title)
+msgid "The Basics of Autotools"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:7(todo)
+msgid "This is too long for <uri link=\"::general-concepts\"/>. It needs to be split up and moved somewhere, either to a top-level of its own or into <uri link=\"::appendices/\"/>."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:13(c) devmanual/general-concepts/autotools/text.xml:59(c) devmanual/general-concepts/autotools/text.xml:96(c) devmanual/general-concepts/autotools/text.xml:208(c) devmanual/general-concepts/autotools/text.xml:211(c) devmanual/general-concepts/autotools/text.xml:455(c) devmanual/general-concepts/autotools/text.xml:481(c) devmanual/general-concepts/autotools/text.xml:531(c) devmanual/general-concepts/autotools/text.xml:558(c)
+msgid "automake"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:13(c) devmanual/general-concepts/autotools/text.xml:55(c) devmanual/general-concepts/autotools/text.xml:96(c) devmanual/general-concepts/autotools/text.xml:163(c) devmanual/general-concepts/autotools/text.xml:200(c) devmanual/general-concepts/autotools/text.xml:201(c) devmanual/general-concepts/autotools/text.xml:204(c) devmanual/general-concepts/autotools/text.xml:309(c) devmanual/general-concepts/autotools/text.xml:406(c) devmanual/general-concepts/autotools/text.xml:407(c) devmanual/general-concepts/autotools/text.xml:531(c) devmanual/general-concepts/autotools/text.xml:558(c) devmanual/general-concepts/autotools/text.xml:570(c) devmanual/general-concepts/autotools/text.xml:584(c)
+msgid "autoconf"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:12(p)
+msgid "An understanding of GNU autotools (<placeholder-1/>, <placeholder-2/> etc.) can be useful when working with ebuilds:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:18(li)
+msgid "Finding and correcting build issues is often easier if the build system is not seen simply as a scary black box."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:22(li)
+msgid "The autotools input files can help when determining a package's build-time dependencies."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:26(li)
+msgid "The risk of accidentally breaking something by patching the wrong file at the wrong time is greatly reduced if the relationship between the build system files is understood."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:35(title)
+msgid "Major Autotools Components"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:38(p)
+msgid "Autotools is a collection of related packages which, when used together, remove much of the difficulty involved in creating portable software. These tools, together with a few relatively simple upstream-supplied input files, are used to create the build system for a package."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:49(p)
+msgid "In a simple setup:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:55(c) devmanual/general-concepts/autotools/text.xml:62(c) devmanual/general-concepts/autotools/text.xml:92(c) devmanual/general-concepts/autotools/text.xml:106(c) devmanual/general-concepts/autotools/text.xml:456(c) devmanual/general-concepts/autotools/text.xml:495(c)
+msgid "configure"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:56(c) devmanual/general-concepts/autotools/text.xml:72(c) devmanual/general-concepts/autotools/text.xml:557(c)
+msgid "configure.in"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:56(c) devmanual/general-concepts/autotools/text.xml:73(c) devmanual/general-concepts/autotools/text.xml:123(c) devmanual/general-concepts/autotools/text.xml:162(c) devmanual/general-concepts/autotools/text.xml:175(c) devmanual/general-concepts/autotools/text.xml:280(c) devmanual/general-concepts/autotools/text.xml:332(c) devmanual/general-concepts/autotools/text.xml:496(c) devmanual/general-concepts/autotools/text.xml:557(c) devmanual/general-concepts/autotools/text.xml:567(c) devmanual/general-concepts/autotools/text.xml:576(c)
+msgid "configure.ac"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:54(li)
+msgid "The <placeholder-1/> program produces a <placeholder-2/> script from either <placeholder-3/> or <placeholder-4/> (see note below)."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:59(c) devmanual/general-concepts/autotools/text.xml:63(c) devmanual/general-concepts/autotools/text.xml:455(c)
+msgid "Makefile.in"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:59(c) devmanual/general-concepts/autotools/text.xml:123(c) devmanual/general-concepts/autotools/text.xml:455(c) devmanual/general-concepts/autotools/text.xml:506(c) devmanual/general-concepts/autotools/text.xml:510(c) devmanual/general-concepts/autotools/text.xml:515(c)
+msgid "Makefile.am"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:58(li)
+msgid "The <placeholder-1/> program produces a <placeholder-2/> from a <placeholder-3/>."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:62(c) devmanual/general-concepts/autotools/text.xml:66(c) devmanual/general-concepts/autotools/text.xml:456(c) devmanual/general-concepts/autotools/text.xml:461(c) devmanual/general-concepts/autotools/text.xml:480(c) devmanual/general-concepts/autotools/text.xml:495(c)
+msgid "Makefile"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:61(li)
+msgid "The <placeholder-1/> script is run to produce one or more <placeholder-2/> files from <placeholder-3/> files."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:66(c) devmanual/general-concepts/autotools/text.xml:106(c) devmanual/general-concepts/autotools/text.xml:457(c) devmanual/general-concepts/autotools/text.xml:475(c)
+msgid "make"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:65(li)
+msgid "The <placeholder-1/> program uses the <placeholder-2/> to compile the program."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:71(note)
+msgid "The <placeholder-1/> name used to be standard. However, the GNU documentation now recommends <placeholder-2/> as it is more obvious which program should be used when processing it. The files perform the same purpose and have the same format <d/> the only difference is the name."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:81(c) devmanual/general-concepts/autotools/text.xml:82(c) devmanual/general-concepts/autotools/text.xml:582(c)
+msgid "src_unpack"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:78(p)
+msgid "You may see autotools being used in a variety of phase functions. Prior to EAPI2, the QA team preferred that the source code be manipulated in <placeholder-1/><d/>the rationale being that <placeholder-2/> handles \"getting the package ready to be compiled.\""
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:90(c)
+msgid "src_prepare"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:86(p)
+msgid "EAPI2, however, introduced a new phase function: <uri link=\"::ebuild-writing/functions/src_prepare\"/>. This is now the appropriate place to manipulate the source code prior to configuration and compilation. In particular, <placeholder-1/> is called before <uri link=\"::ebuild-writing/functions/src_configure\"/>, which usually expects the <placeholder-2/> script to exist."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:96(c)
+msgid "autoreconf"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:97(c) devmanual/general-concepts/autotools/text.xml:543(c) devmanual/general-concepts/autotools/text.xml:544(c)
+msgid "autoheader"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:97(c) devmanual/general-concepts/autotools/text.xml:583(c)
+msgid "aclocal"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:97(c)
+msgid "autopoint"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:97(c)
+msgid "libtoolize"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:98(c)
+msgid "autogen.sh"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:99(e) devmanual/general-concepts/autotools/text.xml:105(b) devmanual/general-concepts/autotools/text.xml:340(e) devmanual/general-concepts/autotools/text.xml:341(b)
+msgid "not"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:99(c)
+msgid "autogen"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:101(c)
+msgid "eautoconf"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:101(c)
+msgid "eautomake"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:95(p)
+msgid "The <placeholder-1/> tool supposedly runs <placeholder-2/> (and <placeholder-3/>, <placeholder-4/>, <placeholder-5/>, <placeholder-6/> and <placeholder-7/>) as necessary. Sometimes it works. Some packages ship a shell script named <placeholder-8/> which does the same thing (this is <placeholder-9/> related to <placeholder-10/>). The autotools.eclass contains helper functions for the stand-alone tools with their corresponding names e.g. <placeholder-11/> and <placeholder-12/>."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:108(c) devmanual/general-concepts/autotools/text.xml:162(c) devmanual/general-concepts/autotools/text.xml:294(c) devmanual/general-concepts/autotools/text.xml:308(c) devmanual/general-concepts/autotools/text.xml:339(c) devmanual/general-concepts/autotools/text.xml:347(c)
+msgid "./configure"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:110(c)
+msgid ".ac"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:110(c)
+msgid ".in"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:104(warning)
+msgid "You must <placeholder-1/> attempt to modify any of the generated files in between running <placeholder-2/> and <placeholder-3/>. This can lead to autotools trying to be clever and recreate the files, in turn leading to your changes being removed. In some situations this will also result in <placeholder-4/> arguments being silently dropped, which can give broken dependencies. The best way to proceed is usually to work with the <placeholder-5/> / <placeholder-6/> files instead."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:118(title)
+msgid "Simple Autotools Patching Example"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:121(p)
+msgid "The following snippet illustrates the correct way to proceed after patching either <placeholder-1/> or <placeholder-2/>:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:126(codesample)
+msgid "EAPI=5 inherit autotools src_prepare() { # Remove problematic LDFLAGS declaration sed -i -e '/^LDFLAGS/d' src/Makefile.am || die # Rerun autotools einfo \"Regenerating autotools files...\" WANT_AUTOCONF=2.5 eautoconf WANT_AUTOMAKE=1.9 eautomake } src_compile() { econf $(use_enable nls) emake }"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:148(c)
+msgid "einfo"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:147(p)
+msgid "The <placeholder-1/> message before running autotools is not mandatory. However, these steps can sometimes take a while and may produce no output, so it may make sense to let the user know that something is still happening. See <uri link=\"::ebuild-writing/messages\"/>."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:158(title)
+msgid "The <c>configure.ac</c> File"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:164(c) devmanual/general-concepts/autotools/text.xml:313(c) devmanual/general-concepts/autotools/text.xml:338(c)
+msgid "--enable"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:165(c) devmanual/general-concepts/autotools/text.xml:362(c)
+msgid "--with"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:161(p)
+msgid "The <placeholder-1/> file is used to create the <placeholder-2/> script. It consists of a series of macros which are processed and expanded by <placeholder-3/>. These macros can check for packages and libraries, handle <placeholder-4/> and <placeholder-5/> switches, and generate various files."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:171(title)
+msgid "Basic Format of <c>configure.ac</c>"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:176(c) devmanual/general-concepts/autotools/text.xml:176(c)
+msgid "dnl"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:174(p)
+msgid "The <placeholder-1/> file is a basic text file. Indenting and whitespace are largely irrelevant. Comments are indicated by the string <placeholder-2/> (<placeholder-3/> is actually a macro which discards the remainder of the input <d/> it stands for \"discard new line\")."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:181(p)
+msgid "If the previous sentence made you uneasy, you should probably stop reading this page. It gets far worse."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:186(p)
+msgid "A typical file might start with something like the following:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:190(codesample)
+msgid "dnl Process this file with autoconf AC_INIT(appname, 0.1) AC_PREREQ(2.5) AC_CONFIG_SRCDIR(src/main.c) AC_CONFIG_AUX_DIR(config) AM_INIT_AUTOMAKE(1.8)"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:200(c)
+msgid "AC_PREREQ"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:202(c)
+msgid "=autoconf-2.5*"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:203(c)
+msgid "export WANT_AUTOCONF=\"2.5\""
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:203(c)
+msgid "autoconf-2.59"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:199(p)
+msgid "The <placeholder-1/> line, if present, tells you which <placeholder-2/> version you need. This is useful, because <placeholder-3/> is not compatible between versions. In the above example, we need <placeholder-4/>. and we should <placeholder-5/> (or use the <placeholder-6/> script) when calling <placeholder-7/>."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:208(c)
+msgid "AM_INIT_AUTOMAKE"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:209(c)
+msgid "automake-1.7"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:210(c)
+msgid "automake-1.8"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:210(c)
+msgid "WANT_AUTOMAKE=\"1.8\""
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:207(p)
+msgid "The <placeholder-1/> line tells us which <placeholder-2/> version we need. Again, there is little chance that an <placeholder-3/> script will work properly with <placeholder-4/>. Setting <placeholder-5/> in the environment can be used to make an unversioned <placeholder-6/> call run the correct version."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:215(c)
+msgid "WANT_"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:214(note)
+msgid "The <placeholder-1/> variables are a Gentoo feature that originally came from Mandrake. Other distributions may handle things differently."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:219(p)
+msgid "Usually, some standard checks will follow:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:223(codesample)
+msgid "dnl Check for toolchain and install components AC_PROG_CC AC_PROG_INSTALL AC_PROG_LN_S AC_PROG_RANLIB"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:231(p)
+msgid "For non-standard applications, you may also see manual checks:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:235(codesample)
+msgid "dnl Check for sed AC_CHECK_PROGS(regex_cmd, sed) if test x$regex_cmd = \"x\" ; then AC_MSG_ERROR([sed is required to build the data files.]) fi"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:243(p)
+msgid "You may also see checks for compiler features:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:247(codesample)
+msgid "dnl Check that our compiler can do const and inline AC_C_CONST AC_C_INLINE"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:253(p)
+msgid "Library and header checks:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:257(codesample)
+msgid "dnl Check for standard headers: AC_HEADER_STDC AC_HEADER_DIRENT AC_CHECK_HEADERS([stdlib.h stdio.h libintl.h locale.h]) dnl Check for libraries: AC_CHECK_LIB(ssl, SSL_free)"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:267(p)
+msgid "And function checks:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:271(codesample)
+msgid "dnl Check for functions: AC_CHECK_FUNCS([setlocale strtol])"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:280(c)
+msgid "autoscan"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:276(p)
+msgid "Often these will be all jumbled together without any useful comments. In some cases, many of the checks done won't even be necessary for the application in question <d/> most autotools code is copy/pasted rather than written from scratch, and <placeholder-1/> (a tool which helps write <placeholder-2/>) is sometimes over-eager to add in checks."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:284(p)
+msgid "The file will finish with some output functions:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:288(codesample)
+msgid "AM_CONFIG_HEADER(config.h) AC_OUTPUT(Makefile src/Makefile nls/Makefile man/Makefile tests/Makefile)"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:293(p)
+msgid "These are used to make the <placeholder-1/> script generate the relevant files."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:301(title)
+msgid "Enable and Disable Checks"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:305(e)
+msgid "optional"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:308(c)
+msgid "--enable-foo"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:308(c)
+msgid "--disable-foo"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:304(p)
+msgid "So far we've only seen 'hard' dependencies. Many packages have <placeholder-1/> support for various extras (graphics toolkits, libraries which add functionality, interpreters, features, ...). This is (if we're lucky) handled via <placeholder-2/> and <placeholder-3/> switches to <placeholder-4/>. which are generated from <placeholder-5/> rules."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:313(c) devmanual/general-concepts/autotools/text.xml:338(c)
+msgid "--disable"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:312(p)
+msgid "A simple <placeholder-1/> / <placeholder-2/> function might look something like the following:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:317(codesample)
+msgid "AC_MSG_CHECKING(--enable-cscope argument) AC_ARG_ENABLE(cscope, [ --enable-cscope Include cscope interface.], [enable_cscope=$enableval], [enable_cscope=\"no\"]) AC_MSG_RESULT($enable_cscope) if test \"$enable_cscope\" = \"yes\"; then AC_DEFINE(FEAT_CSCOPE) fi"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:332(c) devmanual/general-concepts/autotools/text.xml:332(c) devmanual/general-concepts/autotools/text.xml:351(c)
+msgid "AC_ARG_ENABLE"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:333(c)
+msgid "./configure --help"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:329(p)
+msgid "Sometimes more complicated checks are included based upon whether or not an option is enabled. There are also some predefined macros which include <placeholder-1/>. so grepping <placeholder-2/> for <placeholder-3/> may not give a complete list. A better way is to use <placeholder-4/> and check the output."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:337(important)
+msgid "The third argument is used when a <placeholder-1/> or <placeholder-2/> switch to <placeholder-3/> is provided, and the fourth is used when such a switch is <placeholder-4/> passed. A common misconception is that the third is enable and the fourth is disable <d/> this is <placeholder-5/> the case. You may encounter packages that get this wrong."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:348(c)
+msgid "./configure --enable-foo"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:348(c)
+msgid "./configure --disable-foo"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:350(e)
+msgid "different"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:345(p)
+msgid "A simple way to check that a package is using this macro properly is to install the optional dependency, and then try all of <placeholder-1/>. <placeholder-2/> and <placeholder-3/>. If the second and third runs give the same results, something is wrong. If the first run gives a <placeholder-4/> result to the second and third, there is a good chance that a misunderstanding of the <placeholder-5/> arguments is to blame."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:358(title)
+msgid "With and Without Checks"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:362(c)
+msgid "--without"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:361(p)
+msgid "A simple <placeholder-1/> / <placeholder-2/> check might look like:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:365(codesample)
+msgid "AC_MSG_CHECKING([whether to enable foo]) AC_ARG_WITH(foo, [ --with-foo enable foo support], with_foo=$withval, with_foo=yes) AC_MSG_RESULT($with_foo)"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:376(c)
+msgid "with"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:374(p)
+msgid "Again, the third argument is for 'specified' and the fourth for 'not specified', and there are standard macros which include <placeholder-1/> options."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:383(title)
+msgid "Automatic Checks"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:386(p)
+msgid "It's possible to write autoconf rules which bypass the manual enable / disable convention (or which just ignore what the user asks for). If your package does this, it must be fixed to avoid dependency problems."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:393(c)
+msgid "AC_CHECK_LIB"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:395(b)
+msgid "must"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:392(p)
+msgid "The most common form is packages which simply use <placeholder-1/> to decide whether or not to enable a feature. If you find a package which does this, you <placeholder-2/> change the behaviour."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:402(title)
+msgid "Quoting Rules for <c>configure.ac</c>"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:406(c) devmanual/general-concepts/autotools/text.xml:407(c) devmanual/general-concepts/autotools/text.xml:564(c) devmanual/general-concepts/autotools/text.xml:567(c) devmanual/general-concepts/autotools/text.xml:570(c) devmanual/general-concepts/autotools/text.xml:575(c) devmanual/general-concepts/autotools/text.xml:576(c) devmanual/general-concepts/autotools/text.xml:577(c) devmanual/general-concepts/autotools/text.xml:581(c) devmanual/general-concepts/autotools/text.xml:589(c) devmanual/general-concepts/autotools/text.xml:593(c) devmanual/general-concepts/autotools/text.xml:594(c) devmanual/general-concepts/autotools/text.xml:623(c)
+msgid "m4"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:407(c)
+msgid "["
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:408(c)
+msgid "]"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:408(c)
+msgid "\""
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:408(c)
+msgid "'"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:405(p)
+msgid "Behind the scenes, <placeholder-1/> makes heavy use of the <placeholder-2/> macro processor to do the work. The <placeholder-3/> quote characters are set by <placeholder-4/> to be <placeholder-5/> and <placeholder-6/> for opening and closing quotes respectively. Using <placeholder-7/> or <placeholder-8/> may produce unexpected results."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:414(c)
+msgid "@&lt;:@"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:414(c)
+msgid "@:&gt;@"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:412(p)
+msgid "To include a literal left square bracket, the easiest thing to do is to use the special string <placeholder-1/>. For a right bracket, use <placeholder-2/>."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:417(p)
+msgid "For example:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:421(codesample)
+msgid "AC_MSG_RESULT(the first) AC_MSG_RESULT([the second]) AC_MSG_RESULT(\"the third\") AC_MSG_RESULT(@&lt;:@the fourth@:&gt;@) AC_MSG_RESULT([@&lt;:@the fifth@:&gt;@])"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:429(p)
+msgid "gives:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:433(pre)
+msgid "the first the second \"the third\" [the fourth] [the fifth]"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:442(c)
+msgid "[ ]"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:441(p)
+msgid "When in doubt, it is generally safest to quote macro arguments using <placeholder-1/> rather than leaving things unquoted."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:451(title)
+msgid "The <c>Makefile.am</c> Files"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:454(p)
+msgid "The <placeholder-1/> file is processed by <placeholder-2/> to create <placeholder-3/>, which is in turn processed by <placeholder-4/> to create <placeholder-5/>, which is in turn used by <placeholder-6/> to build the software."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:460(p)
+msgid "The basic format is like that of a <placeholder-1/>. However, you will see various 'special' variables being set, rather than every rule being written manually."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:465(p)
+msgid "A very simple example:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:469(codesample)
+msgid "bin_PROGRAMS = myapp myapp_SOURCES = myapp_commandline.c myapp.c"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:475(c)
+msgid "make clean"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:476(c)
+msgid "make distclean"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:476(c)
+msgid "make dist"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:474(p)
+msgid "All the standard GNU rules will be generated, so <placeholder-1/>. <placeholder-2/>. <placeholder-3/>. <placeholder-4/> and so on will all work here."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:479(p)
+msgid "You may also see some standard <placeholder-1/> constructs showing up whenever there isn't a standard <placeholder-2/> way of handling a certain task. For example:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:484(codesample)
+msgid "CLEANFILES = glep31check.1 man_MANS = glep31check.1 EXTRA_DIST = glep31check.in %.1 : %.in @regex_cmd@ -e \"s,\\@VERSION\\@,$(VERSION),g\" $? &gt; $@"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:494(c)
+msgid "@regex_cmd@"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:495(c) devmanual/general-concepts/autotools/text.xml:523(c)
+msgid "sed"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:496(c)
+msgid "AC_SUBST(VARNAME)"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:493(p)
+msgid "Here, the <placeholder-1/> variable will be substituted with whatever <placeholder-2/> detects (<placeholder-3/> in this case) when creating the <placeholder-4/>. This is handled via the macro <placeholder-5/> in <placeholder-6/>."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:502(title)
+msgid "Makefile Variables"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:507(c) devmanual/general-concepts/autotools/text.xml:510(c)
+msgid "CFLAGS"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:510(c)
+msgid "AM_CFLAGS"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:505(p)
+msgid "Sometimes, badly behaved <placeholder-1/> files will override user variables such as <placeholder-2/>. This must not be allowed <d/> see <uri link=\"::general-concepts/user-environment#Not Filtering Variables\"/>. There are separate special variables which should be used in these situations <d/> for setting <placeholder-3/>. for example, a <placeholder-4/> should use <placeholder-5/> so that user preferences are not ignored."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:514(p)
+msgid "So, if a <placeholder-1/> contains, say:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:518(codesample)
+msgid "CFLAGS=\"-Wall\""
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:523(c)
+msgid "patch"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:522(p)
+msgid "You should <placeholder-1/> or <placeholder-2/> it to use:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:526(codesample)
+msgid "AM_CFLAGS=\"-Wall\""
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:530(p)
+msgid "Remember to manually run <placeholder-1/> then <placeholder-2/> if you do this."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:539(title)
+msgid "The <c>config.h.in</c> File"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:543(c)
+msgid "config.h.in"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:542(p)
+msgid "The <placeholder-1/> file is generated by <placeholder-2/>. You shouldn't have to worry about this usually, but occasionally you may need to run <placeholder-3/> manually as part of the build process if upstream do not ship a pre-generated version."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:553(title)
+msgid "<c>aclocal</c> and <c>m4</c> Files"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:556(p)
+msgid "In the <placeholder-1/> or <placeholder-2/> files you can call not only the default macros defined by <placeholder-3/> and <placeholder-4/>. but also other functions which can be defined by specific packages like libraries and programs to check for their features in the correct manner."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:565(c) devmanual/general-concepts/autotools/text.xml:582(c)
+msgid "/usr/share/aclocal"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:566(c)
+msgid "autotools"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:569(c)
+msgid "USE"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:563(p)
+msgid "Those functions are (usually) defined in <placeholder-1/> files placed in the <placeholder-2/> directory by packages. Problems can arise when you need to regenerate the <placeholder-3/> files, because the functions used by the <placeholder-4/> file can be defined in an <placeholder-5/> macro file which isn't installed on the user's system. This is the case for example for some optional features which require libraries and are disabled by <placeholder-6/> flags. If the <placeholder-7/> files aren't installed in the user's system, the <placeholder-8/> step will fail."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:574(p)
+msgid "To resolve this, most packages just ship the <placeholder-1/> macro files needed for their <placeholder-2/> in an <placeholder-3/> subdirectory in the source package. Unfortunately, not all <placeholder-4/> directories are complete, even if they are present."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:584(c)
+msgid "aclocal.m4"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:580(p)
+msgid "In those cases you need to find out the <placeholder-1/> file, usually installed by the dependency in <placeholder-2/>. and make sure that the <placeholder-3/> stage both makes available those files to the autotools and calls <placeholder-4/> to recreate the <placeholder-5/> file which is used by <placeholder-6/> when creating the configure script."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:590(c)
+msgid "SRC_URI"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:591(c)
+msgid "${WORKDIR}"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:591(c)
+msgid "gentoo-m4"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:588(p)
+msgid "Usually it's more than one <placeholder-1/> file which is missing, so you probably want to package them in a tarball, and add it to <placeholder-2/>. After making sure that the tarball is extracted somewhere in <placeholder-3/> (say, in a <placeholder-4/> directory), you usually have two general ways to handle those macro files, one for packages which ships with an incomplete <placeholder-5/> directory and one for packages which ships without the <placeholder-6/> directory."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:597(p)
+msgid "In the first case you usually want to do something like:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:601(codesample)
+msgid "einfo \"Regenerating autotools files...\" cp \"${WORKDIR}/gentoo-m4\" \"${S}/m4\" || die \"m4 copy failed\" WANT_AUTOCONF=\"2.5\" aclocal -I \"${S}/m4\" || die \"aclocal failed\" WANT_AUTOCONF=\"2.5\" autoconf || die \"autoconf failed\""
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:608(p)
+msgid "and so on. In the second case you can simplify it in this way:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:612(codesample)
+msgid "einfo \"Regenerating autotools files...\" WANT_AUTOCONF=\"2.5\" aclocal -I \"${WORKDIR}/gentoo-m4\" || die \"aclocal failed\" WANT_AUTOCONF=\"2.5\" autoconf || die \"autoconf failed\""
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:618(p)
+msgid "without need to copy the files."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:622(p)
+msgid "It's always better inform upstream when the needed <placeholder-1/> files are missing in the distribution, asking them to add all the needed files in the source tarball to avoid version conflicts if the macro changes."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:632(title)
+msgid "Libtool"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:635(todo)
+msgid "Stuff about libtool, libtoolize, elibtoolize, libtool.eclass. Which I know almost nothing about... Yay!"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:644(title)
+msgid "Further Autotools Reading"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:647(p)
+msgid "For more details on autotools:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:656(uri)
+msgid "freely available online"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:652(li)
+msgid "The book \"GNU Autoconf, Automake and Libtool\" by Gary V. Vaughan, Ben Elliston, Tom Tromey and Ian Lance Taylor (often called \"The Autobook\") provides a good but somewhat outdated description of autotools. It is <placeholder-1/>."
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:658(li)
+msgid "The GNU documentation for the various autotools components is of varying quality and completeness:"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:664(uri)
+msgid "GNU automake Manual"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:669(uri)
+msgid "GNU autoconf Manual"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:672(uri)
+msgid "GNU libtool Manual"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:675(uri)
+msgid "GNU m4 Manual"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:680(uri)
+msgid "These slides"
+msgstr ""
+
+#: devmanual/general-concepts/autotools/text.xml:678(li)
+msgid "There are some good overview lectures available online. <placeholder-1/> are one example."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/general-concepts/autotools/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/appendices/editor-configuration/xemacs/text.xml:4(title)
+msgid "Configuring XEmacs for UTF-8"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/xemacs/text.xml:8(c)
+msgid "xemacs"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/xemacs/text.xml:8(c)
+msgid "USE=mule"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/xemacs/text.xml:9(c)
+msgid "app-xemacs/mule-ucs"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/xemacs/text.xml:10(c)
+msgid "~/.xemacs/init.el"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/xemacs/text.xml:7(p)
+msgid "First, you need to have built <placeholder-1/> itself with <placeholder-2/>. Then, the <placeholder-3/> package is needed. To autoload Unicode support, you can add the following to your <placeholder-4/>:"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/xemacs/text.xml:13(pre)
+msgid "(require 'un-define)"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/xemacs/text.xml:17(p)
+msgid "If automatic character set detection on files is not working properly, here are three commands that can help."
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/xemacs/text.xml:24(c)
+msgid "set-buffer-file-coding-system (C-x RET f)"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/xemacs/text.xml:23(li)
+msgid "<placeholder-1/> changes the coding system for the current file."
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/xemacs/text.xml:28(c)
+msgid "set-default-buffer-file-coding-system (C-x RET F)"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/xemacs/text.xml:27(li)
+msgid "<placeholder-1/> sets the default for unsaved buffers and ASCII-looking files that have no obvious character set markers for autodetection."
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/xemacs/text.xml:33(c)
+msgid "universal-coding-system-argument (C-x RET c)"
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/xemacs/text.xml:32(li)
+msgid "<placeholder-1/> lets you set the coding system for the next command, so issuing this from a dired window immediately before opening a problematic file is a tactic that can be of use when autodetection gets things pathologically wrong."
+msgstr ""
+
+#: devmanual/appendices/editor-configuration/xemacs/text.xml:41(p)
+msgid "The current coding system will be displayed near the left edge of the status line."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/appendices/editor-configuration/xemacs/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

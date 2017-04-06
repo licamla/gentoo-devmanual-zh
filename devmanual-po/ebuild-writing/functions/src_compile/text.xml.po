@@ -1,0 +1,124 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:4(title) devmanual/ebuild-writing/functions/src_compile/text.xml:10(c) devmanual/ebuild-writing/functions/src_compile/text.xml:14(c) devmanual/ebuild-writing/functions/src_compile/text.xml:92(c) devmanual/ebuild-writing/functions/src_compile/text.xml:93(c) devmanual/ebuild-writing/functions/src_compile/text.xml:105(c)
+msgid "src_compile"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:9(th)
+msgid "Function"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:13(th)
+msgid "Purpose"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:14(c)
+msgid "src_configure"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:14(important)
+msgid "the configure parts of <placeholder-1/> have been splitted out in EAPI=2 to <placeholder-2/>. see <uri link=\"::ebuild-writing/functions/src_configure\"/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:14(ti)
+msgid "Configure and build the package.<placeholder-1/>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:17(th)
+msgid "Sandbox"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:18(ti)
+msgid "Enabled"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:21(th)
+msgid "Privilege"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:22(ti)
+msgid "user"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:25(th)
+msgid "Called for"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:26(ti)
+msgid "ebuild"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:32(title)
+msgid "Default <c>src_compile</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:35(title)
+msgid "with EAPI=0,1"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:37(codesample)
+msgid "src_compile() { if [ -x ./configure ]; then econf fi if [ -f Makefile ] || [ -f GNUmakefile ] || [ -f makefile ]; then emake || die \"emake failed\" fi }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:50(title) devmanual/ebuild-writing/functions/src_compile/text.xml:88(title)
+msgid "with EAPI=2"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:52(codesample)
+msgid "src_compile() { if [ -f Makefile ] || [ -f GNUmakefile ] || [ -f makefile ]; then emake || die \"emake failed\" fi }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:65(title)
+msgid "Sample <c>src_compile</c>"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:68(title)
+msgid "with EAPI=0"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:70(codesample)
+msgid "src_compile() { use sparc &amp;&amp; filter-flags -fomit-frame-pointer append-ldflags -Wl,-z,now econf \\ $(use_enable ssl ) \\ $(use_enable perl perlinterp ) emake || die \"Make failed!\" }"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:83(uri)
+msgid "flag-o-matic"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:83(c)
+msgid "append-ldflags"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:82(note)
+msgid "You also need to inherit the <placeholder-1/> eclass in order to use the <placeholder-2/> function."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:92(c)
+msgid "emake"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:90(p)
+msgid "porting the above example to EAPI=2, you won't need to define an extra <placeholder-1/>, as it only calls <placeholder-2/> (which is the default <placeholder-3/> function)."
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:101(title)
+msgid "<c>src_compile</c> Processes"
+msgstr ""
+
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:103(p)
+msgid "The following subsections cover different topics which often occur when writing <placeholder-1/> functions."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/ebuild-writing/functions/src_compile/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

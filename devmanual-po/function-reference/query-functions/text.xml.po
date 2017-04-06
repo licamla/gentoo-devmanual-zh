@@ -1,0 +1,192 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/function-reference/query-functions/text.xml:4(title)
+msgid "Query Functions Reference"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:8(c)
+msgid "ebuild.sh"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:7(p)
+msgid "The following functions, which are provided by <placeholder-1/>, can be used to query variables and similar state."
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:14(th)
+msgid "Function"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:17(th)
+msgid "Details"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:23(c)
+msgid "use flagname"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:26(c) devmanual/function-reference/query-functions/text.xml:45(c)
+msgid "flagname"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:28(c)
+msgid "!flagname"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:29(c) devmanual/function-reference/query-functions/text.xml:37(c) devmanual/function-reference/query-functions/text.xml:45(c)
+msgid "use"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:25(ti)
+msgid "Returns a true value if and only if <placeholder-1/> is enabled. The condition is inverted if prefixed with an exclamation mark, <placeholder-2/>. It is guaranteed that <placeholder-3/> produces no output."
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:34(c)
+msgid "useq flagname"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:36(ti) devmanual/function-reference/query-functions/text.xml:82(ti)
+msgid "Deprecated synonym for <placeholder-1/>."
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:42(c)
+msgid "usev flagname"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:44(ti)
+msgid "As <placeholder-1/>, echoes <placeholder-2/> upon success."
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:50(c)
+msgid "use_enable flag str val"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:53(c)
+msgid "--enable-str=val"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:53(c)
+msgid "--disable-str"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:53(c)
+msgid "useq flag"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:54(c)
+msgid "str"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:54(c) devmanual/function-reference/query-functions/text.xml:71(c) devmanual/function-reference/query-functions/text.xml:91(c)
+msgid "flag"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:54(c)
+msgid "val"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:52(ti)
+msgid "Echoes either <placeholder-1/> or <placeholder-2/> depending upon <placeholder-3/>. If <placeholder-4/> is not specified, uses <placeholder-5/> instead. If <placeholder-6/> is not specified, omits the assignment part."
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:60(c)
+msgid "use_with flag str val"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:63(c)
+msgid "use_enable"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:63(c)
+msgid "--with-"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:63(c)
+msgid "--without-"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:62(ti)
+msgid "As <placeholder-1/>, but <placeholder-2/> or <placeholder-3/>."
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:68(c)
+msgid "has flag string"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:71(c)
+msgid "string"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:72(c)
+msgid "if has ccache $FEATURES ; then"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:74(c)
+msgid "!flag"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:75(c) devmanual/function-reference/query-functions/text.xml:83(c) devmanual/function-reference/query-functions/text.xml:91(c)
+msgid "has"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:70(ti)
+msgid "Returns true if <placeholder-1/> is included in the flag list <placeholder-2/> (example: <placeholder-3/>). The condition is inverted if prefixed with an exclamation mark, <placeholder-4/>. It is guaranteed that <placeholder-5/> produces no output."
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:80(c)
+msgid "hasq flag string"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:88(c)
+msgid "hasv flag string"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:90(ti)
+msgid "As <placeholder-1/>, echoes <placeholder-2/> on success."
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:96(c)
+msgid "best_version pkg"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:99(c) devmanual/function-reference/query-functions/text.xml:110(c)
+msgid "pkg"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:101(c)
+msgid "best_version app-editors/emacs:24"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:102(c)
+msgid "app-editors/emacs-24.5-r3"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:98(ti)
+msgid "Echoes category, name and version of the highest version of <placeholder-1/> that is currently installed. Example: <placeholder-2/> will output <placeholder-3/>."
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:107(c)
+msgid "has_version pkg[flag]"
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:114(c)
+msgid "has_version \"=app-editors/nano-2.5.3[nls,spell]\""
+msgstr ""
+
+#: devmanual/function-reference/query-functions/text.xml:109(ti)
+msgid "True if <placeholder-1/> (can include <uri link=\"::general-concepts/dependencies#version specifiers\"/> and <uri link=\"::general-concepts/dependencies#built with use dependencies\"/>) is installed. Example: <placeholder-2/>."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/function-reference/query-functions/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

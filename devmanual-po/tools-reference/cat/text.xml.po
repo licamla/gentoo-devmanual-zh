@@ -1,0 +1,144 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-07 00:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devmanual/tools-reference/cat/text.xml:4(title)
+msgid "<c>cat</c> -- File Concatenation"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:8(c) devmanual/tools-reference/cat/text.xml:16(c) devmanual/tools-reference/cat/text.xml:46(c) devmanual/tools-reference/cat/text.xml:63(c) devmanual/tools-reference/cat/text.xml:65(c) devmanual/tools-reference/cat/text.xml:71(c)
+msgid "cat"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:9(c)
+msgid "cat firstfile secondfile ..."
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:7(p)
+msgid "The <placeholder-1/> command can be used to concatenate the contents of two or more files. The usage is <placeholder-2/>."
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:13(title)
+msgid "Abuse of <c>cat</c>"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:15(p)
+msgid "If you find yourself about to use <placeholder-1/> in an ebuild, stop and reconsider. It is almost always unnecessary."
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:21(c)
+msgid "cat somefile | somecommand"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:22(c)
+msgid "somecommand &lt; somefile"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:24(c)
+msgid "somecommand somefile"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:20(p)
+msgid "All usages in the form <placeholder-1/> are silly and should be eschewed. The form <placeholder-2/> does the same thing, and doesn't involve an extra fork and a pipe. With many standard utilities the <placeholder-3/> form will work as well."
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:28(c)
+msgid "foo=$(cat somefile)"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:29(c)
+msgid "foo"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:30(c)
+msgid "foo=$(&lt;somefile)"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:31(c)
+msgid "cat file | xargs cmd"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:31(c)
+msgid "xargs cmd &lt; file"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:32(c)
+msgid "cmd $(&lt;file)"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:27(p)
+msgid "Using <placeholder-1/> to place the contents of a file into the variable <placeholder-2/> is also unnecessary. The command <placeholder-3/> works just as well and doesn't require a fork. Similarly, <placeholder-4/> and <placeholder-5/> can be replaced by <placeholder-6/>."
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:36(c)
+msgid "cat foo &gt; bar"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:37(c)
+msgid "cp -f foo bar"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:35(p)
+msgid "Finally, <placeholder-1/>, where foo is a single file, can usually be replaced by <placeholder-2/>."
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:43(title)
+msgid "Here Documents"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:48(c)
+msgid "sendmail-8.13.3"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:45(p)
+msgid "On the other hand, <placeholder-1/> is exceptionally useful for so-called \"here\" documents, such as the following example from the <placeholder-2/> ebuild:"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:51(codesample)
+msgid "src_install() { # ... cat &lt;&lt;- EOF &gt; \"${D}/etc/mail/trusted-users\" || die # trusted-users - users that can send mail as others without a warning # apache, mailman, majordomo, uucp are good candidates EOF # ... }"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:63(c)
+msgid "src_install"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:64(c)
+msgid "${D}/etc/mail/trusted-users"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:66(c)
+msgid "EOF"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:62(p)
+msgid "In this example <placeholder-1/> is used inside <placeholder-2/> to create the <placeholder-3/> file. Specifically, the new file will comprise the lines between the <placeholder-4/> line and the line with <placeholder-5/> in the ebuild."
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:70(c) devmanual/tools-reference/cat/text.xml:78(c)
+msgid "&lt;&lt;-"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:76(c)
+msgid "${FILESDIR}"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:78(c)
+msgid "&lt;&lt;"
+msgstr ""
+
+#: devmanual/tools-reference/cat/text.xml:69(p)
+msgid "The funny hyphen in <placeholder-1/> is a &gt;=bash-2.05 syntax that tells <placeholder-2/> to strip leading tabs (please note that when you want to copy the example, you have to replace the leading spaces with tabs), so that, as Azarah puts it, \"we won't have the ebuilds looking from space effect\". For such small files as the example above, a set of here documents is more elegant, and easier to maintain, than the equivalent bunch of files floating about in <placeholder-3/> would be. If for some reason you need to preserve leading whitespace, then simply use <placeholder-4/> instead of <placeholder-5/> to get the desired effect."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: devmanual/tools-reference/cat/text.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+
