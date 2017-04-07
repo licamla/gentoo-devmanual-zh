@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2017-04-07 00:39+0800\n"
-"PO-Revision-Date: 2017-04-07 00:44+0800\n"
+"PO-Revision-Date: 2017-04-07 20:13+0800\n"
 "Last-Translator: Licamla <licamla@live.cn>\n"
 "Language-Team: licamla\n"
 "Language: zh_CN\n"
@@ -23,11 +23,11 @@ msgstr "本文档是正在进行的修订工作。它包含空白、不准确、
 
 #: devmanual/text.xml:17(uri)
 msgid "bug list"
-msgstr "bug 列表"
+msgstr "bug list"
 
 #: devmanual/text.xml:19(uri)
 msgid "new bug"
-msgstr ""
+msgstr "new bug"
 
 #: devmanual/text.xml:13(p)
 msgid "Contributions are encouraged. See the <uri link=\"::appendices/contributing\"/> section for how to get started. If you have any corrections, suggestions or improvements please look at the <placeholder-1/> and file a <placeholder-2/>. The <uri link=\"::appendices/contributors\"/> section lists specific contributions to this manual."
@@ -38,7 +38,7 @@ msgstr ""
 
 #: devmanual/text.xml:26(title)
 msgid "Contents"
-msgstr ""
+msgstr "目录"
 
 #: devmanual/text.xml:33(title)
 msgid "Full Contents"
