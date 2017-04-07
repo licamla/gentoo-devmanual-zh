@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2017-04-07 00:39+0800\n"
-"PO-Revision-Date: 2017-04-07 20:13+0800\n"
+"PO-Revision-Date: 2017-04-07 23:56+0800\n"
 "Last-Translator: Licamla <licamla@live.cn>\n"
 "Language-Team: licamla\n"
 "Language: zh_CN\n"
@@ -23,18 +23,18 @@ msgstr "本文档是正在进行的修订工作。它包含空白、不准确、
 
 #: devmanual/text.xml:17(uri)
 msgid "bug list"
-msgstr "bug list"
+msgstr "bug列表"
 
 #: devmanual/text.xml:19(uri)
 msgid "new bug"
-msgstr "new bug"
+msgstr "新bug"
 
 #: devmanual/text.xml:13(p)
 msgid "Contributions are encouraged. See the <uri link=\"::appendices/contributing\"/> section for how to get started. If you have any corrections, suggestions or improvements please look at the <placeholder-1/> and file a <placeholder-2/>. The <uri link=\"::appendices/contributors\"/> section lists specific contributions to this manual."
 msgstr ""
-"鼓励捐款。请参阅<uri link=\"::appendices/contributing\"></uri>如何开始一节。如果你有任何更正，建议或改进意见"
-"请看看<placeholder-1></placeholder-1>和文件<placeholder-2></placeholder-2>。<uri "
-"link=\"::appendices/contributors\"></uri>部分列出了本手册的具体贡献。"
+"欢迎完善该文档。具体操作详见<uri link=\"::appendices/contributing\""
+"></uri>一节。如果你有任何更正，建议或改进意见请查看<placeholder-1/>和提交一份<placeholder-2/>。<uri link="
+"\"::appendices/contributors\"></uri>部分列出了本手册的具体贡献。"
 
 #: devmanual/text.xml:26(title)
 msgid "Contents"

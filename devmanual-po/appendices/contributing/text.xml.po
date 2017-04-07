@@ -1,105 +1,117 @@
+# Licamla <licamla@live.cn>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2017-04-07 00:39+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2017-04-08 00:24+0800\n"
+"Last-Translator: Licamla <licamla@live.cn>\n"
+"Language-Team: licamla\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Virtaal 0.7.1\n"
 
 #: devmanual/appendices/contributing/text.xml:4(title)
 msgid "Contributing to This Document"
-msgstr ""
+msgstr "为本文档贡献自己的力量"
 
 #: devmanual/appendices/contributing/text.xml:10(uri)
 msgid "bugs.gentoo.org"
-msgstr ""
+msgstr "bugs.gentoo.org"
 
 #: devmanual/appendices/contributing/text.xml:7(p)
 msgid "Contributions for this document are very welcome. Whether you've found a typo or have written an entire new section, the best way to get in touch is via Bugzilla at <placeholder-1/>."
-msgstr ""
+msgstr "非常欢迎为本文档添砖加瓦，哪怕是印刷错误或一段新的内容，您都可以通过登录Bugzilla<placeholder-1/>来提交。"
 
 #: devmanual/appendices/contributing/text.xml:13(p)
 msgid "The editors reserve the right to modify submissions as they see fit. Any substantial changes will of course be discussed with the submitter first <d/> unless explicitly requested, minor typo corrections and formatting fixes will not be discussed."
-msgstr ""
+msgstr "编辑有权按照他们的想法来修改意见书。除了显而易见的请求、轻微的错字更正及格式修复不会讨论外，其他任何重大的变化都首先要讨论，然后才能提交。"
 
 #: devmanual/appendices/contributing/text.xml:21(uri)
 msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr ""
+msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
 
 #: devmanual/appendices/contributing/text.xml:20(p)
 msgid "This document is licensed under the <placeholder-1/>. If this is a problem, don't submit anything."
-msgstr ""
+msgstr "本文档的授权协议是<placeholder-1/>。如果这是问题，请不要提交任何东西。"
 
 #: devmanual/appendices/contributing/text.xml:29(c)
 msgid "index.html"
-msgstr ""
+msgstr "index.html"
 
 #: devmanual/appendices/contributing/text.xml:30(c)
 msgid "text.xml"
-msgstr ""
+msgstr "text.xml"
 
 #: devmanual/appendices/contributing/text.xml:26(p)
 msgid "This document is produced using the DevBook XML build system. You can download a snapshot of the system as well as the relevant XML files from Subversion. You can also view the XML of any page by replacing <placeholder-1/> with <placeholder-2/> in the URL. If you'd rather just work with plain text, that's fine too <d/> the formatting can be easily done by someone else (meaning, us)."
 msgstr ""
+"本文档是使用 DevBook XML 生成系统产生的。您可以从Subversion下载系统以及相关的XML文件的快照。您还可以在URL中使用<placeh"
+"older-1/>替换成<placeholder-2/>来查看任何网页的 "
+"XML。如果你只愿意使用纯文本，那也没关系了<d/>格式可以由我们的其他人来简单处理。"
 
 #: devmanual/appendices/contributing/text.xml:35(title)
 msgid "Where to find the sources"
-msgstr ""
+msgstr "在哪里可以找到源代码"
 
 #: devmanual/appendices/contributing/text.xml:40(uri)
 msgid "git.gentoo.org"
-msgstr ""
+msgstr "git.gentoo.org"
 
 #: devmanual/appendices/contributing/text.xml:42(c)
 msgid "git+ssh://git@git.gentoo.org/proj/devmanual.git"
-msgstr ""
+msgstr "git+ssh://git@git.gentoo.org/proj/devmanual.git"
 
 #: devmanual/appendices/contributing/text.xml:44(c)
 msgid "git clone git://anongit.gentoo.org/proj/devmanual.git"
-msgstr ""
+msgstr "git clone git://anongit.gentoo.org/proj/devmanual.git"
 
 #: devmanual/appendices/contributing/text.xml:46(uri)
 msgid "GitHub"
-msgstr ""
+msgstr "GitHub"
 
 #: devmanual/appendices/contributing/text.xml:38(p)
 msgid "Currently, sources are hosted on <placeholder-1/>. For current Gentoo developers, access is at <placeholder-2/>. Non-developers can clone the repository by typing <placeholder-3/>. The sources are also hosted on <placeholder-4/> for those who prefer to submit patches using pull requests."
 msgstr ""
+"当前源码放在<placeholder-1/>。对于Gentoo开发者访问<placeholder-2/>。非开发者通过输入<placeholder-3/>"
+"来复制仓库。对于更喜欢使用pull requests来提交补丁的人来说也可以使用放在<placeholder-4/>上的源码。"
 
 #: devmanual/appendices/contributing/text.xml:51(c)
 msgid "make"
-msgstr ""
+msgstr "make"
 
 #: devmanual/appendices/contributing/text.xml:52(c)
 msgid "xsltproc"
-msgstr ""
+msgstr "xsltproc"
 
 #: devmanual/appendices/contributing/text.xml:53(c)
 msgid "dev-libs/libxslt"
-msgstr ""
+msgstr "dev-libs/libxslt"
 
 #: devmanual/appendices/contributing/text.xml:54(c)
 msgid "convert"
-msgstr ""
+msgstr "convert"
 
 #: devmanual/appendices/contributing/text.xml:54(c)
 msgid "media-gfx/imagemagick"
-msgstr ""
+msgstr "media-gfx/imagemagick"
 
 #: devmanual/appendices/contributing/text.xml:50(p)
 msgid "To build the devmanual, simply run <placeholder-1/> in the top directory of the repository. You need <placeholder-2/> (from <placeholder-3/>) for the XML to HTML conversion and <placeholder-4/> (from <placeholder-5/>) for the SVG to PNG conversion used in some of the figures throughout the document."
 msgstr ""
+"若要生成 devmanual，只需在仓库的顶层目录中运行<placeholder-1/>。你需要安装用于转换XML成HTML的<placeholder-2"
+"/>(来自<placeholder-3/>)和用于把整个文档中使用的SVG图表转换成PNG的<placeholder-4/>(来自<placeholder"
+"-5/>)。"
 
 #: devmanual/appendices/contributing/text.xml:63(title)
 msgid "Quick Introduction to DevBook XML"
-msgstr ""
+msgstr "DevBook XML 的快速入门"
 
 #: devmanual/appendices/contributing/text.xml:67(uri)
 msgid "GuideXML"
-msgstr ""
+msgstr "GuideXML"
 
 #: devmanual/appendices/contributing/text.xml:66(p)
 msgid "DevBook XML is heavily based on <placeholder-1/> and many tags are similar, if not the same. The main differences occur in layout which are designed to make a large-scale publication easier to produce and manage using a hierarchical tree system. Before starting off you really should first examine the GuideXML guide in a reasonable amount of depth."
@@ -197,4 +209,3 @@ msgstr ""
 #: devmanual/appendices/contributing/text.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

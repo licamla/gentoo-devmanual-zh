@@ -1,71 +1,35 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <guide self="appendices/contributing/">
 <chapter>
-<title>Contributing to This Document</title>
+<title>为本文档贡献自己的力量</title>
 
 <body>
-<p>
-Contributions for this document are very welcome. Whether you've found a typo
-or have written an entire new section, the best way to get in touch is via Bugzilla
-at <uri link="https://bugs.gentoo.org">bugs.gentoo.org</uri>.
-</p>
+<p>非常欢迎为本文档添砖加瓦，哪怕是印刷错误或一段新的内容，您都可以通过登录Bugzilla<uri link="https://bugs.gentoo.org">bugs.gentoo.org</uri>来提交。</p>
 
-<p>
-The editors reserve the right to modify submissions as they see fit. Any
-substantial changes will of course be discussed with the submitter first <d/>
-unless explicitly requested, minor typo corrections and formatting fixes will
-not be discussed.
-</p>
+<p>编辑有权按照他们的想法来修改意见书。除了显而易见的请求、轻微的错字更正及格式修复不会讨论外，其他任何重大的变化都首先要讨论，然后才能提交。</p>
 
-<p>
-This document is licensed under the <uri link="http://creativecommons.org/licenses/by-sa/3.0/">
-Creative Commons Attribution-ShareAlike 3.0 Unported License</uri>.
-If this is a problem, don't submit anything.
-</p>
+<p>本文档的授权协议是<uri link="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</uri>。如果这是问题，请不要提交任何东西。</p>
 
-<p>
-This document is produced using the DevBook XML build system. You can download
-a snapshot of the system as well as the relevant XML files from Subversion. You
-can also view the XML of any page by replacing <c>index.html</c> with
-<c>text.xml</c> in the URL. If you'd rather just work with plain text, that's
-fine too <d/> the formatting can be easily done by someone else (meaning, us).
-</p>
+<p>本文档是使用 DevBook XML 生成系统产生的。您可以从Subversion下载系统以及相关的XML文件的快照。您还可以在URL中使用<c>index.html</c>替换成<c>text.xml</c>来查看任何网页的 XML。如果你只愿意使用纯文本，那也没关系了<d/>格式可以由我们的其他人来简单处理。</p>
 
 <subsection>
-  <title>Where to find the sources</title>
+  <title>在哪里可以找到源代码</title>
   <body>
 
-<p>
-Currently, sources are hosted on
-<uri link="https://gitweb.gentoo.org/proj/devmanual.git">git.gentoo.org</uri>.
-For current Gentoo developers, access is at
-<c>git+ssh://git@git.gentoo.org/proj/devmanual.git</c>.
-Non-developers can clone the repository by typing
-<c>git clone git://anongit.gentoo.org/proj/devmanual.git</c>.
-The sources are also hosted on
-<uri link="https://github.com/gentoo/devmanual.gentoo.org">GitHub</uri>
-for those who prefer to submit patches using pull requests.
-</p>
+<p>当前源码放在<uri link="https://gitweb.gentoo.org/proj/devmanual.git">git.gentoo.org</uri>。对于Gentoo开发者访问<c>git+ssh://git@git.gentoo.org/proj/devmanual.git</c>。非开发者通过输入<c>git clone git://anongit.gentoo.org/proj/devmanual.git</c>来复制仓库。对于更喜欢使用pull requests来提交补丁的人来说也可以使用放在<uri link="https://github.com/gentoo/devmanual.gentoo.org">GitHub</uri>上的源码。</p>
 
-<p>
-To build the devmanual, simply run <c>make</c> in the top directory of
-the repository. You need <c>xsltproc</c> (from
-<c>dev-libs/libxslt</c>) for the XML to HTML conversion and
-<c>convert</c> (from <c>media-gfx/imagemagick</c>) for the SVG to PNG
-conversion used in some of the figures throughout the document.
-</p>
+<p>若要生成 devmanual，只需在仓库的顶层目录中运行<c>make</c>。你需要安装用于转换XML成HTML的<c>xsltproc</c>(来自<c>dev-libs/libxslt</c>)和用于把整个文档中使用的SVG图表转换成PNG的<c>convert</c>(来自<c>media-gfx/imagemagick</c>)。</p>
   </body>
 </subsection>
 
 </body>
 
 <section>
-<title>Quick Introduction to DevBook XML</title>
+<title>DevBook XML 的快速入门</title>
 <body>
 
 <p>
-DevBook XML is heavily based on <uri link="https://www.gentoo.org/doc/en/xml-guide.xml">
-GuideXML</uri> and many tags are similar, if not the same. The main differences
+DevBook XML is heavily based on <uri link="https://www.gentoo.org/doc/en/xml-guide.xml">GuideXML</uri> and many tags are similar, if not the same. The main differences
 occur in layout which are designed to make a large-scale publication easier
 to produce and manage using a hierarchical tree system. Before starting off you
 really should first examine the GuideXML guide in a reasonable amount of depth.
@@ -144,4 +108,3 @@ really should first examine the GuideXML guide in a reasonable amount of depth.
 </chapter>
 
 </guide>
-
