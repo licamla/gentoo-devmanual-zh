@@ -1,0 +1,170 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>为本文档贡献自己的力量 – Gentoo Development Guide</title>
+<link rel="stylesheet" href="../../devmanual.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Gentoo Devmanual is a technical manual which covers topics such as writing ebuilds and eclasses, and policies that developers should be abiding by.">
+<link href="https://assets.gentoo.org/tyrian/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="https://assets.gentoo.org/tyrian/tyrian.min.css" rel="stylesheet" media="screen">
+<link rel="icon" href="https://www.gentoo.org/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<header><div class="site-title"><div class="container"><div class="row">
+<div class="site-title-buttons"><div class="btn-group btn-group-sm">
+<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span><strong> Get Gentoo!</strong></a><div class="btn-group btn-group-sm">
+<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#"><span class="fa fa-fw fa-map-o"></span><span class="hidden-xs"> gentoo.org sites </span><span class="caret"></span></a><ul class="dropdown-menu dropdown-menu-right">
+<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+<li class="divider">
+<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+<li class="divider">
+<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+</ul>
+</div>
+</div></div>
+<div class="logo">
+<a href="/" title="Back to the homepage" class="site-logo"><object data="https://assets.gentoo.org/tyrian/site-logo.svg" type="image/svg+xml"><img src="https://assets.gentoo.org/tyrian/site-logo.png" alt="Gentoo Linux Logo"></object></a><span class="site-label">Development Guide</span>
+</div>
+</div></div></div>
+<nav class="tyrian-navbar" role="navigation"><div class="container"><div class="row">
+<div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+<div class="collapse navbar-collapse navbar-main-collapse"><ul class="nav navbar-nav">
+<li><a href="../../index.html"><span class="glyphicon glyphicon-home"></span>  Home</a></li>
+<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">为本文档贡献自己的力量<span class="caret"></span></a></li>
+<li><a href="../further-reading/index.html"><span class="glyphicon glyphicon-arrow-left"></span>  Further Reading</a></li>
+<li><a href="../../appendices/contributors/index.html">Contributions  <span class="glyphicon glyphicon-arrow-right"></span></a></li>
+</ul></div>
+</div></div></nav></header><div class="container"><div class="row"><div class="col-md010"><ol class="breadcrumb">
+<li><a href="../../index.html">主索引</a></li>
+<li><a href="../index.html">Appendices</a></li>
+</ol></div></div></div>
+<div class="container">
+<h1 class="first-header">为本文档贡献自己的力量</h1>
+<p>非常欢迎为本文档添砖加瓦，哪怕是印刷错误或一段新的内容，您都可以通过登录Bugzilla<a href="https://bugs.gentoo.org">bugs.gentoo.org</a>来提交。</p>
+
+<p>编辑有权按照他们的想法来修改意见书。除了显而易见的请求、轻微的错字更正及格式修复不会讨论外，其他任何重大的变化都首先要讨论，然后才能提交。</p>
+
+<p>本文档的授权协议是<a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>。如果这是问题，请不要提交任何东西。</p>
+
+<p>本文档是使用 DevBook XML 生成系统产生的。您可以从Subversion下载系统以及相关的XML文件的快照。您还可以在URL中使用<code class="docutils literal"><span class="pre">index.html</span></code>替换成<code class="docutils literal"><span class="pre">text.xml</span></code>来查看任何网页的 XML。如果你只愿意使用纯文本，那也没关系了
+    —
+  格式可以由我们的其他人来简单处理。</p>
+
+<div class="section">
+<h3 id="在哪里可以找到源代码">在哪里可以找到源代码</h3>
+
+<p>当前源码放在<a href="https://gitweb.gentoo.org/proj/devmanual.git">git.gentoo.org</a>。对于Gentoo开发者，可以访问<code class="docutils literal"><span class="pre">git+ssh://git@git.gentoo.org/proj/devmanual.git</span></code>。非开发者通过输入<code class="docutils literal"><span class="pre">git clone git://anongit.gentoo.org/proj/devmanual.git</span></code>来复制仓库。对于更喜欢使用pull requests来提交补丁的人来说也可以使用放在<a href="https://github.com/gentoo/devmanual.gentoo.org">GitHub</a>上的源码。</p>
+
+<p>若要生成 devmanual，只需在仓库的顶层目录中运行<code class="docutils literal"><span class="pre">make</span></code>。你需要安装用于转换XML成HTML的<code class="docutils literal"><span class="pre">xsltproc</span></code>(来自<code class="docutils literal"><span class="pre">dev-libs/libxslt</span></code>)和用于把整个文档中使用的SVG图表转换成PNG的<code class="docutils literal"><span class="pre">convert</span></code>(来自<code class="docutils literal"><span class="pre">media-gfx/imagemagick</span></code>)。</p>
+  </div>
+
+<div class="section">
+<h2 id="devbook-xml-的快速入门">DevBook XML 的快速入门</h2>
+
+<p>
+DevBook XML is heavily based on <a href="https://www.gentoo.org/doc/en/xml-guide.xml">GuideXML</a> and many tags are similar, if not the same. The main differences
+occur in layout which are designed to make a large-scale publication easier
+to produce and manage using a hierarchical tree system. Before starting off you
+really should first examine the GuideXML guide in a reasonable amount of depth.
+</p>
+
+<div class="section">
+<h3 id="differences-from-guidexml">Differences from GuideXML</h3>
+
+<dl>
+  <dt>
+    Indentation
+  </dt>
+  <dd>
+      Indent when needed 
+    —
+   you should not indent any section flow elements such as
+      <code class="docutils literal"><span class="pre">&lt;subsection&gt;</span></code> but do indent tables, lists and definition lists.
+      Do <i>not</i> indent text in ordinary paragraph blocks.
+    </dd>
+  <dt>
+    Code Samples
+  </dt>
+  <dd>
+      You can use the normal GuideXML tag <code class="docutils literal"><span class="pre">&lt;pre&gt;</span></code> when you need no syntax
+      highlighting. When you need syntax highlighting use the <code class="docutils literal"><span class="pre">&lt;codesample&gt;</span></code>
+      tag along with a <code class="docutils literal"><span class="pre">lang</span></code> attribute 
+    —
+   usually you want this to be set to
+      <code class="docutils literal"><span class="pre">ebuild</span></code> to syntax highlight ebuild code snippets.
+    </dd>
+  <dt>
+    Hierarchy
+  </dt>
+  <dd>
+      The whole document is organized as a tree. Each directory can contain one
+      document. Each document can inherit multiple sub-documents using the
+      <code class="docutils literal"><span class="pre">&lt;include&gt;</span></code> flag. You <b>must</b> ensure that the <code class="docutils literal"><span class="pre">self</span></code> tag
+      in each document correctly points to the relative path of the document from
+      the root node so that the tree-walking algorithms work correctly.
+    </dd>
+</dl>
+
+</div>
+</div>
+<div class="section">
+<h2 id="style-guidelines">Style Guidelines</h2>
+
+<ul>
+  <li>
+  This document is in British English. Submissions in other kinds of English are
+  welcome, but they may have their spelling corrected.
+  </li>
+  <li>
+  Third person form should be used rather than first.
+  </li>
+  <li>
+  This is not a formal document. The writing style is intended to be
+  professional but readable.
+  </li>
+  <li>
+  When using in-sentence hyphens as punctuation 
+    —
+   like this 
+    —
+   use a space,
+  followed by the <code class="docutils literal"><span class="pre">&lt;d/&gt;</span></code> tag. The build system will automatically turn
+  this into a proper Unicode long dash.
+  </li>
+</ul>
+
+</div>
+
+</div>
+<footer><div class="container">
+<div class="row">
+<div class="col-xs-12 col-md-offset-2 col-md-7"></div>
+<div class="col-xs-12 col-md-3">
+<h3 class="footerhead">Questions or comments?</h3>
+              Please feel free to <a href="https://www.gentoo.org/inside-gentoo/contact/">contact us</a>.
+            </div>
+</div>
+<div class="row">
+<div class="col-xs-2 col-sm-3 col-md-2"><ul class="footerlinks three-icons">
+<li><a href="http://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+</ul></div>
+<div class="col-xs-10 col-sm-9 col-md-10">
+<strong>Copyright (C) 2001-2017 Gentoo Foundation, Inc.</strong><br><small>
+                Gentoo is a trademark of the Gentoo Foundation, Inc.
+                The text of this document is distributed under the
+                <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+                The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+              </small>
+</div>
+</div>
+</div></footer><script src="https://assets.gentoo.org/tyrian/jquery.min.js"></script><script src="https://assets.gentoo.org/tyrian/bootstrap.min.js"></script>
+</body>
+</html>

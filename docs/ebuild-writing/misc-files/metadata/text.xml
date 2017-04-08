@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="utf-8"?>
+<guide self="ebuild-writing/misc-files/metadata/">
+<chapter>
+<title>Package and Category <c>metadata.xml</c></title>
+
+<body>
+<p>
+The <c>metadata.xml</c> file is used to specify additional data about a
+package or category.
+</p>
+
+<section>
+<title>Syntax</title>
+<body>
+
+<p>
+A metadata file follows the syntax defined in
+<uri link="https://wiki.gentoo.org/wiki/GLEP:68">GLEP 68</uri>.
+The character set <b>must</b> be UTF-8 as specified by
+<uri link="https://wiki.gentoo.org/wiki/GLEP:31">GLEP 31</uri>.
+</p>
+
+<p>
+Concerning indentation there is no strict rule governing the style and
+width. However the following minimal set of rules need to be followed:
+<ul>
+  <li>
+    Indentation should be consistent, i.e. either spaces or tabs, but
+    not both.
+  </li>
+  <li>
+    Keep the existing style when touching metadata.xml files that
+    belong to other developers.
+  </li>
+</ul>
+</p>
+
+<p>
+The following table summarizes the tags that may appear in a
+metadata.xml:
+</p>
+
+<table>
+<tr>
+  <th>tag</th>
+  <th>description</th>
+</tr>
+<tr>
+  <ti>
+    <brite>&lt;catmetadata&gt;</brite>
+  </ti>
+  <ti>
+    This is the root element of the <path>metadata.xml</path> file for
+    categories. It has no attributes. It contains a number of
+    <brite>&lt;longdescription&gt;</brite> tags, each for a different
+    language.
+  </ti>
+</tr>
+<tr>
+  <ti>
+    <brite>&lt;pkgmetadata&gt;</brite>
+  </ti>
+  <ti>
+    This is the root element of the <path>metadata.xml</path> file for
+    packages. It has no attributes. The following subtags are
+    allowed:
+    <brite>&lt;longdescription&gt;</brite>,
+    <brite>&lt;maintainer&gt;</brite>,
+    <brite>&lt;slots&gt;</brite>,
+    <brite>&lt;use&gt;</brite>, and
+    <brite>&lt;upstream&gt;</brite>.
+    While all the subtags are optional, &lt;upstream&gt; may
+    appear at most once.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;longdescription&gt;</brite></ti>
+  <ti>
+    This tag contains a description for a category or a package. For
+    packages, it is used to augment the
+    <uri link="::ebuild-writing/variables#ebuild-defined-variables">
+    DESCRIPTION</uri> field in the ebuilds themselves. This tag has
+    two optional subtags: <brite>&lt;pkg&gt;</brite> and
+    <brite>&lt;cat&gt;</brite>.
+  </ti>
+</tr>
+<tr>
+  <ti>
+    <brite>&lt;maintainer&gt;</brite>
+  </ti>
+  <ti>
+    This tag specifies the persons and/or projects responsible for
+    the maintenance of a package. The <c>type</c> attribute must
+    be specified and can be either <c>"person"</c> or
+    <c>"project"</c>. There is one required subtag:
+    <brite>&lt;email&gt;</brite>. It has two optional subtags:
+    <brite>&lt;name&gt;</brite> and
+    <brite>&lt;description&gt;</brite>.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;email&gt;</brite></ti>
+  <ti>
+    This contains the e-mail address of the maintainer. It is required.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;name&gt;</brite></ti>
+  <ti>
+    This contains freetext with the name of the maintainer. It is optional.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;description&gt;</brite></ti>
+  <ti>
+    The description tag contains a description of the maintainership, or for 
+    example a remark that someone interested can take over the maintainership. 
+    It is optional.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;slots&gt;</brite></ti>
+  <ti>
+    This tag describes the
+    <uri link="::general-concepts/slotting">slots</uri> of a package.
+    It has two optional subtags: &lt;slot&gt; and &lt;subslots&gt;.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;slot&gt;</brite></ti>
+  <ti>
+    This contains information for a particular slot. The <c>name</c>
+    attribute is mandatory and specifies the name of the slot.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;subslots&gt;</brite></ti>
+  <ti>
+    Describes the meaning of subslots for the whole package. This
+    tag may appear at most once.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;use&gt;</brite></ti>
+  <ti>
+    This tag contains descriptions of <uri link="::ebuild-writing/variables#iuse">USE flags</uri>.
+    This tag is optional and, if specified, has one required subtag:
+    <brite>&lt;flag&gt;</brite>.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;flag&gt;</brite></ti>
+  <ti>
+    This tag contains a description of how the named USE flag affects this
+    package. It is required if the <brite>&lt;use&gt;</brite> tag is specified.
+    It also requires the USE flag to be named in the <c>name</c> attribute.
+    This tag has two optional subtags: <brite>&lt;pkg&gt;</brite> and
+    <brite>&lt;cat&gt;</brite>.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;upstream&gt;</brite></ti>
+  <ti>
+    This tag contains information about the upstream developers/project.
+    It supports multiple optional subtags: &lt;maintainer&gt;,
+    &lt;changelog&gt;, &lt;doc&gt;, &lt;bugs-to&gt;,
+    and &lt;remote-id&gt;.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;maintainer&gt;</brite></ti>
+  <ti>
+    Provides information about the upstream maintainer. It requires a
+    &lt;name&gt; subtag to be specified, supports an optional
+    &lt;email&gt; subtag and an optional <c>status</c> attribute.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;name&gt;</brite></ti>
+  <ti>
+    The name of an upstream maintainer should contain a block of text with upstream's name.
+    This element is mandatory for an upstream maintainer and must appear exactly once.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;email&gt;</brite></ti>
+  <ti>
+    The email address of an upstream maintainer. May appear only once.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;changelog&gt;</brite></ti>
+  <ti>
+    Should contain a URL where the location of the upstream changelog can be found.
+    The URL must be version independent and must point to a changelog which is only
+    updated on new releases of the corresponding package. (This also implies that
+    one can link to an automatically updated changelog in case of vcs snapshots
+    only). May appear at most once.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;doc&gt;</brite></ti>
+  <ti>
+    Should contain a URL where the location of the upstream documentation can be
+    found. The link must not point to any third party documentation and must be
+    version independent. If the documentation is available in more than one language,
+    a lang attribute can be used which follows the same rules as the one for
+    &lt;longdescription&gt;.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;bugs-to&gt;</brite></ti>
+  <ti>
+    Should contain a place where bugs can be filed, a URL or an e-mail address prefixed
+    with <c>mailto:</c>. May appear at most once.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;remote-id&gt;</brite></ti>
+  <ti>
+    Should specify a type of package identification tracker and the identification that
+    corresponds to the package in question. remote-id should make it easier to index
+    information such as its Freshmeat ID or its CPAN name.
+    It has a mandatory attribute <c>type</c> which identifies the type
+    of upstream source.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;pkg&gt;</brite></ti>
+  <ti>
+    This tag contains a valid qualified package name.
+  </ti>
+</tr>
+<tr>
+  <ti><brite>&lt;cat&gt;</brite></ti>
+  <ti>
+    This tag contains a valid category name as defined in
+    <path>profiles/categories</path>.
+  </ti>
+</tr>
+</table>
+
+<p>
+There are also some attributes that can be used with these tags:
+</p>
+
+<table>
+<tr>
+  <th>attribute</th>
+  <th>tags</th>
+  <th>description</th>
+</tr>
+<tr>
+  <ti>lang</ti>
+  <ti>
+    <brite>&lt;description&gt;</brite>, <brite>&lt;longdescription&gt;</brite>,
+    <brite>&lt;slots&gt;</brite>,
+    <brite>&lt;use&gt;</brite>, <brite>&lt;doc&gt;</brite>
+  </ti>
+  <ti>
+    In every case where a description is required, there must be at
+    <e>least</e> an english description.  If an additional description in
+    another language is given, this attribute is used to specify the language
+    used.  The format is the two-character language code as defined by the <uri link="http://www.w3.org/WAI/ER/IG/ert/iso639.htm#2letter">ISO-639-1</uri>
+    norm.
+  </ti>
+</tr>
+<tr>
+  <ti>restrict</ti>
+  <ti>
+    <brite>&lt;maintainer&gt;</brite>,
+    <brite>&lt;longdescription&gt;</brite>, <brite>&lt;flag&gt;</brite>
+  </ti>
+  <ti>
+    The restrict attribute allows one to restrict the application of
+    certain tags to certain versions of a package. When this attribute
+    is used, other tags with or without the restrict attribute must be
+    present to cover all the versions of the package. A tag without
+    the restrict attribute serves as the default. The format of the
+    restrict attribute is that of a EAPI=0 package dependency
+    specification. Due to the limitations of XML, the "&lt;" and
+    "&gt;" need to be specified using "&amp;lt;" and "&amp;gt;".
+  </ti>
+</tr>
+<tr>
+  <ti>name</ti>
+  <ti>
+    <brite>&lt;flag&gt;</brite>, <brite>&lt;slot&gt;</brite>
+  </ti>
+  <ti>
+    When this attribute is required on the &lt;flag&gt; tag, it
+    simply contains the name of the USE flag. For the
+    &lt;slot&gt; tag, it specifies the
+    <uri link="::general-concepts/slotting#slot-names">
+    slot name</uri> to which it applies. A slot name of <c>"*"</c>
+    allows for a single &lt;slot&gt; tag to match all the slots of a
+    package, in which case no other slot tags may be present.
+  </ti>
+</tr>
+<tr>
+  <ti>status</ti>
+  <ti>
+    <brite>&lt;maintainer&gt;</brite>
+  </ti>
+  <ti>
+    The upstream maintainer element has a status attribute, which is
+    one of <c>"active"</c> or <c>"inactive"</c>. This attribute is not
+    mandatory. The absence of it shall be interpreted as
+    <c>"unknown"</c>. Please note that this attribute is only allowed
+    for the &lt;maintainer&gt; subtags of the &lt;upstream&gt;
+    element!
+  </ti>
+</tr>
+<tr>
+  <ti>type</ti>
+  <ti>
+    <brite>&lt;remote-id&gt;</brite>
+  </ti>
+  <ti>
+    A string identifying the type of upstream source. A list of valid strings are kept in
+    <uri link="https://www.gentoo.org/dtd/metadata.dtd">metadata.dtd</uri>.
+    Developers should email the gentoo-dev mailing list before using a new type value. 
+  </ti>
+</tr>
+<tr>
+  <ti>type</ti>
+  <ti>
+    <brite>&lt;maintainer&gt;</brite>
+  </ti>
+  <ti>
+    Defines the type of the maintainer for a package. There are only
+    two valid values: <c>"person"</c> and <c>"project"</c>. The latter
+    denotes an official
+    <uri link="::general-concepts/herds-and-projects">
+    Gentoo project</uri>.
+  </ti>
+</tr>
+
+</table>
+
+</body>
+</section>
+<section>
+<title>Package Metadata</title>
+<body>
+<p>
+All packages <b>must</b> include a <c>metadata.xml</c> file which
+provides information about package description, maintainers, local USE
+flags, upstream etc.
+</p>
+
+<p>
+For developers' convenience, a skeleton file is provided in the
+Gentoo tree with the name
+<uri link="https://gitweb.gentoo.org/repo/gentoo.git/tree/skel.metadata.xml">
+skel.metadata.xml</uri>. The metadata file can also be created
+using the <c>app-portage/metagen</c> tool.
+</p>
+
+<p>
+Commits of package metadata files are handled by <c>repoman</c>. In
+order for metadata checks to be performed, <c>dev-libs/libxml2</c>
+must be installed on the system.
+</p>
+
+<p>
+Unless specified otherwise, the maintainer who is listed in the
+metadata first shall be the assignee for the bugs for that package as
+per <uri link="https://wiki.gentoo.org/wiki/GLEP:67#Bug_assignment">
+GLEP 67</uri>.
+</p>
+
+<subsection>
+<title>Package Metadata Examples</title>
+<body>
+
+<p>
+In the following sections, various examples of metadata.xml are
+provided. These examples are based on actual package metadata files to
+keep things as realistic as possible. However, they may not include
+these files verbatim and should be taken as hypothetical examples.
+</p>
+
+<subsubsection>
+<title>Projects as Maintainers</title>
+<body>
+
+<p>
+For the first example, a package maintained by a single project is
+presented. It is a simplified version of <path>metadata.xml</path> for
+the package <path>app-office/libreoffice</path>. The package
+maintainer is identified by the email address <c>office@gentoo.org</c>
+with the name <c>Gentoo Office Project</c> as specified in the
+optional &lt;name&gt; subtag. It also provides a long package
+description.
+</p>
+
+<codesample lang="sgml">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd"&gt;
+&lt;pkgmetadata&gt;
+  &lt;maintainer type="project"&gt;
+    &lt;email&gt;office@gentoo.org&lt;/email&gt;
+    &lt;name&gt;Gentoo Office Project&lt;/name&gt;
+  &lt;/maintainer&gt;
+  &lt;longdescription&gt;
+    LibreOffice is the successor of OpenOffice.org. This ebuild
+    allows you to compile it yourself. Unfortunately this compilation can
+    take up to a day depending on the speed of your computer. It will
+    however make a snappier LibreOffice than the binary version.
+  &lt;/longdescription&gt;
+&lt;/pkgmetadata&gt;
+</codesample>
+
+<p>
+The email address <c>office@gentoo.org</c> corresponds to the
+<c>Gentoo Office Project</c> as defined in
+<uri link="https://api.gentoo.org/metastructure/projects.xml">
+projects.xml</uri>. This file lists all the projects in Gentoo and it
+is generated from the
+<uri link="https://wiki.gentoo.org/wiki/Project:Gentoo">
+projects listing</uri> available on the Gentoo Wiki:
+</p>
+
+<codesample lang="sgml">
+&lt;project&gt;
+  &lt;email&gt;office@gentoo.org&lt;/email&gt;
+  &lt;name&gt;Gentoo Office Project&lt;/name&gt;
+  &lt;url&gt;https://wiki.gentoo.org/wiki/Project:Office&lt;/url&gt;
+  &lt;description&gt;
+    The Office project manages the office implementations
+    and related packages in Gentoo.
+  &lt;/description&gt;
+  &lt;member&gt;
+    &lt;email&gt;dilfridge@gentoo.org&lt;/email&gt;
+    &lt;name&gt;Andreas K. Hüttel&lt;/name&gt;
+    &lt;role&gt;member&lt;/role&gt;
+  &lt;/member&gt;
+  &lt;member&gt;
+    &lt;email&gt;scarabeus@gentoo.org&lt;/email&gt;
+    &lt;name&gt;Tomáš Chvátal&lt;/name&gt;
+    &lt;role&gt;member&lt;/role&gt;
+  &lt;/member&gt;
+&lt;/project&gt;
+</codesample>
+
+</body>
+</subsubsection>
+<subsubsection>
+<title>Local USE Flag Descriptions</title>
+<body>
+
+<p>
+The second example is formed after the <path>metadata.xml</path> of
+<path>sys-apps/portage</path>. It lists multiple maintainers where one
+is a developer and the other is a project. It illustrates how local
+USE flag descriptions are specified and also contains an upstream
+element. It is also worth pointing out the use of <c>mailto:</c>
+prefix in &lt;bugs-to&gt; tag due to the presence of an email address
+as opposed to a URL. Conversely, email addresses specified in the
+&lt;email&gt; tags require no such prefix.
+</p>
+
+<codesample lang="sgml">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd"&gt;
+&lt;pkgmetadata&gt;
+  &lt;upstream&gt;
+    &lt;bugs-to&gt;mailto:dev-portage@gentoo.org&lt;/bugs-to&gt;
+    &lt;changelog&gt;https://gitweb.gentoo.org/proj/portage.git/plain/RELEASE-NOTES&lt;/changelog&gt;
+    &lt;doc&gt;https://wiki.gentoo.org/wiki/Handbook:AMD64/Working/Portage&lt;/doc&gt;
+  &lt;/upstream&gt;
+  &lt;maintainer type="person"&gt;
+    &lt;email&gt;larry@gentoo.org&lt;/email&gt;
+    &lt;name&gt;Larry the Cow&lt;/name&gt;
+  &lt;/maintainer&gt;
+  &lt;maintainer type="project"&gt;
+    &lt;email&gt;dev-portage@gentoo.org&lt;/email&gt;
+  &lt;/maintainer&gt;
+  &lt;use&gt;
+    &lt;flag name="epydoc"&gt;Build html API documentation with epydoc.&lt;/flag&gt;
+    &lt;flag name="ipc"&gt;Use inter-process communication between portage and running ebuilds.&lt;/flag&gt;
+    &lt;flag name="pypy2_0"&gt;Use pypy-c2.0 as Python interpreter.&lt;/flag&gt;
+    &lt;flag name="python2"&gt;Use python2 as Python interpreter.&lt;/flag&gt;
+    &lt;flag name="python3"&gt;Use python3 as Python interpreter.&lt;/flag&gt;
+    &lt;flag name="xattr"&gt;
+      Preserve extended attributes (filesystem-stored metadata) when
+      installing files. Usually only required for hardened systems.
+    &lt;/flag&gt;
+  &lt;/use&gt;
+&lt;/pkgmetadata&gt;
+</codesample>
+
+</body>
+</subsubsection>
+<subsubsection>
+<title>Split Maintainership</title>
+<body>
+
+<p>
+This example splits the maintainership based on package versions using
+the attribute <c>restrict</c>. According to the
+<path>metadata.xml</path> of <path>sys-boot/grub</path>, the ebuilds
+for version 2 and above are maintained by floppym@gentoo.org whereas
+earlier versions are maintained by the Gentoo Base System
+project. Note the use of "&amp;gt;" as opposed to "&gt;" in
+<c>restrict</c>.
+</p>
+
+<p>
+The example also uses the <c>&lt;pkg&gt;</c> tag in USE flag
+descriptions. Slot dependency specifiers are not allowed inside
+&lt;pkg&gt;, therefore the notation
+&lt;pkg&gt;sys-boot/grub&lt;/pkg&gt;<c>:2</c> is adopted as opposed to
+&lt;pkg&gt;sys-boot/grub<c>:2</c>&lt;/pkg&gt;.
+</p>
+
+<p>
+Lastly, the <c>&lt;remote-id&gt;</c> tag in the upstream description
+is demonstrated.
+</p>
+
+<codesample lang="sgml">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd"&gt;
+&lt;pkgmetadata&gt;
+  &lt;maintainer restrict="&amp;gt;=sys-boot/grub-2" type="person"&gt;
+    &lt;email&gt;floppym@gentoo.org&lt;/email&gt;
+  &lt;/maintainer&gt;
+  &lt;maintainer type="project"&gt;
+    &lt;email&gt;base-system@gentoo.org&lt;/email&gt;
+    &lt;name&gt;Gentoo Base System&lt;/name&gt;
+  &lt;/maintainer&gt;
+  &lt;use&gt;
+    &lt;flag name="device-mapper"&gt;
+      Enable support for device-mapper from &lt;pkg&gt;sys-fs/lvm2&lt;/pkg&gt;
+    &lt;/flag&gt;
+    &lt;flag name="efiemu"&gt;
+      Build and install the efiemu runtimes
+    &lt;/flag&gt;
+    &lt;flag name="fonts"&gt;Build and install fonts for the gfxterm module&lt;/flag&gt;
+    &lt;flag name="mount"&gt;
+      Build and install the grub-mount utility
+    &lt;/flag&gt;
+    &lt;flag name="libzfs"&gt;
+      Enable support for &lt;pkg&gt;sys-fs/zfs&lt;/pkg&gt;
+    &lt;/flag&gt;
+    &lt;flag name="multislot"&gt;
+      Allow concurrent installation of &lt;pkg&gt;sys-boot/grub&lt;/pkg&gt;:0 and
+      &lt;pkg&gt;sys-boot/grub&lt;/pkg&gt;:2 by renaming all programs.
+    &lt;/flag&gt;
+    &lt;flag name="themes"&gt;Build and install GRUB themes (starfield)&lt;/flag&gt;
+    &lt;flag name="truetype"&gt;
+      Build and install grub-mkfont conversion utility
+    &lt;/flag&gt;
+  &lt;/use&gt;
+  &lt;upstream&gt;
+    &lt;remote-id type="sourceforge"&gt;dejavu&lt;/remote-id&gt;
+  &lt;/upstream&gt;
+&lt;/pkgmetadata&gt;
+</codesample>
+
+</body>
+</subsubsection>
+<subsubsection>
+<title>Slots and Subslots</title>
+<body>
+
+<p>
+The main focus of this example is to demonstrate how slots and
+subslots are specified, by examining the metadata of
+<path>media-libs/libpng</path>. There may be multiple reasons for
+slotting depending on the nature of the package. For this particular
+package, it can be seen that the slots are used to provide different
+versions of the library with varying binary compatibility and that
+developers are advised to build against the slot 0. Furthermore,
+different versions of this package with the same subslot provide the
+same Application Binary Interface (ABI), according to the description
+specified in the <c>&lt;subslots&gt;</c> tag.
+</p>
+
+<codesample lang="sgml">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd"&gt;
+&lt;pkgmetadata&gt;
+  &lt;maintainer type="project"&gt;
+    &lt;email&gt;base-system@gentoo.org&lt;/email&gt;
+    &lt;name&gt;Gentoo Base System&lt;/name&gt;
+  &lt;/maintainer&gt;
+  &lt;use&gt;
+    &lt;flag name="apng"&gt;support unofficial APNG (Animated PNG) spec&lt;/flag&gt;
+  &lt;/use&gt;
+  &lt;upstream&gt;
+    &lt;remote-id type="cpe"&gt;cpe:/a:libpng:libpng&lt;/remote-id&gt;
+    &lt;remote-id type="sourceforge"&gt;apng&lt;/remote-id&gt;
+  &lt;/upstream&gt;
+  &lt;slots&gt;
+    &lt;slot name="0"&gt;
+      For building against. This is the only slot
+      that provides headers and command line tools.
+    &lt;/slot&gt;
+    &lt;slot name="1.2"&gt;
+      For binary compatibility, provides libpng12.so.0 only.
+    &lt;/slot&gt;
+    &lt;slot name="1.5"&gt;
+      For binary compatibility, provides libpng15.so.15 only.
+    &lt;/slot&gt;
+    &lt;subslots&gt;Reflect ABI compatibility for libpng.so.&lt;/subslots&gt;
+  &lt;/slots&gt;
+&lt;/pkgmetadata&gt;
+</codesample>
+
+</body>
+</subsubsection>
+</body>
+</subsection>
+<subsection>
+<title>Maintainer-Needed</title>
+<body>
+
+<p>
+Maintainer-needed, or orphaned, packages have no maintainers
+responsible for them. Per
+<uri link="https://wiki.gentoo.org/wiki/GLEP:67#Case_of_maintainer-needed_packages">
+GLEP 67</uri>, these packages must not contain any &lt;maintainer&gt;
+subtags under &lt;pkgmetadata&gt; in their <c>metadata.xml</c>. By
+convention, a comment line containing the string <c>maintainer-needed</c>
+is inserted. Other tags which are relevant to the package may be
+present in the metadata. Bugs for these packages must be assigned to
+<c>maintainer-needed@gentoo.org</c>. The QA team periodically generates the
+<uri link="https://qa-reports.gentoo.org/output/maintainer-needed.html">
+orphaned packages list</uri> along with their corresponding bugs as
+part of the QA reports.
+</p>
+
+<codesample lang="sgml">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd"&gt;
+&lt;pkgmetadata&gt;
+  &lt;!-- maintainer-needed --&gt;
+  &lt;upstream&gt;
+    &lt;maintainer status="active"&gt;
+      &lt;email&gt;rasmus@alum.mit.edu&lt;/email&gt;
+      &lt;name&gt;Matt Rasmussen&lt;/name&gt;
+    &lt;/maintainer&gt;
+    &lt;doc lang="en"&gt;http://keepnote.org/manual/&lt;/doc&gt;
+    &lt;bugs-to&gt;https://code.google.com/p/keepnote/issues/list&lt;/bugs-to&gt;
+  &lt;/upstream&gt;
+  &lt;longdescription lang="en"&gt;
+    KeepNote is a note taking application. With KeepNote, you can
+    store your class notes, TODO lists, research notes, journal entries,
+    paper outlines, etc in a simple notebook hierarchy with rich-text
+    formatting, images, and more. Using full-text search, you can
+    retrieve any note for later reference.
+  &lt;/longdescription&gt;
+&lt;/pkgmetadata&gt;
+</codesample>
+
+</body>
+</subsection>
+</body>
+</section>
+
+<section>
+<title>Category Metadata</title>
+<body>
+<p>
+For categories, <c>metadata.xml</c> specifies a long description (in
+English and optionally in other languages). A typical example:
+</p>
+
+<codesample lang="sgml">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE catmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd"&gt;
+&lt;catmetadata&gt;
+  &lt;longdescription lang="en"&gt;
+    The app-vim category contains plugins and syntax file
+    packages for the Vim text editor.
+  &lt;/longdescription&gt;
+  &lt;longdescription lang="de"&gt;
+    Die Kategorie app-vim enthält Plugins und Syntax-Pakete
+    für den Vim Texteditor.
+  &lt;/longdescription&gt;
+&lt;/catmetadata&gt;
+</codesample>
+
+<p>
+When creating a new category, creating a <c>metadata.xml</c> file
+along with a <c>&lt;longdescription&gt;</c> in English is
+<b>mandatory</b>. Translations are handled by any interested developer
+who speaks a language sufficiently well.
+</p>
+
+<p>
+The correct way to commit a <e>category</e> <c>metadata.xml</c> file
+is currently:
+</p>
+
+<pre>
+xmllint --noout --valid metadata.xml
+git add metadata.xml
+git commit --gpg-sign
+</pre>
+
+<p>
+The commit message should be formatted properly.
+A sample commit is shown below:
+</p>
+
+<pre>
+commit db359439bcd52f5a7f20d2332ab62feb16657504
+Author: Alexis Ballier &lt;aballier@gentoo.org&gt;
+Date:   Tue Sep 22 10:47:49 2015 +0200
+
+  dev-ros: Add metadata.xml for the category.
+</pre>
+
+</body>
+</section>
+
+</body>
+</chapter>
+</guide>

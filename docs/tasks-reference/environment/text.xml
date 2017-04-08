@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<guide self="tasks-reference/environment/">
+<chapter>
+<title>Environment Files</title>
+
+<body>
+
+<p>
+Some packages need to globally set an environment variable for all users. The
+canonical way of doing this is via <c>/etc/env.d</c>. All files in this directory
+are sourced when generating user environment settings.
+</p>
+
+<p>
+This directory should <b>only</b> be used for setting environment variables.
+</p>
+
+<p>
+To install a file into this directory, use <c>doenvd</c> or <c>newenvd</c> (see
+<uri link="::function-reference/install-functions/"/>). The format of the file
+should be a series of lines in the form <c>VARIABLE="the value"</c>.
+</p>
+
+<p>
+There is further discussion in the <uri link="https://wiki.gentoo.org/wiki/Handbook:X86/Working/EnvVar">
+Environment Variables section</uri>.
+</p>
+
+</body>
+</chapter>
+</guide>

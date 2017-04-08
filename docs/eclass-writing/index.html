@@ -1,0 +1,838 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Eclass Writing Guide – Gentoo Development Guide</title>
+<link rel="stylesheet" href="../devmanual.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Gentoo Devmanual is a technical manual which covers topics such as writing ebuilds and eclasses, and policies that developers should be abiding by.">
+<link href="https://assets.gentoo.org/tyrian/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="https://assets.gentoo.org/tyrian/tyrian.min.css" rel="stylesheet" media="screen">
+<link rel="icon" href="https://www.gentoo.org/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<header><div class="site-title"><div class="container"><div class="row">
+<div class="site-title-buttons"><div class="btn-group btn-group-sm">
+<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span><strong> Get Gentoo!</strong></a><div class="btn-group btn-group-sm">
+<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#"><span class="fa fa-fw fa-map-o"></span><span class="hidden-xs"> gentoo.org sites </span><span class="caret"></span></a><ul class="dropdown-menu dropdown-menu-right">
+<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+<li class="divider">
+<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+<li class="divider">
+<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+</ul>
+</div>
+</div></div>
+<div class="logo">
+<a href="/" title="Back to the homepage" class="site-logo"><object data="https://assets.gentoo.org/tyrian/site-logo.svg" type="image/svg+xml"><img src="https://assets.gentoo.org/tyrian/site-logo.png" alt="Gentoo Linux Logo"></object></a><span class="site-label">Development Guide</span>
+</div>
+</div></div></div>
+<nav class="tyrian-navbar" role="navigation"><div class="container"><div class="row">
+<div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+<div class="collapse navbar-collapse navbar-main-collapse"><ul class="nav navbar-nav">
+<li><a href="../index.html"><span class="glyphicon glyphicon-home"></span>  Home</a></li>
+<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Eclass Writing Guide<span class="caret"></span></a></li>
+<li><a href="../ebuild-maintenance/index.html"><span class="glyphicon glyphicon-arrow-left"></span>  Ebuild Maintenance</a></li>
+<li><a href="../profiles/index.html">Profiles  <span class="glyphicon glyphicon-arrow-right"></span></a></li>
+</ul></div>
+</div></div></nav></header><div class="container"><div class="row"><div class="col-md010"><ol class="breadcrumb"><li><a href="../index.html">主索引</a></li></ol></div></div></div>
+<div class="container">
+<h1 class="first-header">Eclass Writing Guide</h1>
+<p>
+This section provides a brief introduction to eclass authoring.
+</p>
+
+<div class="alert alert-info" role="alert">
+<strong>Important:</strong>
+You should reread the <a href="../general-concepts/overlay/index.html#overlay-and-eclasses">Overlay and Eclasses</a>
+and <a href="../general-concepts/portage-cache/index.html">The Portage Cache</a> sections before continuing.
+</div>
+
+<div class="section">
+<h2 id="purpose-of-eclasses">Purpose of Eclasses</h2>
+
+<p>
+An eclass is a collection of code which can be used by more than one ebuild. At
+the time of writing, all eclasses live in the <code class="docutils literal"><span class="pre">eclass/</span></code> directory in the tree.
+Roughly speaking, there are three kinds of eclass:
+</p>
+
+<ul>
+  <li>
+    Those which provide common functions which are used by many ebuilds (for
+    example, <code class="docutils literal"><span class="pre">eutils</span></code>, <code class="docutils literal"><span class="pre">versionator</span></code>, <code class="docutils literal"><span class="pre">cvs</span></code>, <code class="docutils literal"><span class="pre">bash-completion</span></code>)
+  </li>
+  <li>
+    Those which provide a basic build system for many similar packages (for
+    example, <code class="docutils literal"><span class="pre">vim-plugin</span></code>, <code class="docutils literal"><span class="pre">kde</span></code>)
+  </li>
+  <li>
+    Those which handle one or a small number of packages with complex build
+    systems (for example, <code class="docutils literal"><span class="pre">vim</span></code>, <code class="docutils literal"><span class="pre">toolchain</span></code>, <code class="docutils literal"><span class="pre">kernel-2</span></code>)
+  </li>
+</ul>
+
+</div>
+
+<div class="section">
+<h2 id="adding-and-updating-eclasses">Adding and Updating Eclasses</h2>
+
+<p>
+Before committing a new eclass to the tree, it should be emailed to the
+gentoo-dev mailing list with a justification and a proposed implementation. Do
+not skip this step 
+    —
+   sometimes a better implementation or an alternative which
+does not require a new eclass will be suggested.
+</p>
+
+<p>
+Before updating <code class="docutils literal"><span class="pre">eutils</span></code> or a similar widely used eclass, it is best to email
+the gentoo-dev list. It may be that your proposed change is broken in a way you
+had not anticipated, or that there is an existing function which performs the
+same purpose, or that your function may be better off in its own eclass. If you
+don't email gentoo-dev first, and end up breaking something, expect to be in a
+lot of trouble.
+</p>
+
+<p>
+When removing a function or changing the API of an eclass, make
+sure that it doesn't break any ebuilds in the tree, and post a
+notice to gentoo-dev at least 30 days in advance, preferably with
+a patch included.
+</p>
+
+<p>
+If there is an existing maintainer for an eclass (this is usually the case), you
+<b>must</b> talk to the maintainer before committing any changes.
+</p>
+
+<p>
+It is not usually necessary to email the gentoo-dev list before making changes
+to a non-general eclass which you maintain. Use common sense here.
+</p>
+
+<div class="alert alert-warning" role="alert">
+<strong>Warning:</strong>
+Committing a broken eclass can kill huge numbers of packages. Since
+<code class="docutils literal"><span class="pre">repoman</span></code> is not eclass-aware, be very sure you do proper testing.
+</div>
+
+<p>
+A simple way to verify syntax is <code class="docutils literal"><span class="pre">bash -n foo.eclass</span></code>.
+</p>
+
+</div>
+
+<div class="section">
+<h2 id="removing-eclasses">Removing Eclasses</h2>
+
+<p>No longer used eclasses may be removed from the tree, but developers must
+adhere to the following process:</p>
+
+<ol>
+  <li>
+    Make sure that no packages or other eclasses in the tree <code class="docutils literal"><span class="pre">inherit</span></code> the
+    eclass.
+  </li>
+  <li>
+    Send a lastrite message to the gentoo-dev and gentoo-dev-announce
+    mailing-lists, announcing that the not-used eclass will be removed in 30
+    days.
+  </li>
+  <li>
+    Add a one line comment to the eclass, saying exactly <code class="docutils literal"><span class="pre"># @DEAD</span></code> so that
+    the eclass-manpages package will not attempt to document it.
+  </li>
+  <li>
+    Wait for the 30-day period to pass, then remove the eclass from the tree.
+  </li>
+</ol>
+
+
+</div>
+
+<div class="section">
+<h2 id="documenting-eclasses">Documenting Eclasses</h2>
+
+<p>
+Eclasses are documented with comment blocks that follow a special
+markup syntax. The comment blocks are separated by blank lines and
+each block documents an individual element of an eclass.
+</p>
+
+<p>
+Documentation tags for various eclass elements are explained in their
+respective sections below. Common to all the tags that accept
+multiline freetext, the <code class="docutils literal"><span class="pre">@CODE</span></code> tag should be used when necessary
+to create unformatted code chunks (such as example code) by placing
+the tag at the beginning and the end.
+</p>
+</div>
+
+<div class="section">
+<h2 id="basic-eclass-format">Basic Eclass Format</h2>
+
+<p>
+An eclass is a <code class="docutils literal"><span class="pre">bash</span></code> script which is sourced within the ebuild environment.
+Files should be a simple text file with a <code class="docutils literal"><span class="pre">.eclass</span></code> extension. Allowed
+characters in the filename are lowercase letters, the digits 0-9, hyphens,
+underscores and dots. Eclasses are not intrinsically versioned.
+</p>
+
+<p>
+Eclasses should start with the standard ebuild header, along with
+comments explaining the maintainer and purpose of the eclass, and any
+other relevant documentation. Eclass documentation block should be the
+first documentation block to appear in the eclass. The following table
+summarizes the available documentation tags:
+</p>
+
+<table class="table">
+<tr>
+  <th>tag</th>
+  <th>optional?</th>
+  <th>arguments</th>
+  <th>description</th>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@ECLASS:</span></code>
+  </td>
+  <td class="devbook">
+    NO
+  </td>
+  <td class="devbook">
+    Name of the eclass being documented.
+  </td>
+  <td class="devbook">
+    Documents various information about the eclass. Must appear as the
+    first tag in the comment block.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@MAINTAINER:</span></code>
+  </td>
+  <td class="devbook">
+    NO
+  </td>
+  <td class="devbook">
+    One or more name and email pairs.
+  </td>
+  <td class="devbook">
+    List of maintainers for the eclass to be contacted. One line per
+    maintainer. Must start on a newline after the tag.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@AUTHOR:</span></code>
+  </td>
+  <td class="devbook">
+    YES
+  </td>
+  <td class="devbook">
+    One or more name and email pairs.
+  </td>
+  <td class="devbook">
+    List of authors for the eclass. One line per author. Must start on
+    a newline after the tag.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@BUGREPORTS:</span></code>
+  </td>
+  <td class="devbook">
+    YES
+  </td>
+  <td class="devbook">
+    Multiline freetext.
+  </td>
+  <td class="devbook">
+    Describes how bugs related to this eclass should be reported.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@VCSURL:</span></code>
+  </td>
+  <td class="devbook">
+    YES
+  </td>
+  <td class="devbook">
+    A URI string.
+  </td>
+  <td class="devbook">
+    Points to the URL of the VCS that contains the eclass source.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@BLURB:</span></code>
+  </td>
+  <td class="devbook">
+    NO
+  </td>
+  <td class="devbook">
+    Single line freetext.
+  </td>
+  <td class="devbook">
+    Contains a short description for the eclass. Must be on the same
+    line with the tag.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@DESCRIPTION:</span></code>
+  </td>
+  <td class="devbook">
+    YES
+  </td>
+  <td class="devbook">
+    Multiline freetext.
+  </td>
+  <td class="devbook">
+    Long description for the eclass.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@EXAMPLE:</span></code>
+  </td>
+  <td class="devbook">
+    YES
+  </td>
+  <td class="devbook">
+    Multiline freetext.
+  </td>
+  <td class="devbook">
+    Examples that illustrate various uses of this eclass.
+  </td>
+</tr>
+</table>
+
+</div>
+
+<div class="section">
+<h2 id="eclass-variables">Eclass Variables</h2>
+
+<p>
+Top level variables may be defined as for ebuilds. If any USE flags are
+used, <code class="docutils literal"><span class="pre">IUSE</span></code> must be set. The <code class="docutils literal"><span class="pre">KEYWORDS</span></code> variable must <b>not</b> be set in an
+eclass.
+</p>
+
+<p>
+You should document the meaning, usage, and default value of every
+variable in your eclass. The tags available for documenting eclass
+variables are as follows:
+</p>
+
+<table class="table">
+<tr>
+  <th>tag</th>
+  <th>optional?</th>
+  <th>arguments</th>
+  <th>description</th>
+</tr>
+<tr>
+  <td class="devbook" nowrap>
+    <code class="docutils literal"><span class="pre">@ECLASS-VARIABLE:</span></code>
+  </td>
+  <td class="devbook">
+    NO
+  </td>
+  <td class="devbook">
+    Name of the eclass variable to which the documentation applies.
+  </td>
+  <td class="devbook">
+    This tag applies to eclass specific variables that affect the
+    default behavior of the eclass. Read-only variables, which are
+    exported by the eclass for developer use, are also documented with
+    this tag. Must appear as the first tag in the comment block.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@DEFAULT_UNSET</span></code>
+  </td>
+  <td class="devbook">
+    YES
+  </td>
+  <td class="devbook">
+    
+    —
+  
+  </td>
+  <td class="devbook">
+    Indicates that this variable is unset by default if not set by the
+    developer.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@INTERNAL</span></code>
+  </td>
+  <td class="devbook">
+    YES
+  </td>
+  <td class="devbook">
+    
+    —
+  
+  </td>
+  <td class="devbook">
+    Indicates that the variable is internal to the eclass.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@REQUIRED</span></code>
+  </td>
+  <td class="devbook">
+    YES
+  </td>
+  <td class="devbook">
+    
+    —
+  
+  </td>
+  <td class="devbook">
+    Indicates that this variable must be set by the developer.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@DESCRIPTION:</span></code>
+  </td>
+  <td class="devbook">
+    NO
+  </td>
+  <td class="devbook">
+    Multiline freetext.
+  </td>
+  <td class="devbook">
+    Long description for the eclass variable.
+  </td>
+</tr>
+</table>
+
+</div>
+
+<div class="section">
+<h2 id="eclass-functions">Eclass Functions</h2>
+
+<p>
+Eclasses may define functions. These functions will be visible to anything which
+inherits the eclass.
+</p>
+
+<p>
+You should document the purpose, arguments, usage, and return value of
+every function in your eclass. The standard tags available for
+documentation are:
+</p>
+
+<table class="table">
+<tr>
+  <th>tag</th>
+  <th>optional?</th>
+  <th>arguments</th>
+  <th>description</th>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@FUNCTION:</span></code>
+  </td>
+  <td class="devbook">
+    NO
+  </td>
+  <td class="devbook">
+    Name of the function to which the documentation block applies.
+  </td>
+  <td class="devbook">
+    Documents information about an eclass function such as its calling
+    convention etc. Must appear as the first tag in the comment block.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@USAGE:</span></code>
+  </td>
+  <td class="devbook">
+    NO
+  </td>
+  <td class="devbook">
+    List of required and optional arguments to the function.
+  </td>
+  <td class="devbook">
+    List of arguments that the eclass function accepts, specified in
+    the following syntax: <code class="docutils literal"><span class="pre">&lt;</span></code>Required arguments<code class="docutils literal"><span class="pre">&gt;</span></code>
+    <code class="docutils literal"><span class="pre">[</span></code>Optional arguments<code class="docutils literal"><span class="pre">]</span></code>
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@RETURN:</span></code>
+  </td>
+  <td class="devbook">
+    <b>*</b>
+  </td>
+  <td class="devbook">
+    Return value of the function.
+  </td>
+  <td class="devbook">
+    <p>Description for the value returned by the function.</p>
+    <p><b>*</b>: Not optional for functions that return a value.</p>
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@MAINTAINER:</span></code>
+  </td>
+  <td class="devbook">
+    YES
+  </td>
+  <td class="devbook">
+    Multiline freetext.
+  </td>
+  <td class="devbook">
+    List of contacts for the eclass function. One line per
+    maintainer. Must start on a newline after the tag.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@INTERNAL</span></code>
+  </td>
+  <td class="devbook">
+    YES
+  </td>
+  <td class="devbook">
+    
+    —
+  
+  </td>
+  <td class="devbook">
+    Indicates that the function is internal to the eclass and should
+    not be called from outside.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@DESCRIPTION:</span></code>
+  </td>
+  <td class="devbook">
+    <b>*</b>
+  </td>
+  <td class="devbook">
+    Multiline freetext.
+  </td>
+  <td class="devbook">
+    <p>Long description for the eclass function.</p>
+    <p><b>*:</b> Not optional if <code class="docutils literal"><span class="pre">RETURN:</span></code> is absent.</p>
+  </td>
+</tr>
+</table>
+
+</div>
+<div class="section">
+<h2 id="eclass-function-variables">Eclass Function Variables</h2>
+
+<p>
+Eclass functions may make use of variables just like any other bash
+function. Special function-specific variables should be documented
+using the following tags:
+</p>
+
+<table class="table">
+<tr>
+  <th>tag</th>
+  <th>optional?</th>
+  <th>arguments</th>
+  <th>description</th>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@VARIABLE:</span></code>
+  </td>
+  <td class="devbook">
+    NO
+  </td>
+  <td class="devbook">
+    Name of the function-specific variable to which the documentation applies.
+  </td>
+  <td class="devbook">
+    This tag applies to variables consumed by specific functions of
+    the eclass. They are in effect only when the specific function is
+    called.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@DEFAULT_UNSET</span></code>
+  </td>
+  <td class="devbook">
+    YES
+  </td>
+  <td class="devbook">
+    
+    —
+  
+  </td>
+  <td class="devbook">
+    Indicates that this variable is unset by default if not set by the
+    developer.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@INTERNAL</span></code>
+  </td>
+  <td class="devbook">
+    YES
+  </td>
+  <td class="devbook">
+    
+    —
+  
+  </td>
+  <td class="devbook">
+    Indicates that the variable is internal to the eclass function.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@REQUIRED</span></code>
+  </td>
+  <td class="devbook">
+    YES
+  </td>
+  <td class="devbook">
+    
+    —
+  
+  </td>
+  <td class="devbook">
+    Indicates that this variable must be set by the developer.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    <code class="docutils literal"><span class="pre">@DESCRIPTION:</span></code>
+  </td>
+  <td class="devbook">
+    NO
+  </td>
+  <td class="devbook">
+    Multiline freetext.
+  </td>
+  <td class="devbook">
+    Long description for the function variable.
+  </td>
+</tr>
+</table>
+
+</div>
+
+<div class="section">
+<h2 id="simple-common-functions-eclass-example">Simple Common Functions Eclass Example</h2>
+
+<p>
+As an example, the following eclass was written to illustrate a better way of
+installing OSX application files during a discussion on this subject. It defines
+a single function, <code class="docutils literal"><span class="pre">domacosapp</span></code>.
+</p>
+
+<pre><span class="Constant"><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Copyright</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">1999-2017</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Gentoo</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Foundation</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Distributed</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">under</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">the</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">terms</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">of</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">the</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">GNU</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">General</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Public</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">License</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">v2</span>
+
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@ECLASS:</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">macosapp.eclass</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@MAINTAINER:</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Ciaran</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">McCreesh</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">&lt;ciaranm@gentoo.org&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@BLURB:</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">install</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">macos</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">.app</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">files</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">to</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">the</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">relevant</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">location.</span>
+
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@FUNCTION:</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">domacosapp</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@USAGE:</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">&lt;app-file&gt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">[new-file]</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@DESCRIPTION:</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Install</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">the</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">given</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">.app</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">file</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">into</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">the</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">appropriate</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">location.</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">If</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">[new-file]</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">is</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">given,</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">it</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">will</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">be</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">used</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">as</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">the</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">new</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">(installed)</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">of</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">the</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">file.</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Otherwise</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">&lt;app-file&gt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">is</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">installed</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">as-is.</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Special">domacosapp()</span> <span xmlns="http://www.w3.org/1999/xhtml" class="PreProc">{</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">[[</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">-z</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">${1}</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">]]</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">&amp;&amp;</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">die</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span>usage: domacosapp &lt;file&gt; [new file]<span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">if</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">use</span> ppc-macos <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">;</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">then</span>
+        <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">insinto</span> /Applications
+        <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">newins</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">$1</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">${2:-${1}</span>}<span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">||</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">die</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span>Failed to install <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">${1}</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">fi</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="PreProc">}</span>
+</span></pre>
+
+</div>
+
+<div class="section">
+<h2 id="export-functions">Export Functions</h2>
+
+<p>
+An eclass may provide default implementations for any of the standard ebuild
+functions (<code class="docutils literal"><span class="pre">src_unpack</span></code>, <code class="docutils literal"><span class="pre">pkg_postinst</span></code> etc). This can be done either as a
+simple function definition (which is not multiple eclass friendly) or using
+<code class="docutils literal"><span class="pre">EXPORT_FUNCTIONS</span></code>. Functions given to <code class="docutils literal"><span class="pre">EXPORT_FUNCTIONS</span></code> are implemented
+as normal, but have their name prefixed with <code class="docutils literal"><span class="pre">${ECLASS}_</span></code>.
+</p>
+
+<div class="alert alert-info" role="alert">
+<strong>Important:</strong>
+Only 'standard' functions should be specified in <code class="docutils literal"><span class="pre">EXPORT_FUNCTIONS</span></code>.
+</div>
+
+<div class="alert alert-success" role="alert">
+<strong>Note:</strong><code class="docutils literal"><span class="pre">EXPORT_FUNCTIONS</span></code> is a function, <i>not</i> a variable.</div>
+
+<p>
+If multiple eclasses export the same function, the latest (inherited last)
+defined version wins.  If an ebuild defines a function that is exported, this
+gets priority over any eclass version. This can be used to override
+eclass-defined defaults 
+    —
+   for example, say we had <code class="docutils literal"><span class="pre">fnord.eclass</span></code>:
+</p>
+
+<pre><span class="Constant">EXPORT_FUNCTIONS <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">src_compile</span>
+
+<span xmlns="http://www.w3.org/1999/xhtml" class="Special">fnord_src_compile()</span> <span xmlns="http://www.w3.org/1999/xhtml" class="PreProc">{</span>
+    do_stuff <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">||</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">die</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="PreProc">}</span>
+</span></pre>
+
+<p>
+Then an ebuild could do this:
+</p>
+
+<pre><span class="Constant"><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">inherit</span> fnord.eclass
+
+<span xmlns="http://www.w3.org/1999/xhtml" class="Special">src_compile()</span> <span xmlns="http://www.w3.org/1999/xhtml" class="PreProc">{</span>
+    do_pre_stuff <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">||</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">die</span>
+    fnord_src_compile
+    do_post_stuff <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">||</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">die</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="PreProc">}</span>
+</span></pre>
+
+</div>
+
+<div class="section">
+<h2 id="simple-build-system-eclass-example">Simple Build System Eclass Example</h2>
+
+<p>
+A simple eclass which defines a number of functions and a default
+<code class="docutils literal"><span class="pre">src_compile</span></code> for the (hypothetical) <code class="docutils literal"><span class="pre">jmake</span></code> build system might look
+something like the following:
+</p>
+
+<pre><span class="Constant"><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Copyright</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">1999-2017</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Gentoo</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Foundation</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Distributed</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">under</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">the</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">terms</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">of</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">the</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">GNU</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">General</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Public</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">License</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">v2</span>
+
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@ECLASS:</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">jmake.eclass</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@MAINTAINER:</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Gentoo</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Devmanual</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Project</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">&lt;devmanual@gentoo.org&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@AUTHOR:</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Ciaran</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">McCreesh</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">&lt;ciaranm@gentoo.org&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@BLURB:</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Demonstrate</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">a</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">simple</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">build</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">system</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">eclass.</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@DESCRIPTION:</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Demonstrates</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">EXPORT_FUNCTIONS</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">and</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">defines</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">simple</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">wrappers</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">for</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">the</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">(hypothetical)</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">jmake</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">build</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">system</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">and</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">a</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">default</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">src_compile.</span>
+
+EXPORT_FUNCTIONS <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">src_compile</span>
+
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">DEPEND</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span>&gt;=sys-devel/jmake-2<span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span>
+
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@FUNCTION:</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">jmake-configure</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@USAGE:</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">[additional-args]</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@DESCRIPTION:</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Passes</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">all</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">arguments</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">through</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">to</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">the</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">appropriate</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"></span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">jmake</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">configure</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"></span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">command.</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Special">jmake-configure()</span> <span xmlns="http://www.w3.org/1999/xhtml" class="PreProc">{</span>
+    jmake configure <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">--prefix</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span>/usr <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">$@</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="PreProc">}</span>
+
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@FUNCTION:</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">jmake-build</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@USAGE:</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">[additional-args]</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@DESCRIPTION:</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">First</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">builds</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">all</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">dependencies,</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">and</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">then</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">passes</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">through</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">its</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">arguments</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">to</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">the</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">appropriate</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"></span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">jmake</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">build</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">command.</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Special">jmake-build()</span> <span xmlns="http://www.w3.org/1999/xhtml" class="PreProc">{</span>
+    jmake dep <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">&amp;&amp;</span> jmake build <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">$@</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="PreProc">}</span>
+
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@FUNCTION:</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">jmake-src_compile</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@DESCRIPTION:</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Calls</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">jmake-configure()</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">and</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">jmake-build()</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">to</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">compile</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">a</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">jmake</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">project.</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Special">jmake_src_compile()</span> <span xmlns="http://www.w3.org/1999/xhtml" class="PreProc">{</span>
+    jmake-configure <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">||</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">die</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span>configure failed<span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span>
+    jmake-build <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">||</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">die</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span>build failed<span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="PreProc">}</span>
+</span></pre>
+
+</div>
+
+<div class="section">
+<h2 id="handling-incorrect-usage-of-an-eclass">Handling incorrect usage of an eclass</h2>
+
+<p>
+Sometimes an eclass is used incorrectly by an ebuild and the eclass
+knows it is being used incorrectly- the common example is an
+eclass that only works with a specific set of EAPIs, but is being
+accessed inherited by an ebuild with a different EAPI.
+In those cases, used sparingly as a last resort, it is allowed
+for an eclass to invoke die from the global scope.  For example:
+</p>
+
+<pre><span class="Constant"><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Copyright</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">1999-2017</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Gentoo</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Foundation</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Distributed</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">under</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">the</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">terms</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">of</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">the</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">GNU</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">General</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Public</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">License</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">v2</span>
+
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@ECLASS:</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">eapi-die.eclass</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@MAINTAINER:</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Gentoo</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Devmanual</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Project</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">&lt;devmanual@gentoo.org&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Comment">#</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">@BLURB:</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">Calls</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">die</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">when</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">used</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">with</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">an</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">invalid</span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Comment">EAPI.</span>
+
+<span xmlns="http://www.w3.org/1999/xhtml" class="Statement">case</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">${EAPI:-0}</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">in</span>
+  0<span xmlns="http://www.w3.org/1999/xhtml" class="PreProc">)</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">die</span> <span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span>this eclass doesn't support EAPI 0<span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span> ;;
+  *<span xmlns="http://www.w3.org/1999/xhtml" class="PreProc">)</span> ;;
+<span xmlns="http://www.w3.org/1999/xhtml" class="Statement">esac</span>
+</span></pre>
+</div>
+
+
+</div>
+<footer><div class="container">
+<div class="row">
+<div class="col-xs-12 col-md-offset-2 col-md-7"></div>
+<div class="col-xs-12 col-md-3">
+<h3 class="footerhead">Questions or comments?</h3>
+              Please feel free to <a href="https://www.gentoo.org/inside-gentoo/contact/">contact us</a>.
+            </div>
+</div>
+<div class="row">
+<div class="col-xs-2 col-sm-3 col-md-2"><ul class="footerlinks three-icons">
+<li><a href="http://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+</ul></div>
+<div class="col-xs-10 col-sm-9 col-md-10">
+<strong>Copyright (C) 2001-2017 Gentoo Foundation, Inc.</strong><br><small>
+                Gentoo is a trademark of the Gentoo Foundation, Inc.
+                The text of this document is distributed under the
+                <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+                The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+              </small>
+</div>
+</div>
+</div></footer><script src="https://assets.gentoo.org/tyrian/jquery.min.js"></script><script src="https://assets.gentoo.org/tyrian/bootstrap.min.js"></script>
+</body>
+</html>

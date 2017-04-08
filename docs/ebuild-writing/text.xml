@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<guide self="ebuild-writing/">
+<chapter>
+<title>Ebuild Writing</title>
+
+<body>
+<p>
+This section describes how to write an ebuild. It covers the basic format
+of an ebuild and the variables and functions available, and finishes off
+with some general notes and extended examples.
+</p>
+</body>
+
+<section>
+<title>Contents</title>
+<body>
+<contentsTree/>
+</body>
+</section>
+</chapter>
+
+<include href="file-format/"/>
+<include href="eapi/"/>
+<include href="use-conditional-code/"/>
+<include href="error-handling/"/>
+<include href="users-and-groups/"/>
+<include href="messages/"/>
+<include href="variables/"/>
+<include href="using-eclasses/"/>
+<include href="functions/"/>
+<include href="misc-files/"/>
+<include href="user-submitted/"/>
+<include href="common-mistakes/"/>
+</guide>

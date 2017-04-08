@@ -1,0 +1,767 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Package and Category metadata.xml – Gentoo Development Guide</title>
+<link rel="stylesheet" href="../../../devmanual.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Gentoo Devmanual is a technical manual which covers topics such as writing ebuilds and eclasses, and policies that developers should be abiding by.">
+<link href="https://assets.gentoo.org/tyrian/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="https://assets.gentoo.org/tyrian/tyrian.min.css" rel="stylesheet" media="screen">
+<link rel="icon" href="https://www.gentoo.org/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<header><div class="site-title"><div class="container"><div class="row">
+<div class="site-title-buttons"><div class="btn-group btn-group-sm">
+<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span><strong> Get Gentoo!</strong></a><div class="btn-group btn-group-sm">
+<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#"><span class="fa fa-fw fa-map-o"></span><span class="hidden-xs"> gentoo.org sites </span><span class="caret"></span></a><ul class="dropdown-menu dropdown-menu-right">
+<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+<li class="divider">
+<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+<li class="divider">
+<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+</ul>
+</div>
+</div></div>
+<div class="logo">
+<a href="/" title="Back to the homepage" class="site-logo"><object data="https://assets.gentoo.org/tyrian/site-logo.svg" type="image/svg+xml"><img src="https://assets.gentoo.org/tyrian/site-logo.png" alt="Gentoo Linux Logo"></object></a><span class="site-label">Development Guide</span>
+</div>
+</div></div></div>
+<nav class="tyrian-navbar" role="navigation"><div class="container"><div class="row">
+<div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+<div class="collapse navbar-collapse navbar-main-collapse"><ul class="nav navbar-nav">
+<li><a href="../../../index.html"><span class="glyphicon glyphicon-home"></span>  Home</a></li>
+<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Package and Category metadata.xml<span class="caret"></span></a></li>
+<li><a href="../index.html"><span class="glyphicon glyphicon-arrow-left"></span>  Miscellaneous Files</a></li>
+<li><a href="../../../ebuild-writing/misc-files/patches/index.html">Patches  <span class="glyphicon glyphicon-arrow-right"></span></a></li>
+</ul></div>
+</div></div></nav></header><div class="container"><div class="row"><div class="col-md010"><ol class="breadcrumb">
+<li><a href="../../../index.html">主索引</a></li>
+<li><a href="../../index.html">Ebuild Writing</a></li>
+<li><a href="../index.html">Miscellaneous Files</a></li>
+</ol></div></div></div>
+<div class="container">
+<h1 class="first-header">Package and Category <code class="docutils literal"><span class="pre">metadata.xml</span></code>
+</h1>
+<p>
+The <code class="docutils literal"><span class="pre">metadata.xml</span></code> file is used to specify additional data about a
+package or category.
+</p>
+
+<div class="section">
+<h2 id="syntax">Syntax</h2>
+
+<p>
+A metadata file follows the syntax defined in
+<a href="https://wiki.gentoo.org/wiki/GLEP:68">GLEP 68</a>.
+The character set <b>must</b> be UTF-8 as specified by
+<a href="https://wiki.gentoo.org/wiki/GLEP:31">GLEP 31</a>.
+</p>
+
+<p>
+Concerning indentation there is no strict rule governing the style and
+width. However the following minimal set of rules need to be followed:
+<ul>
+  <li>
+    Indentation should be consistent, i.e. either spaces or tabs, but
+    not both.
+  </li>
+  <li>
+    Keep the existing style when touching metadata.xml files that
+    belong to other developers.
+  </li>
+</ul>
+</p>
+
+<p>
+The following table summarizes the tags that may appear in a
+metadata.xml:
+</p>
+
+<table class="table">
+<tr>
+  <th>tag</th>
+  <th>description</th>
+</tr>
+<tr>
+  <td class="devbook">
+    &lt;catmetadata&gt;
+  </td>
+  <td class="devbook">
+    This is the root element of the metadata.xml file for
+    categories. It has no attributes. It contains a number of
+    &lt;longdescription&gt; tags, each for a different
+    language.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    &lt;pkgmetadata&gt;
+  </td>
+  <td class="devbook">
+    This is the root element of the metadata.xml file for
+    packages. It has no attributes. The following subtags are
+    allowed:
+    &lt;longdescription&gt;,
+    &lt;maintainer&gt;,
+    &lt;slots&gt;,
+    &lt;use&gt;, and
+    &lt;upstream&gt;.
+    While all the subtags are optional, &lt;upstream&gt; may
+    appear at most once.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;longdescription&gt;</td>
+  <td class="devbook">
+    This tag contains a description for a category or a package. For
+    packages, it is used to augment the
+    <a href="../../../ebuild-writing/variables/index.html#ebuild-defined-variables">
+    DESCRIPTION</a> field in the ebuilds themselves. This tag has
+    two optional subtags: &lt;pkg&gt; and
+    &lt;cat&gt;.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">
+    &lt;maintainer&gt;
+  </td>
+  <td class="devbook">
+    This tag specifies the persons and/or projects responsible for
+    the maintenance of a package. The <code class="docutils literal"><span class="pre">type</span></code> attribute must
+    be specified and can be either <code class="docutils literal"><span class="pre">"person"</span></code> or
+    <code class="docutils literal"><span class="pre">"project"</span></code>. There is one required subtag:
+    &lt;email&gt;. It has two optional subtags:
+    &lt;name&gt; and
+    &lt;description&gt;.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;email&gt;</td>
+  <td class="devbook">
+    This contains the e-mail address of the maintainer. It is required.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;name&gt;</td>
+  <td class="devbook">
+    This contains freetext with the name of the maintainer. It is optional.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;description&gt;</td>
+  <td class="devbook">
+    The description tag contains a description of the maintainership, or for 
+    example a remark that someone interested can take over the maintainership. 
+    It is optional.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;slots&gt;</td>
+  <td class="devbook">
+    This tag describes the
+    <a href="../../../general-concepts/slotting/index.html">slots</a> of a package.
+    It has two optional subtags: &lt;slot&gt; and &lt;subslots&gt;.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;slot&gt;</td>
+  <td class="devbook">
+    This contains information for a particular slot. The <code class="docutils literal"><span class="pre">name</span></code>
+    attribute is mandatory and specifies the name of the slot.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;subslots&gt;</td>
+  <td class="devbook">
+    Describes the meaning of subslots for the whole package. This
+    tag may appear at most once.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;use&gt;</td>
+  <td class="devbook">
+    This tag contains descriptions of <a href="../../../ebuild-writing/variables/index.html#iuse">USE flags</a>.
+    This tag is optional and, if specified, has one required subtag:
+    &lt;flag&gt;.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;flag&gt;</td>
+  <td class="devbook">
+    This tag contains a description of how the named USE flag affects this
+    package. It is required if the &lt;use&gt; tag is specified.
+    It also requires the USE flag to be named in the <code class="docutils literal"><span class="pre">name</span></code> attribute.
+    This tag has two optional subtags: &lt;pkg&gt; and
+    &lt;cat&gt;.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;upstream&gt;</td>
+  <td class="devbook">
+    This tag contains information about the upstream developers/project.
+    It supports multiple optional subtags: &lt;maintainer&gt;,
+    &lt;changelog&gt;, &lt;doc&gt;, &lt;bugs-to&gt;,
+    and &lt;remote-id&gt;.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;maintainer&gt;</td>
+  <td class="devbook">
+    Provides information about the upstream maintainer. It requires a
+    &lt;name&gt; subtag to be specified, supports an optional
+    &lt;email&gt; subtag and an optional <code class="docutils literal"><span class="pre">status</span></code> attribute.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;name&gt;</td>
+  <td class="devbook">
+    The name of an upstream maintainer should contain a block of text with upstream's name.
+    This element is mandatory for an upstream maintainer and must appear exactly once.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;email&gt;</td>
+  <td class="devbook">
+    The email address of an upstream maintainer. May appear only once.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;changelog&gt;</td>
+  <td class="devbook">
+    Should contain a URL where the location of the upstream changelog can be found.
+    The URL must be version independent and must point to a changelog which is only
+    updated on new releases of the corresponding package. (This also implies that
+    one can link to an automatically updated changelog in case of vcs snapshots
+    only). May appear at most once.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;doc&gt;</td>
+  <td class="devbook">
+    Should contain a URL where the location of the upstream documentation can be
+    found. The link must not point to any third party documentation and must be
+    version independent. If the documentation is available in more than one language,
+    a lang attribute can be used which follows the same rules as the one for
+    &lt;longdescription&gt;.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;bugs-to&gt;</td>
+  <td class="devbook">
+    Should contain a place where bugs can be filed, a URL or an e-mail address prefixed
+    with <code class="docutils literal"><span class="pre">mailto:</span></code>. May appear at most once.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;remote-id&gt;</td>
+  <td class="devbook">
+    Should specify a type of package identification tracker and the identification that
+    corresponds to the package in question. remote-id should make it easier to index
+    information such as its Freshmeat ID or its CPAN name.
+    It has a mandatory attribute <code class="docutils literal"><span class="pre">type</span></code> which identifies the type
+    of upstream source.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;pkg&gt;</td>
+  <td class="devbook">
+    This tag contains a valid qualified package name.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">&lt;cat&gt;</td>
+  <td class="devbook">
+    This tag contains a valid category name as defined in
+    profiles/categories.
+  </td>
+</tr>
+</table>
+
+<p>
+There are also some attributes that can be used with these tags:
+</p>
+
+<table class="table">
+<tr>
+  <th>attribute</th>
+  <th>tags</th>
+  <th>description</th>
+</tr>
+<tr>
+  <td class="devbook">lang</td>
+  <td class="devbook">
+    &lt;description&gt;, &lt;longdescription&gt;,
+    &lt;slots&gt;,
+    &lt;use&gt;, &lt;doc&gt;
+  </td>
+  <td class="devbook">
+    In every case where a description is required, there must be at
+    <i>least</i> an english description.  If an additional description in
+    another language is given, this attribute is used to specify the language
+    used.  The format is the two-character language code as defined by the <a href="http://www.w3.org/WAI/ER/IG/ert/iso639.htm#2letter">ISO-639-1</a>
+    norm.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">restrict</td>
+  <td class="devbook">
+    &lt;maintainer&gt;,
+    &lt;longdescription&gt;, &lt;flag&gt;
+  </td>
+  <td class="devbook">
+    The restrict attribute allows one to restrict the application of
+    certain tags to certain versions of a package. When this attribute
+    is used, other tags with or without the restrict attribute must be
+    present to cover all the versions of the package. A tag without
+    the restrict attribute serves as the default. The format of the
+    restrict attribute is that of a EAPI=0 package dependency
+    specification. Due to the limitations of XML, the "&lt;" and
+    "&gt;" need to be specified using "&amp;lt;" and "&amp;gt;".
+  </td>
+</tr>
+<tr>
+  <td class="devbook">name</td>
+  <td class="devbook">
+    &lt;flag&gt;, &lt;slot&gt;
+  </td>
+  <td class="devbook">
+    When this attribute is required on the &lt;flag&gt; tag, it
+    simply contains the name of the USE flag. For the
+    &lt;slot&gt; tag, it specifies the
+    <a href="../../../general-concepts/slotting/index.html#slot-names">
+    slot name</a> to which it applies. A slot name of <code class="docutils literal"><span class="pre">"*"</span></code>
+    allows for a single &lt;slot&gt; tag to match all the slots of a
+    package, in which case no other slot tags may be present.
+  </td>
+</tr>
+<tr>
+  <td class="devbook">status</td>
+  <td class="devbook">
+    &lt;maintainer&gt;
+  </td>
+  <td class="devbook">
+    The upstream maintainer element has a status attribute, which is
+    one of <code class="docutils literal"><span class="pre">"active"</span></code> or <code class="docutils literal"><span class="pre">"inactive"</span></code>. This attribute is not
+    mandatory. The absence of it shall be interpreted as
+    <code class="docutils literal"><span class="pre">"unknown"</span></code>. Please note that this attribute is only allowed
+    for the &lt;maintainer&gt; subtags of the &lt;upstream&gt;
+    element!
+  </td>
+</tr>
+<tr>
+  <td class="devbook">type</td>
+  <td class="devbook">
+    &lt;remote-id&gt;
+  </td>
+  <td class="devbook">
+    A string identifying the type of upstream source. A list of valid strings are kept in
+    <a href="https://www.gentoo.org/dtd/metadata.dtd">metadata.dtd</a>.
+    Developers should email the gentoo-dev mailing list before using a new type value. 
+  </td>
+</tr>
+<tr>
+  <td class="devbook">type</td>
+  <td class="devbook">
+    &lt;maintainer&gt;
+  </td>
+  <td class="devbook">
+    Defines the type of the maintainer for a package. There are only
+    two valid values: <code class="docutils literal"><span class="pre">"person"</span></code> and <code class="docutils literal"><span class="pre">"project"</span></code>. The latter
+    denotes an official
+    <a href="../../../general-concepts/herds-and-projects/index.html">
+    Gentoo project</a>.
+  </td>
+</tr>
+
+</table>
+
+</div>
+<div class="section">
+<h2 id="package-metadata">Package Metadata</h2>
+<p>
+All packages <b>must</b> include a <code class="docutils literal"><span class="pre">metadata.xml</span></code> file which
+provides information about package description, maintainers, local USE
+flags, upstream etc.
+</p>
+
+<p>
+For developers' convenience, a skeleton file is provided in the
+Gentoo tree with the name
+<a href="https://gitweb.gentoo.org/repo/gentoo.git/tree/skel.metadata.xml">
+skel.metadata.xml</a>. The metadata file can also be created
+using the <code class="docutils literal"><span class="pre">app-portage/metagen</span></code> tool.
+</p>
+
+<p>
+Commits of package metadata files are handled by <code class="docutils literal"><span class="pre">repoman</span></code>. In
+order for metadata checks to be performed, <code class="docutils literal"><span class="pre">dev-libs/libxml2</span></code>
+must be installed on the system.
+</p>
+
+<p>
+Unless specified otherwise, the maintainer who is listed in the
+metadata first shall be the assignee for the bugs for that package as
+per <a href="https://wiki.gentoo.org/wiki/GLEP:67#Bug_assignment">
+GLEP 67</a>.
+</p>
+
+<div class="section">
+<h3 id="package-metadata-examples">Package Metadata Examples</h3>
+
+<p>
+In the following sections, various examples of metadata.xml are
+provided. These examples are based on actual package metadata files to
+keep things as realistic as possible. However, they may not include
+these files verbatim and should be taken as hypothetical examples.
+</p>
+
+<div class="section">
+<h4 id="projects-as-maintainers">Projects as Maintainers</h4>
+
+<p>
+For the first example, a package maintained by a single project is
+presented. It is a simplified version of metadata.xml for
+the package app-office/libreoffice. The package
+maintainer is identified by the email address <code class="docutils literal"><span class="pre">office@gentoo.org</span></code>
+with the name <code class="docutils literal"><span class="pre">Gentoo Office Project</span></code> as specified in the
+optional &lt;name&gt; subtag. It also provides a long package
+description.
+</p>
+
+<pre><span class=""><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">?xml</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">version</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">1.0</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">encoding</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">UTF-8</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">?</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">!DOCTYPE</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">pkgmetadata</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">SYSTEM</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"></span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">http://www.gentoo.org/dtd/metadata.dtd</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">pkgmetadata</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">maintainer</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">type</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">project</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>office@gentoo.org<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>Gentoo Office Project<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/maintainer</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">longdescription</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    LibreOffice is the successor of OpenOffice.org. This ebuild
+    allows you to compile it yourself. Unfortunately this compilation can
+    take up to a day depending on the speed of your computer. It will
+    however make a snappier LibreOffice than the binary version.
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/longdescription</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/pkgmetadata</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+</span></pre>
+
+<p>
+The email address <code class="docutils literal"><span class="pre">office@gentoo.org</span></code> corresponds to the
+<code class="docutils literal"><span class="pre">Gentoo Office Project</span></code> as defined in
+<a href="https://api.gentoo.org/metastructure/projects.xml">
+projects.xml</a>. This file lists all the projects in Gentoo and it
+is generated from the
+<a href="https://wiki.gentoo.org/wiki/Project:Gentoo">
+projects listing</a> available on the Gentoo Wiki:
+</p>
+
+<pre><span class=""><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">project</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>office@gentoo.org<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>Gentoo Office Project<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">url</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>https://wiki.gentoo.org/wiki/Project:Office<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/url</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">description</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    The Office project manages the office implementations
+    and related packages in Gentoo.
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/description</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">member</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>dilfridge@gentoo.org<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>Andreas K. Hüttel<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">role</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>member<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/role</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/member</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">member</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>scarabeus@gentoo.org<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>Tomáš Chvátal<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">role</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>member<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/role</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/member</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/project</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+</span></pre>
+
+</div>
+<div class="section">
+<h4 id="local-use-flag-descriptions">Local USE Flag Descriptions</h4>
+
+<p>
+The second example is formed after the metadata.xml of
+sys-apps/portage. It lists multiple maintainers where one
+is a developer and the other is a project. It illustrates how local
+USE flag descriptions are specified and also contains an upstream
+element. It is also worth pointing out the use of <code class="docutils literal"><span class="pre">mailto:</span></code>
+prefix in &lt;bugs-to&gt; tag due to the presence of an email address
+as opposed to a URL. Conversely, email addresses specified in the
+&lt;email&gt; tags require no such prefix.
+</p>
+
+<pre><span class=""><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">?xml</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">version</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">1.0</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">encoding</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">UTF-8</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">?</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">!DOCTYPE</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">pkgmetadata</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">SYSTEM</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"></span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">http://www.gentoo.org/dtd/metadata.dtd</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">pkgmetadata</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">upstream</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">bugs-to</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>mailto:dev-portage@gentoo.org<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/bugs-to</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">changelog</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>https://gitweb.gentoo.org/proj/portage.git/plain/RELEASE-NOTES<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/changelog</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">doc</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>https://wiki.gentoo.org/wiki/Handbook:AMD64/Working/Portage<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/doc</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/upstream</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">maintainer</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">type</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">person</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>larry@gentoo.org<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>Larry the Cow<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/maintainer</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">maintainer</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">type</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">project</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>dev-portage@gentoo.org<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/maintainer</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">use</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">epydoc</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>Build html API documentation with epydoc.<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">ipc</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>Use inter-process communication between portage and running ebuilds.<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">pypy2_0</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>Use pypy-c2.0 as Python interpreter.<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">python2</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>Use python2 as Python interpreter.<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">python3</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>Use python3 as Python interpreter.<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">xattr</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+      Preserve extended attributes (filesystem-stored metadata) when
+      installing files. Usually only required for hardened systems.
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/use</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/pkgmetadata</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+</span></pre>
+
+</div>
+<div class="section">
+<h4 id="split-maintainership">Split Maintainership</h4>
+
+<p>
+This example splits the maintainership based on package versions using
+the attribute <code class="docutils literal"><span class="pre">restrict</span></code>. According to the
+metadata.xml of sys-boot/grub, the ebuilds
+for version 2 and above are maintained by floppym@gentoo.org whereas
+earlier versions are maintained by the Gentoo Base System
+project. Note the use of "&amp;gt;" as opposed to "&gt;" in
+<code class="docutils literal"><span class="pre">restrict</span></code>.
+</p>
+
+<p>
+The example also uses the <code class="docutils literal"><span class="pre">&lt;pkg&gt;</span></code> tag in USE flag
+descriptions. Slot dependency specifiers are not allowed inside
+&lt;pkg&gt;, therefore the notation
+&lt;pkg&gt;sys-boot/grub&lt;/pkg&gt;<code class="docutils literal"><span class="pre">:2</span></code> is adopted as opposed to
+&lt;pkg&gt;sys-boot/grub<code class="docutils literal"><span class="pre">:2</span></code>&lt;/pkg&gt;.
+</p>
+
+<p>
+Lastly, the <code class="docutils literal"><span class="pre">&lt;remote-id&gt;</span></code> tag in the upstream description
+is demonstrated.
+</p>
+
+<pre><span class=""><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">?xml</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">version</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">1.0</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">encoding</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">UTF-8</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">?</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">!DOCTYPE</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">pkgmetadata</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">SYSTEM</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"></span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">http://www.gentoo.org/dtd/metadata.dtd</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">pkgmetadata</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">maintainer</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">restrict</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">&amp;gt;=sys-boot/grub-2</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">type</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">person</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>floppym@gentoo.org<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/maintainer</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">maintainer</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">type</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">project</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>base-system@gentoo.org<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>Gentoo Base System<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/maintainer</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">use</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">device-mapper</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+      Enable support for device-mapper from <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">pkg</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>sys-fs/lvm2<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/pkg</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">efiemu</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+      Build and install the efiemu runtimes
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">fonts</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>Build and install fonts for the gfxterm module<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">mount</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+      Build and install the grub-mount utility
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">libzfs</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+      Enable support for <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">pkg</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>sys-fs/zfs<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/pkg</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">multislot</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+      Allow concurrent installation of <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">pkg</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>sys-boot/grub<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/pkg</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>:0 and
+      <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">pkg</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>sys-boot/grub<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/pkg</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>:2 by renaming all programs.
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">themes</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>Build and install GRUB themes (starfield)<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">truetype</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+      Build and install grub-mkfont conversion utility
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/use</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">upstream</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">remote-id</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">type</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">sourceforge</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>dejavu<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/remote-id</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/upstream</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/pkgmetadata</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+</span></pre>
+
+</div>
+<div class="section">
+<h4 id="slots-and-subslots">Slots and Subslots</h4>
+
+<p>
+The main focus of this example is to demonstrate how slots and
+subslots are specified, by examining the metadata of
+media-libs/libpng. There may be multiple reasons for
+slotting depending on the nature of the package. For this particular
+package, it can be seen that the slots are used to provide different
+versions of the library with varying binary compatibility and that
+developers are advised to build against the slot 0. Furthermore,
+different versions of this package with the same subslot provide the
+same Application Binary Interface (ABI), according to the description
+specified in the <code class="docutils literal"><span class="pre">&lt;subslots&gt;</span></code> tag.
+</p>
+
+<pre><span class=""><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">?xml</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">version</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">1.0</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">encoding</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">UTF-8</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">?</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">!DOCTYPE</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">pkgmetadata</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">SYSTEM</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"></span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">http://www.gentoo.org/dtd/metadata.dtd</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">pkgmetadata</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">maintainer</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">type</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">project</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>base-system@gentoo.org<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>Gentoo Base System<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/maintainer</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">use</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">apng</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>support unofficial APNG (Animated PNG) spec<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/flag</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/use</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">upstream</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">remote-id</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">type</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">cpe</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>cpe:/a:libpng:libpng<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/remote-id</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">remote-id</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">type</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">sourceforge</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>apng<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/remote-id</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/upstream</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">slots</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">slot</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">0</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+      For building against. This is the only slot
+      that provides headers and command line tools.
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/slot</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">slot</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">1.2</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+      For binary compatibility, provides libpng12.so.0 only.
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/slot</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">slot</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">1.5</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+      For binary compatibility, provides libpng15.so.15 only.
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/slot</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">subslots</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>Reflect ABI compatibility for libpng.so.<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/subslots</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/slots</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/pkgmetadata</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+</span></pre>
+
+</div>
+</div>
+<div class="section">
+<h3 id="maintainer-needed">Maintainer-Needed</h3>
+
+<p>
+Maintainer-needed, or orphaned, packages have no maintainers
+responsible for them. Per
+<a href="https://wiki.gentoo.org/wiki/GLEP:67#Case_of_maintainer-needed_packages">
+GLEP 67</a>, these packages must not contain any &lt;maintainer&gt;
+subtags under &lt;pkgmetadata&gt; in their <code class="docutils literal"><span class="pre">metadata.xml</span></code>. By
+convention, a comment line containing the string <code class="docutils literal"><span class="pre">maintainer-needed</span></code>
+is inserted. Other tags which are relevant to the package may be
+present in the metadata. Bugs for these packages must be assigned to
+<code class="docutils literal"><span class="pre">maintainer-needed@gentoo.org</span></code>. The QA team periodically generates the
+<a href="https://qa-reports.gentoo.org/output/maintainer-needed.html">
+orphaned packages list</a> along with their corresponding bugs as
+part of the QA reports.
+</p>
+
+<pre><span class=""><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">?xml</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">version</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">1.0</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">encoding</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">UTF-8</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">?</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">!DOCTYPE</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">pkgmetadata</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">SYSTEM</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"></span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">http://www.gentoo.org/dtd/metadata.dtd</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">pkgmetadata</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">!--</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">maintainer-needed</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">--</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">upstream</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">maintainer</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">status</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">active</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+      <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>rasmus@alum.mit.edu<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/email</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+      <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>Matt Rasmussen<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/name</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/maintainer</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">doc</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">lang</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">en</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>http://keepnote.org/manual/<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/doc</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">bugs-to</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>https://code.google.com/p/keepnote/issues/list<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/bugs-to</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/upstream</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">longdescription</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">lang</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">en</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    KeepNote is a note taking application. With KeepNote, you can
+    store your class notes, TODO lists, research notes, journal entries,
+    paper outlines, etc in a simple notebook hierarchy with rich-text
+    formatting, images, and more. Using full-text search, you can
+    retrieve any note for later reference.
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/longdescription</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/pkgmetadata</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+</span></pre>
+
+</div>
+</div>
+
+<div class="section">
+<h2 id="category-metadata">Category Metadata</h2>
+<p>
+For categories, <code class="docutils literal"><span class="pre">metadata.xml</span></code> specifies a long description (in
+English and optionally in other languages). A typical example:
+</p>
+
+<pre><span class=""><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">?xml</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">version</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">1.0</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">encoding</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">UTF-8</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">?</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">!DOCTYPE</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">catmetadata</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">SYSTEM</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"></span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">http://www.gentoo.org/dtd/metadata.dtd</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">catmetadata</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">longdescription</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">lang</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">en</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    The app-vim category contains plugins and syntax file
+    packages for the Vim text editor.
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/longdescription</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">longdescription</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier"> </span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">lang</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">=</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Constant">de</span><span xmlns="http://www.w3.org/1999/xhtml" class="Statement">"</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+    Die Kategorie app-vim enthält Plugins und Syntax-Pakete
+    für den Vim Texteditor.
+  <span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/longdescription</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+<span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&lt;</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">/catmetadata</span><span xmlns="http://www.w3.org/1999/xhtml" class="Identifier">&gt;</span>
+</span></pre>
+
+<p>
+When creating a new category, creating a <code class="docutils literal"><span class="pre">metadata.xml</span></code> file
+along with a <code class="docutils literal"><span class="pre">&lt;longdescription&gt;</span></code> in English is
+<b>mandatory</b>. Translations are handled by any interested developer
+who speaks a language sufficiently well.
+</p>
+
+<p>
+The correct way to commit a <i>category</i> <code class="docutils literal"><span class="pre">metadata.xml</span></code> file
+is currently:
+</p>
+
+<pre>
+xmllint --noout --valid metadata.xml
+git add metadata.xml
+git commit --gpg-sign
+</pre>
+
+<p>
+The commit message should be formatted properly.
+A sample commit is shown below:
+</p>
+
+<pre>
+commit db359439bcd52f5a7f20d2332ab62feb16657504
+Author: Alexis Ballier &lt;aballier@gentoo.org&gt;
+Date:   Tue Sep 22 10:47:49 2015 +0200
+
+  dev-ros: Add metadata.xml for the category.
+</pre>
+
+</div>
+
+
+</div>
+<footer><div class="container">
+<div class="row">
+<div class="col-xs-12 col-md-offset-2 col-md-7"></div>
+<div class="col-xs-12 col-md-3">
+<h3 class="footerhead">Questions or comments?</h3>
+              Please feel free to <a href="https://www.gentoo.org/inside-gentoo/contact/">contact us</a>.
+            </div>
+</div>
+<div class="row">
+<div class="col-xs-2 col-sm-3 col-md-2"><ul class="footerlinks three-icons">
+<li><a href="http://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+</ul></div>
+<div class="col-xs-10 col-sm-9 col-md-10">
+<strong>Copyright (C) 2001-2017 Gentoo Foundation, Inc.</strong><br><small>
+                Gentoo is a trademark of the Gentoo Foundation, Inc.
+                The text of this document is distributed under the
+                <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+                The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+              </small>
+</div>
+</div>
+</div></footer><script src="https://assets.gentoo.org/tyrian/jquery.min.js"></script><script src="https://assets.gentoo.org/tyrian/bootstrap.min.js"></script>
+</body>
+</html>

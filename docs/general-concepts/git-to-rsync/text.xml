@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<guide self="general-concepts/git-to-rsync/">
+<chapter>
+<title>Git to RSYNC</title>
+
+<body>
+
+<p>
+  Changes made to the tree are propagated to the users in stages:
+</p>
+
+<ul>
+  <li>
+    Developer commits to local Git clone and pushes to central remote
+    Git repository. Commits and pushes are signed using Git
+    mechanisms based on GPG.
+  </li>
+  <li>
+    Staging box syncs from central Git repository, generates the metadata cache, ChangeLogs and signed Manifests from Git history.
+  </li>
+  <li>
+    <c>rsync1</c> syncs from the staging box.
+  </li>
+  <li>
+    Public rsync servers sync from <c>rsync1</c>.
+  </li>
+  <li>
+    Users sync from the public rsync servers.
+  </li>
+</ul>
+
+<figure short="Git to RSYNC Propagation" link="diagram.png">
+  Diagram showing Git to RSYNC Propagation
+</figure>
+
+<p>
+  The <c>emerge-websync</c> snapshot is made daily from the staging box.
+</p>
+
+</body>
+</chapter>
+</guide>
