@@ -28,50 +28,24 @@
 <title>DevBook XML 的快速入门</title>
 <body>
 
-<p>
-DevBook XML is heavily based on <uri link="https://www.gentoo.org/doc/en/xml-guide.xml">GuideXML</uri> and many tags are similar, if not the same. The main differences
-occur in layout which are designed to make a large-scale publication easier
-to produce and manage using a hierarchical tree system. Before starting off you
-really should first examine the GuideXML guide in a reasonable amount of depth.
-</p>
+<p>DevBook XML基于<uri link="https://www.gentoo.org/doc/en/xml-guide.xml">GuideXML</uri>,并且除了部分标签不同外其余的都是相似的。主要不同在于为了使大型出版物产生和管理更容易而使用了分层次的树型系统。在真正开始前,你应该适度查看下GuideXML指南。</p>
 
 <subsection>
-<title>Differences from GuideXML</title>
+<title>与GuideXML的差异</title>
 <body>
 
 <dl>
-  <dt>
-    Indentation
-  </dt>
+  <dt>缩进</dt>
   <dd>
-    <p>
-      Indent when needed <d/> you should not indent any section flow elements such as
-      <c>&lt;subsection&gt;</c> but do indent tables, lists and definition lists.
-      Do <e>not</e> indent text in ordinary paragraph blocks.
-    </p>
+    <p>在需要时才缩进<d/>表格、列表和定义表是需要缩进外，你不应该在像<c>&lt;subsection&gt;</c>这样随处可见元素缩进行任何区段。在普通的块段时<e>不要</e>缩进文本。</p>
   </dd>
-  <dt>
-    Code Samples
-  </dt>
+  <dt>代码示例</dt>
   <dd>
-    <p>
-      You can use the normal GuideXML tag <c>&lt;pre&gt;</c> when you need no syntax
-      highlighting. When you need syntax highlighting use the <c>&lt;codesample&gt;</c>
-      tag along with a <c>lang</c> attribute <d/> usually you want this to be set to
-      <c>ebuild</c> to syntax highlight ebuild code snippets.
-    </p>
+    <p>当你没有语法高亮的需求时可以使用GuideXML的普通标签<c>&lt;pre&gt;</c>.当你需要语法高亮时可以使用带<c>lang</c>属性的<c>&lt;codesample&gt;</c>标签<d/>通常你需要把ebuild代码片段设置成<c>ebuild</c>语法高亮。</p>
   </dd>
-  <dt>
-    Hierarchy
-  </dt>
+  <dt>层次结构</dt>
   <dd>
-    <p>
-      The whole document is organized as a tree. Each directory can contain one
-      document. Each document can inherit multiple sub-documents using the
-      <c>&lt;include&gt;</c> flag. You <b>must</b> ensure that the <c>self</c> tag
-      in each document correctly points to the relative path of the document from
-      the root node so that the tree-walking algorithms work correctly.
-    </p>
+    <p>整个文档被当成一棵树来组织。每个目录可以包含一个文档。每个文档可以使用<c>&lt;include&gt;</c>标志来继承多个子文档。你<b>必须</b>确保每个文档的<c>self</c>标签正确指向从根节点开始的相对路径，这样树的遍历算法才能正确地工作。</p>
   </dd>
 </dl>
 
@@ -81,26 +55,14 @@ really should first examine the GuideXML guide in a reasonable amount of depth.
 </section>
 
 <section>
-<title>Style Guidelines</title>
+<title>样式指南</title>
 <body>
 
 <ul>
-  <li>
-  This document is in British English. Submissions in other kinds of English are
-  welcome, but they may have their spelling corrected.
-  </li>
-  <li>
-  Third person form should be used rather than first.
-  </li>
-  <li>
-  This is not a formal document. The writing style is intended to be
-  professional but readable.
-  </li>
-  <li>
-  When using in-sentence hyphens as punctuation <d/> like this <d/> use a space,
-  followed by the <c>&lt;d/&gt;</c> tag. The build system will automatically turn
-  this into a proper Unicode long dash.
-  </li>
+  <li>本文档使用英式英语。欢迎在意见书中使用其他种类英语，但他们可能需要进行拼写更正。</li>
+  <li>应该使用第三人称的宾语而不是第一人称。</li>
+  <li>这不是一份正式的文档。写作风格的目的是为专业性及可读性。</li>
+  <li>当在句子中使用连字符作为标点时<d/>就像这个<d/>一样在<c>&lt;d/&gt;</c>标签后跟上一空格。构建系统会把自动把他转换成一个适当的Unicode长破折号。</li>
 </ul>
 
 </body>

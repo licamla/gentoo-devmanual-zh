@@ -67,76 +67,38 @@
 <div class="section">
 <h2 id="devbook-xml-的快速入门">DevBook XML 的快速入门</h2>
 
-<p>
-DevBook XML is heavily based on <a href="https://www.gentoo.org/doc/en/xml-guide.xml">GuideXML</a> and many tags are similar, if not the same. The main differences
-occur in layout which are designed to make a large-scale publication easier
-to produce and manage using a hierarchical tree system. Before starting off you
-really should first examine the GuideXML guide in a reasonable amount of depth.
-</p>
+<p>DevBook XML基于<a href="https://www.gentoo.org/doc/en/xml-guide.xml">GuideXML</a>,并且除了部分标签不同外其余的都是相似的。主要不同在于为了使大型出版物产生和管理更容易而使用了分层次的树型系统。在真正开始前,你应该适度查看下GuideXML指南。</p>
 
 <div class="section">
-<h3 id="differences-from-guidexml">Differences from GuideXML</h3>
+<h3 id="与guidexml的差异">与GuideXML的差异</h3>
 
 <dl>
-  <dt>
-    Indentation
-  </dt>
-  <dd>
-      Indent when needed 
+  <dt>缩进</dt>
+  <dd>在需要时才缩进
     —
-   you should not indent any section flow elements such as
-      <code class="docutils literal"><span class="pre">&lt;subsection&gt;</span></code> but do indent tables, lists and definition lists.
-      Do <i>not</i> indent text in ordinary paragraph blocks.
-    </dd>
-  <dt>
-    Code Samples
-  </dt>
-  <dd>
-      You can use the normal GuideXML tag <code class="docutils literal"><span class="pre">&lt;pre&gt;</span></code> when you need no syntax
-      highlighting. When you need syntax highlighting use the <code class="docutils literal"><span class="pre">&lt;codesample&gt;</span></code>
-      tag along with a <code class="docutils literal"><span class="pre">lang</span></code> attribute 
+  表格、列表和定义表是需要缩进外，你不应该在像<code class="docutils literal"><span class="pre">&lt;subsection&gt;</span></code>这样随处可见元素缩进行任何区段。在普通的块段时<i>不要</i>缩进文本。</dd>
+  <dt>代码示例</dt>
+  <dd>当你没有语法高亮的需求时可以使用GuideXML的普通标签<code class="docutils literal"><span class="pre">&lt;pre&gt;</span></code>.当你需要语法高亮时可以使用带<code class="docutils literal"><span class="pre">lang</span></code>属性的<code class="docutils literal"><span class="pre">&lt;codesample&gt;</span></code>标签
     —
-   usually you want this to be set to
-      <code class="docutils literal"><span class="pre">ebuild</span></code> to syntax highlight ebuild code snippets.
-    </dd>
-  <dt>
-    Hierarchy
-  </dt>
-  <dd>
-      The whole document is organized as a tree. Each directory can contain one
-      document. Each document can inherit multiple sub-documents using the
-      <code class="docutils literal"><span class="pre">&lt;include&gt;</span></code> flag. You <b>must</b> ensure that the <code class="docutils literal"><span class="pre">self</span></code> tag
-      in each document correctly points to the relative path of the document from
-      the root node so that the tree-walking algorithms work correctly.
-    </dd>
+  通常你需要把ebuild代码片段设置成<code class="docutils literal"><span class="pre">ebuild</span></code>语法高亮。</dd>
+  <dt>层次结构</dt>
+  <dd>整个文档被当成一棵树来组织。每个目录可以包含一个文档。每个文档可以使用<code class="docutils literal"><span class="pre">&lt;include&gt;</span></code>标志来继承多个子文档。你<b>必须</b>确保每个文档的<code class="docutils literal"><span class="pre">self</span></code>标签正确指向从根节点开始的相对路径，这样树的遍历算法才能正确地工作。</dd>
 </dl>
 
 </div>
 </div>
 <div class="section">
-<h2 id="style-guidelines">Style Guidelines</h2>
+<h2 id="样式指南">样式指南</h2>
 
 <ul>
-  <li>
-  This document is in British English. Submissions in other kinds of English are
-  welcome, but they may have their spelling corrected.
-  </li>
-  <li>
-  Third person form should be used rather than first.
-  </li>
-  <li>
-  This is not a formal document. The writing style is intended to be
-  professional but readable.
-  </li>
-  <li>
-  When using in-sentence hyphens as punctuation 
+  <li>本文档使用英式英语。欢迎在意见书中使用其他种类英语，但他们可能需要进行拼写更正。</li>
+  <li>应该使用第三人称的宾语而不是第一人称。</li>
+  <li>这不是一份正式的文档。写作风格的目的是为专业性及可读性。</li>
+  <li>当在句子中使用连字符作为标点时
     —
-   like this 
+  就像这个
     —
-   use a space,
-  followed by the <code class="docutils literal"><span class="pre">&lt;d/&gt;</span></code> tag. The build system will automatically turn
-  this into a proper Unicode long dash.
-  </li>
+  一样在<code class="docutils literal"><span class="pre">&lt;d/&gt;</span></code>标签后跟上一空格。构建系统会把自动把他转换成一个适当的Unicode长破折号。</li>
 </ul>
 
 </div>

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2017-04-07 00:39+0800\n"
-"PO-Revision-Date: 2017-04-08 00:38+0800\n"
+"PO-Revision-Date: 2017-04-08 22:55+0800\n"
 "Last-Translator: Licamla <licamla@live.cn>\n"
 "Language-Team: licamla\n"
 "Language: zh_CN\n"
@@ -116,94 +116,104 @@ msgstr "GuideXML"
 #: devmanual/appendices/contributing/text.xml:66(p)
 msgid "DevBook XML is heavily based on <placeholder-1/> and many tags are similar, if not the same. The main differences occur in layout which are designed to make a large-scale publication easier to produce and manage using a hierarchical tree system. Before starting off you really should first examine the GuideXML guide in a reasonable amount of depth."
 msgstr ""
+"DevBook XML基于<placeholder-1/>,并且除了部分标签不同外其余的都是相似的。主要不同在于为了使大型出版物产生和管理更容易而使用了分"
+"层次的树型系统。在真正开始前,你应该适度查看下GuideXML指南。"
 
 #: devmanual/appendices/contributing/text.xml:75(title)
 msgid "Differences from GuideXML"
-msgstr ""
+msgstr "与GuideXML的差异"
 
 #: devmanual/appendices/contributing/text.xml:79(dt)
 msgid "Indentation"
-msgstr ""
+msgstr "缩进"
 
 #: devmanual/appendices/contributing/text.xml:85(c)
 msgid "&lt;subsection&gt;"
-msgstr ""
+msgstr "&lt;subsection&gt;"
 
 #: devmanual/appendices/contributing/text.xml:86(e)
 msgid "not"
-msgstr ""
+msgstr "不要"
 
 #: devmanual/appendices/contributing/text.xml:83(p)
 msgid "Indent when needed <d/> you should not indent any section flow elements such as <placeholder-1/> but do indent tables, lists and definition lists. Do <placeholder-2/> indent text in ordinary paragraph blocks."
 msgstr ""
+"在需要时才缩进<d/>表格、列表和定义表是需要缩进外，你不应该在像<placeholder-1/>这样随处可见元素缩进行任何区段。在普通的块段时<plac"
+"eholder-2/>缩进文本。"
 
 #: devmanual/appendices/contributing/text.xml:89(dt)
 msgid "Code Samples"
-msgstr ""
+msgstr "代码示例"
 
 #: devmanual/appendices/contributing/text.xml:94(c)
 msgid "&lt;pre&gt;"
-msgstr ""
+msgstr "&lt;pre&gt;"
 
 #: devmanual/appendices/contributing/text.xml:95(c)
 msgid "&lt;codesample&gt;"
-msgstr ""
+msgstr "&lt;codesample&gt;"
 
 #: devmanual/appendices/contributing/text.xml:96(c)
 msgid "lang"
-msgstr ""
+msgstr "lang"
 
 #: devmanual/appendices/contributing/text.xml:97(c)
 msgid "ebuild"
-msgstr ""
+msgstr "ebuild"
 
 #: devmanual/appendices/contributing/text.xml:93(p)
 msgid "You can use the normal GuideXML tag <placeholder-1/> when you need no syntax highlighting. When you need syntax highlighting use the <placeholder-2/> tag along with a <placeholder-3/> attribute <d/> usually you want this to be set to <placeholder-4/> to syntax highlight ebuild code snippets."
 msgstr ""
+"当你没有语法高亮的需求时可以使用GuideXML的普通标签<placeholder-1/>.当你需要语法高亮时可以使用带<placeholder-3/>属"
+"性的<placeholder-2/>标签<d/>通常你需要把ebuild代码片段设置成<placeholder-4/>语法高亮。"
 
 #: devmanual/appendices/contributing/text.xml:100(dt)
 msgid "Hierarchy"
-msgstr ""
+msgstr "层次结构"
 
 #: devmanual/appendices/contributing/text.xml:107(c)
 msgid "&lt;include&gt;"
-msgstr ""
+msgstr "&lt;include&gt;"
 
 #: devmanual/appendices/contributing/text.xml:107(b)
 msgid "must"
-msgstr ""
+msgstr "必须"
 
 #: devmanual/appendices/contributing/text.xml:107(c)
 msgid "self"
-msgstr ""
+msgstr "self"
 
 #: devmanual/appendices/contributing/text.xml:104(p)
 msgid "The whole document is organized as a tree. Each directory can contain one document. Each document can inherit multiple sub-documents using the <placeholder-1/> flag. You <placeholder-2/> ensure that the <placeholder-3/> tag in each document correctly points to the relative path of the document from the root node so that the tree-walking algorithms work correctly."
 msgstr ""
+"整个文档被当成一棵树来组织。每个目录可以包含一个文档。每个文档可以使用<placeholder-1/>标志来继承多个子文档。你<placeholder-2"
+"/>确保每个文档的<placeholder-3/>标签正确指向从根节点开始的相对路径，这样树的遍历算法才能正确地工作。"
 
 #: devmanual/appendices/contributing/text.xml:120(title)
 msgid "Style Guidelines"
-msgstr ""
+msgstr "样式指南"
 
 #: devmanual/appendices/contributing/text.xml:124(li)
 msgid "This document is in British English. Submissions in other kinds of English are welcome, but they may have their spelling corrected."
-msgstr ""
+msgstr "本文档使用英式英语。欢迎在意见书中使用其他种类英语，但他们可能需要进行拼写更正。"
 
 #: devmanual/appendices/contributing/text.xml:128(li)
 msgid "Third person form should be used rather than first."
-msgstr ""
+msgstr "应该使用第三人称的宾语而不是第一人称。"
 
 #: devmanual/appendices/contributing/text.xml:131(li)
 msgid "This is not a formal document. The writing style is intended to be professional but readable."
-msgstr ""
+msgstr "这不是一份正式的文档。写作风格的目的是为专业性及可读性。"
 
 #: devmanual/appendices/contributing/text.xml:137(c)
 msgid "&lt;d/&gt;"
-msgstr ""
+msgstr "&lt;d/&gt;"
 
 #: devmanual/appendices/contributing/text.xml:135(li)
 msgid "When using in-sentence hyphens as punctuation <d/> like this <d/> use a space, followed by the <placeholder-1/> tag. The build system will automatically turn this into a proper Unicode long dash."
 msgstr ""
+"当在句子中使用连字符作为标点时<d/>就像这个<d/>一样在<placeholder-1/>标签后跟上一空格。构建系统会把自动把他转换成一个适当的Unic"
+"ode长破折号。"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: devmanual/appendices/contributing/text.xml:0(None)
